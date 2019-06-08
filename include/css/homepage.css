@@ -1,0 +1,325 @@
+@media (min-width: 768px) {
+  .layer {
+    color: #f6f8f8;
+    background-color: #000;
+    cursor: default;
+  }
+  #navbar-mscp {
+    background-color: transparent;
+    border-radius: 0;
+    height: 100px;
+    border: none;
+    margin-bottom: 0;
+  }
+  #navbar-mscp .container-fluid {
+    height: 100%;
+  }
+  #navbar-mscp .container-fluid .navbar-header {
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+  }
+  #navbar-mscp .container-fluid .navbar-header a {
+    width: 300px;
+    height: 100%;
+    padding: 0;
+    margin: 0 auto;
+    line-height: 100px;
+    text-align: center;
+  }
+  #navbar-mscp .navbar-collapse {
+    margin-top: 60px;
+  }
+  #navbar-mscp .navbar-nav li>a {
+    color: #f6f8f8;
+    padding: 10px;
+    font-size: 16px;
+  }
+  #navbar-mscp .navbar-nav li.current>a {
+    color: #ca1717;
+  }
+  #navbar-mscp .navbar-nav li:hover>a {
+    color: #ffdc90;
+  }
+
+  .body {
+    background-color: transparent;
+  }
+  #banner {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  #carousel-mscp .carousel-indicators li {
+    width: 16px;
+    height: 16px;
+    border-color: #ffdc90;
+  }
+  #carousel-mscp .carousel-indicators li.active {
+    width: 18px;
+    height: 18px;
+    background-color: #ca1717;
+  }
+  #carousel-mscp .carousel-inner .item::before, #carousel-mscp .carousel-inner .item::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    transition: all 0.8s;
+    z-index: -1;
+  }
+  #carousel-mscp .carousel-inner .item::before {
+    border-right: 5px solid #ffdc90;
+    border-bottom: 5px solid #ffdc90;
+    bottom: 3%;
+    right: 3%;
+  }
+  #carousel-mscp .carousel-inner .item::after {
+    border-top: 5px solid #ffdc90;
+    border-left: 5px solid #ffdc90;
+    top: 3%;
+    left: 3%;
+  }
+  #carousel-mscp .carousel-inner .item.active::before, #carousel-mscp .carousel-inner .item.active::after {
+    z-index: 3;
+    width: 94%;
+    height: 94%;
+  }
+  #carousel-mscp .carousel-control {
+    opacity: 0;
+  }
+  #carousel-mscp:hover .carousel-control {
+    opacity: 1;
+  }
+
+  #case {
+    position: relative;
+    width: 100%;
+    background-color: #000;
+  }
+  #case .case-hd {
+    padding: 60px 0 50px;
+  }
+  #case .case-hd h2 {
+    text-align: center;
+    font-size: 50px;
+    margin: 5px 0;
+  }
+  #case .case-hd h5 {
+    text-align: center;
+    margin: 5px 0;
+  }
+  #case .case-bd {
+    margin: 0 auto;
+    padding: 0;
+  }
+  #case .case-bd .case-list {
+    list-style: none;
+    margin: 0;
+    padding: 5px;
+  }
+  #case .case-bd .case-list li {
+    padding: 5px;
+  }
+  #case .case-bd .case-list li a {
+    width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #case .case-bd a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: 100%;
+  }
+  #case .case-bd a img {
+    width: 100%;
+    transition: all 0.3s;
+  }
+  #case .case-bd a .cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #fff;
+    transition: all 0.3s;
+    text-align: center;
+    overflow: hidden;
+  }
+  #case .case-bd a .cover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border: 0px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s;
+  }
+  #case .case-bd a .cover .title, #case .case-bd a .cover .content {
+    position:  relative;
+    transition: all 0.6s;
+    opacity: 0;
+  }
+  #case .case-bd a .cover .title {
+    left: 20px;
+  }
+  #case .case-bd a .cover .content {
+    right: 20px;
+  }
+  #case .case-bd a .cover span.glyphicon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 48px;
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid #ffdc90;
+    color: #ffdc90;
+    transform: rotate(0) scale(0);
+    margin-top: 10%;
+    transition: all 0.6s;
+  }
+
+  
+  #case .case-bd a:hover img {
+    transform: scale(1.2);
+  }
+  #case .case-bd a:hover .cover {
+    opacity: 0.8;
+    padding: 20px;
+  }
+  #case .case-bd a:hover .cover::after {
+    border-width: 20px;
+  }
+  #case .case-bd a .cover:hover {
+    padding: 10%;
+  }
+  #case .case-bd a .cover:hover .title {
+    left: 0;
+    opacity: 1;
+  }
+  #case .case-bd a .cover:hover .content {
+    right: 0;
+    opacity: 1;
+  }
+  #case .case-bd a .cover:hover span.glyphicon {
+    transform: rotate(360deg) scale(1.0);
+  }
+
+
+  /* #case .case-bd .case-list li a::before, #case .case-bd .case-list li a::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    transition: all 0.6s linear;
+    z-index: -1;
+  }
+  #case .case-bd .case-list li a::before {
+    border-right: 2px solid #ffdc90;
+    border-bottom: 2px solid #ffdc90;
+    bottom: 3%;
+    right: 3%;
+  }
+  #case .case-bd .case-list li a::after {
+    border-top: 2px solid #ffdc90;
+    border-left: 2px solid #ffdc90;
+    top: 3%;
+    left: 3%;
+  }
+  #case .case-bd .case-list li a:hover::before, #case .case-bd .case-list li a:hover::after {
+    z-index: 3;
+    width: 94%;
+    height: 94%;
+  } */
+  /* #case .case-bd .case-list li a img {
+    width: 100%;
+    transition: .6s all;
+  }
+  #case .case-bd .case-list li a .cover {
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    padding: 10% 5%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: #f6f8f8;
+    background-color: rgba(33, 33, 33, 0.6);
+    transform: perspective(200px) rotateX(-90deg);
+    transform-origin: top;
+    z-index: 2;
+    opacity: 0;
+    text-align: center;
+    transition: all 0.3s;
+  }
+  #case .case-bd .case-list li a .cover h3 {
+    transition: all 0.3s;
+    opacity: 0;
+    position: relative;
+    right: 20px;
+    overflow: hidden;
+    font-size: 28px;
+  }
+  #case .case-bd .case-list li a .cover h5 {
+    transition: all 0.3s;
+    opacity: 0;
+    position: relative;
+    left: 20px;
+    overflow: hidden;
+    font-size: 18px;
+  }
+  #case .case-bd .case-list li a .cover span.glyphicon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 48px;
+    border: 1px solid #ffdc90;
+    color: #ffdc90;
+    margin: 10% auto 0;
+    transform: rotate(0) scale(0);
+  }
+  #case .case-bd .case-list li a:hover img {
+    transform: scale(1.1, 1.1);
+  }
+  #case .case-bd .case-list li a:hover .cover {
+    transform: perspective(200px) rotateX(0);
+    opacity: 1;
+  }
+  #case .case-bd .case-list li a:hover .cover h3 {
+    opacity: 1;
+    transition-delay: 0.3s;
+    right: 0;
+  }
+  #case .case-bd .case-list li a:hover .cover h5 {
+    opacity: 1;
+    transition-delay: 0.3s;
+    left: 0;
+  }
+  #case .case-bd .case-list li a:hover span.glyphicon {
+    transform: rotate(360deg) scale(1);
+    transition:  all 0.3s 0.3s;
+  } */
+
+  #contact .container-fluid, #contact .row {
+    padding: 0;
+    margin: 0;
+  }
+  #contact .contact-hd {
+    padding: 30px 0;
+  }
+
+}
