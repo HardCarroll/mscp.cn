@@ -37,7 +37,7 @@
               <li><a href="#">精品案例</a></li>
               <li><a href="#">企业介绍</a></li>
               <li><a href="#">新闻资讯</a></li>
-              <li><a href="#">联系方式</a></li>
+              <li><a href="#">联系我们</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -152,27 +152,79 @@
           <a href="#" class="more">更多案例 >></a>
         </section>
       </div>
-      <div id="company">company</div>
-      <div id="news">news</div>
+      <div id="company">
+        <section class="company-hd">
+          <span>弥尚餐饮</span>
+          <span>装饰设计</span>
+        </section>
+        <section class="company-bd">
+          <span>湖南优厨联盟餐饮管理有限公司<b>，</b></span>
+          <span>是一家年轻的<b>、</b>专业的餐饮管理公司<b>，</b></span>
+          <span>不受众多加盟分店经营压力和管理牵制<b>。</b></span>
+          <span>是经湖南省工商部门核准的独立合法的有限责任公司<b>，</b></span>
+          <span>我们一家专注提供<b>“</b>餐饮相关专业服务<b>”</b>的餐饮连锁管理机构<b>。</b></span>
+        </section>
+        <section class="company-ft">
+          <a href="#"></a>
+        </section>
+      </div>
+      <div id="news">
+        <section class="news-hd">
+          <h2>新闻动态<span>News</span></h2>
+        </section>
+        <section class="news-bd container-fluid row">
+          <section class="col-xs-12 col-sm-6">
+            <a href="#">
+              <img src="" alt="">
+            </a>
+          </section>
+          <section class="col-xs-12 col-sm-6"></section>
+        </section>
+        <section class="news-ft">
+          <a href="#" class="more">更多资讯 >></a>
+        </section>
+      </div>
       <div id="partner">partner</div>
       <div id="contact">
         <section class="contact-hd">
           <img src="/images/bottom-text.png" alt="">
         </section>
         <section class="contact-bd container-fluid row">
-          <div class="col-xs-12 col-sm-6">left area</div>
-          <div class="col-xs-12 col-sm-6">right area</div>
+          <div class="col-xs-12 col-sm-4">
+            <h4>关于我们</h4>
+            <p><a href="#">公司介绍</a></p>
+            <p><a href="#">企业文化</a></p>
+            <p><a href="#">荣誉合集</a></p>
+            <p><a href="#">合作伙伴</a></p>
+            <p><a href="#">弥尚团队</a></p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <h4>联系我们</h4>
+            <p>电话：+86 13873976777</p>
+            <p>座机：0731-88853335</p>
+            <p>传真：0731-88853335</p>
+            <p>邮箱：382320863@qq.com</p>
+            <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="qrcode">
+              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
+              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
+            </div>
+          </div>
         </section>
-        <section class="contact-ft"></section>
+        <section class="contact-ft">
+          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备123456789号</a>
+        </section>
       </div>
     </section>
-    <section class="footer">footer</section>
   </section>
 
 
 
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/include/js/homepage.js"></script>
 </body>
 
 </html>
