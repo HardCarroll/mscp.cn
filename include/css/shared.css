@@ -16,6 +16,7 @@ img {
   vertical-align: top;
   margin: 0;
   padding: 0;
+  border: none;
 }
 strong {
   font-style: normal;
@@ -167,10 +168,24 @@ input, textarea, button, select {
   0% {
     transform-origin: center center;
     transform: scale(0) rotate(0);
+    opacity: 0;
   }
   100% {
     transform-origin: center center;
     transform: scale(1) rotate(360deg);
+    opacity: 1;
+  }
+}
+@keyframes enlargeIn {
+  0% {
+    transform-origin: center center;
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: center center;
+    transform: scale(1);
+    opacity: 1;
   }
 }
 @keyframes slideFromLeft {

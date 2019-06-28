@@ -1,4 +1,17 @@
 $(function() {
+  $("[data-toggle='popover']").popover();
+  // $("#tst-pop").popover({title:"title", content: "test content"});
+
+  $("#clk").click(function() {
+    console.log("click");
+    $("#tst-pop").popover("show");
+  });
+  $("#tst-pop").on("shown.bs.popover", function() {
+    setTimeout(function() {
+      $("#tst-pop").popover("hide");
+    }, 3000);
+  });
+
   var adTimer = setInterval(autoPlay, 3000, {target: $(".adCarousel-wrap")});
   $(".adCarousel").mouseenter(function() {
     clearInterval(adTimer);

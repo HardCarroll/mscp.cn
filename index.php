@@ -27,7 +27,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">企业LOGO预留位置(300*100px)</a>
+            <a class="navbar-brand" href="#"><img src="/images/logo.svg" alt=""></a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-navbar-mscp">
@@ -63,37 +63,6 @@
           <span class="glyphicon glyphicon-chevron-right"></span>
         </section>
       </div>
-
-      <!-- <div id="banner">
-        <div id="carousel-mscp" class="carousel slide" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-mscp" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-mscp" data-slide-to="1"></li>
-            <li data-target="#carousel-mscp" data-slide-to="2"></li>
-          </ol>
-
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="/images/banner.jpg" alt="...">
-            </div>
-            <div class="item">
-              <img src="/images/banner2.jpg" alt="...">
-            </div>
-            <div class="item">
-              <img src="/images/banner3.jpg" alt="...">
-            </div>
-          </div>
-
-          <a class="left carousel-control" href="#carousel-mscp" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="right carousel-control" href="#carousel-mscp" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      </div> -->
 
       <div id="service">
         <section class="service-hd">
@@ -165,7 +134,6 @@
           </div>
         </section>
       </div>
-      <div id="advantage"></div>
       <div id="budget">
         <div class="budget-inner">
           <section class="budget-hd">
@@ -174,14 +142,14 @@
           </section>
           <section class="container-fluid row budget-bd">
             <div class="col-xs-12 col-sm-4 lt">
-              <div class="input-group">
+              <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积" data-placement="bottom" tabindex="0" id="area-box">
                 <span class="input-group-addon">餐厅面积</span>
-                <input id="canteen-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
+                <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
                 <span class="input-group-addon">㎡</span>
               </div>
               <div class="input-group">
                 <span class="input-group-addon">装修风格</span>
-                <select name="" class="form-control" id="canteen-style">
+                <select name="" class="form-control" id="decoration-style">
                   <option value="0">田园风</option>
                   <option value="1">新中式</option>
                   <option value="2">时尚版</option>
@@ -189,9 +157,9 @@
                 </select>
                 <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
               </div>
-              <div class="input-group">
+              <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码" data-placement="bottom" tabindex="0" id="tel-box">
                 <span class="input-group-addon">联系电话</span>
-                <input type="text" class="form-control" id="canteen-tel" placeholder="请留下您的联系电话">
+                <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11" data-toggle="popover">
                 <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
               </div>
               <div class="tips">
@@ -215,6 +183,46 @@
           </section>
           <section class="budget-ft"></section>
         </div>
+      </div>
+      <div id="advantage">
+        <section class="container-fluid row advantage-hd">
+          <div class="col-sm-8">1</div>
+          <div class="col-sm-4">2</div>
+        </section>
+        <section class="container-fluid row advantage-bd">
+          <div class="col-sm-3 item">
+            <img src="/images/adv-1.jpg" alt="">
+            <div class="num">01</div>
+            <div class="txt">
+              <p>灯光的合理布局，不仅满足了基本的照明要求外，还起到烘托气氛的作用。</p>
+              <p>恰当的灯光运用可以调动现场的气氛，影响消费者的情绪。</p>
+            </div>
+          </div>
+          <div class="col-sm-3 item">
+            <img src="/images/adv-2.jpg" alt="">
+            <div class="num">02</div>
+            <div class="txt">
+              <p>合理布局动线不仅增加空间利用率还能快速导流，提升服务效率及质量。</p>
+            </div>
+          </div>
+          <div class="col-sm-3 item">
+            <img src="/images/adv-3.jpg" alt="">
+            <div class="num">03</div>
+            <div class="txt">
+              <p>分析消费者年龄层次心理采用对应色彩及造型，增加餐厅亲和力提升回头率。</p>
+              <p>根据消费者的需求，创造和加大商业价值，提高运营的效率！</p>
+            </div>
+          </div>
+          <div class="col-sm-3 item">
+            <img src="/images/adv-4.jpg" alt="">
+            <div class="num">04</div>
+            <div class="txt">
+              <p>门头是一张餐厅品牌对外的公开名片；又是一个餐厅整体环境设计的元素融合的代表；更是一家餐饮品牌的品质形象。</p>
+            </div>
+          </div>
+        </section>
+        <section class="advantage-ft">
+        </section>
       </div>
       <div id="case">
         <section class="case-hd">
@@ -510,7 +518,6 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-          <button type="button" class="btn btn-primary"></button>
         </div>
       </div>
     </div>
