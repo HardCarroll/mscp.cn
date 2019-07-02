@@ -22,19 +22,19 @@
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-mscp" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
+              <span class="sr-only">弥尚餐饮装饰设计导航栏</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="/images/logo.svg" alt=""></a>
+            <a class="navbar-brand" href="/"><img src="/images/logo.svg" alt=""></a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-navbar-mscp">
             <ul class="nav navbar-nav navbar-right">
               <li class="current"><a href="/">首页</a></li>
-              <li><a href="#advantage">服务优势</a></li>
-              <li><a href="#">一键报价</a></li>
+              <li><a href="/advantage">服务优势</a></li>
+              <li><a href="javascript:;">一键报价</a></li>
               <li><a href="/case">精品案例</a></li>
               <li><a href="/about">企业介绍</a></li>
               <li><a href="/news">新闻资讯</a></li>
@@ -78,7 +78,7 @@
                 <h5>一站式服务</h5>
                 <p>第一经营视角为您精准策划</p>
                 <p>专业缔造有价值的商业空间</p>
-                <a href="#" class="btn btn-custom-sm">了解更多</a>
+                <a href="javascript:;" class="btn btn-custom-sm">了解更多</a>
               </div>
             </section>
             <section class="list">
@@ -138,7 +138,7 @@
         <div class="budget-inner">
           <section class="budget-hd">
             <h2>我的餐厅装修需要花多少钱？</h2>
-            <h5>10秒帮你算出明细，不花冤枉钱！</h5>
+            <h5>5秒帮您算出明细，不花冤枉钱！</h5>
           </section>
           <section class="container-fluid row budget-bd">
             <div class="col-xs-12 col-sm-4 lt">
@@ -185,44 +185,52 @@
         </div>
       </div>
       <div id="advantage">
-        <section class="container-fluid row advantage-hd">
-          <div class="col-sm-8">1</div>
-          <div class="col-sm-4">2</div>
-        </section>
-        <section class="container-fluid row advantage-bd">
-          <div class="col-sm-3 item">
-            <img src="/images/adv-1.jpg" alt="">
-            <div class="num">01</div>
-            <div class="txt">
-              <p>灯光的合理布局，不仅满足了基本的照明要求外，还起到烘托气氛的作用。</p>
-              <p>恰当的灯光运用可以调动现场的气氛，影响消费者的情绪。</p>
+        <div class="advantage-inner">
+          <section class="container-fluid row advantage-hd">
+            <div class="col-sm-9">
+              <h2>专业人做专业事</h2>
+              <h5>创<span>有内涵</span>的品牌,造<span>富文化</span>的空间,建<span>高品质</span>的工程</h5>
             </div>
-          </div>
-          <div class="col-sm-3 item">
-            <img src="/images/adv-2.jpg" alt="">
-            <div class="num">02</div>
-            <div class="txt">
-              <p>合理布局动线不仅增加空间利用率还能快速导流，提升服务效率及质量。</p>
+            <div class="col-sm-3">
+              <a href="javascript:;" class="btn-more">预约设计</a>
+              <!-- <img src="/images/adv-bg.jpg" alt=""> -->
             </div>
-          </div>
-          <div class="col-sm-3 item">
-            <img src="/images/adv-3.jpg" alt="">
-            <div class="num">03</div>
-            <div class="txt">
-              <p>分析消费者年龄层次心理采用对应色彩及造型，增加餐厅亲和力提升回头率。</p>
-              <p>根据消费者的需求，创造和加大商业价值，提高运营的效率！</p>
+          </section>
+          <section class="container-fluid row advantage-bd">
+            <div class="col-sm-3 item">
+              <img src="/images/adv-1.jpg" alt="">
+              <div class="num">01</div>
+              <div class="txt">
+                <p>灯光的合理布局，不仅满足了基本的照明要求外，还起到烘托气氛的作用。</p>
+                <p>恰当的灯光运用可以调动现场的气氛，影响消费者的情绪。</p>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-3 item">
-            <img src="/images/adv-4.jpg" alt="">
-            <div class="num">04</div>
-            <div class="txt">
-              <p>门头是一张餐厅品牌对外的公开名片；又是一个餐厅整体环境设计的元素融合的代表；更是一家餐饮品牌的品质形象。</p>
+            <div class="col-sm-3 item">
+              <img src="/images/adv-2.jpg" alt="">
+              <div class="num">02</div>
+              <div class="txt">
+                <p>合理布局动线不仅增加空间利用率还能快速导流，提升服务效率及质量。</p>
+              </div>
             </div>
-          </div>
-        </section>
-        <section class="advantage-ft">
-        </section>
+            <div class="col-sm-3 item">
+              <img src="/images/adv-3.jpg" alt="">
+              <div class="num">03</div>
+              <div class="txt">
+                <p>分析消费者年龄层次心理采用对应色彩及造型，增加餐厅亲和力提升回头率。</p>
+                <p>根据消费者的需求，创造和加大商业价值，提高运营的效率！</p>
+              </div>
+            </div>
+            <div class="col-sm-3 item">
+              <img src="/images/adv-4.jpg" alt="">
+              <div class="num">04</div>
+              <div class="txt">
+                <p>门头是一张餐厅品牌对外的公开名片；又是一个餐厅整体环境设计的元素融合的代表；更是一家餐饮品牌的品质形象。</p>
+              </div>
+            </div>
+          </section>
+          <section class="advantage-ft">
+          </section>
+        </div>
       </div>
       <div id="case">
         <section class="case-hd">
@@ -232,7 +240,7 @@
         <section class="container-fluid case-bd">
           <ul class="row case-list">
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-1.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">剁椒鱼头</h3>
@@ -242,7 +250,7 @@
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-2.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">锅仔滋补羊肉</h3>
@@ -252,7 +260,7 @@
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-3.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">开胃豆腐王</h3>
@@ -262,7 +270,7 @@
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-4.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">秘制猪脚</h3>
@@ -272,7 +280,7 @@
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-5.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">平锅臭桂鱼</h3>
@@ -282,7 +290,7 @@
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="#">
+              <a href="javascript:;">
                 <img src="/images/new-6.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">香辣刨盐鱼</h3>
@@ -294,7 +302,7 @@
           </ul>
         </section>
         <section class="case-ft">
-          <a href="#" class="more">更多案例 >></a>
+          <a href="javascript:;" class="more">更多案例 >></a>
         </section>
       </div>
       <div id="company">
@@ -324,7 +332,7 @@
         <section class="news-bd container-fluid row">
           <section class="col-xs-12 col-sm-6 lt">
             <div class="hot">
-              <a href="#">
+              <a href="javascript:;">
                 <div class="pic">
                   <img title="主题酒店设计需要注意的事项有哪些？" src="/images/hot.jpg" alt="主题酒店设计需要注意的事项有哪些？">
                 </div>
@@ -338,7 +346,7 @@
           <section class="col-xs-12 col-sm-6 rt">
             <ul class="news-list">
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">中餐厅的空间设计有哪些注意事项？</h4>
                     做餐厅，装修很重要，空间设计更重要。好的空间设计能让消费者印象深刻，更能为自己的品牌树立独一无二的形象。中餐厅而言，空间设计要考量的方面很多，餐厅品类、消费档次、复古或时尚等等。那么，中餐厅的空间设计到底有哪些注意事项呢？
@@ -349,7 +357,7 @@
                 </a>
               </li>
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">论厨房设计在饭店运营过程中的重要性及其影响</h4>
                     厨房作为饭店最重要的职能部门，设计的合理好坏与否，都将对饭店的的建设和产品质量产生直接影响，同时也将影响到厨房本身的生产规模和产品结构调整，对于在厨房里工作的员工身心健康以及工作效率也会有着微妙的影响等等。
@@ -360,7 +368,7 @@
                 </a>
               </li>
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">饭店装修施工之前需要注意到的一些细节</h4>
                     众所周知，作为公共场所的餐饮饭店，对于消防安全管理也是丝毫不能忽视的，这一点在公共娱乐场所消防安全管理规定有明确的规定，这里就不多讲了，很容易就能查阅到，这里想要讲的是，需要根据管理制度提前制定好紧急疏散预案。
@@ -371,7 +379,7 @@
                 </a>
               </li>
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">中餐厅的空间设计有哪些注意事项？</h4>
                     做餐厅，装修很重要，空间设计更重要。好的空间设计能让消费者印象深刻，更能为自己的品牌树立独一无二的形象。中餐厅而言，空间设计要考量的方面很多，餐厅品类、消费档次、复古或时尚等等。那么，中餐厅的空间设计到底有哪些注意事项呢？
@@ -382,7 +390,7 @@
                 </a>
               </li>
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">论厨房设计在饭店运营过程中的重要性及其影响</h4>
                     厨房作为饭店最重要的职能部门，设计的合理好坏与否，都将对饭店的的建设和产品质量产生直接影响，同时也将影响到厨房本身的生产规模和产品结构调整，对于在厨房里工作的员工身心健康以及工作效率也会有着微妙的影响等等。
@@ -393,7 +401,7 @@
                 </a>
               </li>
               <li class="item">
-                <a href="#" class="media">
+                <a href="javascript:;" class="media">
                   <div class="media-body">
                     <h4 class="media-heading">饭店装修施工之前需要注意到的一些细节</h4>
                     众所周知，作为公共场所的餐饮饭店，对于消防安全管理也是丝毫不能忽视的，这一点在公共娱乐场所消防安全管理规定有明确的规定，这里就不多讲了，很容易就能查阅到，这里想要讲的是，需要根据管理制度提前制定好紧急疏散预案。
@@ -471,7 +479,7 @@
           </div>
         </section>
         <section class="contact-ft">
-          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.miibeian.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备123456789号</a>
+          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
         </section>
       </div>
     </section>
@@ -479,11 +487,23 @@
     <!-- 右下角fixed侧边栏 -->
     <ul class="list-group fixed fixed-rb" id="asidebar">
       <ul class="hidden-xs list-group" id="asidebar-tools">
-        <li class="list-group-item" role="button" id="btn_aside_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=292610020&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></a></span></li>
-        <li class="list-group-item" role="button" id="btn_aside_tel"><span class="glyphicon glyphicon-earphone"></span></li>
-        <li class="list-group-item" role="button" id="btn_aside_qrcode"><span class="glyphicon glyphicon-qrcode"></span></li>
+        <li class="list-group-item" role="button" id="btn_aside_qq">
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=292610020&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+        </li>
+        <li class="list-group-item" role="button" id="btn_aside_tel">
+          <span class="glyphicon glyphicon-earphone"></span>
+          <div class="tel">13873976777</div>
+        </li>
+        <li class="list-group-item" role="button" id="btn_aside_qrcode">
+          <span class="glyphicon glyphicon-qrcode"></span>
+          <div class="qrcode">
+            <img src="/images/qrcode.jpg" alt="">
+          </div>
+        </li>
       </ul>
-      <li class="list-group-item" role="button" id="btn_backtop"><span class="glyphicon glyphicon-arrow-up"></span></li>
+      <li class="list-group-item" role="button" id="btn_backtop">
+        <span class="glyphicon glyphicon-arrow-up"></span>
+      </li>
     </ul>
 
   </section>
@@ -525,6 +545,7 @@
 
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/include/js/shared.js"></script>
   <script src="/include/js/homepage.js"></script>
 </body>
 

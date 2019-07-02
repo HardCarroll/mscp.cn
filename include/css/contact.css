@@ -1,0 +1,44 @@
+.card {
+  background-color: rgb(51, 51, 51);
+  padding: 0;
+  margin: 50px 0;
+  transition: all 0.6s;
+}
+.card:hover {
+  box-shadow: 0 0 16px 2px #ffdc90;
+}
+.card .txt {
+  padding: 15px;
+}
+.card .txt p {
+  margin: 15px 0;
+  font-size: 16px;
+}
+.card .img {
+  text-align: center;
+  padding: 15px;
+}
+.card .img .wrap {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.card .img .wrap .cover {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 20px;
+  transition: all 0.6s;
+}
+.card:hover .img .wrap .cover {
+  transform: rotate(360deg);
+}
+#baidu-map {
+  width: 100%;
+  height: 600px;
+  margin: 50px 0;
+  transition: all 0.6s;
+}
+#baidu-map:hover {
+  box-shadow: 0 0 16px 2px #ffdc90;
+}
