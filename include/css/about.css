@@ -1,0 +1,180 @@
+#banner {
+  background-image: url(/images/banner-bg.jpg);
+}
+#company-tab {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0 0;
+  position: relative;
+}
+#company-tab::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  background-color: #ca1717;
+  transform: scaleX(0);
+  transform-origin: center center;
+  transition: transform 0.6s;
+}
+#company-tab:hover::after {
+  transform: scaleX(1);
+}
+#company-tab li {
+  position: relative;
+  background: transparent;
+  margin: 0 15px;
+}
+#company-tab li a {
+  background: transparent;
+  border: none;
+  margin: 0;
+  padding: 15px;
+  font-size: 20px;
+}
+#company-tab li::before, #company-tab li::after {
+  font-family: "Glyphicons Halflings";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  line-height: 15px;
+  content: "\e250";
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ca1717;
+  opacity: 0;
+}
+#company-tab li::after {
+  content: "\e251";
+  right: 0;
+}
+#company-tab li.active::before,#company-tab li.active::after {
+  opacity: 1;
+}
+#company-tab li:not(.active):hover::before, #company-tab li:not(.active):hover::after {
+  opacity: 1;
+  color: #ffdc90;
+}
+#company-tab li.active a {
+  color: #ca1717;
+}
+#company-tab li:not(.active):hover a {
+  color: #ffdc90;
+}
+.tab-content {
+  padding: 15px 0;
+}
+#profile {
+  position: relative;
+}
+#profile>div {
+  padding-top: 20px;
+}
+#profile>div:last-child {
+  padding-bottom: 20px;
+}
+#profile h4 {
+  font-weight: 700;
+}
+#profile p {
+  text-indent: 2em;
+  font-size: 16px;
+}
+#profile ul {
+  list-style: square;
+  padding-left: 40px;
+}
+#profile ul li {
+  font-size: 16px;
+  margin: 15px 0;
+}
+#profile ul p {
+  text-indent: 0;
+}
+#honor {
+  text-align: center;
+}
+#honor .item {
+  background-color: #363636;
+}
+#honor .item p {
+  padding: 10px 0;
+}
+#honor .item:hover {
+  box-shadow: 0 0 16px 0 #ca1717;
+}
+#honor .item:hover p {
+  color: #ffdc90;
+}
+#partner {
+  text-align: center;
+}
+#partner .item {
+  background-color: #232323;
+}
+#partner .item img {
+  filter: grayscale(1);
+}
+#partner .item p {
+  padding: 10px 0;
+}
+#partner .item:hover img {
+  filter: grayscale(0);
+  transition: all 0.6s;
+}
+#partner .item:hover p  {
+  color: #ffdc90;
+}
+#team .column .item {
+  padding: 50px;
+  background-color: #363636;
+  transition: all 0.6s;
+}
+#team .column .item .photo {
+  overflow: hidden;
+  transition: all 0.6s;
+}
+#team .column .item .photo img {
+  transition: all 0.6s;
+}
+#team .column .item .info {
+  padding: 15px 0 5px;
+  border-bottom: 2px solid #c6c8c8;
+  position: relative;
+}
+#team .column .item .info::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #ca1717;
+  transition: all 0.6s;
+}
+#team .column .item .info .name {
+  font-size: 18px;
+  font-weight: 700;
+}
+#team .column .item .info .pos {
+  margin-left: 30px;
+}
+#team .column .item:hover {
+  background-color: #363636;
+  transform: translate(0, -15px);
+  box-shadow: -2px 2px 16px -1px #e6e8e8;
+}
+#team .column .item:hover .photo {
+  box-shadow: 0 0 6px 0px #ffdc90;
+}
+#team .column .item:hover .info::after {
+  width: 100%;
+}
+#team .column .item:hover img {
+  transform: scale(1.16);
+}
+#team .column .item .txt {
+  padding: 10px 0;
+}
