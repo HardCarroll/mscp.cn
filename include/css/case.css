@@ -105,6 +105,8 @@
 .tab-content .column .item:hover .bd-txt span.glyphicon {
   color: #ffdc90;
   box-shadow: 0 0 0px 1px #ffdc90;
+  transition: all 0.6s;
+  transform: rotateZ(360deg);
 }
 .bd-txt {
   position: relative;

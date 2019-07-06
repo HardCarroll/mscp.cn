@@ -78,7 +78,7 @@
                 <h5>一站式服务</h5>
                 <p>第一经营视角为您精准策划</p>
                 <p>专业缔造有价值的商业空间</p>
-                <a href="javascript:;" class="btn btn-custom-sm">了解更多</a>
+                <a href="tel:13873976777" class="btn btn-custom-sm">了解更多</a>
               </div>
             </section>
             <section class="list">
@@ -192,8 +192,7 @@
               <h5>创<span>有内涵</span>的品牌,造<span>富文化</span>的空间,建<span>高品质</span>的工程</h5>
             </div>
             <div class="col-sm-3">
-              <a href="javascript:;" class="btn-more">预约设计</a>
-              <!-- <img src="/images/adv-bg.jpg" alt=""> -->
+              <a href="tel:13873976777" class="btn-more">预约设计</a>
             </div>
           </section>
           <section class="container-fluid row advantage-bd">
@@ -443,7 +442,7 @@
           </div>
         </section>
         <section class="partner-ft">
-          <div class="btn btn-custom">沟通合作</div>
+          <a href="tel:13873976777" class="btn btn-custom">沟通合作</a>
         </section>
       </div>
       <div id="contact">
