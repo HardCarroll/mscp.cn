@@ -33,7 +33,7 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      border: 2px solid #ca1717;
+      /* border: 2px solid #ca1717; */
     }
     .tips>p {
       margin: 15px 0;
