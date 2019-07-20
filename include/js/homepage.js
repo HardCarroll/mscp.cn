@@ -25,7 +25,7 @@ $(function() {
     var tel = $("#decoration-tel").val();
     var regTel = /^1[0-9]{10}$/;
 
-    console.log(parseInt(area));
+    // console.log(parseInt(area));
 
     if(parseInt(area) <= 0 || area == "") {
       $("#area-box").popover("show");

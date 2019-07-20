@@ -26,6 +26,9 @@
   word-break:break-all;
   text-indent: 2em;
 }
+.card-list .case-thumb img {
+  width: 100%;
+}
 
 #displayModal {
   padding-right: 0 !important;

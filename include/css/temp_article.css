@@ -1,0 +1,26 @@
+.article-card {
+  margin: 50px 0;
+  padding: 20px 10px;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  position: relative;
+}
+.article-card span.glyphicon-bullhorn {
+  position: absolute;
+  font-size: 26px;
+  top: -12px;
+  left: 12px;
+}
+.article-card .card-head {
+  text-align: center;
+}
+.card-head p {
+  margin: 10px 0;
+}
+.card-head .title {
+  font-size: 18px;
+}
+.article-card .card-body img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}

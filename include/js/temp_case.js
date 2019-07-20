@@ -1,5 +1,5 @@
 $(function() {
-  refresh_recommends();
+  // refresh_recommends();
   $(".case-thumb .case-thumb-item").each(function() {
     $(this).click(function() {
       var curItem = $(this).index();

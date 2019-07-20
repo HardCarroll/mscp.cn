@@ -1,3 +1,38 @@
+<?php
+$dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/include/json/temp_case.json");
+// $dataJson = file_get_contents("php://input");
+$dataArray = json_decode($dataJson, true);
+$p_title = $dataArray["st_title"];
+$p_keywords = $dataArray["st_keywords"];
+$p_description = $dataArray["st_description"];
+$c_title = $dataArray["ct_title"];
+$c_area = $dataArray["ct_area"];
+$c_address = $dataArray["ct_address"];
+$c_class = $dataArray["ct_class"];
+$c_team = $dataArray["ct_team"];
+$c_company = $dataArray["ct_company"];
+$c_description = $dataArray["ct_description"];
+// $more_prev = $dataArray["more_prev"];
+// $more_next = $dataArray["more_next"];
+function transmitCasetype($key) {
+  $type = '';
+  switch($key) {
+    case 0:
+      $type = '田园风';
+      break;
+    case 1:
+      $type = '工业风';
+      break;
+    case 2:
+      $type = '时尚版';
+      break;
+    case 3:
+      $type = '新中式';
+      break;
+  }
+  return $type;
+}
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -34,8 +69,8 @@
             <ul class="nav navbar-nav navbar-right">
               <li><a href="/">首页</a></li>
               <li><a href="/advantage">服务优势</a></li>
-              <li><a href="javascript:;">一键报价</a></li>
-              <li class="current"><a href="/case">精品案例</a></li>
+              <li><a href="/budget">一键报价</a></li>
+              <li class="current"><a href="javascript:;">精品案例</a></li>
               <li><a href="/about">企业介绍</a></li>
               <li><a href="/news">新闻资讯</a></li>
               <li><a href="/contact">联系我们</a></li>
@@ -45,7 +80,7 @@
       </nav>
     </section>
     <section id="banner">
-      <!-- <img src="/images/contact-bg.jpg" alt=""> -->
+      <img src="/images/contact-bg.jpg" alt="">
     </section>
     <section class="position">
       <div class="inner">
@@ -54,7 +89,9 @@
         <ol class="breadcrumb">
           <li><a href="/">首页</a></li>
           <li><a href="/case">精品案例</a></li>
-          <li class="active">案例名称</li>
+          <li class="active">
+            <?php echo $c_title;?>
+          </li>
         </ol>
       </div>
     </section>
@@ -66,7 +103,7 @@
             <span>项目名称：</span>
             <p>
               <?php 
-                // echo $c_title;
+                echo $c_title;
               ?>
             </p>
           </li>
@@ -74,7 +111,7 @@
             <span>项目面积：</span>
             <p>
               <?php
-                // echo $c_area;
+                echo $c_area;
               ?>
             </p>
           </li>
@@ -82,7 +119,7 @@
             <span>项目地址：</span>
             <p>
               <?php
-              // echo $c_address;
+              echo $c_address;
               ?>
             </p>
           </li>
@@ -90,7 +127,7 @@
             <span>项目类型：</span>
             <p>
               <?php
-              // echo transmitCasetype($c_class);
+              echo transmitCasetype($c_class);
               ?>
             </p>
           </li>
@@ -98,7 +135,7 @@
             <span>主创团队：</span>
             <p>
               <?php
-              // echo $c_team;
+              echo $c_team;
               ?>
             </p>
           </li>
@@ -106,7 +143,7 @@
             <span>出品单位：</span>
             <p>
               <?php
-              // echo $c_company;
+              echo $c_company;
               ?>
             </p>
           </li>
@@ -115,7 +152,7 @@
             <span>项目简介：</span>
             <p>
               <?php
-              // echo $c_description;
+              echo $c_description;
               ?>
             </p>
           </div>
@@ -126,10 +163,13 @@
                 </section> -->
             <!-- 动态生成案例图片缩略图 -->
             <?php
-            // $imgArray = json_decode($dataArray["ct_image"], true);
-            // foreach ($imgArray as $imgs_item) {
-            //   echo '<section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 case-thumb-item"><img src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '"></section>';
-            // }
+            $imgArray = json_decode($dataArray["c_image"], true);
+            foreach ($imgArray as $imgs_item) {
+              echo '<section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 case-thumb-item"><img src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '"></section>';
+            }
+            // print_r($dataArray);
+            // print_r($imgArray);
+            // echo "hello";
             ?>
           </div>
         </ul>
@@ -178,7 +218,7 @@
     <ul class="list-group fixed fixed-rb" id="asidebar">
       <ul class="hidden-xs list-group" id="asidebar-tools">
         <li class="list-group-item" role="button" id="btn_aside_qq">
-          <a href="http://wpa.qq.com/msgrd?v=3&uin=292610020&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
         </li>
         <li class="list-group-item" role="button" id="btn_aside_tel">
           <span class="glyphicon glyphicon-earphone"></span>
