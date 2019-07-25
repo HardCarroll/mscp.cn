@@ -3,6 +3,9 @@ $(function() {
   if($body.width() <= 768) {
     window.location.href = "/wap.php";
   }
+  else {
+    window.location.href = "/debug/index.html";
+  }
   // 解决移动端下点其他地方不失焦的问题
   $("body").on("touchend", function(e){
     if(e.target !== "input") {

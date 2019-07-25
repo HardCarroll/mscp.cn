@@ -1,17 +1,217 @@
 $(function() {
-  $("[data-toggle='popover']").popover();
-  // $("#tst-pop").popover({title:"title", content: "test content"});
-
-  $("#clk").click(function() {
-    console.log("click");
-    $("#tst-pop").popover("show");
+  var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");
+  if($body.width() <= 768) {
+    window.location.href = "/wap.php";
+  }
+  else {
+    // window.location.href = "/debug/index.html";
+  }
+  // 解决移动端下点其他地方不失焦的问题
+  $("body").on("touchend", function(e){
+    if(e.target !== "input") {
+      $("input").blur();
+    }
   });
-  $("#tst-pop").on("shown.bs.popover", function() {
-    setTimeout(function() {
-      $("#tst-pop").popover("hide");
-    }, 3000);
+  // 返回顶部按钮#btn_backtop处理过程
+  $("#btn_backtop").click(function() {
+    $.fn.fullpage.moveTo(1);
   });
 
+  $("#fullpage").fullpage({
+    navigation: true,
+    navigationPosition: "left",
+    navigationTooltips: ["官网首页", "5秒就能帮您算出明细！", "您的设计够专业吗？", "这些案例能否激发您的灵感？", "术业有专攻，省时省心又省钱！", "选择我们，您会收获什么？", "您想要的，我们都有！", "一站式服务，为您保驾护航！", "多年专注，不玩套路！", "友好合作，互利共赢！", "关注我们，了解我们！"],
+    // showActiveTooltip: true,
+    afterLoad: function(origin, destination, direction){
+      $(destination.item).find(".hd h2").animate({top: 0, opacity: 1}, 600);
+      $(destination.item).find(".hd h5 .left").delay(200).animate({left: 0, opacity: 1}, 600);
+      $(destination.item).find(".hd h5 .right").delay(200).animate({right: 0, opacity: 1}, 600);
+
+      // 预算页 #budget
+      if(destination.index === 1) {
+        $("#budget .bd .lt").delay(400).animate({bottom: 0, opacity: 1}, 600);
+        $("#budget .bd .btn-round").delay(800).animate({opacity: 1}, 600);
+        $("#budget .bd .rt").delay(400).animate({bottom: 0, opacity: 1}, 600);
+      }
+      // 专业性 #professional
+      if(destination.index === 2) {
+        $("#professional .bd .pro-item").delay(600).animate({top: 0, opacity: 1}, 800);
+        $(destination.item).find(".btn-square").delay(1000).animate({top: 0, opacity: 1}, 600);
+      }
+      // 案例展示 #case
+      if(destination.index === 3) {
+        $("#case .bd-list li").delay(800).css("transform", "rotateZ(0) translate(0, 0)");
+        $(destination.item).find(".btn-square").delay(400).animate({top: 0, opacity: 1}, 600, function() {$("#case .bd").css("box-shadow", "0 0 16px 0 #ffdc90")});
+      }
+      // 服务优势 #advantage
+      if(destination.index === 4) {
+        $("#advantage .hd h5 span:nth-of-type(1)").delay(200).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 b:nth-of-type(1)").delay(400).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 span:nth-of-type(2)").delay(600).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 b:nth-of-type(2)").delay(800).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 span:nth-of-type(3)").delay(1000).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 b:nth-of-type(3)").delay(1200).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 span:nth-of-type(4)").delay(1400).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 b:nth-of-type(4)").delay(1600).animate({opacity: 1}, 600);
+        $("#advantage .hd h5 span:nth-of-type(5)").delay(1800).animate({opacity: 1}, 600);
+        $("#advantage .bd").delay(2000).animate({height: "440px", opacity: 1}, 600, function() {
+          $("#advantage .list-item").animate({opacity: 1}, 600);
+          $("#advantage .list-item .wrap").css("box-shadow", "0 0 3px 0 #FFDC90");
+        });
+        $(destination.item).find(".btn-square").delay(2000).animate({top: 0, opacity: 1}, 600);
+      }
+      // 免费服务 #service
+      if(destination.index === 5) {
+        $(destination.item).find(".btn-square").delay(200).animate({top: 0, opacity: 1}, 600);
+      }
+      // 额外服务支持 #support
+      if(destination.index === 6) {
+        $(destination.item).find(".bd-list .list-item").delay(200).animate({opacity: 1}, 600, function() {
+          $(this).css("transform", "translateX(0)");
+        });
+        $(destination.item).find(".btn-square").delay(100).animate({top: 0, opacity: 1}, 600);
+      }
+      // 多年专注，不玩套路
+      if(destination.index === 8) {
+        $(destination.item).find(".btn-square").delay(100).animate({top: 0, opacity: 1}, 600);
+      }
+      // 多年专注，不玩套路
+      if(destination.index === 9) {
+        $(destination.item).find(".btn-square").delay(100).animate({top: 0, opacity: 1}, 600);
+      }
+
+      // 离开页
+      $(origin.item).find(".hd h2").delay(700).animate({top: "-360%", opacity: 0}, 300);
+      $(origin.item).find(".hd h5 .left").delay(700).animate({left: "-360%", opacity: 0}, 300);
+      $(origin.item).find(".hd h5 .right").delay(700).animate({right: "-360%", opacity: 0}, 300);
+      $(origin.item).find(".ft .btn-square").animate({top: "500px", opacity: 0}, 200);
+
+      // 预算页 #budget
+      if(origin.index === 1) {
+        $("#budget .bd .lt").animate({bottom: "-360%", opacity: 0}, 300);
+        $("#budget .bd .btn-round").animate({opacity: 0}, 300);
+        $("#budget .bd .rt").animate({bottom: "-360%", opacity: 0}, 300);
+      }
+
+      // 专业性 #professional
+      if(origin.index === 2) {
+        $("#professional .bd .pro-item:nth-child(2n-1)").animate({top: "100%", opacity: 0}, 300);
+        $("#professional .bd .pro-item:nth-child(2n)").animate({top: "-100%", opacity: 0}, 300);
+      }
+
+      // 案例展示 #case
+      if(origin.index === 3) {
+        $("#case .bd").css("box-shadow", "none");
+        $("#case .bd-list li:nth-child(1)").css("transform", "rotateZ(45deg) translate(-3000px, -1000px)");
+        $("#case .bd-list li:nth-child(2)").css("transform", "rotateZ(90deg) translate(-3000px, 1000px)");
+        $("#case .bd-list li:nth-child(3)").css("transform", "rotateZ(135deg) translate(3000px, -1000px)");
+        $("#case .bd-list li:nth-child(4)").css("transform", "rotateZ(180deg) translate(3000px, 1000px)");
+        $("#case .bd-list li:nth-child(5)").css("transform", "rotateZ(225deg) translate(-3000px, -1000px)");
+        $("#case .bd-list li:nth-child(6)").css("transform", "rotateZ(270deg) translate(-3000px, -1000px)");
+      }
+
+      // 服务优势 #advantage
+      if(origin.index === 4) {
+        $("#advantage .hd h5 span").animate({opacity: 0}, 300);
+        $("#advantage .hd h5 b").animate({opacity: 0}, 300);
+        $("#advantage .bd").animate({height: 0}, 300, function() {
+          $("#advantage .list-item").animate({opacity: 0}, 300);
+          $("#advantage .list-item .wrap").css("box-shadow", "none");
+        });
+      }
+
+      // 免费服务 #service
+      if(origin.index === 5) {
+        // $("#service .hd h2").animate({top: "-360%", opacity: 0}, 300);
+      }
+
+      // 额外服务支持 #support
+      if(origin.index === 6) {
+        $(origin.item).find(".list-item:nth-child(1)").delay(300).animate({opacity: 0}, 300, function() {
+          $(this).css("transform", "translateX(150%)");
+        });
+        $(origin.item).find(".list-item:nth-child(2)").delay(300).animate({opacity: 0}, 300, function() {
+          $(this).css("transform", "translateX(50%)");
+        });
+        $(origin.item).find(".list-item:nth-child(3)").delay(300).animate({opacity: 0}, 300, function() {
+          $(this).css("transform", "translateX(-50%)");
+        });
+        $(origin.item).find(".list-item:nth-child(4)").delay(300).animate({opacity: 0}, 300, function() {
+          $(this).css("transform", "translateX(-150%)");
+        });
+      }
+
+    }
+  });
+
+  // 装修计算器
+  $("[data-toggle='popover'").popover();
+
+  $(".btn-round").off("click").on("click", function() {
+    var area = $("#decoration-area").val();
+    var type = $("#decoration-style").val();
+    var tel = $("#decoration-tel").val();
+    var regTel = /^1[0-9]{10}$/;
+
+    if(parseInt(area) <= 0 || area == "") {
+      $("#area-box").popover("show");
+      $("#area-box").on("shown.bs.popover", function() {
+        setTimeout(function() {
+          $("#area-box").popover("hide");
+          $("#decoration-area").select().focus();
+        }, 1500);
+      });
+    }else if(!regTel.test(tel)) {
+      $("#tel-box").popover("show");
+      $("#tel-box").on("shown.bs.popover", function() {
+        setTimeout(function() {
+          $("#tel-box").popover("hide");
+          $("#decoration-tel").select().focus();
+        }, 1500);
+      });
+    }
+    else {
+      var data = {area: area, type: type, tel: tel};
+      
+      var fmd_getBudget = new FormData();
+      fmd_getBudget.append("token", "getBudget");
+      fmd_getBudget.append("data", JSON.stringify(data));
+      $.ajax({
+        url: "/include/php/handle.php",
+        type: "POST",
+        data: fmd_getBudget,
+        processData: false,
+        contentType: false,
+        dataType:"json",
+        success: function(result) {
+          var html = '';
+          html += '<table class="table table-hover">';
+          html += '<thead><tr><th></th><th>名称</th><th>说明</th><th>费用</th></tr></thead>';
+          html += '<tbody>';
+          for(var item in result) {
+            html += '<tr><th>';
+            html += (parseInt(item, 10)+1);
+            html += '</th>';
+            for(var val in result[item]) {
+              html += '<td>';
+              html += result[item][val];
+              html +='</td>';
+            }
+            html += '</tr>';
+          }
+          html += '</tbody></table>';
+          $("#budgetModal .modal-body").html(html);
+          $("#budgetModal").modal({backdrop: "static"});
+        },
+        error: function(err) {
+          console.log("fail: " + err);
+        }
+      });
+    }
+
+  });
+
+  // 轮播图
   var adTimer = setInterval(autoPlay, 3000, {target: $(".adCarousel-wrap")});
   $(".adCarousel").mouseenter(function() {
     clearInterval(adTimer);

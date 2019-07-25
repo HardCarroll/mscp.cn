@@ -6,369 +6,786 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Debug Document</title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/include/fullpage/css/fullpage.css">
+  <link rel="stylesheet" href="/include/css/icons.css">
   <link rel="stylesheet" href="./debug.css">
 </head>
 <body>
+  <nav class="navbar navbar-inverse" id="navbar-mscp">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-mscp"
+          aria-expanded="false">
+          <span class="sr-only">弥尚餐饮装饰设计导航栏</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="/images/logo.svg" alt=""></a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-navbar-mscp">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="current">
+            <a href="javascript:;">首页<b>Home</b></a>
+          </li>
+          <li><a href="javascript:;">服务优势<b>Advantage</b></a></li>
+          <li><a href="/budget">一键报价<b>Offer</b></a></li>
+          <li><a href="/case">精品案例<b>Case</b></a></li>
+          <li><a href="/about">企业介绍<b>About</b></a></li>
+          <li><a href="/news">新闻资讯<b>News</b></a></li>
+          <li><a href="/contact">联系我们<b>Contact</b></a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
-  <div class="test-box">
-    text in test-box
-    <div class="bd-cover">
-      <span class="bd-t"></span>
-      <span class="bd-r"></span>
-      <span class="bd-b"></span>
-      <span class="bd-l"></span>
+  <div id="fullpage">
+    <!-- .adCarousel begin -->
+    <div class="section adCarousel">
+      <section class="adCarousel-wrap">
+        <div class="item active"><img data-src="/images/banner.jpg"></div>
+        <div class="item"><img data-src="/images/banner2.jpg"></div>
+        <div class="item"><img data-src="/images/banner3.jpg"></div>
+      </section>
+      
+      <section class="adCarousel-indicators">
+      </section>
+      
+      <section class="adCarousel-control prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </section>
+      <section class="adCarousel-control next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+      </section>
+    </div>  <!-- .adCarousel end;-->
+    <!-- #budget begin -->
+    <div class="section" id="budget">
+      <section class="hd">
+        <h2><strong>餐厅装修与投资</strong>&nbsp;要花多少钱？</h2>
+        <h5><span class="left">弥尚餐饮整装计算器</span><span class="right">5秒帮您算出明细，不花冤枉钱！</span></h5>
+      </section>
+      <section class="container-fluid row bd inner">
+        <div class="col-xs-12 col-sm-4 lt">
+          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积"
+            data-placement="bottom" tabindex="0" id="area-box">
+            <span class="input-group-addon">餐厅面积</span>
+            <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
+            <span class="input-group-addon">㎡</span>
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">装修风格</span>
+            <select name="" class="form-control" id="decoration-style">
+              <option value="0">田园风</option>
+              <option value="1">新中式</option>
+              <option value="2">时尚版</option>
+              <option value="3">工业风</option>
+            </select>
+            <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
+          </div>
+          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
+            data-placement="bottom" tabindex="0" id="name-box">
+            <span class="input-group-addon">您的姓名</span>
+            <input type="text" class="form-control" id="decoration-name" placeholder="请问您如何称呼">
+            <span class="input-group-addon glyphicon glyphicon-user"></span>
+          </div>
+          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
+            data-placement="bottom" tabindex="0" id="tel-box">
+            <span class="input-group-addon">联系电话</span>
+            <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11"
+              data-toggle="popover">
+            <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
+          </div>
+          <div class="tips">
+            <span class="glyphicon glyphicon-heart"></span>
+            <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 md">
+          <div class="btn btn-round">立即报价</div>
+        </div>
+        <div class="col-xs-12 col-sm-4 rt">
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+              aria-valuemax="100" style="width: 10%">
+              设计费
+            </div>10%
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="28" aria-valuemin="0"
+              aria-valuemax="100" style="width: 28%">
+              材料费
+            </div>28%
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="22" aria-valuemin="0"
+              aria-valuemax="100" style="width: 22%">
+              人工费
+            </div>22%
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="15" aria-valuemin="0"
+              aria-valuemax="100" style="width: 15%">
+              餐饮配套
+            </div>15%
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+              aria-valuemax="100" style="width: 10%">
+              软装配饰
+            </div>10%
+          </div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="15" aria-valuemin="0"
+              aria-valuemax="100" style="width: 15%">
+              空调电器
+            </div>15%
+          </div>
+        </div>
+      </section>
+      <section class="ft"></section>
+    </div>  <!-- #budget end;-->
+    <!-- #professional begin -->
+    <div class="section" id="professional">
+      <div class="hd">
+        <h2>设计专不专业&nbsp;<strong>直接关系到餐厅盈利与否</strong></h2>
+        <h5><span class="left">缔造有价值的餐饮空间</span><span class="right">是我们一直以来的追求</span></h5>
+      </div>
+      <div class="bd container-fluid row inner">
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+          <div class="cap">
+            <p class="index">01</p>
+            <p class="title">针对餐厅客户人群定制风格</p>
+            <p class="txt">根据位置分析消费人群的年龄、性格等特性定制风格，<strong>提升餐厅进店率</strong></p>
+          </div>
+        </div>
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+          <div class="cap">
+            <p class="index">02</p>
+            <p class="title">门头可提升进店率50%以上</p>
+            <p class="txt">根据不同环境设定不同造型的大气抢眼门头增加曝光率，<strong>同时增加进店率</strong></p>
+          </div>
+        </div>
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-2.jpg"></div>
+          <div class="cap">
+            <p class="index">03</p>
+            <p class="title">合理动线是快速盈利的秘诀</p>
+            <p class="txt">结合五行布局动线不仅增加空间利用率还能快速导流，<strong>提升服务效率及质量</strong></p>
+          </div>
+        </div>
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-4.jpg"></div>
+          <div class="cap">
+            <p class="index">04</p>
+            <p class="title">灯光设计可促进客户消费</p>
+            <p class="txt">针对不同环境运用不同的手法设计灯光，不仅能营造良好就餐氛围，<strong>还能提升食欲</strong></p>
+          </div>
+        </div>
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+          <div class="cap">
+            <p class="index">05</p>
+            <p class="title">造型有效的增加回头率</p>
+            <p class="txt">分析消费者年龄层次心理采用对应造型，<strong>能有效的提升回头率</strong></p>
+          </div>
+        </div>
+        <div class="pro-item col-sm-2">
+          <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+          <div class="cap">
+            <p class="index">06</p>
+            <p class="title">色彩搭配增加亲和力</p>
+            <p class="txt">根据消费者的需求，创造和加大商业价值，<strong>提高运营的效率</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="ft">
+        <a class="btn btn-square" href="javascript:;">了解更多</a>
+      </div>
+    </div>  <!-- #professional end;-->
+    <!-- #case begin -->
+    <div class="section" id="case">
+      <div class="hd">
+        <h2><strong>最新餐厅设计案例</strong>&nbsp;激发您的装修灵感？</h2>
+        <h5><span class="left">资深设计狮为您量身打造</span><span class="right">让您的餐厅脱颖而出</span></h5>
+      </div>
+      <div class="bd container-fluid inner">
+        <ul class="row bd-list">
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="/template/temp_case.php">
+              <img src="/images/new-1.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">案例模板</h3>
+                <h5 class="text-ellipsis content">点击查看案例展示模板页内容</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="javascript:;">
+              <img src="/images/new-2.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">锅仔滋补羊肉</h3>
+                <h5 class="text-ellipsis content">锅仔羊肉香味扑鼻且驱寒暖身，香在口，暖在心是深受欢迎的冬季家常菜</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="javascript:;">
+              <img src="/images/new-3.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">开胃豆腐王</h3>
+                <h5 class="text-ellipsis content">内酯豆腐是豆腐中的“小鲜肉”,质地细腻嫩滑,热量低,深受各路吃货喜爱</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="javascript:;">
+              <img src="/images/new-4.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">秘制猪脚</h3>
+                <h5 class="text-ellipsis content">猪脚十分软糯，有嚼感，丝毫没有肥腻感，软滑糯嫩、烂而不散、唇齿留香</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="javascript:;">
+              <img src="/images/new-5.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">平锅臭桂鱼</h3>
+                <h5 class="text-ellipsis content">鱼肉经过腌制，具有神奇般鲜嫩和口感，微辣且锅香飘逸，是下饭好选择</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+          <li class="col-xs-12 col-sm-6 col-md-4">
+            <a href="javascript:;">
+              <img src="/images/new-6.jpg" alt="">
+              <div class="cover">
+                <h3 class="text-ellipsis title">香辣刨盐鱼</h3>
+                <h5 class="text-ellipsis content">把生鱼用盐腌制，做成刨盐鱼，制作出符合湖南人的香鲜辣的香辣刨盐鱼</h5>
+                <span class="glyphicon glyphicon-plus"></span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="javascript:;" class="btn btn-square">查看更多案例</a>
+      </div>
+    </div>  <!-- #case end;-->
+    <!-- #advantage begin -->
+    <div class="section" id="advantage">
+      <div class="hd">
+        <h2><strong>术业有专攻</strong>&nbsp;弥尚为您省下的不只是时间还有Money</h2>
+        <h5>
+          <span class="txt">餐饮配套商家</span>
+          <b class="operator">+</b>
+          <span class="txt">高效运营团队</span>
+          <b class="operator">+</b>
+          <span class="txt">精英施工团队</span>
+          <b class="operator">+</b>
+          <span class="txt">全程跟踪指导</span>
+          <b class="operator">=</b>
+          <span>省时省心更省钱</span>
+        </h5>
+      </div>
+      <div class="bd inner">
+        <ul class="container-fluid row bd-list">
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="main">价格优势</div>
+              <div class="sub"><p>餐饮一站式采购，</p><p>便宜又齐全</p></div>
+              <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="main">工期优势</div>
+              <div class="sub"><p>餐饮一站式采购，</p><p>便宜又齐全</p></div>
+              <div class="des">7x24小时服务，全程24小时监理监工，多年的餐饮店施工设计经验，能有效缩短15%装修工期。</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="main">质量优势</div>
+              <div class="sub"><p>多年品牌沉淀，</p><p>工程遍布全国各地</p></div>
+              <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="main">服务优势</div>
+              <div class="sub"><p>先体验再付费，</p><p>万元服务免费送</p></div>
+              <div class="des">上门量房、方案布局、装修报价、餐饮店选址、用餐人群分析全面做到先体验，再谈是否合作。</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="javascript:;" class="btn btn-square">立即咨询</a>
+      </div>
+    </div>  <!-- #advantage end;-->
+    <!-- #service begin -->
+    <div class="section" id="service">
+      <div class="hd">
+        <h2>选择弥尚餐饮整装设计&nbsp;<strong>您会收获什么？</strong></h2>
+        <h5><span class="left">价值万元服务免费享</span><span class="right">先体验后合作</span></h5>
+      </div>
+      <div class="bd inner">
+        <ul class="bd-list">
+          <li class="list-item">
+            <div class="wrap">
+              <div class="pic">
+                <img data-src="/images/what-1.jpg">
+              </div>
+              <div class="txt">
+                <h3>现场查勘</h3>
+                <p>设计师免费为您上门量房，确保发挥您餐厅每一寸空间的价值！</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="wrap">
+              <div class="pic">
+                <img data-src="/images/what-2.jpg">
+              </div>
+              <div class="txt">
+                <h3>商圈考察</h3>
+                <p>根据您的餐厅大小、位置商圈为您量身定制设计风格！</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="wrap">
+              <div class="pic">
+                <img data-src="/images/what-3.jpg">
+              </div>
+              <div class="txt">
+                <h3>设计方案</h3>
+                <p>获奖设计师根据您的餐厅类型与布局1对1为您定制方案！</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="wrap">
+              <div class="pic">
+                <img data-src="/images/what-4.jpg">
+              </div>
+              <div class="txt">
+                <h3>餐厅选址</h3>
+                <p>根据您选址的餐厅类型与客户人群，为您选择适合的餐厅位置！</p>
+              </div>
+            </div>
+          </li>
+          <li class="list-item">
+            <div class="wrap">
+              <div class="pic">
+                <img data-src="/images/what-5.jpg">
+              </div>
+              <div class="txt">
+                <h3>预算服务</h3>
+                <p>结合多家材料与餐饮设施商家，价格比市面低10%-30%费用！</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="javascript:;" class="btn btn-square">沟通合作</a>
+      </div>
+    </div>  <!-- #case end;-->
+    <!-- #support begin -->
+    <div class="section" id="support">
+      <div class="hd">
+        <h2><strong>懂设计更懂餐饮</strong>&nbsp;弥尚还能为您提供这些服务</h2>
+        <h5><span class="left">不仅仅是空间设计装修</span><span class="right">还提供专业餐饮运营指导</span></h5>
+      </div>
+      <div class="bd inner">
+        <ul class="container-fluid row bd-list">
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="pic"><img data-src="/images/sup-ico1.png"></div>
+              <div class="title">人才培训</div>
+              <div class="txt">可进行人才输送，也可进行人才培训，确保餐厅有可用之人！</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="pic"><img data-src="/images/sup-ico2.png"></div>
+              <div class="title">设备提供</div>
+              <div class="txt">涵盖给种类餐饮店设备，可为您提供专业更低价的餐厅设备！</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="pic"><img data-src="/images/sup-ico3.png"></div>
+              <div class="title">软装配饰</div>
+              <div class="txt">包含市面多种或定制装饰，为您提供更优惠更齐全的餐厅装饰！</div>
+            </div>
+          </li>
+          <li class="list-item col-sm-3">
+            <div class="wrap">
+              <div class="pic"><img data-src="/images/sup-ico4.png"></div>
+              <div class="title">软件服务</div>
+              <div class="txt">专业的餐饮店服务与收银软件，为您避免高价过时软件！</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ft">
+        <a href="javascript:;" class="btn btn-square">了解更多</a>
+      </div>
+    </div> <!-- #support end-->
+    <!-- #slogan begin -->
+    <div class="section" id="slogan">
+      <div class="mask">
+        <div class="hd">
+          <h2>餐饮+运营一站式服务&nbsp;<strong>省钱省时又省力</strong></h2>
+          <h5><span class="left">专业全面一站式服务</span><span class="right">为您的餐厅保驾护航</span></h5>
+        </div>
+        <div class="bd inner">
+          <ul class="bd-list">
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico3.png">
+                </div>
+                <div class="txt">现场考察</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico6.png">
+                </div>
+                <div class="txt">市场分析</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico4.png">
+                </div>
+                <div class="txt">空间设计</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico2.png">
+                </div>
+                <div class="txt">品牌设计</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico5.png">
+                </div>
+                <div class="txt">装修施工</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico7.png">
+                </div>
+                <div class="txt">软装配饰</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico3.png">
+                </div>
+                <div class="txt">收银系统</div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/all_in_one-ico8.png">
+                </div>
+                <div class="txt">开业策划</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft inner">
+          <ul class="container-fluid row ft-list">
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="title">易</div>
+                <span class="seperator"></span>
+                <div class="txt">一站式悉心指导</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="title">省</div>
+                <span class="seperator"></span>
+                <div class="txt">节约人工轻松创收</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="title">全</div>
+                <span class="seperator"></span>
+                <div class="txt">配套产品齐全便宜</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="title">精</div>
+                <span class="seperator"></span>
+                <div class="txt">半成品到店很省心</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- #slogan end -->
+
+    <!-- #goal begin -->
+    <div class="section" id="goal">
+      <div class="mask">
+        <div class="hd">
+          <h2>25年专注餐饮设计与运营&nbsp;<strong>以打造餐饮品牌店盈利为目标</strong></h2>
+          <h5><span class="left">不和加盟商共同承担投资风险的</span><span class="right">都是“套路”</span></h5>
+        </div>
+        <div class="bd inner">
+          <ul class="container-fluid row bd-list">
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="pic">260+</div>
+                <div class="txt">覆盖全国260多个城市</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="pic">49+</div>
+                <div class="txt">塑造品牌49余个</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="pic">460+</div>
+                <div class="txt">落地打造460多家餐厅门店</div>
+              </div>
+            </li>
+            <li class="col-sm-3 list-item">
+              <div class="wrap">
+                <div class="pic">19800+</div>
+                <div class="txt">服务面积超过19800平方</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft">
+          <a href="http://www.xlrj.net" class="btn btn-square">查看更多</a>
+        </div>
+      </div>
+    </div> <!-- #goal end -->
+
+    <!-- #partner begin -->
+    <div class="section" id="partner">
+      <div class="mask">
+        <div class="hd">
+          <h2>弥尚餐饮整装设计&nbsp;<strong>合作品牌</strong></h2>
+        </div>
+        <div class="bd inner">
+          <ul class="container-fluid row bd-list">
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_01.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_02.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_03.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_04.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_05.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_06.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_01.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_02.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_03.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_04.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_05.png"></div>
+              </div>
+            </li>
+            <li class="col-sm-2 list-item">
+              <div class="wrap">
+                <div class="pic"><img data-src="/images/p_06.png"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft">
+          <a href="javascript:;" class="btn btn-square">沟通合作</a>
+        </div>
+      </div>
+    </div> <!-- #partner end -->
+
+    <!-- #about begin -->
+    <div class="section" id="about">
+      <div class="mask">
+        <div class="hd inner">
+          <div class="cpy-name">
+            <span>弥尚餐饮</span>
+            <span>整装设计</span>
+          </div>
+          <div class="cpy-des">
+            <span>湖南优厨联盟餐饮管理有限公司<b>，</b></span>
+            <span>是一家年轻的<b>、</b>专业的餐饮管理公司<b>，</b></span>
+            <span>不受众多加盟分店经营压力和管理牵制<b>。</b></span>
+            <span>是经湖南省工商部门核准的</span>
+            <span>独立合法的有限责任公司<b>，</b></span>
+            <span>我们是一家专注提供</span>
+            <span><b>“</b>餐饮相关专业服务<b>”</b>的</span>
+            <span>餐饮连锁管理机构<b>。</b></span>
+          </div>
+          <div class="pos">
+            <img src="/images/pos-bg.png" alt="">
+            <div class="cover">
+              <img src="/images/pos-fg.png" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="bd inner">
+          <div class="bd-title">
+            <img src="/images/bottom-text.png" alt="">
+          </div>
+          <div class="bd-body">
+            <div class="contact-us">
+              <h4>联系我们</h4>
+              <p>电话：+86 13873976777</p>
+              <p>座机：0731-88853335</p>
+              <p>传真：0731-88853335</p>
+              <p>邮箱：382320863@qq.com</p>
+              <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
+            </div>
+            <div class="qrcode">
+              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
+              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
+            </div>
+          </div>
+          
+        </div>
+        <div class="ft">
+          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
+        </div>
+      </div>
+    </div><!-- #about end -->
+
+  </div>
+
+  <!-- 右下角fixed侧边栏 -->
+  <ul class="list-group fixed fixed-rb" id="asidebar">
+    <ul class="hidden-xs list-group" id="asidebar-tools">
+      <li class="list-group-item" role="button" id="btn_aside_qq">
+        <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span
+            class="icon icon-cuz icon-qq"></span></a>
+      </li>
+      <li class="list-group-item" role="button" id="btn_aside_tel">
+        <span class="glyphicon glyphicon-earphone"></span>
+        <div class="tel">13873976777</div>
+      </li>
+      <li class="list-group-item" role="button" id="btn_aside_qrcode">
+        <span class="glyphicon glyphicon-qrcode"></span>
+        <div class="qrcode">
+          <img src="/images/qrcode.jpg" alt="">
+        </div>
+      </li>
+    </ul>
+    <li class="list-group-item" role="button" id="btn_backtop">
+      <span class="glyphicon glyphicon-arrow-up"></span>
+    </li>
+  </ul>
+
+  <!-- Budget Modal -->
+  <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="budgetModalLabel">装修费用明细表</h4>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th></th>
+                <th>名称</th>
+                <th>费用</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>1</th>
+                <td>设计费</td>
+                <td>38000</td>
+                <td>效果图、施工图</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="list">
-    <div class="item"><img src="/images/banner.jpg" alt=""></div>
-    <div class="item"><img src="/images/banner2.jpg" alt=""></div>
-    <div class="item"><img src="/images/banner3.jpg" alt=""></div>
-  </div>
 
-  <div class="container-fluid row" id="waterfall">
-    <div class="col-sm-4 column">
-      <a href="javascript:;" class="item">
-        <div class="hd-pic"><img src="/images/news-01.jpg" alt=""></div>
-        <div class="bd-txt">
-          <span class="title">精品案例名称</span>
-          <span class="glyphicon glyphicon-menu-right"></span>
-        </div>
-      </a>
-    </div>
-    <div class="col-sm-4 column">
-      <div class="item"><img src="/images/new-1.jpg" alt=""></div>
-      <div class="item"><img src="/images/all_in_one.png" alt=""></div>
-      <div class="item"><img src="/images/advantage-bg.png" alt=""></div>
-      <div class="item"><img src="/images/banner-bg.jpg" alt=""></div>
-      <div class="item"><img src="/images/banner.jpg" alt=""></div>
-    </div>
-    <div class="col-sm-4 column"></div>
-  </div>
-
-  <!-- <div id="service">
-    <section class="all-in-one">
-      <img src="/images/all_in_one-center.png" alt="">
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico1.png" alt="">
-          <p>品牌策划</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico2.png" alt="">
-          <p>选址分析</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico3.png" alt="">
-          <p>项目定位</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico4.png" alt="">
-          <p>空间设计</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico5.png" alt="">
-          <p>工程施工</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico6.png" alt="">
-          <p>材料采购</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico7.png" alt="">
-          <p>产品配套</p>
-        </div>
-      </div>
-      <div class="item">
-        <div class="text">
-          <img src="/images/all_in_one-ico8.png" alt="">
-          <p>售后服务</p>
-        </div>
-      </div>
-    </section>
-  </div> -->
-
-    <!-- <div class="oneStep">
-      <div class="main">
-        <div class="mainIn">
-          <img src="/images/oneStepImg1.png" alt="配套服务" class="img">
-          <a href="/pdfw/fstl/" title="了解更多" class="indexMore"><i style="margin-right: -12px;">了解更多</i><span
-              style="opacity: 0;">&gt;</span></a>
-          <img src="/images/oneStepImg2.png" alt="" class="rotate">
-        </div>
-    
-        <div class="list list1">
-          <div class="imgs">
-            <img src="/images/oneStepIcon1.png" alt="品牌策划" title="品牌策划" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="品牌策划"><img src="/images/oneStepIconAc1.png" alt="品牌策划" title="品牌策划"
-                class="icon2"></a>
-          </div>
-          <p class="title">品牌策划</p>
-          <img src="/images/oneStepImg4.png" alt="品牌策划" title="品牌策划" class="bg">
-          <div class="txt" style="display: none;">
-            <p class="p1">1.品牌策划</p>
-            <p class="p2">
-              您的店铺或品牌有让人过目不忘的视觉符号吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list2">
-          <div class="imgs">
-            <img src="/images/oneStepIcon2.png" alt="选址分析" title="选址分析" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="选址分析"><img src="/images/oneStepIconAc2.png" alt="选址分析" title="选址分析"
-                class="icon2"></a>
-          </div>
-          <p class="title">选址分析</p>
-          <img src="/images/oneStepImg4.png" alt="选址分析" title="选址分析" class="bg">
-          <div class="txt" style="display: none;">
-            <p class="p1">2.选址分析</p>
-            <p class="p2">
-              您的经营场所找到最佳的财源气口了吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list3">
-          <div class="imgs">
-            <img src="/images/oneStepIcon3.png" alt="项目定位" title="项目定位" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="项目定位"><img src="/images/oneStepIconAc3.png" alt="项目定位" title="项目定位"
-                class="icon2"></a>
-          </div>
-          <p class="title">项目定位</p>
-          <img src="/images/oneStepImg4.png" alt="项目定位" title="项目定位" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">3.项目定位</p>
-            <p class="p2">
-              您的经营场所消费者是谁您都定位准了吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list4">
-          <div class="imgs">
-            <img src="/images/oneStepIcon4.png" alt="空间设计" title="空间设计" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="空间设计"><img src="/images/oneStepIconAc4.png" alt="空间设计" title="空间设计"
-                class="icon2"></a>
-          </div>
-          <p class="title">空间设计</p>
-          <img src="/images/oneStepImg4.png" alt="空间设计" title="空间设计" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">4.空间设计</p>
-            <p class="p2">
-              您想拥有独一无二的装修设计，吸引客户进店消费吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list5">
-          <div class="imgs">
-            <img src="/images/oneStepIcon5.png" alt="工程施工" title="工程施工" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="工程施工"><img src="/images/oneStepIconAc5.png" alt="工程施工" title="工程施工"
-                class="icon2"></a>
-          </div>
-          <p class="title">工程施工</p>
-          <img src="/images/oneStepImg4.png" alt="工程施工" title="工程施工" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">5.工程施工</p>
-            <p class="p2">
-              您想找到手艺好、做事认真负责的施工人员吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list6">
-          <div class="imgs">
-            <img src="/images/oneStepIcon6.png" alt="材料采购" title="材料采购" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="材料采购"><img src="/images/oneStepIconAc6.png" alt="材料采购" title="材料采购"
-                class="icon2"></a>
-          </div>
-          <p class="title">材料采购</p>
-          <img src="/images/oneStepImg4.png" alt="材料采购" title="材料采购" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">6.材料采购</p>
-            <p class="p2">
-              您想用到好的装修材料，价格还不贵吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list7">
-          <div class="imgs">
-            <img src="/images/oneStepIcon7.png" alt="产品配套" title="产品配套" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="产品配套"><img src="/images/oneStepIconAc7.png" alt="产品配套" title="产品配套"
-                class="icon2"></a>
-          </div>
-          <p class="title">产品配套</p>
-          <img src="/images/oneStepImg4.png" alt="产品配套" title="产品配套" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">7.产品配套</p>
-            <p class="p2">
-              您想装修快速完工，还能做到省心和放心吗？
-            </p>
-          </div>
-        </div>
-    
-        <div class="list list8">
-          <div class="imgs">
-            <img src="/images/oneStepIcon8.png" alt="售后服务" title="售后服务" class="icon1" style="margin-top: 0px;"><br>
-            <a href="/pdfw/fstl/" title="售后服务"><img src="/images/oneStepIconAc8.png" alt="售后服务" title="售后服务"
-                class="icon2"></a>
-          </div>
-          <p class="title">售后服务</p>
-          <img src="/images/oneStepImg4.png" alt="售后服务" title="售后服务" class="bg">
-          <div class="txt" style="display: none; opacity: 1;">
-            <p class="p1">8.售后服务</p>
-            <p class="p2">
-              您想装修之后没有后顾之忧吗？
-            </p>
-          </div>
-        </div>
-    
-      </div>
-    </div> -->
-
-
-
-  <!-- <div class="adCarousel">
-    <section class="adCarousel-wrap">
-      <div class="item active"><img src="/images/banner.jpg" alt=""></div>
-      <div class="item"><img src="/images/banner2.jpg" alt=""></div>
-      <div class="item"><img src="/images/banner3.jpg" alt=""></div>
-    </section>
-
-    <section class="adCarousel-indicators"></section>
-
-    <section class="adCarousel-control prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-    </section>
-    <section class="adCarousel-control next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-    </section>
-  </div>
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="content" tabindex="0" id="tst-pop">
-    <span class="input-group-addon">联系电话</span>
-    <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的联系电话" maxlength="11">
-    <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
-  </div>
-  <a role="button" class="btn btn-default" id="clk">Click</a>
-
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <div id="advantage">
-    <section class="container-fluid row advantage-bd">
-      <div class="col-sm-3 item">
-        <img src="/images/adv-1.jpg" alt="">
-        <div class="num">01</div>
-        <div class="txt">
-          <p>恰当的灯光运用可以调动现场的气氛，影响消费者的情绪。</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img src="/images/adv-2.jpg" alt="">
-        <div class="num">02</div>
-        <div class="txt">
-          <p>合理布局动线不仅增加空间利用率还能快速导流，提升服务效率及质量。</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img src="/images/adv-3.jpg" alt="">
-        <div class="num">03</div>
-        <div class="txt">
-          <p>根据消费者的需求，创造和加大商业价值，提高运营的效率！</p>
-        </div>
-      </div>
-      <div class="col-sm-3 item">
-        <img src="/images/adv-4.jpg" alt="">
-        <div class="num">04</div>
-        <div class="txt">
-          <p>门头是一张餐厅品牌对外的公开名片；又是一个餐厅整体环境设计的元素融合的代表；更是一家餐饮品牌的品质形象。</p>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <div class="gradient"></div>
-
-  <div id="budget">
-    <section class="budget-hd">
-      <h2>我的餐厅装修需要花多少钱？</h2>
-      <h5>10秒帮你算出明细，不花冤枉钱！</h5>
-    </section>
-    <section class="budget-bd"></section>
-    <section class="budget-ft"></section>
-  </div>
-
-  <div class="row-1">
-    <div class="block" data-txt="设计费用"></div>
-    <div class="block" data-txt="设备费用"></div>
-  </div>
-  <div class="row-2">
-    <div class="block" data-txt="材料费用"></div>
-    <div class="block" data-txt="人工费用"></div>
-  </div>
-  <div class="debug"></div>
-
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th></th>
-        <th>名称</th>
-        <th>费用</th>
-        <th>说明</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th>1</th>
-        <td>设计费</td>
-        <td>36800</td>
-        <td>效果图、施工图等</td>
-      </tr>
-      <tr>
-        <th>2</th>
-        <td>材料费</td>
-        <td>800000</td>
-        <td>装修主材、辅材等</td>
-      </tr>
-      <tr>
-        <th>3</th>
-        <td>人工费</td>
-        <td>60000</td>
-        <td>泥工、木工、油漆工等</td>
-      </tr>
-      <tr>
-        <th>4</th>
-        <td>设备费用</td>
-        <td>100000</td>
-        <td>厨房设备、空调设备等</td>
-      </tr>
-    </tbody>
-  </table> -->
-  
-<script src="/include/jquery/jquery.min.js"></script>
-<script src="/include/bootstrap/js/bootstrap.min.js"></script>
-<script src="./debug.js"></script>
+  <script src="/include/jquery/jquery.min.js"></script>
+  <script src="/include/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/include/fullpage/js/fullpage.js"></script>
+  <script src="./debug.js"></script>
 </body>
 </html>
