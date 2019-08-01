@@ -68,7 +68,9 @@ $(function() {
         $(destination.item).find(".btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
       }
       // 资深设计师一对一服务 #designer
-      if(destination.index === 6){}
+      if(destination.index === 6){
+        $(destination.item).find(".btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
+      }
       // 额外服务支持 #support
       if(destination.index === 7) {
         $(destination.item).find(".bd-list .list-item").delay(200).animate({opacity: 1}, 600, function() {
@@ -94,10 +96,14 @@ $(function() {
         });
         $(destination.item).find(".bd .bd-list.left li").delay(200).animate({right: 0, opacity: 1}, 600);
         $(destination.item).find(".bd .bd-list.right li").delay(200).animate({left: 0, opacity: 1}, 600);
+        $(destination.item).find(".ft .btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
       }
       // 多年专注，不玩套路 #goal
       if(destination.index === 10) {
-        $(destination.item).find(".bd-list").delay(800).animate({height: "265px"}, 600);
+        $(destination.item).find(".bd-list").delay(800).animate({height: "265px"}, 600, function() {
+          var hdTimer = setInterval(function(){
+          }, 100);
+        });
         $(destination.item).find(".btn-square").delay(800).animate({top: 0, opacity: 1}, 600);
       }
       // 友好合作，互利共赢 #partner
@@ -116,6 +122,9 @@ $(function() {
         $(destination.item).find(".cpy-des span").each(function(i) {
           $(this).delay(i*200+600).animate({top: 0, opacity: 1}, 1000);
         });
+        $(destination.item).find(".pos").delay(600).animate({left: 0, opacity: 1}, 1000);
+        $(destination.item).find(".bd .cover").delay(800).animate({top: "100%"}, 1000);
+        $(destination.item).find(".ft").delay(1600).animate({opacity: 1}, 800);
       }
 
       // 离开页
@@ -209,7 +218,12 @@ $(function() {
 
       // #about
       if(origin.index === 12) {
+        $(origin.item).find(".cpy-name span:nth-child(1)").animate({top: "-500px", opacity: 0}, 300);
+        $(origin.item).find(".cpy-name span:nth-child(2)").animate({top: "500px", opacity: 0}, 300);
         $(origin.item).find(".cpy-des span").animate({opacity: 0, top: "500px"}, 300);
+        $(origin.item).find(".pos").animate({left: "500px", opacity: 0}, 300);
+        $(origin.item).find(".bd .cover").animate({top: "0%"}, 300);
+        $(origin.item).find(".ft").animate({opacity: 0}, 300);
       }
 
     }
@@ -310,4 +324,9 @@ function reversePlay(param) {
   var ele = $(param.target).children().last();
   // $(param.target).stop().children().first().removeClass("active").fadeOut().parent().prepend(ele).children().first().addClass("active").fadeIn();
   $(param.target).stop().prepend(ele).children().first().addClass("active").fadeIn().next().removeClass("active").fadeOut();
+}
+
+function test(ele, times) {
+  times++;
+  $(ele).html(times);
 }

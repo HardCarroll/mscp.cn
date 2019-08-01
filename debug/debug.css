@@ -95,7 +95,7 @@ a, a:focus, a:active, a:hover {
   font-size: 20px;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  text-shadow: 0 1px 2px rgba(0,0,0,0.6);
   background-color: rgba(0,0,0,0);
   opacity: 0;
   z-index: 100;
@@ -162,6 +162,8 @@ a, a:focus, a:active, a:hover {
 }
 .bd {
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
 }
 .bd .bd-list {
   list-style: none;
@@ -588,6 +590,14 @@ a, a:focus, a:active, a:hover {
   text-shadow: 0 0 30px #f00;
 }
 
+#designer {
+  position: relative;
+  overflow: hidden;
+}
+#designer .fp-tableCell{
+  display: table;
+}
+
 #support {
   overflow: hidden;
   position: relative;
@@ -734,7 +744,7 @@ a, a:focus, a:active, a:hover {
 #focus .bd {
   display: -moz-box;  /* Firefox */ display: -ms-flexbox;    /* IE10 */ display: -webkit-box;    /* Safari */  display: -webkit-flex;    /* Chrome, WebKit */ display: box;  display: flexbox;  display: flex;
   justify-content: space-around;
-  padding: 50px 0;
+  padding: 10px 0;
 }
 #focus .bd .bd-list {
   list-style: none;
@@ -924,6 +934,8 @@ a, a:focus, a:active, a:hover {
 #about .pos {
   position: relative;
   width: 300px;
+  left: 500px;
+  opacity: 0;
 }
 #about .pos>img {
   width: 300px;
@@ -943,6 +955,16 @@ a, a:focus, a:active, a:hover {
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
+}
+#about .bd .cover {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: #000;
 }
 #about .bd .bd-title {
   padding: 15px 0;
@@ -986,11 +1008,6 @@ a, a:focus, a:active, a:hover {
 }
 #about .bd .bd-body {
   position: relative;
-  display: -moz-box;  /* Firefox */ 
-  display: -ms-flexbox;    /* IE10 */ 
-  display: -webkit-box;    /* Safari */  
-  display: -webkit-flex;    /* Chrome, WebKit */ 
-  display: box;  display: flexbox;  
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -1013,6 +1030,7 @@ a, a:focus, a:active, a:hover {
 #about .ft {
   padding-bottom: 0;
   color: #fff;
+  opacity: 0;
 }
 #about .ft a {
   color: #fff;
