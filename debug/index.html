@@ -63,89 +63,91 @@
     </div>  <!-- .adCarousel end;-->
     <!-- #budget begin -->
     <div class="section" id="budget">
-      <section class="hd">
-        <h2><strong>餐厅装修与投资</strong>&nbsp;要花多少钱？</h2>
-        <h5><span class="left">弥尚餐饮整装计算器</span><span class="right">5秒帮您算出明细，不花冤枉钱！</span></h5>
-      </section>
-      <section class="container-fluid row bd inner">
-        <div class="col-xs-12 col-sm-4 lt">
-          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积"
-            data-placement="bottom" tabindex="0" id="area-box">
-            <span class="input-group-addon">餐厅面积</span>
-            <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
-            <span class="input-group-addon">㎡</span>
+      <div class="mask">
+        <div class="hd">
+          <h2><strong>餐厅装修与投资</strong>&nbsp;要花多少钱？</h2>
+          <h5><span class="left">弥尚餐饮整装计算器</span><span class="right">5秒帮您算出明细，不花冤枉钱！</span></h5>
+        </div>
+        <div class="container-fluid row bd inner">
+          <div class="col-xs-12 col-sm-4 lt">
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积"
+              data-placement="bottom" tabindex="0" id="area-box">
+              <span class="input-group-addon">餐厅面积</span>
+              <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
+              <span class="input-group-addon">㎡</span>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">装修风格</span>
+              <select name="" class="form-control" id="decoration-style">
+                <option value="0">田园风</option>
+                <option value="1">新中式</option>
+                <option value="2">时尚版</option>
+                <option value="3">工业风</option>
+              </select>
+              <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
+            </div>
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
+              data-placement="bottom" tabindex="0" id="name-box">
+              <span class="input-group-addon">您的姓名</span>
+              <input type="text" class="form-control" id="decoration-name" placeholder="请问您如何称呼">
+              <span class="input-group-addon glyphicon glyphicon-user"></span>
+            </div>
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
+              data-placement="bottom" tabindex="0" id="tel-box">
+              <span class="input-group-addon">联系电话</span>
+              <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11"
+                data-toggle="popover">
+              <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
+            </div>
+            <div class="tips">
+              <span class="glyphicon glyphicon-heart"></span>
+              <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
+            </div>
           </div>
-          <div class="input-group">
-            <span class="input-group-addon">装修风格</span>
-            <select name="" class="form-control" id="decoration-style">
-              <option value="0">田园风</option>
-              <option value="1">新中式</option>
-              <option value="2">时尚版</option>
-              <option value="3">工业风</option>
-            </select>
-            <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
+          <div class="col-xs-12 col-sm-4 md">
+            <div class="btn btn-round">立即报价</div>
           </div>
-          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
-            data-placement="bottom" tabindex="0" id="name-box">
-            <span class="input-group-addon">您的姓名</span>
-            <input type="text" class="form-control" id="decoration-name" placeholder="请问您如何称呼">
-            <span class="input-group-addon glyphicon glyphicon-user"></span>
-          </div>
-          <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
-            data-placement="bottom" tabindex="0" id="tel-box">
-            <span class="input-group-addon">联系电话</span>
-            <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11"
-              data-toggle="popover">
-            <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
-          </div>
-          <div class="tips">
-            <span class="glyphicon glyphicon-heart"></span>
-            <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
+          <div class="col-xs-12 col-sm-4 rt">
+            <div class="progress">
+              <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                aria-valuemax="100" style="width: 10%">
+                设计费
+              </div>10%
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="28" aria-valuemin="0"
+                aria-valuemax="100" style="width: 28%">
+                材料费
+              </div>28%
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="22" aria-valuemin="0"
+                aria-valuemax="100" style="width: 22%">
+                人工费
+              </div>22%
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped" role="progressbar" aria-valuenow="15" aria-valuemin="0"
+                aria-valuemax="100" style="width: 15%">
+                餐饮配套
+              </div>15%
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="10" aria-valuemin="0"
+                aria-valuemax="100" style="width: 10%">
+                软装配饰
+              </div>10%
+            </div>
+            <div class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="15" aria-valuemin="0"
+                aria-valuemax="100" style="width: 15%">
+                空调电器
+              </div>15%
+            </div>
           </div>
         </div>
-        <div class="col-xs-12 col-sm-4 md">
-          <div class="btn btn-round">立即报价</div>
-        </div>
-        <div class="col-xs-12 col-sm-4 rt">
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0"
-              aria-valuemax="100" style="width: 10%">
-              设计费
-            </div>10%
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="28" aria-valuemin="0"
-              aria-valuemax="100" style="width: 28%">
-              材料费
-            </div>28%
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="22" aria-valuemin="0"
-              aria-valuemax="100" style="width: 22%">
-              人工费
-            </div>22%
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="15" aria-valuemin="0"
-              aria-valuemax="100" style="width: 15%">
-              餐饮配套
-            </div>15%
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0"
-              aria-valuemax="100" style="width: 10%">
-              软装配饰
-            </div>10%
-          </div>
-          <div class="progress">
-            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="15" aria-valuemin="0"
-              aria-valuemax="100" style="width: 15%">
-              空调电器
-            </div>15%
-          </div>
-        </div>
-      </section>
-      <section class="ft"></section>
+        <div class="ft"></div>
+      </div>
     </div>  <!-- #budget end;-->
     <!-- #professional begin -->
     <div class="section" id="professional">
@@ -411,8 +413,13 @@
         </div>
         <div class="bd inner">
           <div class="bd-list">
-            <div class="list-item active">
-            </div>
+            <div class="list-item">1</div>
+            <div class="list-item">2</div>
+            <div class="list-item">3</div>
+            <div class="list-item">4</div>
+            <div class="list-item">5</div>
+            <div class="list-item">6</div>
+            <div class="list-item">7</div>
           </div>
         </div>
         <div class="ft">

@@ -163,7 +163,6 @@ a, a:focus, a:active, a:hover {
 .bd {
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
 .bd .bd-list {
   list-style: none;
@@ -190,10 +189,16 @@ a, a:focus, a:active, a:hover {
 }
 
 #budget {
-  background-image: url(/images/budget-bg.jpg);
+  background-image: url(/images/bg-1.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+#budget .fp-tableCell {
+  display: table;
+}
+#budget .mask {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 #budget .bd {
   padding: 100px 0;
@@ -597,6 +602,49 @@ a, a:focus, a:active, a:hover {
 #designer .fp-tableCell{
   display: table;
 }
+#designer .bd-list {
+  height: 500px;
+  position: relative;
+}
+#designer .bd-list .list-item {
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: all 0.8s;
+}
+/* #designer .bd-list .list-item:nth-child(1) {
+  z-index: 2;
+  opacity: 0.6;
+  background-color: #f00;
+  transform: scale(0.6) translateX(-350%);
+}
+#designer .bd-list .list-item:nth-child(2) {
+  z-index: 3;
+  opacity: 0.8;
+  background-color: #ff0;
+  transform: scale(0.8) translateX(-175%);
+}
+#designer .bd-list .list-item:nth-child(3) {
+  z-index: 4;
+  opacity: 1;
+  background-color: #FFF;
+  transform: scale(1) translateX(-50%);
+}
+#designer .bd-list .list-item:nth-child(4) {
+  z-index: 3;
+  opacity: 0.8;
+  background-color: #0FF;
+  transform: scale(0.8) translateX(50%);
+}
+#designer .bd-list .list-item:nth-child(5) {
+  z-index: 2;
+  opacity: 0.6;
+  background-color: #00F;
+  transform: scale(0.6) translateX(180%);
+} */
 
 #support {
   overflow: hidden;
