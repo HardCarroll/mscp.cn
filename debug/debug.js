@@ -1,4 +1,5 @@
 $(function() {
+  var designerTimer = 0;
   var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");
   if($body.width() <= 768) {
     window.location.href = "/wap.php";
@@ -17,65 +18,86 @@ $(function() {
     $.fn.fullpage.moveTo(1);
   });
 
-  function autoSlide() {
+  digtalAutoIncrease($("#goal .list-item:nth-child(1) .wrap div span"));
+
+  function digtalAutoIncrease(target, paramJson) {
+    console.log("haha");
+    var ele = $(target);
+    var param = paramJson || {};
+    var finalNum = param.targetNum || ele.data("value");
+    var time = param.totalmSec || ele.data("time");
+    var step = param.permSec || 50;
+
+    var oneStep = finalNum / time / step;
+    var count = 0;
+    var initial = 0;
+
+    var ascTimer = setInterval(function() {
+      count += oneStep;
+      if(count >= finalNum) {
+        clearInterval(ascTimer);
+        count = finalNum;
+      }
+      var tmp = Math.floor(count);
+      if(tmp === initial) {
+        return;
+      }
+      initial = tmp;
+      ele.html = initial;
+    }, step);
+  }
+
+  function reverseSlide() {
     var ele = $("#designer .bd-list").children().last();
     $("#designer .bd-list").prepend(ele);
-    $("#designer .bd-list").children().each(function(i) {
-      var count = $(this).parent().children().length;
-      var index = $(this).index();
-      var mid = Math.floor(count / 2);
-      // var key = Math.abs(index - mid);
-      var zIndex = count - Math.abs(index - mid);
-      var nScale = Math.pow(0.9, Math.abs(index - mid));
-      var nOpacity = Math.pow(0.9, Math.abs(index - mid));
-      var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
-      var mLeft = (index - mid)*100 + "px";
-      $("#designer .bd-list").children().eq(i).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft,"transform": "scale("+nScale+")"});
-    });
+    setItemStyle({object: $("#designer .bd-list")});
   }
-  function reverseSlide() {
+  function autoSlide() {
     var ele = $("#designer .bd-list").children().first();
     $("#designer .bd-list").append(ele);
-    $("#designer .bd-list").children().each(function(i) {
+    setItemStyle({object: $("#designer .bd-list")});
+  }
+
+  function setItemStyle(paramJson) {
+    var count = $(paramJson.object).children().length;
+    var mid = Math.floor(count / 2);
+    $(paramJson.object).children().each(function(i) {
+      var zIndex = count - Math.abs(i - mid);
+      var nScale = Math.pow(0.9, Math.abs(i - mid));
+      var nOpacity = Math.pow(0.9, Math.abs(i - mid));
+      // var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
+      var mLeft = (i - mid)*150 + "px";
+      $(this).css({"z-index": zIndex, "opacity": nOpacity, "margin-left": mLeft, "transform": "translateX(-50%) scale("+nScale+")"});
+      // $(this).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft, "transform": "translateX(-50%) scale("+nScale+")"});
+    });
+    $(paramJson.object).children().removeClass("active").eq(mid).addClass("active");
+  }
+
+  // 注册鼠标进入、离开事件
+  $("#designer .bd-list").off("mouseenter").on("mouseenter", function() {
+    if(designerTimer) {
+      clearInterval(designerTimer);
+      designerTimer = 0;
+    }
+  });
+  $("#designer .bd-list").off("mouseleave").on("mouseleave", function() {
+    if(!designerTimer) {
+      designerTimer = setInterval(autoSlide, 3000);
+    }
+  });
+  // 注册鼠标单击事件
+  $("#designer .bd-list").children().each(function() {
+    $(this).off("click").on("click", function() {
       var count = $(this).parent().children().length;
       var index = $(this).index();
       var mid = Math.floor(count / 2);
-      // var key = Math.abs(index - mid);
-      var zIndex = count - Math.abs(index - mid);
-      var nScale = Math.pow(0.9, Math.abs(index - mid));
-      var nOpacity = Math.pow(0.9, Math.abs(index - mid));
-      var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
-      var mLeft = (index - mid)*100 + "px";
-      $("#designer .bd-list").children().eq(i).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft,"transform": "scale("+nScale+")"});
-    });
-  }
-  
-  // console.log($("#designer .bd-list").children().eq(0));
-
-  $("#designer .bd-list").children().each(function(i) {
-    // console.log($("#designer .bd-list").children().eq(i));
-    var count = $(this).parent().children().length;
-    var index = $(this).index();
-    var mid = Math.floor(count / 2);
-    var key = Math.abs(index - mid);
-    var zIndex = count - Math.abs(index - mid);
-    var nScale = Math.pow(0.9, Math.abs(index - mid));
-    var nOpacity = Math.pow(0.9, Math.abs(index - mid));
-    var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
-    var mLeft = (index - mid)*100 + "px";
-    $("#designer .bd-list").children().eq(i).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft,"transform": "scale("+nScale+")"});
-
-    $(this).off("click").on("click", function() {
-    //   var count = $(this).parent().children().length;
-    //   var index = $(this).index();
-    //   var mid = Math.floor(count / 2);
-    //   var key = Math.abs(index - mid);
+      var key = Math.abs(index - mid);
       while(key > 0) {
         if(index-mid > 0) {
-          reverseSlide();
+          autoSlide();
         }
         else {
-          autoSlide();
+          reverseSlide();
         }
         key--;
       }
@@ -134,7 +156,11 @@ $(function() {
       }
       // 资深设计师一对一服务 #designer
       if(destination.index === 6){
-        $(destination.item).find(".btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
+        $(destination.item).find(".btn-square").delay(100).animate({top: 0, opacity: 1}, 600);
+        setItemStyle({object: $(destination.item).find(".bd-list")});
+        if(!designerTimer) {
+          designerTimer = setInterval(autoSlide, 3000);
+        }
       }
       // 额外服务支持 #support
       if(destination.index === 7) {
@@ -152,22 +178,18 @@ $(function() {
       }
       // 名师在线答疑 #focus
       if(destination.index === 9) {
-        $(destination.item).find(".bd img").delay(200).animate({opacity: 0.3}, 1000);
+        $(destination.item).find(".bd img").delay(200).animate({opacity: 0.3}, 1600);
         $(destination.item).find(".bd .bd-list.left li").each(function(i) {
-          $(this).delay(i*200).animate({right: 0, opacity: 1}, 600);
+          $(this).delay(i*200).animate({right: 0, opacity: 1}, 800);
         });
         $(destination.item).find(".bd .bd-list.right li").each(function(i) {
-          $(this).delay(200*i+100).animate({left: 0, opacity: 1}, 600);
+          $(this).delay(i*200+100).animate({left: 0, opacity: 1}, 800);
         });
-        $(destination.item).find(".bd .bd-list.left li").delay(200).animate({right: 0, opacity: 1}, 600);
-        $(destination.item).find(".bd .bd-list.right li").delay(200).animate({left: 0, opacity: 1}, 600);
         $(destination.item).find(".ft .btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
       }
       // 多年专注，不玩套路 #goal
       if(destination.index === 10) {
         $(destination.item).find(".bd-list").delay(800).animate({height: "265px"}, 600, function() {
-          var hdTimer = setInterval(function(){
-          }, 100);
         });
         $(destination.item).find(".btn-square").delay(800).animate({top: 0, opacity: 1}, 600);
       }
@@ -240,7 +262,13 @@ $(function() {
       }
 
       // 资深设计师一对一服务 #designer
-      if(origin.index === 6) {}
+      if(origin.index === 6) {
+        $(origin.item).find(".list-item").attr("style", "");
+        if(designerTimer) {
+          clearInterval(designerTimer);
+          designerTimer = 0;
+        }
+      }
 
       // 额外服务支持 #support
       if(origin.index === 7) {
@@ -301,7 +329,7 @@ $(function() {
     var area = $("#decoration-area").val();
     var type = $("#decoration-style").val();
     var tel = $("#decoration-tel").val();
-    var regTel = /^1[0-9]{10}$/;
+    var regTel = /^1[3-9]{10}$/;
 
     if(parseInt(area) <= 0 || area == "") {
       $("#area-box").popover("show");
