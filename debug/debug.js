@@ -338,7 +338,7 @@ $(function() {
     var area = $("#decoration-area").val();
     var type = $("#decoration-style").val();
     var tel = $("#decoration-tel").val();
-    var regTel = /^1[3-9]{10}$/;
+    var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
 
     if(parseInt(area) <= 0 || area == "") {
       $("#area-box").popover("show");

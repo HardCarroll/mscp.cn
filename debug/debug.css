@@ -202,12 +202,16 @@ a, a:focus, a:active, a:hover {
 }
 #budget .bd {
   padding: 100px 0;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 16px 0 rgba(80, 80, 80, 1);
 }
 #budget .lt {
-  padding: 10px 15px;
+  padding: 15px 85px;
   position: relative;
   opacity: 0;
   bottom: -360%;
+  flex: 1;
 }
 #budget .lt .input-group {
   margin: 10px 0;
@@ -235,31 +239,23 @@ a, a:focus, a:active, a:hover {
 }
 #budget .md {
   text-align: center;
-  padding: 50px 15px;
   position: relative;
+  width: 150px;
+  height: 150px;
 }
 #budget .rt {
-  padding: 20px 15px;
+  padding: 15px 85px;
   position: relative;
   opacity: 0;
   bottom: -360%;
-}
-#budget .rt .progress {
-  border-radius: 0;
-  height: 30px;
-  margin-bottom: 0px;
-  line-height: 30px;
-  text-indent: 2em;
-  border: 1px solid #fff;
-  background-color: transparent;
+  flex: 1;
   color: #ffdc90;
 }
-#budget .rt .progress+.progress {
-  border-top: none;
+#budget .rt .total {
+  font-size: 20px;
 }
-#budget .rt .progress .progress-bar {
-  line-height: 30px;
-  text-indent: 0em;
+#budget .rt .tips {
+  font-size: 16px;
 }
 
 #professional {
