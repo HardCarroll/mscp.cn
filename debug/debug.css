@@ -534,6 +534,10 @@ a, a:focus, a:active, a:hover {
 #service {
   position: relative;
   overflow: hidden;
+  background-image: url(/images/cpy-bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 #service .bd .bd-list {
   margin: 0;
@@ -781,6 +785,9 @@ a, a:focus, a:active, a:hover {
 #slogan .fp-tableCell {
   display: table;
 }
+#slogan .mask {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 #slogan .bd-list {
   margin: 0;
   padding: 100px 15px;
@@ -939,9 +946,16 @@ a, a:focus, a:active, a:hover {
   position: relative;
   overflow: hidden;
   color: #fff;
+  background-image: url(/images/bg-7.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 #goal .fp-tableCell {
   display: table;
+}
+#goal .mask {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 #goal .bd {
   padding: 100px 0;
@@ -984,7 +998,7 @@ a, a:focus, a:active, a:hover {
   display: table;
 }
 #partner .mask {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 #partner .bd {
   padding: 100px 0 250px;
@@ -1031,6 +1045,9 @@ a, a:focus, a:active, a:hover {
   color: #ffdc90;
   padding-bottom: 0;
   overflow: hidden;
+}
+#about .cpy-name {
+  color: #ca1717;
 }
 #about .cpy-name span{
   position: relative;

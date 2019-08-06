@@ -18,19 +18,18 @@ $(function() {
     $.fn.fullpage.moveTo(1);
   });
 
-  digtalAutoIncrease($("#goal .list-item:nth-child(1) .wrap div span"));
-
   function digtalAutoIncrease(target, paramJson) {
-    console.log("haha");
     var ele = $(target);
     var param = paramJson || {};
     var finalNum = param.targetNum || ele.data("value");
     var time = param.totalmSec || ele.data("time");
     var step = param.permSec || 50;
 
-    var oneStep = finalNum / time / step;
+    var oneStep = finalNum / (time / step);
     var count = 0;
     var initial = 0;
+
+    ele.html(0);
 
     var ascTimer = setInterval(function() {
       count += oneStep;
@@ -43,7 +42,7 @@ $(function() {
         return;
       }
       initial = tmp;
-      ele.html = initial;
+      ele.html(initial);
     }, step);
   }
 
@@ -190,12 +189,16 @@ $(function() {
       // 多年专注，不玩套路 #goal
       if(destination.index === 10) {
         $(destination.item).find(".bd-list").delay(800).animate({height: "265px"}, 600, function() {
+          $(this).children().each(function() {
+            digtalAutoIncrease($(this).find(".wrap div span"));
+          });
         });
         $(destination.item).find(".btn-square").delay(800).animate({top: 0, opacity: 1}, 600);
       }
       // 友好合作，互利共赢 #partner
       if(destination.index === 11) {
         $(destination.item).find(".bd-list").delay(600).animate({opacity: 1}, 1000);
+        // $(destination.item).find(".list-item").css({"transform": "translate(0, 0)"});
         $(destination.item).find(".btn-square").delay(600).animate({top: 0, opacity: 1}, 600);
       }
       // #about
@@ -302,11 +305,17 @@ $(function() {
       // #goal
       if(origin.index === 10) {
         $(origin.item).find(".bd-list").animate({height: "0px"}, 300);
+        $(origin.item).find(".bd-list .list-item .wrap div span").html(0);
       }
       
       // #partner
       if(origin.index === 11) {
         $(origin.item).find(".bd-list").animate({opacity: 0}, 300);
+        // $(origin.item).find(".list-item").each(function() {
+        //   var posX = Math.ceil(Math.random()*1000 + 1500) + "px";
+        //   var posY = Math.ceil(Math.random()*1000 + 1500) + "px";
+        //   $(this).css({"transform": "translate("+posX+", "+posY+")"});
+        // });
       }
 
       // #about
