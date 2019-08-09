@@ -205,6 +205,9 @@ a, a:focus, a:active, a:hover {
   display: flex;
   align-items: center;
   box-shadow: 0 0 16px 0 rgba(80, 80, 80, 1);
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
 #budget .lt {
   padding: 15px 85px;
@@ -254,8 +257,33 @@ a, a:focus, a:active, a:hover {
 #budget .rt .total {
   font-size: 20px;
 }
-#budget .rt .tips {
+#budget .rt .total span {
+  margin: 0 10px;
+  color: #ca1717;
+  display: inline-block;
+  width: 100px;
+  font-family: "lcd";
+  text-align: center;
+}
+#budget .rt .detail {
+  border: 1px solid #c6c8c8;
+  padding: 15px;
+  margin: 15px 0;
   font-size: 16px;
+  text-align: center;
+}
+#budget .rt .detail p {
+  margin: 5px;
+}
+#budget .rt .detail p span {
+  margin: 0 15px;
+  width: 80px;
+  display: inline-block;
+  font-family: "lcd";
+  text-align: right;
+}
+#budget .rt .tips {
+  font-size: 14px;
 }
 
 #professional {
@@ -598,6 +626,9 @@ a, a:focus, a:active, a:hover {
 #designer {
   position: relative;
   overflow: hidden;
+  background-image: url(/images/contact-bg.jpg);
+  background-size: contain;
+  background-position: center;
 }
 #designer .fp-tableCell{
   display: table;
@@ -719,6 +750,13 @@ a, a:focus, a:active, a:hover {
 #support {
   overflow: hidden;
   position: relative;
+  background-image: url(/images/wood-bg.jpg);
+}
+#support .fp-tableCell {
+  display: table;
+}
+#support .mask {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 #support .bd {
   padding: 75px 0;
@@ -774,7 +812,7 @@ a, a:focus, a:active, a:hover {
   position: relative;
   overflow: hidden;
   background-image: url(/images/advantage-bg.png);
-  background-size: 80%;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
 }
@@ -782,7 +820,7 @@ a, a:focus, a:active, a:hover {
   display: table;
 }
 #slogan .mask {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.86);
 }
 #slogan .bd-list {
   margin: 0;
@@ -938,11 +976,88 @@ a, a:focus, a:active, a:hover {
   transform: translateX(20px);
 }
 
+#news {
+  position: relative;
+  overflow: hidden;
+  background-image: url(/images/news-bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center right;
+}
+#news .fp-tableCell {
+  display: table;
+}
+#news .mask {
+  background-color: rgba(0, 0, 0, 0.86);
+}
+#news .bd {
+  color: #fff;
+  display: flex;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+}
+#news .bd .box {
+  display: flex;
+  height: 500px;
+  width: 152px;
+  align-items: center;
+  border: 1px solid #c6c8c8;
+  overflow: hidden;
+  transition: all 0.6s;
+}
+#news .bd .box+.box {
+  margin-left: 5px;
+}
+#news .bd .box .title {
+  padding: 15px;
+}
+#news .bd .box .title span {
+  display: block;
+  width: 120px;
+  height: 120px;
+  padding: 18px 0;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  box-shadow: 0 0 6px 0 #FFF;
+}
+#news .bd .box.active {
+  width: 1045px;
+}
+#news .bd .box .content {
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid #c6c8c8;
+}
+#news .bd .box .content ul {
+  list-style: none;
+  margin: 0;
+  padding: 5px 15px;
+  position: relative;
+}
+#news .bd .box .content ul li {
+  padding: 15px;
+}
+#news .bd .box .content ul li+li {
+  border-top: 1px dashed;
+}
+#news .bd .box .content ul li .tit {
+  font-size: 20px;
+}
+#news .bd .box .content ul li:hover .tit {
+  color: #ffdc90;
+}
+#news .bd .box .content ul li .txt {
+  font-size: 16px;
+}
+
 #goal {
   position: relative;
   overflow: hidden;
   color: #fff;
-  background-image: url(/images/bg-7.jpg);
+  background-image: url(/images/ys_bg.jpg);
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -951,7 +1066,7 @@ a, a:focus, a:active, a:hover {
   display: table;
 }
 #goal .mask {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0);
 }
 #goal .bd {
   padding: 100px 0;
@@ -985,7 +1100,7 @@ a, a:focus, a:active, a:hover {
 #partner {
   position: relative;
   overflow: hidden;
-  background-image: url(/images/p_bg.jpg);
+  background-image: url(/images/bg-7.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -994,7 +1109,7 @@ a, a:focus, a:active, a:hover {
   display: table;
 }
 #partner .mask {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0);
 }
 #partner .bd {
   padding: 100px 0 250px;
