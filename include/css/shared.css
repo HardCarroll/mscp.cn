@@ -91,11 +91,14 @@ input, textarea, button, select {
   color: #e6e8e8;
 }
 #navbar-mscp {
-  background-color: transparent;
+  background-color: rgba(33, 33, 33, 0.6);
   border-radius: 0;
+  width: 100%;
   height: 100px;
   border: none;
   margin-bottom: 0;
+  position: fixed;
+  z-index: 1000;
 }
 #navbar-mscp .container-fluid {
   height: 100%;
@@ -114,12 +117,21 @@ input, textarea, button, select {
   text-align: center;
 }
 #navbar-mscp .navbar-collapse {
-  margin-top: 60px;
+  margin-top: 20px;
+  padding: 0;
+}
+#navbar-mscp .navbar-nav {
+  margin: 0;
 }
 #navbar-mscp .navbar-nav li>a {
   color: #f6f8f8;
   padding: 10px;
   font-size: 16px;
+  text-align: center;
+}
+#navbar-mscp .navbar-nav li>a b {
+  display: block;
+  font-size: 14px;
 }
 #navbar-mscp .navbar-nav li.current>a {
   color: #ca1717;
@@ -181,26 +193,65 @@ input, textarea, button, select {
   background-repeat: no-repeat;
   background-position: bottom center;
 }
-#contact .container-fluid, #contact .row {
-  padding: 0;
-  margin: 0;
+#contact .contact-hd {
+  padding: 15px 0;
+  text-align: center;
+  border-bottom: 1px solid #ca1717;
 }
 #contact .contact-hd {
-  padding: 50px 0 20px;
+  padding: 15px 0;
   text-align: center;
+  border-bottom: 1px solid #ca1717;
 }
-#contact .contact-bd>div {
-  border-top: 1px solid #ca1717;
-  padding: 30px 15px;
+#contact .contact-hd ul {
+  margin: 0;
+  padding: 15px 0 0;
+}
+#contact .contact-hd ul li {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  border-radius: 50%;
+  border: 1px solid;
+  margin: 0 25px;
+  cursor: pointer;
+}
+#contact .contact-hd ul li:hover span {
+  color: #ca1717;
+}
+#contact .contact-hd ul li .qrcode {
+  position: absolute;
+  box-shadow: 0 0 16px 0 #ffdc90;
+  width: 100px;
+  height: 100px;
+  opacity: 0;
+  top: 50px;
+  left: -35px;
+  transition: all 0.6s;
+  z-index: 1000;
+}
+#contact .contact-hd ul li:last-child:hover .qrcode {
+  opacity: 1;
+  top: 35px;
+}
+#contact .contact-hd ul li .qrcode img {
+  width: 100%;
+}
+
+#contact .contact-bd {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
 }
 #contact .contact-bd h4 {
   margin-top: 0;
 }
 #contact a:hover {
   color: #ca1717;
-}
-#contact .contact-bd .site-map {
-  text-align: center;
 }
 #contact .contact-bd .qrcode {
   text-align: center;
@@ -363,6 +414,56 @@ input, textarea, button, select {
   color: #ffdc90;
 }
 
+
+#bsWXBox.bsBox {
+  width: 216px !important;
+  height: 240px !important;
+}
+#bsWXBox.bsBox>.bsTop {
+  width: 100% !important;
+}
+#bsWXBox.bsBox>.bsFrameDiv>div {
+  width: 100% !important;
+  height: 204px !important;
+}
+#bsWXBox.bsBox>.bsFrameDiv>div>img {
+  width: 204px !important;
+  height: 204px !important;
+  padding: 5px !important;
+  margin: 0 !important;
+}
+#bsFloatTab {
+  background-color: #FFF !important;
+  color: #000 !important;
+}
+.bs-xtop b, .bs-xbottom b {
+  background-color: #FFF !important;
+}
+
+
+@keyframes light {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0 0 66px -1px rgba(216, 216, 216, 0.3);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
 
 @keyframes wave {
 	0% {

@@ -1,4 +1,5 @@
 #banner {
+  height: 450px;
   background-image: url(/images/banner-bg.jpg);
 }
 .card {
@@ -44,4 +45,19 @@
 }
 #baidu-map:hover {
   box-shadow: 0 0 16px 2px #ffdc90;
+}
+
+.message .hd {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.message .hd .line {
+  flex: 1;
+  border: 1px solid;
+}
+.message .hd .txt {
+  padding: 15px 30px;
+  font-size: 26px;
 }

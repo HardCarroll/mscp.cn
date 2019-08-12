@@ -19,67 +19,6 @@ $(function () {
     $.fn.fullpage.moveTo(1);
   });
 
-  // 生成[min, max)区间内的随机数
-  function getRandomNum(min, max) {
-    var min = min || 1;
-    var max = max || 10;
-    return Math.floor(Math.random() * (max - min + 1) + min);
-  }
-
-  function digtalAutoIncrease(target, paramJson) {
-    var ele = $(target);
-    var param = paramJson || {};
-    var finalNum = param.targetNum || ele.data("value");
-    var time = param.totalmSec || ele.data("time");
-    var step = param.permSec || 50;
-
-    var oneStep = finalNum / (time / step);
-    var count = 0;
-    var initial = 0;
-
-    ele.html(0);
-
-    var ascTimer = setInterval(function () {
-      count += oneStep;
-      if (count >= finalNum) {
-        clearInterval(ascTimer);
-        count = finalNum;
-      }
-      var tmp = Math.floor(count);
-      if (tmp === initial) {
-        return;
-      }
-      initial = tmp;
-      ele.html(initial);
-    }, step);
-  }
-
-  function reverseSlide() {
-    var ele = $("#designer .bd-list").children().last();
-    $("#designer .bd-list").prepend(ele);
-    setItemStyle({ object: $("#designer .bd-list") });
-  }
-  function autoSlide() {
-    var ele = $("#designer .bd-list").children().first();
-    $("#designer .bd-list").append(ele);
-    setItemStyle({ object: $("#designer .bd-list") });
-  }
-
-  function setItemStyle(paramJson) {
-    var count = $(paramJson.object).children().length;
-    var mid = Math.floor(count / 2);
-    $(paramJson.object).children().each(function (i) {
-      var zIndex = count - Math.abs(i - mid);
-      var nScale = Math.pow(0.9, Math.abs(i - mid));
-      var nOpacity = Math.pow(0.9, Math.abs(i - mid));
-      var mLeft = (i - mid) * 150 + "px";
-      // var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
-      // $(this).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft, "transform": "translateX(-50%) scale("+nScale+")"});
-      $(this).css({ "z-index": zIndex, "opacity": nOpacity, "margin-left": mLeft, "transform": "translateX(-50%) scale(" + nScale + ")" });
-    });
-    $(paramJson.object).children().removeClass("active").eq(mid).addClass("active");
-  }
-
   // #designer 注册鼠标进入、离开事件
   $("#designer .bd-list").off("mouseenter").on("mouseenter", function () {
     if (designerTimer) {
@@ -459,6 +398,67 @@ $(function () {
     }
   });
 });
+
+// 生成[min, max)区间内的随机数
+function getRandomNum(min, max) {
+  var min = min || 1;
+  var max = max || 10;
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function digtalAutoIncrease(target, paramJson) {
+  var ele = $(target);
+  var param = paramJson || {};
+  var finalNum = param.targetNum || ele.data("value");
+  var time = param.totalmSec || ele.data("time");
+  var step = param.permSec || 50;
+
+  var oneStep = finalNum / (time / step);
+  var count = 0;
+  var initial = 0;
+
+  ele.html(0);
+
+  var ascTimer = setInterval(function () {
+    count += oneStep;
+    if (count >= finalNum) {
+      clearInterval(ascTimer);
+      count = finalNum;
+    }
+    var tmp = Math.floor(count);
+    if (tmp === initial) {
+      return;
+    }
+    initial = tmp;
+    ele.html(initial);
+  }, step);
+}
+
+function reverseSlide() {
+  var ele = $("#designer .bd-list").children().last();
+  $("#designer .bd-list").prepend(ele);
+  setItemStyle({ object: $("#designer .bd-list") });
+}
+function autoSlide() {
+  var ele = $("#designer .bd-list").children().first();
+  $("#designer .bd-list").append(ele);
+  setItemStyle({ object: $("#designer .bd-list") });
+}
+
+function setItemStyle(paramJson) {
+  var count = $(paramJson.object).children().length;
+  var mid = Math.floor(count / 2);
+  $(paramJson.object).children().each(function (i) {
+    var zIndex = count - Math.abs(i - mid);
+    var nScale = Math.pow(0.9, Math.abs(i - mid));
+    var nOpacity = Math.pow(0.9, Math.abs(i - mid));
+    var mLeft = (i - mid) * 150 + "px";
+    // var bgColor = "rgb("+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+", "+Math.ceil(Math.random()*255)+")";
+    // $(this).css({"z-index": zIndex, "opacity": nOpacity, "background-color": bgColor, "margin-left": mLeft, "transform": "translateX(-50%) scale("+nScale+")"});
+    $(this).css({ "z-index": zIndex, "opacity": nOpacity, "margin-left": mLeft, "transform": "translateX(-50%) scale(" + nScale + ")" });
+  });
+  $(paramJson.object).children().removeClass("active").eq(mid).addClass("active");
+}
 
 function autoPlay(param) {
   var ele = $(param.target).find(".active");

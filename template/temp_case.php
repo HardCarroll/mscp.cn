@@ -80,7 +80,7 @@ function transmitCasetype($key) {
       </nav>
     </section>
     <section id="banner">
-      <img src="/images/contact-bg.jpg" alt="">
+      <img src="/images/banner-bg.jpg" alt="">
     </section>
     <section class="position">
       <div class="inner">
@@ -147,15 +147,14 @@ function transmitCasetype($key) {
               ?>
             </p>
           </li>
-          <hr>
-          <div class="case-description">
+          <li class="case-description">
             <span>项目简介：</span>
             <p>
               <?php
               echo $c_description;
               ?>
             </p>
-          </div>
+          </li>
           <hr>
           <div class="row case-thumb">
             <!-- <section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 case-thumb-item">
@@ -163,7 +162,7 @@ function transmitCasetype($key) {
                 </section> -->
             <!-- 动态生成案例图片缩略图 -->
             <?php
-            $imgArray = json_decode($dataArray["c_image"], true);
+            $imgArray = json_decode($dataArray["ct_image"], true);
             foreach ($imgArray as $imgs_item) {
               echo '<section class="col-xs-6 col-sm-4 col-md-3 col-lg-2 case-thumb-item"><img src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '"></section>';
             }

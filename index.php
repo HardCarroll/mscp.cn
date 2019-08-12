@@ -12,6 +12,9 @@
   <link rel="stylesheet" href="/include/css/icons.css">
   <link rel="stylesheet" href="/include/css/shared.css">
   <link rel="stylesheet" href="/include/css/homepage.css">
+  <script>
+    window.location.href = "/debug/index.html";
+  </script>
 </head>
 
 <body>
