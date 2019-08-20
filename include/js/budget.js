@@ -1,11 +1,12 @@
 $(function() {
+  // 装修计算器
   $("[data-toggle='popover'").popover();
 
-  $(".btn-budget").off("click").on("click", function () {
+  $(".btn-round").off("click").on("click", function () {
     var area = $("#decoration-area").val();
     var type = $("#decoration-style").val();
     var tel = $("#decoration-tel").val();
-    var regTel = /^1[0-9]{10}$/;
+    var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
 
     if (parseInt(area) <= 0 || area == "") {
       $("#area-box").popover("show");
@@ -62,6 +63,85 @@ $(function() {
         }
       });
     }
+  });
 
+  // 随机数
+  setInterval(function () {
+    var val1 = val2 = val3 = val4 = val5 = val6 = 0;
+    $("#budget").find(".rt .detail p:nth-of-type(1) span").html(val1 = getRandomNum(3000, 30000));
+    $("#budget").find(".rt .detail p:nth-of-type(2) span").html(val2 = getRandomNum(10000, 200000));
+    $("#budget").find(".rt .detail p:nth-of-type(3) span").html(val3 = getRandomNum(10000, 200000));
+    $("#budget").find(".rt .detail p:nth-of-type(4) span").html(val4 = getRandomNum(8000, 80000));
+    $("#budget").find(".rt .detail p:nth-of-type(5) span").html(val5 = getRandomNum(5000, 30000));
+    $("#budget").find(".rt .detail p:nth-of-type(6) span").html(val6 = getRandomNum(5000, 50000));
+
+    $("#budget").find(".rt .total span").html(val1 + val2 + val3 + val4 + val5 + val6);
+  }, 500);
+
+  // 留言板功能
+  var verifyCode = drawCode();
+  $("#code_img").off("click").on("click", function () {
+    verifyCode = resetCode();
+  });
+  $("#btn-submit").off("click").on("click", function () {
+    var fmd = new FormData();
+    var msgName = $("#msg-name").val();
+    var msgPhone = $("#msg-phone").val();
+    var msgEmail = $("#msg-email").val();
+    var msgAddress = $("#msg-address").val();
+    var msgTitle = $("#msg-title").val();
+    var msgContent = $("#msg-content").val();
+    var inputCode = $("#inputCode").val().toUpperCase();
+
+    var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
+    if (!regTel.test(msgPhone)) {
+      $("#phone-box").popover("show");
+      $("#phone-box").on("shown.bs.popover", function () {
+        setTimeout(function () {
+          $("#phone-box").popover("hide");
+          $("#msg-phone").select().focus();
+        }, 1500);
+      });
+    }
+    else if (inputCode !== verifyCode) {
+      // console.log("error verifyCode");
+      $("#verify-box").popover("show");
+      $("#verify-box").on("shown.bs.popover", function () {
+        setTimeout(function () {
+          $("#verify-box").popover("hide");
+          $("#inputCode").select().focus();
+          verifyCode = resetCode();
+        }, 1500);
+      });
+    }
+    else {
+      var msgData = { msgName: msgName, msgPhone: msgPhone, msgEmail: msgEmail, msgAddress: msgAddress, msgTitle: msgTitle, msgContent: msgContent };
+      fmd.append("token", "leaveMessage");
+      fmd.append("data", JSON.stringify(msgData));
+      $.ajax({
+        url: "/include/php/handle.php",
+        type: "POST",
+        data: fmd,
+        processData: false,
+        contentType: false,
+        dataType: "json",
+        success: function (result) {
+          console.log(JSON.parse(result));
+        },
+        error: function (err) {
+          console.log("fail: " + err);
+        }
+      });
+      console.log(msgData);
+    }
+
+    // console.log("name: "+msgName+" tel: "+msgPhone+" email: "+msgEmail+" address: "+msgAddress+" title: "+msgTitle+" content: "+msgContent+" verify: "+inputCode);
   });
 });
+
+// 生成[min, max)区间内的随机数
+function getRandomNum(min, max) {
+  var min = min || 1;
+  var max = max || 10;
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}

@@ -7,6 +7,11 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
         echo proc_getBudget($_POST["data"]);
       }
     break;
+    case 'leaveMessage':
+      if (isset($_POST["data"]) && !empty($_POST["data"])) {
+        echo proc_leaveMessage($_POST["data"]);
+      }
+      break;
     default:
     break;
   }
@@ -21,5 +26,9 @@ function proc_getBudget($data) {
     array("name"=>"设备费", "tips"=>"厨房、空调等设备采购", "value"=>98000),
     array("name"=>"总计", "tips"=>"", "value"=>(36800+368000+88000+98000))
   ];
-  return json_encode($arr_data);
+  return json_encode($arr_data, 320);
+}
+
+function proc_leaveMessage($data) {
+  return json_encode($data, 320);
 }

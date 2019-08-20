@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="Keywords" content="关键词">
   <meta name="Description" content="内容描述">
-  <title>弥尚餐饮装饰设计</title>
+  <title>一键报价-弥尚餐饮装饰设计</title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/include/css/icons.css">
   <link rel="stylesheet" href="/include/css/shared.css">
@@ -32,13 +32,15 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-navbar-mscp">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">首页</a></li>
-              <li><a href="javascript:;">服务优势</a></li>
-              <li class="current"><a href="javascript:;">一键报价</a></li>
-              <li><a href="/case">精品案例</a></li>
-              <li><a href="/about">企业介绍</a></li>
-              <li><a href="/news">新闻资讯</a></li>
-              <li><a href="/contact">联系我们</a></li>
+              <li>
+                <a href="/">首页<b>Home</b></a>
+              </li>
+              <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
+              <li class="current"><a href="javascript:;">一键报价<b>Offer</b></a></li>
+              <li><a href="/case/">精品案例<b>Case</b></a></li>
+              <li><a href="/about/">企业介绍<b>About</b></a></li>
+              <li><a href="/news/">新闻资讯<b>News</b></a></li>
+              <li><a href="/contact/">联系我们<b>Contact</b></a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -46,14 +48,25 @@
     </section>
     <section class="body">
       <div id="banner"></div>
+      <section class="position">
+        <div class="inner">
+          <span class="glyphicon glyphicon-map-marker"></span>
+          <span>当前位置：</span>
+          <ol class="breadcrumb">
+            <li><a href="/">首页</a></li>
+            <li class="active">一价报价</li>
+          </ol>
+        </div>
+      </section>
+      <!-- #budget begin -->
       <div id="budget">
-        <div class="budget-inner">
-          <section class="budget-hd">
-            <h2>我的餐厅装修需要花多少钱？</h2>
-            <h5>5秒帮您算出明细，不花冤枉钱！</h5>
-          </section>
-          <section class="container-fluid row budget-bd">
-            <div class="col-xs-12 col-sm-4 lt">
+        <div class="mask">
+          <div class="hd">
+            <h2><strong>餐厅装修与投资</strong>&nbsp;要花多少钱？</h2>
+            <h5><span class="left">弥尚餐饮整装计算器</span><span class="right">5秒帮您算出明细，不花冤枉钱！</span></h5>
+          </div>
+          <div class="bd inner">
+            <div class="lt">
               <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积" data-placement="bottom" tabindex="0" id="area-box">
                 <span class="input-group-addon">餐厅面积</span>
                 <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
@@ -69,9 +82,14 @@
                 </select>
                 <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
               </div>
+              <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写您的称呼" data-placement="bottom" tabindex="0" id="name-box">
+                <span class="input-group-addon">您的姓名</span>
+                <input type="text" class="form-control" id="decoration-name" placeholder="请问您如何称呼">
+                <span class="input-group-addon glyphicon glyphicon-user"></span>
+              </div>
               <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码" data-placement="bottom" tabindex="0" id="tel-box">
                 <span class="input-group-addon">联系电话</span>
-                <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11" data-toggle="popover">
+                <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11">
                 <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
               </div>
               <div class="tips">
@@ -79,81 +97,100 @@
                 <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
               </div>
             </div>
-            <div class="col-xs-12 col-sm-4 md">
-              <div class="btn btn-budget">点我报价</div>
+            <div class="md">
+              <div class="btn btn-round">立即报价</div>
             </div>
-            <div class="col-xs-12 col-sm-4 rt">
-              <div class="row-1">
-                <span class="item" data-txt="设计费用"><b>?</b></span>
-                <span class="item" data-txt="设备费用"><b>?</b></span>
+            <div class="rt">
+              <div class="total">您的餐厅投资预算约为<span>0</span>元</div>
+              <div class="detail">
+                <p>设&nbsp;&nbsp;计&nbsp;&nbsp;费：<span>0</span>元</p>
+                <p>材&nbsp;&nbsp;料&nbsp;&nbsp;费：<span>0</span>元</p>
+                <p>人&nbsp;&nbsp;工&nbsp;&nbsp;费：<span>0</span>元</p>
+                <p>餐饮配套：<span>0</span>元</p>
+                <p>软装配饰：<span>0</span>元</p>
+                <p>电器设备：<span>0</span>元</p>
               </div>
-              <div class="row-2">
-                <span class="item" data-txt="材料费用"><b>?</b></span>
-                <span class="item" data-txt="人工费用"><b>?</b></span>
-              </div>
+              <div class="tips">以上装修数据由弥尚餐饮历史服务餐厅装修造价及您填写信息实时分析计算得出！</div>
             </div>
-          </section>
-          <section class="budget-ft"></section>
+          </div>
+          <div class="ft"></div>
         </div>
-      </div>
-      <div id="partner">
-        <section class="partner-hd">
-          <h2>弥尚餐饮装饰合作品牌</h2>
-        </section>
-        <section class="partner-bd container-fluid row">
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_01.png" alt="">
+      </div> <!-- #budget end;-->
+      <div class="message inner">
+          <div class="hd">
+            <span class="line"></span>
+            <span class="txt">在线留言</span>
+            <span class="line"></span>
           </div>
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_02.png" alt="">
+          <div class="bd container-fluid row">
+            <div class="bd-left col-sm-5">
+              <div class="input-group">
+                <span class="input-group-addon">您的称呼</span>
+                <input type="text" id="msg-name" class="form-control" placeholder="请问如何称呼您呢？">
+              </div>
+              <div id="phone-box"class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
+                <span class="input-group-addon">联系电话</span>
+                <input type="text" id="msg-phone" class="form-control" placeholder="请填写您的手机号码，稍后会有工作人员回访！">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">邮箱地址</span>
+                <input type="text" id="msg-email" class="form-control" placeholder="请填写您的邮箱地址，相关资料将通过邮箱发送给您！">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">联系地址</span>
+                <input type="text" id="msg-address" class="form-control" placeholder="如需要现场考察、量房，请填写您的联系地址！">
+              </div>
+            </div>
+            <div class="bd-right col-sm-7">
+              <div class="input-group">
+                <span class="input-group-addon">留言标题</span>
+                <input type="text" id="msg-title" class="form-control" placeholder="您要留言的标题是什么？">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">留言内容</span>
+                <textarea name="msg-content" id="msg-content" rows="6" class="form-control" placeholder="请输入留言内容..."></textarea>
+              </div>
+            </div>
           </div>
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_03.png" alt="">
+          <div id="verify-box" class="ft clearfix" data-toggle="popover" data-trigger="manual" data-content="验证码错误" data-placement="bottom" tabindex="0">
+            <span class="tag">验证码</span>
+            <input type="text" id="inputCode" maxlength="4">
+            <div class="verificationCode">
+              <canvas width="90" height="30" id="verifyCanvas"></canvas>
+              <img id="code_img">
+            </div>
           </div>
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_04.png" alt="">
-          </div>
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_05.png" alt="">
-          </div>
-          <div class="col-xs-4 col-sm-2 item">
-            <img src="/images/p_06.png" alt="">
-          </div>
-        </section>
-        <section class="partner-ft">
-          <a href="tel:13873976777" class="btn btn-custom">沟通合作</a>
-        </section>
-      </div>
+          <div class="btn btn-danger" id="btn-submit">提交</div>
+        </div>
+    </section>
+    <section class="footer">
       <div id="contact">
         <section class="contact-hd">
           <img src="/images/bottom-text.png" alt="">
+          <ul>
+            <li>
+              <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+            </li>
+            <li>
+              <span class="glyphicon glyphicon-qrcode"></span>
+              <div class="qrcode">
+                <img src="/images/qrcode.jpg" alt="">
+              </div>
+            </li>
+          </ul>
         </section>
-        <section class="contact-bd container-fluid row">
-          <div class="col-xs-12 col-sm-4">
-            <div class="site-map">
-              <h4>关于我们</h4>
-              <p><a href="javascript:;">公司介绍</a></p>
-              <p><a href="javascript:;">企业文化</a></p>
-              <p><a href="javascript:;">荣誉合集</a></p>
-              <p><a href="javascript:;">合作伙伴</a></p>
-              <p><a href="javascript:;">弥尚团队</a></p>
-            </div>
+        <section class="contact-bd">
+          <div class="contact-us">
+            <h4>联系我们</h4>
+            <p>电话：+86 13873976777</p>
+            <p>座机：0731-88853335</p>
+            <p>传真：0731-88853335</p>
+            <p>邮箱：382320863@qq.com</p>
+            <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
           </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="contact-us">
-              <h4>联系我们</h4>
-              <p>电话：+86 13873976777</p>
-              <p>座机：0731-88853335</p>
-              <p>传真：0731-88853335</p>
-              <p>邮箱：382320863@qq.com</p>
-              <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="qrcode">
-              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
-              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
-            </div>
+          <div class="qrcode">
+            <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
+            <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
           </div>
         </section>
         <section class="contact-ft">

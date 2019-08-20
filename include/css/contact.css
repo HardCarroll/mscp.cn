@@ -1,11 +1,14 @@
 #banner {
-  height: 450px;
-  background-image: url(/images/banner-bg.jpg);
+  background-image: url(/images/contact-banner.jpg);
+}
+.body {
+  padding: 50px 0;
+  background-image: url(/images/service-bg.jpg);
 }
 .card {
   background-color: rgb(51, 51, 51);
   padding: 0;
-  margin: 50px 0;
+  margin: 0 0 50px;
   transition: all 0.6s;
 }
 .card:hover {
@@ -46,7 +49,9 @@
 #baidu-map:hover {
   box-shadow: 0 0 16px 2px #ffdc90;
 }
-
+.message {
+  position: relative;
+}
 .message .hd {
   display: flex;
   justify-content: center;
@@ -60,4 +65,71 @@
 .message .hd .txt {
   padding: 15px 30px;
   font-size: 26px;
+}
+.message .bd {
+  margin: 0;
+  padding: 0;
+}
+.message .bd .bd-left, .message .bd .bd-right {
+  margin: 0;
+  padding: 0;
+}
+.message .bd .bd-right {
+  padding-left: 30px;
+}
+.message .bd .input-group {
+  margin-bottom: 15px;
+}
+.message .bd .input-group .input-group-addon, .message .bd .input-group .form-control {
+  background-color: transparent;
+  color: #ffdc90;
+  border-radius: 0;
+}
+.message .ft {
+  position: relative;
+  display: inline-block;
+}
+.message .ft .tag {
+  float: left;
+  color: #ffdc90;
+  border: 1px solid #ccc;
+  border-right: none;
+  padding: 6px 12px;
+  width: 81px;
+  height: 42px;
+  line-height: 28px;
+  text-align: center;
+}
+.message .ft #inputCode {
+  float: left;
+  width: 150px;
+  height: 42px;
+  padding: 6px 12px;
+  background-color: transparent;
+  color: #ffdc90;
+  border: 1px solid #ccc;
+}
+.message .ft .verificationCode {
+  float: left;
+  height: 42px;
+  width: 101px;
+  border: 1px solid #ccc;
+  border-left: none;
+  padding: 5px;
+}
+.message .ft .verificationCode #verifyCanvas {
+  display: none;
+}
+.message .ft .verificationCode #code_img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#btn-submit {
+  border-radius: 0;
+  width: 80px;
+  height: 42px;
+  margin-left: 80px;
+  line-height: 28px;
+  vertical-align: top;
 }

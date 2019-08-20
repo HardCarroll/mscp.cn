@@ -17,7 +17,6 @@ $(function() {
     $body.animate({scrollTop: 0}, 300);
   });
 
-
   // 整屏滚动
   //   var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");
   //   var count = true;

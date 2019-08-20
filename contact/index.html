@@ -34,7 +34,7 @@
               <li>
                 <a href="/">首页<b>Home</b></a>
               </li>
-              <li><a href="javascript:;">服务优势<b>Advantage</b></a></li>
+              <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
               <li><a href="/budget">一键报价<b>Offer</b></a></li>
               <li><a href="/case">精品案例<b>Case</b></a></li>
               <li><a href="/about">企业介绍<b>About</b></a></li>
@@ -86,25 +86,45 @@
             <span class="txt">在线留言</span>
             <span class="line"></span>
           </div>
-          <div class="bd">
-            <div class="input-group">
-              <span class="input-group-addon">您的称呼</span>
-              <input type="text" class="form-control" placeholder="如何称呼您呢？">
+          <div class="bd container-fluid row">
+            <div class="bd-left col-sm-5">
+              <div class="input-group">
+                <span class="input-group-addon">您的称呼</span>
+                <input type="text" id="msg-name" class="form-control" placeholder="请问如何称呼您呢？">
+              </div>
+              <div id="tel-box"class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
+                <span class="input-group-addon">联系电话</span>
+                <input type="text" id="msg-phone" class="form-control" placeholder="请填写您的手机号码，稍后会有工作人员回访！">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">邮箱地址</span>
+                <input type="text" id="msg-email" class="form-control" placeholder="请填写您的邮箱地址，相关资料将通过邮箱发送给您！">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">联系地址</span>
+                <input type="text" id="msg-address" class="form-control" placeholder="如需要现场考察、量房，请填写您的联系地址！">
+              </div>
             </div>
-            <div class="input-group">
-              <span class="input-group-addon">您的称呼</span>
-              <input type="text" class="form-control" placeholder="如何称呼您呢？">
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon">您的称呼</span>
-              <input type="text" class="form-control" placeholder="如何称呼您呢？">
-            </div>
-            <div class="input-group">
-              <span class="input-group-addon">您的称呼</span>
-              <input type="text" class="form-control" placeholder="如何称呼您呢？">
+            <div class="bd-right col-sm-7">
+              <div class="input-group">
+                <span class="input-group-addon">留言标题</span>
+                <input type="text" id="msg-title" class="form-control" placeholder="您要留言的标题是什么？">
+              </div>
+              <div class="input-group">
+                <span class="input-group-addon">留言内容</span>
+                <textarea name="msg-content" id="msg-content" rows="6" class="form-control" placeholder="请输入留言内容..."></textarea>
+              </div>
             </div>
           </div>
-          <div class="ft"></div>
+          <div id="verify-box" class="ft clearfix" data-toggle="popover" data-trigger="manual" data-content="验证码错误" data-placement="bottom" tabindex="0">
+            <span class="tag">验证码</span>
+            <input type="text" id="inputCode" maxlength="4">
+            <div class="verificationCode">
+              <canvas width="90" height="30" id="verifyCanvas"></canvas>
+              <img id="code_img">
+            </div>
+          </div>
+          <div class="btn btn-danger" id="btn-submit">提交</div>
         </div>
       </div>
     </section>
@@ -170,34 +190,10 @@
 
   <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
   <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&style=3&fs=4&textcolor=#fff&bgcolor=#000&text=分享"></script>
-
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
   <script src="/include/js/shared.js"></script>
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Q3tkjSIyd86jWKCzKiRfO4wjtjrnmmZR"></script>
-  <script>
-    $(function() {
-      // 百度地图API功能
-      var map = new BMap.Map( "baidu-map" ); // 创建Map实例
-      var point = new BMap.Point(113.013623,28.195707); //创建地图中心点
-      map.centerAndZoom( point, 14 ); // 初始化地图,设置中心点坐标和地图级别
-      var top_right_navigation = new BMap.NavigationControl( {
-        anchor: BMAP_ANCHOR_TOP_RIGHT
-      } );
-      map.addControl( top_right_navigation );
-      var marker = new BMap.Marker( point ); // 创建标注
-      marker . setAnimation( BMAP_ANIMATION_BOUNCE ); //跳动的动画
-      map.addOverlay( marker ); // 将标注添加到地图中
-      var opts = {
-        title: "弥尚餐饮装饰设计有限公司", // 信息窗口标题
-        offset: new BMap.Size(0,-30)
-      };
-      var sContent ="<p style='font-size:14px;color:#007a42;margin:0;'>电话：13873976777</p><p style='font-size:14px;color:#007a42;margin:0;'>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城西门1799</p>";
-      var infoWindow = new BMap.InfoWindow( sContent, opts ); // 创建信息窗口对象 
-      map.openInfoWindow( infoWindow, point ); //开启信息窗口
-
-      map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
-    });
-  </script>
+  <script type="text/javascript" src="/include/js/contact.js"></script>
 </body>
 </html>

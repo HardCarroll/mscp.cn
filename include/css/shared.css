@@ -5,6 +5,7 @@ html, body {
   position: relative;
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
+  cursor: default;
 }
 html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 0 !important;
@@ -55,11 +56,7 @@ input, textarea, button, select {
   white-space: nowrap;
 }
 
-
 .layer {
-  /* width: 100%; */
-  /* height: 100%; */
-  /* overflow: hidden; */
   color: #f6f8f8;
   background-color: #000;
   cursor: default;
@@ -77,10 +74,11 @@ input, textarea, button, select {
 }
 #banner {
   width: 100%;
-  height: 260px;
-  background-position: top left;
+  height: 450px;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  filter: grayscale(0.5);
 }
 .body {
   background-color: transparent;
@@ -272,6 +270,10 @@ input, textarea, button, select {
   padding: 10px 0;
 }
 
+.popover .popover-content {
+  color: #333;
+}
+
 .more {
   display: block;
   width: 100%;
@@ -306,7 +308,7 @@ input, textarea, button, select {
   opacity: 1;
   top: 0;
 }
-.btn-custom-sm {
+/* .btn-custom-sm {
   border: 1px solid #ffdc90;
   border-radius: 4px;
   width: 100px;
@@ -352,6 +354,67 @@ input, textarea, button, select {
   color: #ffdc90;
   background-color: #ea1717;
   box-shadow: 0 0 66px -1px rgba(216, 216, 216, 0.3);
+} */
+
+
+.btn-round {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 106px;
+  background-image: radial-gradient(100% 100% at 80% 80%, rgba(216, 216, 216, 0.3), rgba(202, 23, 23, 0.747));
+  background-color: #ca1717;
+  color: #f6f8f8;
+  font-size: 20px;
+  font-weight: 700;
+  opacity: 0;
+  animation: light 0.8s;
+  animation-iteration-count: infinite;
+}
+.btn-round:hover, .btn-round:focus, .btn-round:active, .btn-round:visited {
+  color: #ffdc90;
+  background-color: #ea1717;
+  box-shadow: 0 0 66px -1px rgba(216, 216, 216, 0.3);
+}
+
+.btn-square {
+  width: 200px;
+  height: 50px;
+  line-height: 48px;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0;
+  color: #d6d8d8;
+  background-color: #ca1717;
+  transition: all 0.3s;
+  overflow: hidden;
+  border: 1px solid #ffdc90;
+  opacity: 0;
+  position: relative;
+  top: 500px;
+}
+.btn-square:hover, .btn-square:focus, .btn-square:active, .btn-square:visited {
+  box-shadow: 0 0 6px 0 #ffdc90;
+  color: #ffdc90;
+}
+
+.btn-track {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px;
+  padding: 0;
+  color: #d6d8d8;
+  background-color: #ca1717;
+  transition: all 0.3s;
+  overflow: hidden;
+  border: none;
+  position: relative;
+}
+.btn-track:hover, .btn-track:focus, .btn-track:active, .btn-track:visited {
+  box-shadow: 0 0 6px 0 #ffdc90;
+  color: #ffdc90;
 }
 
 #asidebar {

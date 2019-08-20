@@ -1,5 +1,5 @@
 #banner {
-  background-image: url(/images/banner-bg.jpg);
+  background-image: url(/images/case-banner.jpg);
 }
 #case-tab {
   display: flex;
@@ -7,24 +7,18 @@
   padding: 15px 0 0;
   position: relative;
 }
-#case-tab::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 1px;
-  bottom: -1px;
-  background-color: #ca1717;
-  transform: scaleX(0);
-  transform-origin: center center;
-  transition: transform 0.6s;
-}
-#case-tab:hover::after {
-  transform: scaleX(1);
-}
 #case-tab li {
   position: relative;
   background: transparent;
   margin: 0 15px;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid transparent;
+  margin-bottom: -1px;
+  z-index: 10;
+}
+#case-tab li.active {
+  border-color: #ddd;
+  border-bottom-color: #000;
 }
 #case-tab li a {
   background: transparent;
@@ -32,30 +26,6 @@
   margin: 0;
   padding: 15px;
   font-size: 20px;
-}
-#case-tab li::before, #case-tab li::after {
-  font-family: "Glyphicons Halflings";
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  text-align: center;
-  line-height: 15px;
-  content: "\e250";
-  top: 50%;
-  transform: translateY(-50%);
-  color: #ca1717;
-  opacity: 0;
-}
-#case-tab li::after {
-  content: "\e251";
-  right: 0;
-}
-#case-tab li.active::before,#case-tab li.active::after {
-  opacity: 1;
-}
-#case-tab li:not(.active):hover::before, #case-tab li:not(.active):hover::after {
-  opacity: 1;
-  color: #ffdc90;
 }
 #case-tab li.active a {
   color: #ca1717;
@@ -66,21 +36,6 @@
 .tab-content {
   padding: 15px 0;
 }
-/* .body {
-  overflow: hidden;
-}
-.body:hover .column {
-  animation: slideFromBottom 0.6s;
-}
-.tab-content .column:nth-child(1) {
-  animation-delay: 0.0s;
-}
-.tab-content .column:nth-child(2) {
-  animation-delay: 0.1s;
-}
-.tab-content .column:nth-child(3) {
-  animation-delay: 0.2s;
-} */
 .tab-content .column .item {
   background-color: #363838;
   transition: all 0.6s;

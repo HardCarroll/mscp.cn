@@ -1,3 +1,6 @@
+#banner {
+  background-image: url(/images/banner-bg.jpg);
+}
 .card-list{
   list-style: none;
   margin: 50px 0;
@@ -25,6 +28,13 @@
   word-wrap:break-word;
   word-break:break-all;
   text-indent: 2em;
+}
+.card-list .case-thumb {
+  margin: 0;
+  padding-top: 10px;
+}
+.card-list .case-thumb .case-thumb-item {
+  padding: 5px;
 }
 .card-list .case-thumb img {
   width: 100%;

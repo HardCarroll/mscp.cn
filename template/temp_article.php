@@ -1,5 +1,5 @@
 <?php
-$dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"]."/include/json/temp_article.json");
+$dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/json/temp_article.json");
 // $dataJson = file_get_contents("php://input");
 $dataArray = json_decode($dataJson, true);
 $st_title = $dataArray["st_title"];
@@ -12,9 +12,10 @@ $ct_issue = $dataArray["ct_issue"];
 $ct_content = $dataArray["ct_content"];
 // $more_prev = $dataArray["more_prev"];
 // $more_next = $dataArray["more_next"];
-function transmitType($key) {
+function transmitType($key)
+{
   $type = '';
-  switch($key) {
+  switch ($key) {
     case 0:
       $type = '行业资讯';
       break;
@@ -27,6 +28,7 @@ function transmitType($key) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +41,7 @@ function transmitType($key) {
   <link rel="stylesheet" href="/include/css/shared.css">
   <link rel="stylesheet" href="/include/css/temp_article.css">
 </head>
+
 <body>
   <section class="layer">
     <section class="header">
@@ -57,20 +60,22 @@ function transmitType($key) {
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-navbar-mscp">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="/">首页</a></li>
-              <li><a href="/advantage">服务优势</a></li>
-              <li><a href="/budget">一键报价</a></li>
-              <li><a href="/case">精品案例</a></li>
-              <li><a href="/about">企业介绍</a></li>
-              <li class="current"><a href="javascript:;">新闻资讯</a></li>
-              <li><a href="/contact">联系我们</a></li>
+              <li>
+                <a href="/">首页<b>Home</b></a>
+              </li>
+              <li><a href="javascript:;">服务优势<b>Advantage</b></a></li>
+              <li><a href="/budget/">一键报价<b>Offer</b></a></li>
+              <li><a href="/case/">精品案例<b>Case</b></a></li>
+              <li><a href="/about/">企业介绍<b>About</b></a></li>
+              <li class="current"><a href="/news/">新闻资讯<b>News</b></a></li>
+              <li><a href="/contact/">联系我们<b>Contact</b></a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
     </section>
     <section id="banner">
-      <img src="/images/contact-bg.jpg" alt="">
+      <!-- <img src="/images/contact-bg.jpg" alt=""> -->
     </section>
     <section class="position">
       <div class="inner">
@@ -108,33 +113,30 @@ function transmitType($key) {
       <div id="contact">
         <section class="contact-hd">
           <img src="/images/bottom-text.png" alt="">
+          <ul>
+            <li>
+              <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+            </li>
+            <li>
+              <span class="glyphicon glyphicon-qrcode"></span>
+              <div class="qrcode">
+                <img src="/images/qrcode.jpg" alt="">
+              </div>
+            </li>
+          </ul>
         </section>
-        <section class="contact-bd container-fluid row">
-          <div class="col-xs-12 col-sm-4">
-            <div class="site-map">
-              <h4>关于我们</h4>
-              <p><a href="javascript:;">公司介绍</a></p>
-              <p><a href="javascript:;">企业文化</a></p>
-              <p><a href="javascript:;">荣誉合集</a></p>
-              <p><a href="javascript:;">合作伙伴</a></p>
-              <p><a href="javascript:;">弥尚团队</a></p>
-            </div>
+        <section class="contact-bd">
+          <div class="contact-us">
+            <h4>联系我们</h4>
+            <p>电话：+86 13873976777</p>
+            <p>座机：0731-88853335</p>
+            <p>传真：0731-88853335</p>
+            <p>邮箱：382320863@qq.com</p>
+            <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
           </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="contact-us">
-              <h4>联系我们</h4>
-              <p>电话：+86 13873976777</p>
-              <p>座机：0731-88853335</p>
-              <p>传真：0731-88853335</p>
-              <p>邮箱：382320863@qq.com</p>
-              <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="qrcode">
-              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
-              <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
-            </div>
+          <div class="qrcode">
+            <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
+            <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
           </div>
         </section>
         <section class="contact-ft">
