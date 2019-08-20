@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="renderer" content="webkit">
+  <meta name="Keywords" content="关键词">
+  <meta name="Description" content="内容描述">
   <title>弥尚餐饮装饰设计-官方网站</title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/include/fullpage/css/fullpage.css">
@@ -32,7 +34,7 @@
           <li class="current">
             <a href="javascript:;">首页<b>Home</b></a>
           </li>
-          <li><a href="javascript:;">服务优势<b>Advantage</b></a></li>
+          <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
           <li><a href="/budget">一键报价<b>Offer</b></a></li>
           <li><a href="/case">精品案例<b>Case</b></a></li>
           <li><a href="/about">企业介绍<b>About</b></a></li>

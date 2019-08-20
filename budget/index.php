@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="renderer" content="webkit">
   <meta name="Keywords" content="关键词">
   <meta name="Description" content="内容描述">
   <title>一键报价-弥尚餐饮装饰设计</title>
