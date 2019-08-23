@@ -109,10 +109,26 @@ input, textarea, button, select {
 #navbar-mscp .container-fluid .navbar-header a {
   width: 300px;
   height: 100%;
-  padding: 0;
+  padding: 15px 0;
   margin: 0 auto;
   line-height: 100px;
   text-align: center;
+}
+#navbar-mscp .container-fluid .navbar-header a img {
+  display: inline-block;
+  height: 100%;
+}
+#navbar-mscp .container-fluid .navbar-header a span {
+  display: inline-block;
+  border-left: 2px solid #ffdc90;
+  margin-left: 15px;
+  padding-left: 15px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffdc90;
+  height: 100%;
+  line-height: 70px;
+  vertical-align: top;
 }
 #navbar-mscp .navbar-collapse {
   margin-top: 20px;

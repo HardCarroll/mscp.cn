@@ -40,22 +40,31 @@
 .advantage .ft {
   margin: 50px 0 0;
   padding: 0 0 50px;
+  border-top: 1px solid #acacac;
 }
 .advantage .ft .adv-detail {
   padding: 25px 0 40px;
 }
-.advantage .ft .adv-detail .content {
+.advantage .ft .adv-detail .list-item {
+  display: none;
+}
+.advantage .ft .adv-detail .list-item.in {
+  display: block;
+}
+.advantage .ft .adv-detail .list-item .content {
+  height: 100px;
   padding: 15px;
   text-indent: 2em;
   font-size: 16px;
   color: #acacac;
 }
-.advantage .ft .adv-detail .title {
+.advantage .ft .adv-detail .list-item .title {
   font-size: 26px;
   font-weight: 700;
   font-style: italic;
+  padding: 15px 0 0;
 }
-.advantage .ft .adv-detail .title span {
+.advantage .ft .adv-detail .list-item .title span {
   font-size: 20px;
   margin: 0 15px;
 }
@@ -78,7 +87,7 @@
   height: 100px;
   transition: transform 0.6s;
 }
-.advantage .ft .adv-list li:hover {
+.advantage .ft .adv-list li.active {
   transform: translateY(-25px);
   background-color: #ca1717;
   border: 1px solid #acacac;
