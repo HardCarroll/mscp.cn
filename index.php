@@ -197,7 +197,7 @@
       <div class="bd container-fluid inner">
         <ul class="row bd-list">
           <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="/template/temp_case.php">
+            <a href="/template/temp_case copy.php">
               <img src="/images/new-1.jpg" alt="">
               <div class="cover">
                 <h3 class="text-ellipsis title">案例模板</h3>

@@ -1,6 +1,6 @@
 <?php
-// $dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/json/temp_case.json");
-$dataJson = file_get_contents("php://input");
+$dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/json/temp_case.json");
+// $dataJson = file_get_contents("php://input");
 $dataArray = json_decode($dataJson, true);
 $p_title = $dataArray["st_title"];
 $p_keywords = $dataArray["st_keywords"];
@@ -88,7 +88,6 @@ function transmitCasetype($key)
     </section>
     <section id="banner">
       <!-- <img src="/images/banner-bg.jpg" alt=""> -->
-      <div class="banner-title"><?php echo $c_title; ?></div>
     </section>
     <section class="position">
       <div class="inner">
@@ -107,7 +106,6 @@ function transmitCasetype($key)
       <div class="inner">
         <ul class="contain-fluid card-list">
           <span class="glyphicon glyphicon-bookmark"></span>
-          <span class="type"><?php echo transmitCasetype($c_class);?></span>
           <li>
             <span>项目名称：</span>
             <p>
@@ -237,10 +235,36 @@ function transmitCasetype($key)
     </ul>
   </section>
 
+  <!-- 案例图片展示模态框 -->
+  <!-- <div id="displayModal" class="modal" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">X</span></button>
+        <h4 class="modal-title" id="displayModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-content">
+        <div class="modal-body">
+          <?php
+          foreach ($imgArray as $imgs_item) {
+            echo '<img class="fade" src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '">';
+          }
+          ?>
+        </div>
+        <div class="modal-footer">
+          <section class="btn-group">
+            <span class="btn btn-default glyphicon glyphicon-triangle-left prev"></span>
+            <span class="btn btn-default pos">1 / 5</span>
+            <span class="btn btn-default glyphicon glyphicon-triangle-right next"></span>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
   <script src="/include/js/shared.js"></script>
-  <!-- <script src="/include/js/temp_case.js"></script> -->
+  <script src="/include/js/temp_case.js"></script>
 </body>
 
 </html>

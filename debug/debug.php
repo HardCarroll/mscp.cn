@@ -16,6 +16,8 @@
   </div>
   <input type="button" value="Verify" id="btn_verify">
 
+  <input type="button" value="CreateHtmlFile" id="btn_createhtml">
+
 </body>
 
 </html>
@@ -38,6 +40,24 @@
         console.log("verify fail");
         verifyCode = resetCode();
       }
+    });
+
+    $("#btn_createhtml").click(function() {
+      console.log("hello world");
+      $.ajax({
+        url: "/include/php/handle.php",
+        type: "POST",
+        data: "token=createHtmlFile",
+        processData: false,
+        // contentType: false, // 当数据格式为FormData时
+        dataType: "json", // 返回数据类型
+        success: function(result) {
+          console.log("success: " + result);
+        },
+        error: function(err) {
+          console.log("error: " + err);
+        }
+      });
     });
 
   });
