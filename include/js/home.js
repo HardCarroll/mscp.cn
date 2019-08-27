@@ -66,7 +66,7 @@ $(function () {
 
       // 预算页 #budget
       if (destination.index === 1) {
-        $(destination.item).find(".bd").delay(800).animate({ height: "450px", opacity: 1 }, 600, function () {
+        $(destination.item).find(".bd").delay(800).animate({ height: "400px", opacity: 1 }, 600, function () {
           $(this).find(".lt").animate({ bottom: 0, opacity: 1 }, 600);
           $(this).find(".btn-round").delay(300).animate({ opacity: 1 }, 600);
           $(this).find(".rt").animate({ bottom: 0, opacity: 1 }, 600);
@@ -108,7 +108,7 @@ $(function () {
         $("#advantage .hd h5 span:nth-of-type(4)").delay(1800).animate({ opacity: 1 }, 600);
         $("#advantage .hd h5 b:nth-of-type(4)").delay(2000).animate({ opacity: 1 }, 600);
         $("#advantage .hd h5 span:nth-of-type(5)").delay(2200).animate({ opacity: 1 }, 600);
-        $("#advantage .bd").delay(2200).animate({ height: "440px", opacity: 1 }, 600, function () {
+        $("#advantage .bd").delay(2200).animate({ height: "410px", opacity: 1 }, 600, function () {
           $("#advantage .list-item").animate({ opacity: 1 }, 600);
           $("#advantage .list-item .wrap").css("box-shadow", "0 0 3px 0 #FFDC90");
         });
@@ -155,7 +155,7 @@ $(function () {
         $(destination.item).find(".ft .btn-square").delay(600).animate({ top: 0, opacity: 1 }, 600);
       }
       if (destination.index === 10) {
-        $(destination.item).find(".bd").delay(800).animate({height: "500px", opacity: 1}, 600);
+        $(destination.item).find(".bd").delay(800).animate({height: "414px", opacity: 1}, 600);
         $(destination.item).find(".btn-square").delay(300).animate({ top: 0, opacity: 1}, 600);
       }
       // 多年专注，不玩套路 #goal
@@ -175,18 +175,18 @@ $(function () {
       }
       // #about
       if (destination.index === 13) {
-        $(destination.item).find(".cpy-name span:nth-child(1)").animate({ top: 0, opacity: 1 }, 600, function () {
-          $(this).css("transform", "translateY(-25%)");
-        });
-        $(destination.item).find(".cpy-name span:nth-child(2)").animate({ top: 0, opacity: 1 }, 600, function () {
-          $(this).css("transform", "translateY(25%)");
-        });
-        $(destination.item).find(".cpy-des span").each(function (i) {
-          $(this).delay(i * 200 + 600).animate({ top: 0, opacity: 1 }, 1000);
-        });
-        $(destination.item).find(".pos").delay(600).animate({ left: 0, opacity: 1 }, 1000);
-        $(destination.item).find(".bd .cover").delay(800).animate({ top: "100%" }, 1000);
-        $(destination.item).find(".ft").delay(1600).animate({ opacity: 1 }, 800);
+        // $(destination.item).find(".cpy-name span:nth-child(1)").animate({ top: 0, opacity: 1 }, 600, function () {
+        //   $(this).css("transform", "translateY(-25%)");
+        // });
+        // $(destination.item).find(".cpy-name span:nth-child(2)").animate({ top: 0, opacity: 1 }, 600, function () {
+        //   $(this).css("transform", "translateY(25%)");
+        // });
+        // $(destination.item).find(".cpy-des span").each(function (i) {
+        //   $(this).delay(i * 200 + 600).animate({ top: 0, opacity: 1 }, 1000);
+        // });
+        // $(destination.item).find(".pos").delay(600).animate({ left: 0, opacity: 1 }, 1000);
+        // $(destination.item).find(".bd .cover").delay(800).animate({ top: "100%" }, 1000);
+        // $(destination.item).find(".ft").delay(1600).animate({ opacity: 1 }, 800);
       }
 
       // 离开页
@@ -302,12 +302,12 @@ $(function () {
 
       // #about
       if (origin.index === 13) {
-        $(origin.item).find(".cpy-name span:nth-child(1)").animate({ top: "-500px", opacity: 0 }, 300);
-        $(origin.item).find(".cpy-name span:nth-child(2)").animate({ top: "500px", opacity: 0 }, 300);
-        $(origin.item).find(".cpy-des span").animate({ opacity: 0, top: "500px" }, 300);
-        $(origin.item).find(".pos").animate({ left: "500px", opacity: 0 }, 300);
-        $(origin.item).find(".bd .cover").animate({ top: "0%" }, 300);
-        $(origin.item).find(".ft").animate({ opacity: 0 }, 300);
+        // $(origin.item).find(".cpy-name span:nth-child(1)").animate({ top: "-500px", opacity: 0 }, 300);
+        // $(origin.item).find(".cpy-name span:nth-child(2)").animate({ top: "500px", opacity: 0 }, 300);
+        // $(origin.item).find(".cpy-des span").animate({ opacity: 0, top: "500px" }, 300);
+        // $(origin.item).find(".pos").animate({ left: "500px", opacity: 0 }, 300);
+        // $(origin.item).find(".bd .cover").animate({ top: "0%" }, 300);
+        // $(origin.item).find(".ft").animate({ opacity: 0 }, 300);
       }
 
     }

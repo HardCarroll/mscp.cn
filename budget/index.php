@@ -18,37 +18,28 @@
 <body>
   <section class="layer">
     <section class="header">
-      <nav class="navbar navbar-inverse" id="navbar-mscp">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-mscp" aria-expanded="false">
-              <span class="sr-only">弥尚餐饮装饰设计导航栏</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">
-              <img src="/images/logo.png" alt="">
-              <span>专注餐饮25年</span>
-            </a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-navbar-mscp">
-            <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="/">首页<b>Home</b></a>
-              </li>
-              <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
-              <li class="current"><a href="javascript:;">一键报价<b>Offer</b></a></li>
-              <li><a href="/case/">精品案例<b>Case</b></a></li>
-              <li><a href="/about/">企业介绍<b>About</b></a></li>
-              <li><a href="/news/">新闻资讯<b>News</b></a></li>
-              <li><a href="/contact/">联系我们<b>Contact</b></a></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
+      <div id="navbar-mscp">
+        <div class="nav-left">
+          <a href="/" class="nav-logo">
+            <img src="/images/xc.png" alt="">
+            <span>懂餐饮更懂设计</span>
+          </a>
+        </div>
+        <div class="nav-middle visible-lg-block">
+          <span>湖南弥尚空间设计</span>
+        </div>
+        <div class="nav-right">
+          <ul class="nav-list clearfix">
+            <li><a href="/">首页<b>Home</b></a></li>
+            <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
+            <li class="current"><a href="javascript:;">一键报价<b>Offer</b></a></li>
+            <li><a href="/case">精品案例<b>Case</b></a></li>
+            <li><a href="/about">企业介绍<b>About</b></a></li>
+            <li><a href="/news">新闻资讯<b>News</b></a></li>
+            <li><a href="/contact">联系我们<b>Contact</b></a></li>
+          </ul>
+        </div>
+      </div>
     </section>
     <section class="body">
       <div id="banner"></div>
@@ -121,51 +112,51 @@
         </div>
       </div> <!-- #budget end;-->
       <div class="message inner">
-          <div class="hd">
-            <span class="line"></span>
-            <span class="txt">在线留言</span>
-            <span class="line"></span>
-          </div>
-          <div class="bd container-fluid row">
-            <div class="bd-left col-sm-5">
-              <div class="input-group">
-                <span class="input-group-addon">您的称呼</span>
-                <input type="text" id="msg-name" class="form-control" placeholder="请问如何称呼您呢？">
-              </div>
-              <div id="phone-box"class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
-                <span class="input-group-addon">联系电话</span>
-                <input type="text" id="msg-phone" class="form-control" placeholder="请填写您的手机号码，稍后会有工作人员回访！">
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon">邮箱地址</span>
-                <input type="text" id="msg-email" class="form-control" placeholder="请填写您的邮箱地址，相关资料将通过邮箱发送给您！">
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon">联系地址</span>
-                <input type="text" id="msg-address" class="form-control" placeholder="如需要现场考察、量房，请填写您的联系地址！">
-              </div>
-            </div>
-            <div class="bd-right col-sm-7">
-              <div class="input-group">
-                <span class="input-group-addon">留言标题</span>
-                <input type="text" id="msg-title" class="form-control" placeholder="您要留言的标题是什么？">
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon">留言内容</span>
-                <textarea name="msg-content" id="msg-content" rows="6" class="form-control" placeholder="请输入留言内容..."></textarea>
-              </div>
-            </div>
-          </div>
-          <div id="verify-box" class="ft clearfix" data-toggle="popover" data-trigger="manual" data-content="验证码错误" data-placement="bottom" tabindex="0">
-            <span class="tag">验证码</span>
-            <input type="text" id="inputCode" maxlength="4">
-            <div class="verificationCode">
-              <canvas width="90" height="30" id="verifyCanvas"></canvas>
-              <img id="code_img">
-            </div>
-          </div>
-          <div class="btn btn-danger" id="btn-submit">提交</div>
+        <div class="hd">
+          <span class="line"></span>
+          <span class="txt">在线留言</span>
+          <span class="line"></span>
         </div>
+        <div class="bd container-fluid row">
+          <div class="bd-left col-sm-5">
+            <div class="input-group">
+              <span class="input-group-addon">您的称呼</span>
+              <input type="text" id="msg-name" class="form-control" placeholder="请问如何称呼您呢？">
+            </div>
+            <div id="phone-box" class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
+              <span class="input-group-addon">联系电话</span>
+              <input type="text" id="msg-phone" class="form-control" placeholder="请填写您的手机号码，稍后会有工作人员回访！">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">邮箱地址</span>
+              <input type="text" id="msg-email" class="form-control" placeholder="请填写您的邮箱地址，相关资料将通过邮箱发送给您！">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">联系地址</span>
+              <input type="text" id="msg-address" class="form-control" placeholder="如需要现场考察、量房，请填写您的联系地址！">
+            </div>
+          </div>
+          <div class="bd-right col-sm-7">
+            <div class="input-group">
+              <span class="input-group-addon">留言标题</span>
+              <input type="text" id="msg-title" class="form-control" placeholder="您要留言的标题是什么？">
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon">留言内容</span>
+              <textarea name="msg-content" id="msg-content" rows="6" class="form-control" placeholder="请输入留言内容..."></textarea>
+            </div>
+          </div>
+        </div>
+        <div id="verify-box" class="ft clearfix" data-toggle="popover" data-trigger="manual" data-content="验证码错误" data-placement="bottom" tabindex="0">
+          <span class="tag">验证码</span>
+          <input type="text" id="inputCode" maxlength="4">
+          <div class="verificationCode">
+            <canvas width="90" height="30" id="verifyCanvas"></canvas>
+            <img id="code_img">
+          </div>
+        </div>
+        <div class="btn btn-danger" id="btn-submit">提交</div>
+      </div>
     </section>
     <section class="footer">
       <div id="contact">

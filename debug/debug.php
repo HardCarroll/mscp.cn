@@ -6,9 +6,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Debug Document</title>
+  <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
+  <style>
+    ul {
+      list-style: none;
+    }
+
+    #navbar-mscp {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-radius: 0;
+      width: 100%;
+      height: 100px;
+      border: none;
+      margin-bottom: 0;
+      padding: 0 15px;
+      position: fixed;
+      z-index: 1000;
+    }
+
+    #navbar-mscp .nav-left {
+      height: 100%;
+      padding: 15px 0;
+    }
+
+    #navbar-mscp .nav-left img {
+      display: inline-block;
+      height: 100%;
+    }
+
+    #navbar-mscp .nav-left span {
+      display: inline-block;
+      border-left: 1px solid #ffdc90;
+      margin-left: 10px;
+      padding-left: 10px;
+      font-size: 20px;
+      font-weight: 700;
+      color: #ffdc90;
+      height: 100%;
+      line-height: 70px;
+      vertical-align: top;
+      /* text-align: left; */
+      /* line-height: 1.7em; */
+    }
+
+    #navbar-mscp .nav-middle span {
+      font-size: 40px;
+      font-weight: 700;
+      color: #ffdc90;
+    }
+
+    #navbar-mscp .nav-right {
+      margin-top: 20px;
+      padding: 0;
+    }
+
+    #navbar-mscp .nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #navbar-mscp .nav-list li {
+      float: left;
+    }
+
+    #navbar-mscp .nav-list li>a {
+      color: #f6f8f8;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    #navbar-mscp .nav-list li>a b {
+      display: block;
+      font-size: 14px;
+    }
+
+    #navbar-mscp .nav-list li.current>a {
+      color: #ca1717;
+    }
+
+    #navbar-mscp .nav-list li:hover>a {
+      color: #ffdc90;
+    }
+
+    #navbar-mscp .nav-list li.current:hover>a {
+      color: #ca1717;
+    }
+  </style>
 </head>
 
 <body>
+  <div id="navbar-mscp">
+    <div class="nav-left">
+      <a href="/" class="nav-logo">
+        <img src="/images/xc.png" alt="">
+        <span>懂餐饮更懂设计</span>
+      </a>
+    </div>
+    <div class="nav-middle visible-lg-block">
+      <span>湖南弥尚空间设计</span>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-list">
+        <li class="current">
+          <a href="javascript:;">首页<b>Home</b></a>
+        </li>
+        <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
+        <li><a href="/budget">一键报价<b>Offer</b></a></li>
+        <li><a href="/case">精品案例<b>Case</b></a></li>
+        <li><a href="/about">企业介绍<b>About</b></a></li>
+        <li><a href="/news">新闻资讯<b>News</b></a></li>
+        <li><a href="/contact">联系我们<b>Contact</b></a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div style="height: 100px;"></div>
   <input type="text" id="inputCode" maxlength="4">
   <div id="verificationCode" class="verificationCode">
     <canvas width="90" height="30" id="verifyCanvas"></canvas>
@@ -33,10 +151,9 @@
 
     $("#btn_verify").click(function() {
       var inputCode = $("#inputCode").val().toUpperCase();
-      if(inputCode === verifyCode) {
+      if (inputCode === verifyCode) {
         console.log("verify success");
-      }
-      else {
+      } else {
         console.log("verify fail");
         verifyCode = resetCode();
       }
@@ -69,7 +186,7 @@
       'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ];
     var canvas = document.getElementById("verifyCanvas"); //获取HTML端画布
-    var context = canvas.getContext("2d");  //获取画布2D上下文
+    var context = canvas.getContext("2d"); //获取画布2D上下文
     context.fillStyle = "cornflowerblue"; //画布填充色
     context.fillRect(0, 0, canvas.width, canvas.height); //清空画布
     context.fillStyle = "white"; //设置字体颜色

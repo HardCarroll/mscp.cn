@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,39 +15,30 @@
   <link rel="stylesheet" href="/include/css/shared.css">
   <link rel="stylesheet" href="/include/css/home.css">
 </head>
+
 <body>
-  <nav class="navbar navbar-inverse" id="navbar-mscp">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar-mscp"
-          aria-expanded="false">
-          <span class="sr-only">弥尚餐饮装饰设计导航栏</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="/">
-          <img src="/images/logo.png" alt="">
-          <span>专注餐饮25年</span>
-        </a>
-      </div>
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-navbar-mscp">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="current">
-            <a href="javascript:;">首页<b>Home</b></a>
-          </li>
-          <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
-          <li><a href="/budget">一键报价<b>Offer</b></a></li>
-          <li><a href="/case">精品案例<b>Case</b></a></li>
-          <li><a href="/about">企业介绍<b>About</b></a></li>
-          <li><a href="/news">新闻资讯<b>News</b></a></li>
-          <li><a href="/contact">联系我们<b>Contact</b></a></li>
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
+  <div id="navbar-mscp">
+    <div class="nav-left">
+      <a href="/" class="nav-logo">
+        <img src="/images/xc.png" alt="">
+        <span>懂餐饮更懂设计</span>
+      </a>
+    </div>
+    <div class="nav-middle visible-lg-block">
+      <span>湖南弥尚空间设计</span>
+    </div>
+    <div class="nav-right">
+      <ul class="nav-list clearfix">
+        <li class="current"><a href="javascript:;">首页<b>Home</b></a></li>
+        <li><a href="/advantage/">服务优势<b>Advantage</b></a></li>
+        <li><a href="/budget">一键报价<b>Offer</b></a></li>
+        <li><a href="/case">精品案例<b>Case</b></a></li>
+        <li><a href="/about">企业介绍<b>About</b></a></li>
+        <li><a href="/news">新闻资讯<b>News</b></a></li>
+        <li><a href="/contact">联系我们<b>Contact</b></a></li>
+      </ul>
+    </div>
+  </div>
 
   <div id="fullpage">
     <!-- .adCarousel begin -->
@@ -56,17 +48,17 @@
         <div class="item"><img data-src="/images/banner2.jpg"></div>
         <div class="item"><img data-src="/images/banner3.jpg"></div>
       </section>
-      
+
       <section class="adCarousel-indicators">
       </section>
-      
+
       <section class="adCarousel-control prev">
         <span class="glyphicon glyphicon-chevron-left"></span>
       </section>
       <section class="adCarousel-control next">
         <span class="glyphicon glyphicon-chevron-right"></span>
       </section>
-    </div>  <!-- .adCarousel end;-->
+    </div> <!-- .adCarousel end;-->
     <!-- #budget begin -->
     <div class="section" id="budget">
       <div class="mask">
@@ -76,8 +68,7 @@
         </div>
         <div class="bd inner">
           <div class="lt">
-            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积"
-              data-placement="bottom" tabindex="0" id="area-box">
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写餐厅的面积" data-placement="bottom" tabindex="0" id="area-box">
               <span class="input-group-addon">餐厅面积</span>
               <input id="decoration-area" type="number" class="form-control" min="0" placeholder="您的餐厅有多少平方？">
               <span class="input-group-addon">㎡</span>
@@ -92,14 +83,12 @@
               </select>
               <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
             </div>
-            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写您的称呼"
-              data-placement="bottom" tabindex="0" id="name-box">
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请正确填写您的称呼" data-placement="bottom" tabindex="0" id="name-box">
               <span class="input-group-addon">您的姓名</span>
               <input type="text" class="form-control" id="decoration-name" placeholder="请问您如何称呼">
               <span class="input-group-addon glyphicon glyphicon-user"></span>
             </div>
-            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码"
-              data-placement="bottom" tabindex="0" id="tel-box">
+            <div class="input-group" data-toggle="popover" data-trigger="manual" data-content="请填写有效的手机号码" data-placement="bottom" tabindex="0" id="tel-box">
               <span class="input-group-addon">联系电话</span>
               <input type="text" class="form-control" id="decoration-tel" placeholder="请留下您的手机号码" maxlength="11">
               <span class="input-group-addon glyphicon glyphicon-phone-alt"></span>
@@ -127,262 +116,293 @@
         </div>
         <div class="ft"></div>
       </div>
-    </div>  <!-- #budget end;-->
+    </div> <!-- #budget end;-->
     <!-- #professional begin -->
     <div class="section" id="professional">
-      <div class="hd">
-        <h2>设计专不专业&nbsp;<strong>直接关系到餐厅盈利与否</strong></h2>
-        <h5><span class="left">缔造有价值的餐饮空间</span><span class="right">是我们一直以来的追求</span></h5>
+      <div class="mask">
+        <div class="hd">
+          <h2>设计专不专业&nbsp;<strong>直接关系到餐厅盈利与否</strong></h2>
+          <h5><span class="left">缔造有价值的餐饮空间</span><span class="right">是我们一直以来的追求</span></h5>
+        </div>
+        <div class="bd container-fluid row inner">
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+            <div class="cap">
+              <p class="index">01</p>
+              <p class="title">针对餐厅客户人群定制风格</p>
+              <p class="txt">根据位置分析消费人群的年龄、性格等特性定制风格，<strong>提升餐厅进店率</strong></p>
+            </div>
+          </div>
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+            <div class="cap">
+              <p class="index">02</p>
+              <p class="title">门头可提升进店率50%以上</p>
+              <p class="txt">根据不同环境设定不同造型的大气抢眼门头增加曝光率，<strong>同时增加进店率</strong></p>
+            </div>
+          </div>
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-2.jpg"></div>
+            <div class="cap">
+              <p class="index">03</p>
+              <p class="title">合理动线是快速盈利的秘诀</p>
+              <p class="txt">结合五行布局动线不仅增加空间利用率还能快速导流，<strong>提升服务效率及质量</strong></p>
+            </div>
+          </div>
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-4.jpg"></div>
+            <div class="cap">
+              <p class="index">04</p>
+              <p class="title">灯光设计可促进客户消费</p>
+              <p class="txt">针对不同环境运用不同的手法设计灯光，不仅能营造良好就餐氛围，<strong>还能提升食欲</strong></p>
+            </div>
+          </div>
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+            <div class="cap">
+              <p class="index">05</p>
+              <p class="title">造型有效的增加回头率</p>
+              <p class="txt">分析消费者年龄层次心理采用对应造型，<strong>能有效的提升回头率</strong></p>
+            </div>
+          </div>
+          <div class="pro-item col-sm-2">
+            <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+            <div class="cap">
+              <p class="index">06</p>
+              <p class="title">色彩搭配增加亲和力</p>
+              <p class="txt">根据消费者的需求，创造和加大商业价值，<strong>提高运营的效率</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="ft">
+          <a class="btn btn-square" href="javascript:;">了解更多</a>
+        </div>
       </div>
-      <div class="bd container-fluid row inner">
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-1.jpg"></div>
-          <div class="cap">
-            <p class="index">01</p>
-            <p class="title">针对餐厅客户人群定制风格</p>
-            <p class="txt">根据位置分析消费人群的年龄、性格等特性定制风格，<strong>提升餐厅进店率</strong></p>
-          </div>
-        </div>
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-3.jpg"></div>
-          <div class="cap">
-            <p class="index">02</p>
-            <p class="title">门头可提升进店率50%以上</p>
-            <p class="txt">根据不同环境设定不同造型的大气抢眼门头增加曝光率，<strong>同时增加进店率</strong></p>
-          </div>
-        </div>
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-2.jpg"></div>
-          <div class="cap">
-            <p class="index">03</p>
-            <p class="title">合理动线是快速盈利的秘诀</p>
-            <p class="txt">结合五行布局动线不仅增加空间利用率还能快速导流，<strong>提升服务效率及质量</strong></p>
-          </div>
-        </div>
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-4.jpg"></div>
-          <div class="cap">
-            <p class="index">04</p>
-            <p class="title">灯光设计可促进客户消费</p>
-            <p class="txt">针对不同环境运用不同的手法设计灯光，不仅能营造良好就餐氛围，<strong>还能提升食欲</strong></p>
-          </div>
-        </div>
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-3.jpg"></div>
-          <div class="cap">
-            <p class="index">05</p>
-            <p class="title">造型有效的增加回头率</p>
-            <p class="txt">分析消费者年龄层次心理采用对应造型，<strong>能有效的提升回头率</strong></p>
-          </div>
-        </div>
-        <div class="pro-item col-sm-2">
-          <div class="pic"><img data-src="/images/adv-1.jpg"></div>
-          <div class="cap">
-            <p class="index">06</p>
-            <p class="title">色彩搭配增加亲和力</p>
-            <p class="txt">根据消费者的需求，创造和加大商业价值，<strong>提高运营的效率</strong></p>
-          </div>
-        </div>
-      </div>
-      <div class="ft">
-        <a class="btn btn-square" href="javascript:;">了解更多</a>
-      </div>
-    </div>  <!-- #professional end;-->
+    </div> <!-- #professional end;-->
     <!-- #case begin -->
     <div class="section" id="case">
-      <div class="hd">
-        <h2><strong>最新餐厅设计案例</strong>&nbsp;激发您的装修灵感？</h2>
-        <h5><span class="left">资深设计狮为您量身打造</span><span class="right">让您的餐厅脱颖而出</span></h5>
+      <div class="mask">
+        <div class="hd">
+          <h2><strong>最新餐厅设计案例</strong>&nbsp;激发您的装修灵感？</h2>
+          <h5><span class="left">资深设计狮为您量身打造</span><span class="right">让您的餐厅脱颖而出</span></h5>
+        </div>
+        <div class="bd container-fluid inner">
+          <ul class="row bd-list">
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="/template/temp_case copy.php">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">案例模板</h3>
+                  <h5 class="text-ellipsis content">点击查看案例展示模板页内容</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="javascript:;">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">锅仔滋补羊肉</h3>
+                  <h5 class="text-ellipsis content">锅仔羊肉香味扑鼻且驱寒暖身，香在口，暖在心是深受欢迎的冬季家常菜</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="javascript:;">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">开胃豆腐王</h3>
+                  <h5 class="text-ellipsis content">内酯豆腐是豆腐中的“小鲜肉”,质地细腻嫩滑,热量低,深受各路吃货喜爱</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="javascript:;">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">秘制猪脚</h3>
+                  <h5 class="text-ellipsis content">猪脚十分软糯，有嚼感，丝毫没有肥腻感，软滑糯嫩、烂而不散、唇齿留香</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="javascript:;">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">平锅臭桂鱼</h3>
+                  <h5 class="text-ellipsis content">鱼肉经过腌制，具有神奇般鲜嫩和口感，微辣且锅香飘逸，是下饭好选择</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+            <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="javascript:;">
+                <img src="/upload/2019082601/201908260101.jpg" alt="">
+                <div class="cover">
+                  <h3 class="text-ellipsis title">香辣刨盐鱼</h3>
+                  <h5 class="text-ellipsis content">把生鱼用盐腌制，做成刨盐鱼，制作出符合湖南人的香鲜辣的香辣刨盐鱼</h5>
+                  <span class="glyphicon glyphicon-plus"></span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="ft">
+          <a href="/case/" class="btn btn-square">查看更多案例</a>
+        </div>
       </div>
-      <div class="bd container-fluid inner">
-        <ul class="row bd-list">
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="/template/temp_case copy.php">
-              <img src="/images/new-1.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">案例模板</h3>
-                <h5 class="text-ellipsis content">点击查看案例展示模板页内容</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="javascript:;">
-              <img src="/images/new-2.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">锅仔滋补羊肉</h3>
-                <h5 class="text-ellipsis content">锅仔羊肉香味扑鼻且驱寒暖身，香在口，暖在心是深受欢迎的冬季家常菜</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="javascript:;">
-              <img src="/images/new-3.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">开胃豆腐王</h3>
-                <h5 class="text-ellipsis content">内酯豆腐是豆腐中的“小鲜肉”,质地细腻嫩滑,热量低,深受各路吃货喜爱</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="javascript:;">
-              <img src="/images/new-4.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">秘制猪脚</h3>
-                <h5 class="text-ellipsis content">猪脚十分软糯，有嚼感，丝毫没有肥腻感，软滑糯嫩、烂而不散、唇齿留香</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="javascript:;">
-              <img src="/images/new-5.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">平锅臭桂鱼</h3>
-                <h5 class="text-ellipsis content">鱼肉经过腌制，具有神奇般鲜嫩和口感，微辣且锅香飘逸，是下饭好选择</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-          <li class="col-xs-12 col-sm-6 col-md-4">
-            <a href="javascript:;">
-              <img src="/images/new-6.jpg" alt="">
-              <div class="cover">
-                <h3 class="text-ellipsis title">香辣刨盐鱼</h3>
-                <h5 class="text-ellipsis content">把生鱼用盐腌制，做成刨盐鱼，制作出符合湖南人的香鲜辣的香辣刨盐鱼</h5>
-                <span class="glyphicon glyphicon-plus"></span>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="ft">
-        <a href="/case/" class="btn btn-square">查看更多案例</a>
-      </div>
-    </div>  <!-- #case end;-->
+    </div> <!-- #case end;-->
     <!-- #advantage begin -->
     <div class="section" id="advantage">
-      <div class="hd">
-        <h2><strong>术业有专攻</strong>&nbsp;弥尚为您省下的不只是时间还有Money</h2>
-        <h5>
-          <span class="txt">餐饮配套商家</span>
-          <b class="operator">+</b>
-          <span class="txt">高效运营团队</span>
-          <b class="operator">+</b>
-          <span class="txt">精英施工团队</span>
-          <b class="operator">+</b>
-          <span class="txt">全程跟踪指导</span>
-          <b class="operator">=</b>
-          <span>省时省心更省钱</span>
-        </h5>
+      <div class="mask">
+        <div class="hd">
+          <h2><strong>术业有专攻</strong>&nbsp;弥尚为您省下的不只是时间还有Money</h2>
+          <h5>
+            <span class="txt">餐饮配套商家</span>
+            <b class="operator">+</b>
+            <span class="txt">高效运营团队</span>
+            <b class="operator">+</b>
+            <span class="txt">精英施工团队</span>
+            <b class="operator">+</b>
+            <span class="txt">全程跟踪指导</span>
+            <b class="operator">=</b>
+            <span>省时省心更省钱</span>
+          </h5>
+        </div>
+        <div class="bd inner">
+          <ul class="container-fluid row bd-list">
+            <li class="list-item col-sm-3">
+              <div class="wrap">
+                <div class="main">价格优势</div>
+                <div class="sub">
+                  <p>餐饮一站式采购，</p>
+                  <p>便宜又齐全</p>
+                </div>
+                <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
+              </div>
+            </li>
+            <li class="list-item col-sm-3">
+              <div class="wrap">
+                <div class="main">工期优势</div>
+                <div class="sub">
+                  <p>餐饮一站式采购，</p>
+                  <p>便宜又齐全</p>
+                </div>
+                <div class="des">7x24小时服务，全程24小时监理监工，多年的餐饮店施工设计经验，能有效缩短15%装修工期。</div>
+              </div>
+            </li>
+            <li class="list-item col-sm-3">
+              <div class="wrap">
+                <div class="main">质量优势</div>
+                <div class="sub">
+                  <p>多年品牌沉淀，</p>
+                  <p>工程遍布全国各地</p>
+                </div>
+                <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
+              </div>
+            </li>
+            <li class="list-item col-sm-3">
+              <div class="wrap">
+                <div class="main">服务优势</div>
+                <div class="sub">
+                  <p>先体验再付费，</p>
+                  <p>万元服务免费送</p>
+                </div>
+                <div class="des">上门量房、方案布局、装修报价、餐饮店选址、用餐人群分析全面做到先体验，再谈是否合作。</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft">
+          <a href="javascript:;" class="btn btn-square">立即咨询</a>
+        </div>
       </div>
-      <div class="bd inner">
-        <ul class="container-fluid row bd-list">
-          <li class="list-item col-sm-3">
-            <div class="wrap">
-              <div class="main">价格优势</div>
-              <div class="sub"><p>餐饮一站式采购，</p><p>便宜又齐全</p></div>
-              <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
-            </div>
-          </li>
-          <li class="list-item col-sm-3">
-            <div class="wrap">
-              <div class="main">工期优势</div>
-              <div class="sub"><p>餐饮一站式采购，</p><p>便宜又齐全</p></div>
-              <div class="des">7x24小时服务，全程24小时监理监工，多年的餐饮店施工设计经验，能有效缩短15%装修工期。</div>
-            </div>
-          </li>
-          <li class="list-item col-sm-3">
-            <div class="wrap">
-              <div class="main">质量优势</div>
-              <div class="sub"><p>多年品牌沉淀，</p><p>工程遍布全国各地</p></div>
-              <div class="des">提供从设计施工、厨具家具、软装VI、软装等一系列服务。根据各个产品特性优势进行实施，并节省10%-30%费用。</div>
-            </div>
-          </li>
-          <li class="list-item col-sm-3">
-            <div class="wrap">
-              <div class="main">服务优势</div>
-              <div class="sub"><p>先体验再付费，</p><p>万元服务免费送</p></div>
-              <div class="des">上门量房、方案布局、装修报价、餐饮店选址、用餐人群分析全面做到先体验，再谈是否合作。</div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="ft">
-        <a href="javascript:;" class="btn btn-square">立即咨询</a>
-      </div>
-    </div>  <!-- #advantage end;-->
+    </div> <!-- #advantage end;-->
     <!-- #service begin -->
     <div class="section" id="service">
-      <div class="hd">
-        <h2>选择弥尚餐饮整装设计&nbsp;<strong>您会收获什么？</strong></h2>
-        <h5><span class="left">价值万元服务免费享</span><span class="right">先体验后合作</span></h5>
+      <div class="mask">
+        <div class="hd">
+          <h2>选择弥尚餐饮整装设计&nbsp;<strong>您会收获什么？</strong></h2>
+          <h5><span class="left">价值万元服务免费享</span><span class="right">先体验后合作</span></h5>
+        </div>
+        <div class="bd inner">
+          <ul class="bd-list">
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-1.jpg">
+                </div>
+                <div class="txt">
+                  <h3>现场查勘</h3>
+                  <p>设计师免费为您上门量房，确保发挥您餐厅每一寸空间的价值！</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-2.jpg">
+                </div>
+                <div class="txt">
+                  <h3>商圈考察</h3>
+                  <p>根据您的餐厅大小、位置商圈为您量身定制设计风格！</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-3.jpg">
+                </div>
+                <div class="txt">
+                  <h3>设计方案</h3>
+                  <p>获奖设计师根据您的餐厅类型与布局1对1为您定制方案！</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-4.jpg">
+                </div>
+                <div class="txt">
+                  <h3>餐厅选址</h3>
+                  <p>根据您选址的餐厅类型与客户人群，为您选择适合的餐厅位置！</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-5.jpg">
+                </div>
+                <div class="txt">
+                  <h3>预算服务</h3>
+                  <p>结合多家材料与餐饮设施商家，价格比市面低10%-30%费用！</p>
+                </div>
+              </div>
+            </li>
+            <li class="list-item">
+              <div class="wrap">
+                <div class="pic">
+                  <img data-src="/images/what-2.jpg">
+                </div>
+                <div class="txt">
+                  <h3>厨房设计</h3>
+                  <p>10年餐饮店后厨设计经验，免费为您设计厨房鸟瞰图！</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="ft">
+          <a href="javascript:;" class="btn btn-square">沟通合作</a>
+        </div>
       </div>
-      <div class="bd inner">
-        <ul class="bd-list">
-          <li class="list-item">
-            <div class="wrap">
-              <div class="pic">
-                <img data-src="/images/what-1.jpg">
-              </div>
-              <div class="txt">
-                <h3>现场查勘</h3>
-                <p>设计师免费为您上门量房，确保发挥您餐厅每一寸空间的价值！</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="wrap">
-              <div class="pic">
-                <img data-src="/images/what-2.jpg">
-              </div>
-              <div class="txt">
-                <h3>商圈考察</h3>
-                <p>根据您的餐厅大小、位置商圈为您量身定制设计风格！</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="wrap">
-              <div class="pic">
-                <img data-src="/images/what-3.jpg">
-              </div>
-              <div class="txt">
-                <h3>设计方案</h3>
-                <p>获奖设计师根据您的餐厅类型与布局1对1为您定制方案！</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="wrap">
-              <div class="pic">
-                <img data-src="/images/what-4.jpg">
-              </div>
-              <div class="txt">
-                <h3>餐厅选址</h3>
-                <p>根据您选址的餐厅类型与客户人群，为您选择适合的餐厅位置！</p>
-              </div>
-            </div>
-          </li>
-          <li class="list-item">
-            <div class="wrap">
-              <div class="pic">
-                <img data-src="/images/what-5.jpg">
-              </div>
-              <div class="txt">
-                <h3>预算服务</h3>
-                <p>结合多家材料与餐饮设施商家，价格比市面低10%-30%费用！</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="ft">
-        <a href="javascript:;" class="btn btn-square">沟通合作</a>
-      </div>
-    </div>  <!-- #service end;-->
+    </div> <!-- #service end;-->
     <!-- #designer begin -->
     <div class="section" id="designer">
       <div class="mask">
@@ -670,7 +690,7 @@
     <div class="section" id="focus">
       <div class="mask">
         <div class="hd">
-          <h2>您所关心的是&nbsp;<strong>弥尚一直在关注的</strong></h2>
+          <h2>您所关心的&nbsp;<strong>是弥尚一直在关注的</strong></h2>
           <h5><span class="left">25年餐饮运营管理经验</span><span class="right">专业名师为您答疑解惑</span></h5>
         </div>
         <div class="bd inner">
@@ -784,15 +804,6 @@
                     </div>
                   </a>
                 </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第6条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
@@ -839,15 +850,6 @@
                 <li class="list-item">
                   <a href="javascript:;" class="wrap">
                     <div class="tit">行业前沿资讯第5条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第6条</div>
                     <div class="des">
                       <div class="pic"></div>
                       <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
@@ -985,19 +987,9 @@
     <div class="section" id="about">
       <div class="mask">
         <div class="hd inner">
-          <div class="cpy-name">
-            <span>弥尚餐饮</span>
-            <span>整装设计</span>
-          </div>
-          <div class="cpy-des">
-            <span>湖南弥尚餐饮装饰设计有限公司<b>，</b></span>
-            <span>是一家专业的餐饮整装设计公司<b>，</b></span>
-            <span>成立于<b>x</b><b>x</b><b>x</b><b>x</b>年<b>，</b></span>
-            <span>总部位于湖南长沙<b>。</b></span>
-            <span>我们专注于连锁店面的设计与装修<b>，</b></span>
-            <span>对行为和动线的合理规划<b>，</b></span>
-            <span>从品牌视觉到空间工程<b>，</b></span>
-            <span>打造出有价值的餐饮空间<b>。</b></span>
+          <div class="cpy">
+            <p class="title">关于弥尚</p>
+            <p class="content">湖南弥尚餐饮装饰设计有限公司，是一家专业的餐饮整装设计公司。我司成立于xxxx年，总部位于湖南长沙。我们专注于连锁店面的设计与装修，通过对消费者心理的深度理解，对行为和动线的合理规划，从品牌视觉到空间工程，打造出有价值的餐饮空间。我们具备一站式、短工期、高品质、优服务的优势特色，最大程度为客户省时、省力、省钱，是湖南颇具影响力的餐饮设计装饰机构。</p>
           </div>
           <div class="pos">
             <img data-src="/images/pos-bg.png">
@@ -1006,13 +998,12 @@
             </div>
           </div>
         </div>
-        <div class="bd">
-          <div class="bd-title">
-            <img data-src="/images/bottom-text.png">
+        <div id="contact">
+          <section class="contact-hd">
+            <img src="/images/bottom-text.png" alt="">
             <ul>
               <li>
-                <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span
-                    class="icon icon-cuz icon-qq"></span></a>
+                <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
               </li>
               <li>
                 <span class="glyphicon glyphicon-qrcode"></span>
@@ -1020,8 +1011,9 @@
                   <img src="/images/qrcode.jpg" alt="">
                 </div>
               </li>
-          </div>
-          <div class="bd-body">
+            </ul>
+          </section>
+          <section class="contact-bd">
             <div class="contact-us">
               <h4>联系我们</h4>
               <p>电话：+86 13873976777</p>
@@ -1034,11 +1026,10 @@
               <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
               <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司小程序"><span>小程序二维码</span></p>
             </div>
-          </div>
-          <div class="cover"></div>
-        </div>
-        <div class="ft">
-          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
+          </section>
+          <section class="contact-ft">
+            <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
+          </section>
         </div>
       </div>
     </div><!-- #about end -->
@@ -1072,8 +1063,7 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-              aria-hidden="true">&times;</d></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</d></button>
           <h4 class="modal-title" id="budgetModalLabel">装修费用明细表</h4>
         </div>
         <div class="modal-body">
@@ -1111,4 +1101,5 @@
   <script src="/include/fullpage/js/fullpage.js"></script>
   <script src="/include/js/home.js"></script>
 </body>
+
 </html>
