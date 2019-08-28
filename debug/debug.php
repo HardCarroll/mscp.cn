@@ -96,6 +96,41 @@
     #navbar-mscp .nav-list li.current:hover>a {
       color: #ca1717;
     }
+    #style-box {
+      width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+    }
+    #style-box .item {
+      text-align: center;
+      display: flex;
+      overflow: hidden;
+      cursor: pointer;
+      border: 1px solid #000;
+    }
+    #style-box .item+.item {
+      border-left: none;
+    }
+    #style-box .item .item-hd {
+      width: 100px;
+    }
+    #style-box .item .item-hd span {
+      font-size: 20px;
+      width: 60px;
+      padding: 15px;
+      display: inline-block;
+    }
+    #style-box .item .item-bd {
+      flex: 1;
+      background-color: #f60;
+    }
+    #style-box .item.active {
+      flex: 1;
+    }
+    #style-box .item.active .item-bd {
+      border-left: 1px solid #000;
+    }
   </style>
 </head>
 
@@ -127,6 +162,44 @@
 
 
   <div style="height: 100px;"></div>
+
+  <hr>
+
+  <div id="style-box">
+    <div class="item active">
+      <div class="item-hd">
+        <span>新中式</span>
+      </div>
+      <div class="item-bd"></div>
+    </div>
+    <div class="item">
+      <div class="item-hd">
+        <span>田园生态</span>
+      </div>
+      <div class="item-bd"></div>
+    </div>
+    <div class="item">
+      <div class="item-hd">
+        <span>工业风</span>
+      </div>
+      <div class="item-bd"></div>
+    </div>
+    <div class="item">
+      <div class="item-hd">
+        <span>时尚风</span>
+      </div>
+      <div class="item-bd"></div>
+    </div>
+    <div class="item">
+      <div class="item-hd">
+        <span>民俗乡土</span>
+      </div>
+      <div class="item-bd"></div>
+    </div>
+  </div>
+
+  <hr>
+
   <input type="text" id="inputCode" maxlength="4">
   <div id="verificationCode" class="verificationCode">
     <canvas width="90" height="30" id="verifyCanvas"></canvas>
@@ -143,6 +216,12 @@
 <script src="/include/jquery/jquery.min.js"></script>
 <script>
   $(function() {
+
+    $("#style-box .item").on("mouseenter", function() {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+
+
     var verifyCode = drawCode();;
 
     $("#code_img").on("click", function() {

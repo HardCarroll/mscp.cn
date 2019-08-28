@@ -1,6 +1,6 @@
 $(function () {
   var budgetTimer = 0;
-  var designerTimer = 0;
+  // var designerTimer = 0;
   var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");
   if ($body.width() <= 768) {
     window.location.href = "/wap.php";
@@ -20,44 +20,48 @@ $(function () {
   });
 
   // #designer 注册鼠标进入、离开事件
-  $("#designer .bd-list").off("mouseenter").on("mouseenter", function () {
-    if (designerTimer) {
-      clearInterval(designerTimer);
-      designerTimer = 0;
-    }
-  });
-  $("#designer .bd-list").off("mouseleave").on("mouseleave", function () {
-    if (!designerTimer) {
-      designerTimer = setInterval(autoSlide, 3000);
-    }
-  });
+  // $("#designer .bd-list").off("mouseenter").on("mouseenter", function () {
+  //   if (designerTimer) {
+  //     clearInterval(designerTimer);
+  //     designerTimer = 0;
+  //   }
+  // });
+  // $("#designer .bd-list").off("mouseleave").on("mouseleave", function () {
+  //   if (!designerTimer) {
+  //     designerTimer = setInterval(autoSlide, 3000);
+  //   }
+  // });
   // #designer 注册鼠标单击事件
-  $("#designer .bd-list").children().each(function () {
-    $(this).off("click").on("click", function () {
-      var count = $(this).parent().children().length;
-      var index = $(this).index();
-      var mid = Math.floor(count / 2);
-      var key = Math.abs(index - mid);
-      while (key > 0) {
-        if (index - mid > 0) {
-          autoSlide();
-        }
-        else {
-          reverseSlide();
-        }
-        key--;
-      }
-    });
+  // $("#designer .bd-list").children().each(function () {
+  //   $(this).off("click").on("click", function () {
+  //     var count = $(this).parent().children().length;
+  //     var index = $(this).index();
+  //     var mid = Math.floor(count / 2);
+  //     var key = Math.abs(index - mid);
+  //     while (key > 0) {
+  //       if (index - mid > 0) {
+  //         autoSlide();
+  //       }
+  //       else {
+  //         reverseSlide();
+  //       }
+  //       key--;
+  //     }
+  //   });
+  // });
+
+  $("#style-box .item").on("click", function() {
+    $(this).addClass("active").siblings().removeClass("active");
   });
 
-  $("#news .box").on("mouseenter", function() {
+  $("#news .box").on("click", function() {
     $(this).addClass("active").siblings().removeClass("active");
   });
 
   $("#fullpage").fullpage({
     navigation: true,
     navigationPosition: "left",
-    navigationTooltips: ["官网首页", "5秒就能帮您算出明细！", "您的设计够专业吗？", "这些案例能否激发您的灵感？", "术业有专攻，省时省心又省钱！", "选择我们，您会收获什么？", "资深设计师一对一服务！", "您想要的，我们都有！", "一站式服务，为您保驾护航！", "专业名师为您答疑解惑！", "足不出户，尽知行业前沿资讯！", "多年专注，不玩套路！", "友好合作，互利共赢！", "关注我们，了解我们！"],
+    navigationTooltips: ["官网首页", "5秒就能帮您算出明细！", "您的设计够专业吗？", "这些案例能否激发您的灵感？", "术业有专攻，省时省心又省钱！", "选择我们，您会收获什么？", "下一个盈利的就是你！", "您想要的，我们都有！", "一站式服务，为您保驾护航！", "专业名师为您答疑解惑！", "足不出户，尽知行业前沿资讯！", "多年专注，不玩套路！", "友好合作，互利共赢！", "关注我们，了解我们！"],
     // showActiveTooltip: true,
     afterLoad: function (origin, destination, direction) {
       $(destination.item).find(".hd h2").animate({ top: 0, opacity: 1 }, 600);
@@ -123,11 +127,12 @@ $(function () {
       }
       // 资深设计师一对一服务 #designer
       if (destination.index === 6) {
-        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 600);
-        setItemStyle({ object: $(destination.item).find(".bd-list") });
-        if (!designerTimer) {
-          designerTimer = setInterval(autoSlide, 3000);
-        }
+        // $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 600);
+        // setItemStyle({ object: $(destination.item).find(".bd-list") });
+        // if (!designerTimer) {
+        //   designerTimer = setInterval(autoSlide, 3000);
+        // }
+        $(destination.item).find("#style-box").delay(600).animate({opacity: 1}, 600);
       }
       // 额外服务支持 #support
       if (destination.index === 7) {
@@ -244,11 +249,12 @@ $(function () {
 
       // 资深设计师一对一服务 #designer
       if (origin.index === 6) {
-        $(origin.item).find(".list-item").attr("style", "");
-        if (designerTimer) {
-          clearInterval(designerTimer);
-          designerTimer = 0;
-        }
+        // $(origin.item).find(".list-item").attr("style", "");
+        // if (designerTimer) {
+        //   clearInterval(designerTimer);
+        //   designerTimer = 0;
+        // }
+        $(origin.item).find("#style-box").animate({opacity: 0}, 300);
       }
 
       // 额外服务支持 #support

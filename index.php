@@ -407,6 +407,60 @@
     <div class="section" id="designer">
       <div class="mask">
         <div class="hd">
+          <h2>选择弥尚餐饮整装设计&nbsp;&nbsp;<strong>给餐厅一个脱颖而出的机会</strong></h2>
+          <h5><span class="left">弥尚帮他们实现了盈利</span><span class="right">可能下一个就是你</span></h5>
+        </div>
+        <div class="bd inner">
+          <div id="style-box">
+            <div class="item active">
+              <div class="item-hd">
+                <img src="/upload/2019082601/201908260102.jpg" alt="">
+                <span>新中式</span>
+              </div>
+              <div class="item-bd">
+                <img src="/upload/2019082601/201908260103.jpg" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-hd">
+                <img src="/upload/2019082601/201908260102.jpg" alt="">
+                <span>田园生态</span>
+              </div>
+              <div class="item-bd">
+                <img src="/upload/2019082601/201908260103.jpg" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-hd">
+                <img src="/upload/2019082601/201908260102.jpg" alt="">
+                <span>工业风</span>
+              </div>
+              <div class="item-bd">
+                <img src="/upload/2019082601/201908260103.jpg" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-hd">
+                <img src="/upload/2019082601/201908260102.jpg" alt="">
+                <span>时尚风</span>
+              </div>
+              <div class="item-bd">
+                <img src="/upload/2019082601/201908260103.jpg" alt="">
+              </div>
+            </div>
+            <div class="item">
+              <div class="item-hd">
+                <img src="/upload/2019082601/201908260102.jpg" alt="">
+                <span>民俗乡土</span>
+              </div>
+              <div class="item-bd">
+                <img src="/upload/2019082601/201908260103.jpg" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ft"></div>
+        <!-- <div class="hd">
           <h2>选择弥尚餐饮整装设计&nbsp;<strong>给餐厅一个脱颖而出的机会</strong></h2>
           <h5><span class="left">从前期测量到后期软装搭配</span><span class="right">资深设计师1对1全程为您服务</span></h5>
         </div>
@@ -528,7 +582,7 @@
         </div>
         <div class="ft">
           <span href="javascript:;" class="btn btn-square">签约设计师</span>
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- #designer end -->
@@ -669,16 +723,16 @@
             </li>
             <li class="col-sm-3 list-item">
               <div class="wrap">
-                <div class="title">全</div>
+                <div class="title">精</div>
                 <span class="seperator"></span>
-                <div class="txt">配套产品齐全便宜</div>
+                <div class="txt">半成品到店很省心</div>
               </div>
             </li>
             <li class="col-sm-3 list-item">
               <div class="wrap">
-                <div class="title">精</div>
+                <div class="title">全</div>
                 <span class="seperator"></span>
-                <div class="txt">半成品到店很省心</div>
+                <div class="txt">配套产品齐全便宜</div>
               </div>
             </li>
           </ul>

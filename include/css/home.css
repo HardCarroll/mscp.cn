@@ -582,7 +582,7 @@
   background-size: contain;
   background-position: center;
 }
-#designer .bd {
+/* #designer .bd {
   overflow: hidden;
   padding: 15px 0;
 }
@@ -694,6 +694,77 @@
 }
 #designer .bd-list .list-item .button .btn-track {
   box-shadow: 0 0 6px 0 #000;
+} */
+#style-box {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  opacity: 0;
+}
+#style-box .item {
+  text-align: center;
+  display: flex;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #e6e8e8;
+  height: 400px;
+}
+#style-box .item+.item {
+  border-left: none;
+}
+#style-box .item .item-hd {
+  width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+#style-box .item .item-hd::after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+  transition: all 0.6s;
+}
+#style-box .item .item-hd img {
+  height: 100%;
+  filter: grayscale(1);
+  transition: all 0.6s;
+}
+#style-box .item .item-hd span {
+  font-size: 30px;
+  font-weight: 700;
+  width: 60px;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffdc90;
+  z-index: 2;
+}
+#style-box .item .item-bd {
+  width: 0;
+  background-color: #f60;
+}
+#style-box .item .item-bd img {
+  height: 100%;
+}
+#style-box .item.active {
+  flex: 1;
+}
+#style-box .item.active .item-hd::after {
+  top: 0%;
+}
+#style-box .item.active .item-hd img {
+  filter: grayscale(0);
+}
+#style-box .item.active .item-bd {
+  border-left: 2px solid #e6e8e8;
+  flex: 1;
 }
 
 #support {
@@ -767,6 +838,7 @@
 }
 #slogan .bd-list {
   margin: 0;
+  padding: 25px 0;
   width: 1200px;
   list-style: none;
   display: flex;
@@ -1056,9 +1128,6 @@
 #partner .mask {
   background-color: rgba(0, 0, 0, 0);
 }
-#partner .bd {
-  /* padding: 100px 0 250px; */
-}
 #partner .bd-list {
   opacity: 0;
 }
@@ -1082,9 +1151,6 @@
 }
 #partner .bd-list .list-item:hover img {
   filter: grayscale(0);
-}
-#partner .ft {
-  /* padding: 0 0 60px; */
 }
 
 #about {
