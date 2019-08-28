@@ -723,16 +723,13 @@
   height: 100%;
   content: "";
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-  transition: all 0.6s;
 }
 #style-box .item .item-hd img {
   height: 100%;
-  filter: grayscale(1);
-  transition: all 0.6s;
 }
 #style-box .item .item-hd span {
   font-size: 30px;
@@ -758,9 +755,6 @@
 }
 #style-box .item.active .item-hd::after {
   top: 0%;
-}
-#style-box .item.active .item-hd img {
-  filter: grayscale(0);
 }
 #style-box .item.active .item-bd {
   border-left: 2px solid #e6e8e8;

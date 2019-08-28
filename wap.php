@@ -48,4 +48,11 @@
     </div>
   </div>
 </body>
+<script>
+  document.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    // e.stopPropagation();
+    // alert("touch start");
+  });
+</script>
 </html>

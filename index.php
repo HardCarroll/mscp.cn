@@ -424,7 +424,7 @@
             <div class="item">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
-                <span>田园生态</span>
+                <span>田园</span>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -433,7 +433,7 @@
             <div class="item">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
-                <span>工业风</span>
+                <span>工业</span>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -442,7 +442,7 @@
             <div class="item">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
-                <span>时尚风</span>
+                <span>时尚</span>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -451,7 +451,7 @@
             <div class="item">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
-                <span>民俗乡土</span>
+                <span>民俗</span>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
