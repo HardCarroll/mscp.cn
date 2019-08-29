@@ -44,9 +44,27 @@
     <!-- .adCarousel begin -->
     <div class="section adCarousel">
       <section class="adCarousel-wrap">
-        <div class="item active"><img data-src="/images/banner.jpg"></div>
-        <div class="item"><img data-src="/images/banner2.jpg"></div>
-        <div class="item"><img data-src="/images/banner3.jpg"></div>
+        <div class="item active">
+          <img data-src="/images/banner1.jpg">
+          <div class="content">
+            <p>专注餐饮25年，懂餐饮更懂设计</p>
+            <a href="/advantage/" class="btn btn-square">专注所以专业</a>
+          </div>
+        </div>
+        <div class="item">
+          <img data-src="/images/banner2.jpg">
+          <div class="content">
+            <p>装修大数据，不花冤枉钱</p>
+            <a href="/budget/" class="btn btn-square">获取装修报价</a>
+        </div>
+        </div>
+        <div class="item">
+          <img data-src="/images/banner3.jpg">
+          <div class="content">
+            <p>花最少的钱，享受最优质的服务</p>
+            <a class="btn btn-square" href="tel:13873976777">咨询热线：138 7397 6777</a>
+          </div>
+        </div>
       </section>
 
       <section class="adCarousel-indicators">
