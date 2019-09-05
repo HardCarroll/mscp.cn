@@ -434,6 +434,7 @@
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>新中式</span>
+                <p>选择弥尚餐饮整装设计，给餐厅一个脱颖而出的机会。弥尚帮他们实现了盈利，可能下一个就是你。</p>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -443,6 +444,7 @@
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>田园</span>
+                <p>选择弥尚餐饮整装设计，给餐厅一个脱颖而出的机会。弥尚帮他们实现了盈利，可能下一个就是你。</p>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -452,6 +454,7 @@
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>工业</span>
+                <p>选择弥尚餐饮整装设计，给餐厅一个脱颖而出的机会。弥尚帮他们实现了盈利，可能下一个就是你。</p>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -461,6 +464,7 @@
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>时尚</span>
+                <p>选择弥尚餐饮整装设计，给餐厅一个脱颖而出的机会。弥尚帮他们实现了盈利，可能下一个就是你。</p>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
@@ -470,6 +474,7 @@
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>民俗</span>
+                <p>选择弥尚餐饮整装设计，给餐厅一个脱颖而出的机会。弥尚帮他们实现了盈利，可能下一个就是你。</p>
               </div>
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">

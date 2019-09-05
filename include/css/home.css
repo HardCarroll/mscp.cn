@@ -38,6 +38,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: all 0.6s;
+}
+.adCarousel .adCarousel-wrap .item:hover .content {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .adCarousel .adCarousel-wrap .item .content p {
   font-size: 45px;
@@ -230,6 +234,7 @@
   width: 100px;
   font-family: "lcd";
   text-align: center;
+  font-size: 30px;
 }
 #budget .rt .detail {
   border: 1px solid #c6c8c8;
@@ -247,6 +252,7 @@
   display: inline-block;
   font-family: "lcd";
   text-align: right;
+  font-size: 20px;
 }
 #budget .rt .tips {
   font-size: 14px;
@@ -755,6 +761,7 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
+  transition: all 0.6s;
 }
 #style-box .item .item-hd img {
   height: 100%;
@@ -763,13 +770,26 @@
   font-size: 30px;
   font-weight: 700;
   width: 60px;
-  padding: 15px;
+  padding: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #ffdc90;
   z-index: 2;
+  border-radius: 50%;
+  transition: all 0.6s;
+}
+#style-box .item .item-hd p {
+  position: absolute;
+  top: 65%;
+  padding: 20px;
+  color: #000;
+  z-index: 10;
+  text-align: left;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.6s;
 }
 #style-box .item .item-bd {
   width: 0;
@@ -783,6 +803,20 @@
 }
 #style-box .item.active .item-hd::after {
   top: 0%;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#style-box .item.active .item-hd span {
+  color: #ca1717;
+  font-size: 20px;
+  width: 100px;
+  height: 100px;
+  line-height: 88px;
+  border: 1px solid #000;
+  box-shadow: 0 0 6px 0 #000;
+  top: 30%;
+}
+#style-box .item.active .item-hd p {
+  opacity: 1;
 }
 #style-box .item.active .item-bd {
   border-left: 2px solid #e6e8e8;

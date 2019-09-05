@@ -50,7 +50,7 @@ $(function () {
   //   });
   // });
 
-  $("#style-box .item").on("click", function() {
+  $("#style-box .item").on("mouseenter", function() {
     $(this).addClass("active").siblings().removeClass("active");
   });
 
@@ -70,10 +70,10 @@ $(function () {
 
       // 预算页 #budget
       if (destination.index === 1) {
-        $(destination.item).find(".bd").delay(800).animate({ height: "400px", opacity: 1 }, 600, function () {
-          $(this).find(".lt").animate({ bottom: 0, opacity: 1 }, 600);
-          $(this).find(".btn-round").delay(300).animate({ opacity: 1 }, 600);
-          $(this).find(".rt").animate({ bottom: 0, opacity: 1 }, 600);
+        $(destination.item).find(".bd").delay(600).animate({ height: "400px", opacity: 1 }, 600, function () {
+          $(this).find(".lt").animate({ bottom: 0, opacity: 1 }, 300);
+          $(this).find(".btn-round").delay(300).animate({ opacity: 1 }, 300);
+          $(this).find(".rt").animate({ bottom: 0, opacity: 1 }, 300);
 
           if (!budgetTimer) {
             budgetTimer = setInterval(function () {
@@ -103,20 +103,20 @@ $(function () {
       }
       // 服务优势 #advantage
       if (destination.index === 4) {
-        $("#advantage .hd h5 span:nth-of-type(1)").delay(600).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 b:nth-of-type(1)").delay(800).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 span:nth-of-type(2)").delay(1000).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 b:nth-of-type(2)").delay(1200).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 span:nth-of-type(3)").delay(1400).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 b:nth-of-type(3)").delay(1600).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 span:nth-of-type(4)").delay(1800).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 b:nth-of-type(4)").delay(2000).animate({ opacity: 1 }, 600);
-        $("#advantage .hd h5 span:nth-of-type(5)").delay(2200).animate({ opacity: 1 }, 600);
-        $("#advantage .bd").delay(2200).animate({ height: "410px", opacity: 1 }, 600, function () {
-          $("#advantage .list-item").animate({ opacity: 1 }, 600);
+        $("#advantage .hd h5 span:nth-of-type(1)").delay(500).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 b:nth-of-type(1)").delay(600).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 span:nth-of-type(2)").delay(700).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 b:nth-of-type(2)").delay(800).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 span:nth-of-type(3)").delay(900).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 b:nth-of-type(3)").delay(1000).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 span:nth-of-type(4)").delay(1100).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 b:nth-of-type(4)").delay(1200).animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 span:nth-of-type(5)").delay(1300).animate({ opacity: 1 }, 300);
+        $("#advantage .bd").delay(1400).animate({ height: "410px", opacity: 1 }, 300, function () {
+          $("#advantage .list-item").animate({ opacity: 1 }, 300);
           $("#advantage .list-item .wrap").css("box-shadow", "0 0 3px 0 #FFDC90");
         });
-        $(destination.item).find(".btn-square").delay(2400).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".btn-square").delay(1500).animate({ top: 0, opacity: 1 }, 300);
       }
       // 免费服务 #service
       if (destination.index === 5) {
