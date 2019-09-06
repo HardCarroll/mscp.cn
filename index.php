@@ -207,21 +207,21 @@
         <div class="bd container-fluid inner">
           <ul class="row bd-list">
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="/template/temp_case copy.php">
+              <a href="/case/2019080601.html">
                 <img src="/upload/2019082601/201908260101.jpg" alt="">
                 <div class="cover">
-                  <h3 class="text-ellipsis title">案例模板</h3>
-                  <h5 class="text-ellipsis content">点击查看案例展示模板页内容</h5>
+                  <h3 class="text-ellipsis title">东莞洪记荷湘里</h3>
+                  <h5 class="text-ellipsis content">被称为“芙蓉国”的湖南是中国著名的渔米之乡，绿色大省，生态大省。湖南的旅游资源十分丰富，张家界，崀山，洞庭湖等山水名胜，享誉海内外，人称“人文湘楚、山水湖南”。洞庭湖畔的荷花飘香，“小荷才露尖尖角，早有蜻蜓立上头”也形成了湘土文化的一大特色，打造一个极具田园家乡特色的民俗湘间菜馆，是为了在潮流来来去去，物欲横流的今天，保持原始的个性与初心，让在都市久居的人们能够在原生态的环境中，找到久违的世外桃源，回到内心熟悉的故土，没有束缚，没有压抑，只为了将纯粹的自在与快乐传递给客户，因为极致，所以纯粹，因为用心，所以脱颖而出。</h5>
                   <span class="glyphicon glyphicon-plus"></span>
                 </div>
               </a>
             </li>
             <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="javascript:;">
+              <a href="/template/temp_case copy.php">
                 <img src="/upload/2019082601/201908260101.jpg" alt="">
                 <div class="cover">
-                  <h3 class="text-ellipsis title">锅仔滋补羊肉</h3>
-                  <h5 class="text-ellipsis content">锅仔羊肉香味扑鼻且驱寒暖身，香在口，暖在心是深受欢迎的冬季家常菜</h5>
+                  <h3 class="text-ellipsis title">案例模板</h3>
+                  <h5 class="text-ellipsis content">点击查看案例展示模板页内容</h5>
                   <span class="glyphicon glyphicon-plus"></span>
                 </div>
               </a>

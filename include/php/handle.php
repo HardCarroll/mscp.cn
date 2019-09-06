@@ -15,6 +15,10 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
     case 'createHtmlFile':
       echo proc_createHtmlFile("2019082601");
       break;
+    case 'fileTree':
+      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"]), 320);
+      // echo fileTree($_SERVER["DOCUMENT_ROOT"]);
+      break;
     default:
     break;
   }
@@ -50,6 +54,22 @@ function proc_createHtmlFile($index) {
   file_put_contents($_SERVER["DOCUMENT_ROOT"].$htmlPath, $str);
   $result = json_encode('{"result": "success"}');
   return $result;
+}
+
+function fileTree($path) {
+  $tree = array();
+  $fileArray = scandir($path);
+  foreach ($fileArray as $file) {
+    if ($file !== "." && $file !== "..") {
+      $val = $file;
+      $filePath = $path . "/" . $file;
+      if (is_dir($filePath)) {
+        $val = array($file => fileTree($filePath));
+      }
+      array_push($tree, $val);
+    }
+  }
+  return $tree;
 }
 
 
