@@ -16,8 +16,8 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       echo proc_createHtmlFile("2019082601");
       break;
     case 'fileTree':
-      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"]), 320);
-      // echo fileTree($_SERVER["DOCUMENT_ROOT"]);
+      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"]."/upload/"), 320);
+      // echo json_encode(getFileName($_SERVER["DOCUMENT_ROOT"]), 320);
       break;
     default:
     break;
@@ -56,20 +56,59 @@ function proc_createHtmlFile($index) {
   return $result;
 }
 
-function fileTree($path) {
-  $tree = array();
+function getFileName($path) {
   $fileArray = scandir($path);
-  foreach ($fileArray as $file) {
-    if ($file !== "." && $file !== "..") {
-      $val = $file;
-      $filePath = $path . "/" . $file;
-      if (is_dir($filePath)) {
-        $val = array($file => fileTree($filePath));
+  $fileArr = array();
+  $folderArr = array();
+  foreach($fileArray as $file) {
+    if($file !== "." && $file !== "..") {
+      if(is_dir($path."/".$file)) {
+        array_push($folderArr, $file);
       }
-      array_push($tree, $val);
+      else {
+        array_push($fileArr, $file);
+      }
     }
   }
-  return $tree;
+  return array("folder"=>$folderArr, "file"=>$fileArr,);
+}
+
+// function fileTree($path) {
+//   $tree = array();
+//   $fileArray = scandir($path);
+//   foreach($fileArray as $file) {
+//     if ($file !== "." && $file !== "..") {
+//       $val = $file;
+//       $filePath = $path . "/" . $file;
+//       if (is_dir($filePath)) {
+//         $val = array($file => fileTree($filePath));
+//       }
+//       array_push($tree, $val);
+//     }
+//   }
+//   return $tree;
+// }
+
+function fileTree($filePath) {
+  // 1, 格式化返回数组
+  $path = str_replace($_SERVER["DOCUMENT_ROOT"], "/", $filePath);
+  $path = str_replace("//", "/", $path);
+  $resultArray = array("name" => basename($path), "path" => $path, "sub_file" => "");
+
+  // 2, 当路径是文件夹则递归调用
+  if (is_dir($filePath)) {
+    $scanArray = scandir($filePath);
+    $subArray = array();
+    foreach ($scanArray as $file) {
+      if ("." !== $file && ".." !== $file) {
+        array_push($subArray, fileTree($filePath . "/" . $file));
+      }
+    }
+    $resultArray["sub_file"] = $subArray;
+  }
+
+  // 3, 返回结果
+  return $resultArray;
 }
 
 
