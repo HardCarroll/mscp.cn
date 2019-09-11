@@ -86,7 +86,7 @@
       border-top: 1px solid #666;
       border-bottom: 1px solid #666;
       flex: 1;
-      overflow: hidden;
+      overflow: auto;
     }
 
     #fileTree .content .content-body .frame {
@@ -158,7 +158,6 @@
       top: 0;
       right: -10px;
     }
-
   </style>
 </head>
 
@@ -231,6 +230,8 @@
       </div>
     </div> -->
 
+  <div id="domTree"></div>
+
 </body>
 
 </html>
@@ -239,16 +240,16 @@
 <script>
   $(function() {
     $(".form-control").on("focus", function() {
-      console.log("focus in " + $(this).attr("id"));
+      // console.log("focus in " + $(this).attr("id"));
       $(this).select();
     });
 
-    // var d = '{"key": "hello", "value": "world", "array": [{"a1": "v1", "b1": "v1"}, {"a2": "v2", "b2": "v2"}]}';
-    // var a = {k: "hello", v: "world", arr: [{a1: "a1", b1: "b1"}, {a2: "a2", b2: "b2"}]};
-    // console.log(JSON.parse(d).array[1]);
-    // console.log(JSON.stringify(a));
+    $(".tree-head").click(function() {
+      $(this).toggleClass("on");
+      $(this).next().toggleClass("off");
+    });
 
-    $("#btnFileTree").click(function() {
+    $("#btnFileTree").on("click", function() {
       if (!$("body").find("#fileTree").length) {
         var dlg = $("<div id='fileTree'><div class='content'><div class='content-head'><span class='title'>File Tree Dialog</span><span class='close glyphicon glyphicon-remove'></span></div><div class='content-body'></div><div class='content-foot'><label>当前位置：</label><div class='pathRoute'></div></div></div></div>");
         $("body").append(dlg);
@@ -257,107 +258,59 @@
         $("#fileTree").remove();
       });
 
+      
+      var fmd = new FormData();
+      fmd.append("token", "fileTree");
+      var val = $("#inJsonPath").val();
+      if (!val) {
+        val = "/";
+      }
+      fmd.append("filePath", val);
+
       $.ajax({
         url: "/include/php/handle.php",
         type: "POST",
-        data: "token=fileTree",
+        data: fmd,
         processData: false,
-        // contentType: false,
-        // dataType: "json",
-        success: function(result) {
-          var val = JSON.parse(result);
-          console.log(val);
-          var html = "";
-          var ele = $("<div class='frame container-fluid'><div class='file-list row'></div></div>");
-          for (var i in val) {
-            for (var k in val[i]) {
-              if ("folder" === i) {
-                ele.find(".file-list").append("<div class='list-item col-xs-3'><span class='item-icon glyphicon glyphicon-folder-close'></span><span class='item-title'>" + val[i][k] + "</span></div>");
-              } else if ("file" === i) {
-                ele.find(".file-list").append("<div class='list-item col-xs-3'><span class='item-icon glyphicon glyphicon-file'></span><span class='item-title'>" + val[i][k] + "</span></div>");
-              }
-            }
-          }
-          $("#fileTree").find(".content-body").append(ele).find(".list-item").click(function() {
-            console.log($(this).html());
-          });
-
-        },
-        error: function(err) {
-          console.log("fail: " + err);
-        }
-      });
-
-    });
-
-    $("#btn").click(function() {
-      $.ajax({
-        url: "/include/php/handle.php",
-        type: "POST",
-        data: "token=fileTree",
-        processData: false,
-        // contentType: false, // 发送数据为复杂格式时设置此项
-        dataType: "json", // 返回数据为JSON格式
+        contentType: false,
+        dataType: "json",
         success: function(result) {
           console.log(result);
-          for(var k in result) {
-            console.log(result[k]);
-          }
-          console.log(JSON.stringify(result));
-
-          // var ele = $("<div></div>");
-          // console.log(isFolder(ele, val).html());
+          fileDomTree(result, $("#fileTree").find(".content-body"));
         },
         error: function(err) {
           console.log("fail: " + err);
         }
       });
+
     });
 
     var data = JSON.parse('{"name":"upload","path":"/upload/","sub_file":[{"name":"2019082601","path":"/upload/2019082601","sub_file":[{"name":"2019082601.json","path":"/upload/2019082601/2019082601.json","sub_file":""},{"name":"201908260101.jpg","path":"/upload/2019082601/201908260101.jpg","sub_file":""},{"name":"201908260102.jpg","path":"/upload/2019082601/201908260102.jpg","sub_file":""},{"name":"201908260103.jpg","path":"/upload/2019082601/201908260103.jpg","sub_file":""},{"name":"201908260104.jpg","path":"/upload/2019082601/201908260104.jpg","sub_file":""}]}]}');
-    // console.log(typeof data.name);
-    // console.log(fileTree(data).html());
-    $("body").append(fileTree(data));
 
-    function fileTree(data, deepth=0) {
-      var ele = $("<div data-deepth="+deepth+" data-path="+data.path+"></div>");
-      ele.html(data.name);
-      if("object" === typeof(data.sub_file)) {
-        deepth += 1;
-        for(var k in data.sub_file) {
-          ele.append(fileTree(data.sub_file[k], deepth));
+    function fileDomTree(data, parentNode = $("body")) {
+      var cNode = $('<div class="panel panel-default"></div>');
+      parentNode.append(cNode);
+      var cHeading = $('<div class="panel-heading" role="tab"><a role="button" data-toggle="collapse"><span class="glyphicon"></span></a></div>');
+      cHeading.find("a").attr({
+        "data-path": data.path,
+        "href": "#" + data.path.replace(/\//g, "_")
+      }).append(data.name);
+      cNode.append(cHeading);
+
+      if ("object" === typeof(data.sub_file)) {
+        cHeading.find("a>span.glyphicon").addClass("glyphicon-folder-close");
+
+        var cBody = $('<div class="panel-body panel-collapse collapse" role="tabpanel"></div>');
+        cBody.attr("id", data.path.replace(/\//g, "_"));
+        cNode.append(cBody);
+
+        for (var k in data.sub_file) {
+          fileDomTree(data.sub_file[k], cBody);
         }
-      }
-      return ele;
-    }
-
-    function isFolder(targetEle, fileName) {
-      // var targetEle = $("<div></div>");
-      // if("object" === typeof(fileName)) {
-      //   var tar = $("<ul></ul>");
-      //   for(var i in fileName) {
-      //     tar.append(i);
-      //     if("object" === typeof(fileName[i])) {}
-      //   }
-      // }
-      // else {
-      //   var ele = $("<p>"+fileName+"</p>");
-      // }
-
-      for (var i in fileName) {
-        if ("object" === typeof(fileName[i])) {
-          var tar = $("<div>" + i + "</div>");
-          var ele = isFolder(tar, fileName[i]);
-        } else {
-          var ele = $("<p>" + fileName[i] + "</p>");
-          // console.log(ele.html());
-        }
-
-        $(targetEle).append(ele);
+      } else {
+        cHeading.find("a>span.glyphicon").addClass("glyphicon-file");
       }
 
-      // console.log($(targetEle).html());
-      return targetEle;
     }
 
   });

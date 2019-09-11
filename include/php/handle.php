@@ -16,7 +16,7 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       echo proc_createHtmlFile("2019082601");
       break;
     case 'fileTree':
-      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"]."/upload/"), 320);
+      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"].$_POST["filePath"]), 320);
       // echo json_encode(getFileName($_SERVER["DOCUMENT_ROOT"]), 320);
       break;
     default:
@@ -56,42 +56,9 @@ function proc_createHtmlFile($index) {
   return $result;
 }
 
-function getFileName($path) {
-  $fileArray = scandir($path);
-  $fileArr = array();
-  $folderArr = array();
-  foreach($fileArray as $file) {
-    if($file !== "." && $file !== "..") {
-      if(is_dir($path."/".$file)) {
-        array_push($folderArr, $file);
-      }
-      else {
-        array_push($fileArr, $file);
-      }
-    }
-  }
-  return array("folder"=>$folderArr, "file"=>$fileArr,);
-}
-
-// function fileTree($path) {
-//   $tree = array();
-//   $fileArray = scandir($path);
-//   foreach($fileArray as $file) {
-//     if ($file !== "." && $file !== "..") {
-//       $val = $file;
-//       $filePath = $path . "/" . $file;
-//       if (is_dir($filePath)) {
-//         $val = array($file => fileTree($filePath));
-//       }
-//       array_push($tree, $val);
-//     }
-//   }
-//   return $tree;
-// }
-
 function fileTree($filePath) {
   // 1, 格式化返回数组
-  $path = str_replace($_SERVER["DOCUMENT_ROOT"], "/", $filePath);
+  $path = str_replace($_SERVER["DOCUMENT_ROOT"], "", $filePath);
   $path = str_replace("//", "/", $path);
   $resultArray = array("name" => basename($path), "path" => $path, "sub_file" => "");
 
