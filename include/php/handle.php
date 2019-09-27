@@ -15,10 +15,6 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
     case 'createHtmlFile':
       echo proc_createHtmlFile("2019082601");
       break;
-    case 'fileTree':
-      echo json_encode(fileTree($_SERVER["DOCUMENT_ROOT"].$_POST["filePath"]), 320);
-      // echo json_encode(getFileName($_SERVER["DOCUMENT_ROOT"]), 320);
-      break;
     default:
     break;
   }
@@ -54,28 +50,6 @@ function proc_createHtmlFile($index) {
   file_put_contents($_SERVER["DOCUMENT_ROOT"].$htmlPath, $str);
   $result = json_encode('{"result": "success"}');
   return $result;
-}
-
-function fileTree($filePath) {
-  // 1, 格式化返回数组
-  $path = str_replace($_SERVER["DOCUMENT_ROOT"], "", $filePath);
-  $path = str_replace("//", "/", $path);
-  $resultArray = array("name" => basename($path), "path" => $path, "sub_file" => "");
-
-  // 2, 当路径是文件夹则递归调用
-  if (is_dir($filePath)) {
-    $scanArray = scandir($filePath);
-    $subArray = array();
-    foreach ($scanArray as $file) {
-      if ("." !== $file && ".." !== $file) {
-        array_push($subArray, fileTree($filePath . "/" . $file));
-      }
-    }
-    $resultArray["sub_file"] = $subArray;
-  }
-
-  // 3, 返回结果
-  return $resultArray;
 }
 
 
