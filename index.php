@@ -61,7 +61,7 @@
         <div class="item">
           <img data-src="/images/banner3.jpg">
           <div class="content">
-            <p>花最少的钱，享受最优质的服务</p>
+            <p>花更少的钱，享受更优质的服务</p>
             <a class="btn btn-square" href="tel:13873976777">咨询热线：138 7397 6777</a>
           </div>
         </div>
@@ -120,7 +120,7 @@
             <div class="btn btn-round">立即报价</div>
           </div>
           <div class="rt">
-            <div class="total">您的餐厅投资预算约为<span>0</span>元</div>
+            <div class="total">您的餐厅投资预算约为<span>166800</span>元</div>
             <div class="detail">
               <p>设&nbsp;&nbsp;计&nbsp;&nbsp;费：<span>0</span>元</p>
               <p>材&nbsp;&nbsp;料&nbsp;&nbsp;费：<span>0</span>元</p>
@@ -201,8 +201,8 @@
     <div class="section" id="case">
       <div class="mask">
         <div class="hd">
-          <h2><strong>最新餐厅设计案例</strong>&nbsp;激发您的装修灵感？</h2>
-          <h5><span class="left">资深设计狮为您量身打造</span><span class="right">让您的餐厅脱颖而出</span></h5>
+          <h2><strong>全新餐厅设计案例</strong>&nbsp;激发您的装修灵感？</h2>
+          <h5><span class="left">权威设计师为您量身打造</span><span class="right">让您的餐厅脱颖而出</span></h5>
         </div>
         <div class="bd container-fluid inner">
           <ul class="row bd-list">

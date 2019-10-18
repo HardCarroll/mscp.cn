@@ -40,7 +40,7 @@
   align-items: center;
   transition: all 0.6s;
 }
-.adCarousel .adCarousel-wrap .item:hover .content {
+.adCarousel:hover .adCarousel-wrap .item .content {
   background-color: rgba(0, 0, 0, 0.3);
 }
 .adCarousel .adCarousel-wrap .item .content p {
@@ -230,7 +230,7 @@
 }
 #budget .rt .total span {
   margin: 0 10px;
-  color: #ca1717;
+  color: #FFF;
   display: inline-block;
   width: 100px;
   font-family: "lcd";
@@ -559,7 +559,7 @@
   flex: 1;
   position: relative;
   overflow: hidden;
-  transition: transform 0.6s;
+  transition: transform 0.3s;
 }
 #service .bd .bd-list .list-item:nth-child(2n-1) {
   transform: translateY(50%);
@@ -841,7 +841,7 @@
   padding: 0;
 }
 #support .bd-list .list-item {
-  transition: all 0.8s;
+  transition: all 0.5s;
   opacity: 0;
   padding: 15px;
 }

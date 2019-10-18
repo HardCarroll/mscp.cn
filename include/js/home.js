@@ -64,13 +64,13 @@ $(function () {
     navigationTooltips: ["官网首页", "5秒就能帮您算出明细！", "您的设计够专业吗？", "这些案例能否激发您的灵感？", "术业有专攻，省时省心又省钱！", "选择我们，您会收获什么？", "下一个盈利的就是你！", "您想要的，我们都有！", "一站式服务，为您保驾护航！", "专业名师为您答疑解惑！", "足不出户，尽知行业前沿资讯！", "多年专注，不玩套路！", "友好合作，互利共赢！", "关注我们，了解我们！"],
     // showActiveTooltip: true,
     afterLoad: function (origin, destination, direction) {
-      $(destination.item).find(".hd h2").animate({ top: 0, opacity: 1 }, 600);
-      $(destination.item).find(".hd h5 .left").delay(200).animate({ left: 0, opacity: 1 }, 600);
-      $(destination.item).find(".hd h5 .right").delay(200).animate({ right: 0, opacity: 1 }, 600);
+      $(destination.item).find(".hd h2").animate({ top: 0, opacity: 1 }, 300);
+      $(destination.item).find(".hd h5 .left").delay(100).animate({ left: 0, opacity: 1 }, 300);
+      $(destination.item).find(".hd h5 .right").delay(100).animate({ right: 0, opacity: 1 }, 300);
 
       // 预算页 #budget
       if (destination.index === 1) {
-        $(destination.item).find(".bd").delay(600).animate({ height: "400px", opacity: 1 }, 600, function () {
+        $(destination.item).find(".bd").animate({ height: "400px", opacity: 1 }, 100, function () {
           $(this).find(".lt").animate({ bottom: 0, opacity: 1 }, 300);
           $(this).find(".btn-round").delay(300).animate({ opacity: 1 }, 300);
           $(this).find(".rt").animate({ bottom: 0, opacity: 1 }, 300);
@@ -93,37 +93,37 @@ $(function () {
       }
       // 专业性 #professional
       if (destination.index === 2) {
-        $("#professional .bd .pro-item").delay(600).animate({ top: 0, opacity: 1 }, 800);
-        $(destination.item).find(".btn-square").delay(1000).animate({ top: 0, opacity: 1 }, 600);
+        $("#professional .bd .pro-item").delay(100).animate({ top: 0, opacity: 1 }, 300);
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 300);
       }
       // 案例展示 #case
       if (destination.index === 3) {
-        $("#case .bd-list li").delay(800).css("transform", "rotateZ(0) translate(0, 0)");
-        $(destination.item).find(".btn-square").delay(400).animate({ top: 0, opacity: 1 }, 600, function () { $("#case .bd").css("box-shadow", "0 0 16px 0 #ffdc90") });
+        $("#case .bd-list li").delay(100).css("transform", "rotateZ(0) translate(0, 0)");
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 600, function () { $("#case .bd").css("box-shadow", "0 0 16px 0 #ffdc90") });
       }
       // 服务优势 #advantage
       if (destination.index === 4) {
-        $("#advantage .hd h5 span:nth-of-type(1)").delay(500).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 b:nth-of-type(1)").delay(600).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 span:nth-of-type(2)").delay(700).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 b:nth-of-type(2)").delay(800).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 span:nth-of-type(3)").delay(900).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 b:nth-of-type(3)").delay(1000).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 span:nth-of-type(4)").delay(1100).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 b:nth-of-type(4)").delay(1200).animate({ opacity: 1 }, 300);
-        $("#advantage .hd h5 span:nth-of-type(5)").delay(1300).animate({ opacity: 1 }, 300);
-        $("#advantage .bd").delay(1400).animate({ height: "410px", opacity: 1 }, 300, function () {
-          $("#advantage .list-item").animate({ opacity: 1 }, 300);
+        $("#advantage .hd h5 span:nth-of-type(1)").delay(100).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 b:nth-of-type(1)").delay(150).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 span:nth-of-type(2)").delay(200).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 b:nth-of-type(2)").delay(250).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 span:nth-of-type(3)").delay(300).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 b:nth-of-type(3)").delay(350).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 span:nth-of-type(4)").delay(400).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 b:nth-of-type(4)").delay(450).animate({ opacity: 1 }, 200);
+        $("#advantage .hd h5 span:nth-of-type(5)").delay(500).animate({ opacity: 1 }, 200);
+        $("#advantage .bd").delay(400).animate({ height: "410px", opacity: 1 }, 200, function () {
+          $("#advantage .list-item").animate({ opacity: 1 }, 200);
           $("#advantage .list-item .wrap").css("box-shadow", "0 0 3px 0 #FFDC90");
         });
-        $(destination.item).find(".btn-square").delay(1500).animate({ top: 0, opacity: 1 }, 300);
+        $(destination.item).find(".btn-square").delay(400).animate({ top: 0, opacity: 1 }, 300);
       }
       // 免费服务 #service
       if (destination.index === 5) {
         $(destination.item).find(".bd-list .list-item").css("transform", "translateY(0)");
-        $(destination.item).find(".bd-list .list-item:nth-child(2n-1) .txt").delay(600).animate({ top: 0 }, 600);
-        $(destination.item).find(".bd-list .list-item:nth-child(2n) .txt").delay(600).animate({ top: "50%" }, 600);
-        $(destination.item).find(".btn-square").delay(600).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".bd-list .list-item:nth-child(2n-1) .txt").delay(200).animate({ top: 0 }, 300);
+        $(destination.item).find(".bd-list .list-item:nth-child(2n) .txt").delay(200).animate({ top: "50%" }, 300);
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 300);
       }
       // 资深设计师一对一服务 #designer
       if (destination.index === 6) {
@@ -132,51 +132,51 @@ $(function () {
         // if (!designerTimer) {
         //   designerTimer = setInterval(autoSlide, 3000);
         // }
-        $(destination.item).find("#style-box").delay(600).animate({opacity: 1}, 600);
+        $(destination.item).find("#style-box").delay(300).animate({opacity: 1}, 300);
       }
       // 额外服务支持 #support
       if (destination.index === 7) {
-        $(destination.item).find(".bd-list .list-item").delay(200).animate({ opacity: 1 }, 600, function () {
+        $(destination.item).find(".bd-list .list-item").delay(100).animate({ opacity: 1 }, 300, function () {
           $(this).css("transform", "translateX(0)");
         });
-        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 300);
       }
       // 一站式服务 #slogan
       if (destination.index === 8) {
         $(destination.item).find(".bd-list .list-item").each(function (i) {
-          $(this).delay(i * 200 + 600).animate({ left: 0 }, 600);
+          $(this).delay(i * 50 + 100).animate({ left: 0 }, 300);
         });
-        $(destination.item).find(".ft").delay(2200).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".ft").delay(300).animate({ top: 0, opacity: 1 }, 300);
       }
       // 名师在线答疑 #focus
       if (destination.index === 9) {
-        $(destination.item).find(".bd img").delay(200).animate({ opacity: 0.3 }, 1600);
+        $(destination.item).find(".bd img").delay(300).animate({ opacity: 0.3 }, 300);
         $(destination.item).find(".bd .bd-list.left li").each(function (i) {
-          $(this).delay(i * 200).animate({ right: 0, opacity: 1 }, 800);
+          $(this).delay(i * 50).animate({ right: 0, opacity: 1 }, 100);
         });
         $(destination.item).find(".bd .bd-list.right li").each(function (i) {
-          $(this).delay(i * 200 + 100).animate({ left: 0, opacity: 1 }, 800);
+          $(this).delay(i * 50 + 50).animate({ left: 0, opacity: 1 }, 100);
         });
-        $(destination.item).find(".ft .btn-square").delay(600).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".ft .btn-square").delay(300).animate({ top: 0, opacity: 1 }, 300);
       }
       if (destination.index === 10) {
-        $(destination.item).find(".bd").delay(800).animate({height: "414px", opacity: 1}, 600);
-        $(destination.item).find(".btn-square").delay(300).animate({ top: 0, opacity: 1}, 600);
+        $(destination.item).find(".bd").delay(300).animate({height: "414px", opacity: 1}, 300);
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1}, 300);
       }
       // 多年专注，不玩套路 #goal
       if (destination.index === 11) {
-        $(destination.item).find(".bd-list").delay(800).animate({ height: "265px" }, 600, function () {
+        $(destination.item).find(".bd-list").delay(300).animate({ height: "265px" }, 300, function () {
           $(this).children().each(function () {
             digtalAutoIncrease($(this).find(".wrap div span"));
           });
         });
-        $(destination.item).find(".btn-square").delay(800).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".btn-square").delay(150).animate({ top: 0, opacity: 1 }, 300);
       }
       // 友好合作，互利共赢 #partner
       if (destination.index === 12) {
-        $(destination.item).find(".bd-list").delay(600).animate({ opacity: 1 }, 1000);
+        $(destination.item).find(".bd-list").delay(300).animate({ opacity: 1 }, 300);
         // $(destination.item).find(".list-item").css({"transform": "translate(0, 0)"});
-        $(destination.item).find(".btn-square").delay(600).animate({ top: 0, opacity: 1 }, 600);
+        $(destination.item).find(".btn-square").delay(0).animate({ top: 0, opacity: 1 }, 300);
       }
       // #about
       if (destination.index === 13) {
@@ -195,17 +195,17 @@ $(function () {
       }
 
       // 离开页
-      $(origin.item).find(".hd h2").animate({ top: "-360%", opacity: 0 }, 300);
-      $(origin.item).find(".hd h5 .left").animate({ left: "-360%", opacity: 0 }, 300);
-      $(origin.item).find(".hd h5 .right").animate({ right: "-360%", opacity: 0 }, 300);
+      $(origin.item).find(".hd h2").animate({ top: "-360%", opacity: 0 }, 100);
+      $(origin.item).find(".hd h5 .left").animate({ left: "-360%", opacity: 0 }, 100);
+      $(origin.item).find(".hd h5 .right").animate({ right: "-360%", opacity: 0 }, 100);
       $(origin.item).find(".ft .btn-square").animate({ top: "500px", opacity: 0 }, 200);
 
       // 预算页 #budget
       if (origin.index === 1) {
-        $(origin.item).find(".bd").animate({ height: 0, opacity: 0 }, 300, function () {
-          $(this).find(".lt").animate({ bottom: "-360%", opacity: 0 }, 300);
-          $(this).find(".btn-round").animate({ opacity: 0 }, 300);
-          $(this).find(".rt").animate({ bottom: "-360%", opacity: 0 }, 300);
+        $(origin.item).find(".bd").animate({ height: 0, opacity: 0 }, 100, function () {
+          $(this).find(".lt").animate({ bottom: "-360%", opacity: 0 }, 100);
+          $(this).find(".btn-round").animate({ opacity: 0 }, 100);
+          $(this).find(".rt").animate({ bottom: "-360%", opacity: 0 }, 100);
         });
         if(budgetTimer) {
           clearInterval(budgetTimer);
@@ -215,8 +215,8 @@ $(function () {
 
       // 专业性 #professional
       if (origin.index === 2) {
-        $("#professional .bd .pro-item:nth-child(2n-1)").animate({ top: "100%", opacity: 0 }, 300);
-        $("#professional .bd .pro-item:nth-child(2n)").animate({ top: "-100%", opacity: 0 }, 300);
+        $("#professional .bd .pro-item:nth-child(2n-1)").animate({ top: "100%", opacity: 0 }, 100);
+        $("#professional .bd .pro-item:nth-child(2n)").animate({ top: "-100%", opacity: 0 }, 100);
       }
 
       // 案例展示 #case
@@ -232,10 +232,10 @@ $(function () {
 
       // 服务优势 #advantage
       if (origin.index === 4) {
-        $("#advantage .hd h5 span").animate({ opacity: 0 }, 300);
-        $("#advantage .hd h5 b").animate({ opacity: 0 }, 300);
-        $("#advantage .bd").animate({ height: 0 }, 300, function () {
-          $("#advantage .list-item").animate({ opacity: 0 }, 300);
+        $("#advantage .hd h5 span").animate({ opacity: 0 }, 100);
+        $("#advantage .hd h5 b").animate({ opacity: 0 }, 100);
+        $("#advantage .bd").animate({ height: 0 }, 100, function () {
+          $("#advantage .list-item").animate({ opacity: 0 }, 100);
           $("#advantage .list-item .wrap").css("box-shadow", "none");
         });
       }
@@ -243,8 +243,8 @@ $(function () {
       // 免费服务 #service
       if (origin.index === 5) {
         // $("#service .hd h2").animate({top: "-360%", opacity: 0}, 300);
-        $(origin.item).find(".bd-list .list-item:nth-child(2n-1)").css("transform", "translateY(50%)").find(".txt").animate({ top: "50%" }, 300);
-        $(origin.item).find(".bd-list .list-item:nth-child(2n)").css("transform", "translateY(-50%)").find(".txt").animate({ top: "0%" }, 300);
+        $(origin.item).find(".bd-list .list-item:nth-child(2n-1)").css("transform", "translateY(50%)").find(".txt").animate({ top: "50%" }, 100);
+        $(origin.item).find(".bd-list .list-item:nth-child(2n)").css("transform", "translateY(-50%)").find(".txt").animate({ top: "0%" }, 100);
       }
 
       // 资深设计师一对一服务 #designer
@@ -254,51 +254,51 @@ $(function () {
         //   clearInterval(designerTimer);
         //   designerTimer = 0;
         // }
-        $(origin.item).find("#style-box").animate({opacity: 0}, 300);
+        $(origin.item).find("#style-box").animate({opacity: 0}, 100);
       }
 
       // 额外服务支持 #support
       if (origin.index === 7) {
-        $(origin.item).find(".list-item:nth-child(1)").animate({ opacity: 0 }, 300, function () {
+        $(origin.item).find(".list-item:nth-child(1)").animate({ opacity: 0 }, 100, function () {
           $(this).css("transform", "translateX(150%)");
         });
-        $(origin.item).find(".list-item:nth-child(2)").animate({ opacity: 0 }, 300, function () {
+        $(origin.item).find(".list-item:nth-child(2)").animate({ opacity: 0 }, 100, function () {
           $(this).css("transform", "translateX(50%)");
         });
-        $(origin.item).find(".list-item:nth-child(3)").animate({ opacity: 0 }, 300, function () {
+        $(origin.item).find(".list-item:nth-child(3)").animate({ opacity: 0 }, 100, function () {
           $(this).css("transform", "translateX(-50%)");
         });
-        $(origin.item).find(".list-item:nth-child(4)").animate({ opacity: 0 }, 300, function () {
+        $(origin.item).find(".list-item:nth-child(4)").animate({ opacity: 0 }, 100, function () {
           $(this).css("transform", "translateX(-150%)");
         });
       }
 
       // #slogan
       if (origin.index === 8) {
-        $(origin.item).find(".bd-list .list-item").animate({ left: "1200px" }, 300);
-        $(origin.item).find(".ft").animate({ top: "500px", opacity: 0 }, 300);
+        $(origin.item).find(".bd-list .list-item").animate({ left: "1200px" }, 100);
+        $(origin.item).find(".ft").animate({ top: "500px", opacity: 0 }, 100);
       }
 
       // #focus
       if (origin.index === 9) {
-        $(origin.item).find(".bd img").animate({ opacity: 0 }, 300);
-        $(origin.item).find(".bd .bd-list.left li").animate({ right: "1500px", opacity: 0 }, 300);
-        $(origin.item).find(".bd .bd-list.right li").animate({ left: "1500px", opacity: 0 }, 300);
+        $(origin.item).find(".bd img").animate({ opacity: 0 }, 100);
+        $(origin.item).find(".bd .bd-list.left li").animate({ right: "1500px", opacity: 0 }, 100);
+        $(origin.item).find(".bd .bd-list.right li").animate({ left: "1500px", opacity: 0 }, 100);
       }
 
       if (origin.index === 10) {
-        $(origin.item).find(".bd").animate({height: "0px", opacity: 0}, 300);
+        $(origin.item).find(".bd").animate({height: "0px", opacity: 0}, 100);
       }
 
       // #goal
       if (origin.index === 11) {
-        $(origin.item).find(".bd-list").animate({ height: "0px" }, 300);
+        $(origin.item).find(".bd-list").animate({ height: "0px" }, 100);
         $(origin.item).find(".bd-list .list-item .wrap div span").html(0);
       }
 
       // #partner
       if (origin.index === 12) {
-        $(origin.item).find(".bd-list").animate({ opacity: 0 }, 300);
+        $(origin.item).find(".bd-list").animate({ opacity: 0 }, 100);
         // $(origin.item).find(".list-item").each(function() {
         //   var posX = Math.ceil(Math.random()*1000 + 1500) + "px";
         //   var posY = Math.ceil(Math.random()*1000 + 1500) + "px";
