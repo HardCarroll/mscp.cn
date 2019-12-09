@@ -22,14 +22,23 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
 
 // 预算服务处理函数
 function proc_getBudget($data) {
-  $arr_data = [
-    array("name"=>"设计费", "tips"=>"效果图、施工图等制作", "value"=>36800),
-    array("name"=>"材料费", "tips"=>"装修主材料、辅材料等", "value"=>368000),
-    array("name"=>"人工费", "tips"=>"泥工、木工、电工、等", "value"=>88000),
-    array("name"=>"设备费", "tips"=>"厨房、空调等设备采购", "value"=>98000),
-    array("name"=>"总计", "tips"=>"", "value"=>(36800+368000+88000+98000))
-  ];
-  return json_encode($arr_data, 320);
+  $arr_data = json_decode($data, TRUE);
+  $arr_budget = array("设计费"=>$arr_data["area"]*80,
+                      "材料费"=>$arr_data["area"]*550,
+                      "人工费"=>$arr_data["area"]*650,
+                      "软装配饰"=>$arr_data["area"]*80,
+                      "灯饰光源"=>$arr_data["area"]*100,
+                      "餐厅桌椅"=>$arr_data["area"]*150,
+                      "空调电器"=>$arr_data["area"]*150,
+                      "厨放设备及抽排"=>$arr_data["area"]*200,
+                      "企划灯箱"=>$arr_data["area"]*100,
+                      "门牌发光字"=>$arr_data["area"]*50,
+                      "餐具小件"=>$arr_data["area"]*50,
+                      "窗帘工服"=>$arr_data["area"]*50,
+                      "收银监控音响"=>$arr_data["area"]*80,
+                      "其他"=>$arr_data["area"]*50,
+                    );
+  return json_encode($arr_budget, 320);
 }
 
 // 留言板功能处理函数

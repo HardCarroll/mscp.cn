@@ -77,15 +77,23 @@ $(function () {
 
           if (!budgetTimer) {
             budgetTimer = setInterval(function () {
-              var val1 = val2 = val3 = val4 = val5 = val6 = 0;
+              var val1 = val2 = val3 = val4 = val5 = val6 = val7 = val8 = val9 = val10 = val11 = val12 = val13 = val14 = 0;
               $(destination.item).find(".rt .detail p:nth-of-type(1) span").html(val1 = getRandomNum(3000, 30000));
               $(destination.item).find(".rt .detail p:nth-of-type(2) span").html(val2 = getRandomNum(10000, 200000));
               $(destination.item).find(".rt .detail p:nth-of-type(3) span").html(val3 = getRandomNum(10000, 200000));
               $(destination.item).find(".rt .detail p:nth-of-type(4) span").html(val4 = getRandomNum(8000, 80000));
               $(destination.item).find(".rt .detail p:nth-of-type(5) span").html(val5 = getRandomNum(5000, 30000));
               $(destination.item).find(".rt .detail p:nth-of-type(6) span").html(val6 = getRandomNum(5000, 50000));
+              $(destination.item).find(".rt .detail p:nth-of-type(7) span").html(val7 = getRandomNum(3000, 30000));
+              $(destination.item).find(".rt .detail p:nth-of-type(8) span").html(val8 = getRandomNum(10000, 200000));
+              $(destination.item).find(".rt .detail p:nth-of-type(9) span").html(val9 = getRandomNum(10000, 200000));
+              $(destination.item).find(".rt .detail p:nth-of-type(10) span").html(val10 = getRandomNum(8000, 80000));
+              $(destination.item).find(".rt .detail p:nth-of-type(11) span").html(val11 = getRandomNum(5000, 30000));
+              $(destination.item).find(".rt .detail p:nth-of-type(12) span").html(val12 = getRandomNum(5000, 50000));
+              $(destination.item).find(".rt .detail p:nth-of-type(13) span").html(val13 = getRandomNum(8000, 80000));
+              $(destination.item).find(".rt .detail p:nth-of-type(14) span").html(val14 = getRandomNum(5000, 30000));
 
-              $(destination.item).find(".rt .total span").html(val1 + val2 + val3 + val4 + val5 + val6);
+              $(destination.item).find(".rt .total span").html(val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8 + val9 + val10 + val11 + val12 + val13 + val14);
             }, 500);
           }
 
@@ -359,24 +367,13 @@ $(function () {
         contentType: false,
         dataType: "json",
         success: function (result) {
-          var html = '';
-          html += '<table class="table table-hover">';
-          html += '<thead><tr><th></th><th>名称</th><th>说明</th><th>费用</th></tr></thead>';
-          html += '<tbody>';
-          for (var item in result) {
-            html += '<tr><th>';
-            html += (parseInt(item, 10) + 1);
-            html += '</th>';
-            for (var val in result[item]) {
-              html += '<td>';
-              html += result[item][val];
-              html += '</td>';
-            }
-            html += '</tr>';
+          clearInterval(budgetTimer);
+          var total = 0;
+          for(var i in result) {
+            $("#budget .rt .detail").find("p[data-item='"+i+"']").find("span").html(result[i]);
+            total += result[i];
           }
-          html += '</tbody></table>';
-          $("#budgetModal .modal-body").html(html);
-          $("#budgetModal").modal({ backdrop: "static" });
+          $("#budget .rt .total").find("span").html(total);
         },
         error: function (err) {
           console.log("fail: " + err);

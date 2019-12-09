@@ -181,7 +181,7 @@
   overflow: hidden;
 }
 #budget .lt {
-  padding: 15px 85px;
+  padding: 15px 0;
   position: relative;
   opacity: 0;
   bottom: -360%;
@@ -218,7 +218,7 @@
   height: 150px;
 }
 #budget .rt {
-  padding: 15px 85px;
+  padding: 15px 0;
   position: relative;
   opacity: 0;
   bottom: -360%;
@@ -245,15 +245,18 @@
   text-align: center;
 }
 #budget .rt .detail p {
-  margin: 5px;
+  line-height: 28px;
+  display: flex;
+  justify-content: space-between;
 }
 #budget .rt .detail p span {
-  margin: 0 15px;
-  width: 80px;
   display: inline-block;
   font-family: "lcd";
   text-align: right;
   font-size: 20px;
+}
+#budget .rt .detail p b {
+  font-weight: normal;
 }
 #budget .rt .tips {
   font-size: 14px;

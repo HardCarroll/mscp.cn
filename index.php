@@ -121,15 +121,23 @@
           </div>
           <div class="rt">
             <div class="total">您的餐厅投资预算约为<span>166800</span>元</div>
-            <div class="detail">
-              <p>设&nbsp;&nbsp;计&nbsp;&nbsp;费：<span>0</span>元</p>
-              <p>材&nbsp;&nbsp;料&nbsp;&nbsp;费：<span>0</span>元</p>
-              <p>人&nbsp;&nbsp;工&nbsp;&nbsp;费：<span>0</span>元</p>
-              <p>餐饮配套：<span>0</span>元</p>
-              <p>软装配饰：<span>0</span>元</p>
-              <p>电器设备：<span>0</span>元</p>
+            <div class="detail row container-fluid">
+              <p class="col-sm-6" data-item="设计费"><b>设计费：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="材料费"><b>材料费：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="人工费"><b>人工费：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="软装配饰"><b>软装配饰：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="灯饰光源"><b>灯饰光源：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="餐厅桌椅"><b>餐厅桌椅：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="空调电器"><b>空调电器：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="厨放设备及抽排"><b>厨放设备及抽排：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="企划灯箱"><b>企划灯箱：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="门牌发光字"><b>门牌发光字：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="餐具小件"><b>餐具小件：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="窗帘工服"><b>窗帘工服：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="收银监控音响"><b>收银监控音响：</b><span>0</span><b>元</b></p>
+              <p class="col-sm-6" data-item="其他"><b>其他：</b><span>0</span><b>元</b></p>
             </div>
-            <div class="tips">以上装修数据由弥尚餐饮历史服务餐厅装修造价及您填写信息实时分析计算得出！</div>
+            <div class="tips">以上投资报价由优厨联盟历时15年综合348+家分店历史数据分析结果，没有包含房屋租金及押金，加盟费等，具体投资及项目可行性请致电15580807779或微信13873976777免费上门实际考察为准！</div>
           </div>
         </div>
         <div class="ft"></div>
