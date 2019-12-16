@@ -16,7 +16,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   <link rel="stylesheet" href="/cms/include/css/icons.css">
   <link rel="stylesheet" href="/cms/include/css/cms.css">
   <link rel="stylesheet" href="/cms/include/css/article_manage.css">
-  <title>文章管理——Powered by 黄狮虎</title>
+  <title>新闻管理——Powered by 黄狮虎</title>
 </head>
 <body>
   <div class="layer">
@@ -96,26 +96,26 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
           <div class="list-item slide slide-left active" role="button" href="/cms/admin/article_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-pencil"></span>
-              <span class="title">文章管理</span>
+              <span class="title">新闻管理</span>
               <span class="pull-right glyphicon glyphicon-menu"></span>
             </div>
             <ul class="slide-menu">
               <li class="text-primary active" href="#articleTab">
                 <span class="glyphicon glyphicon-list"></span>
-                <span class="title">文章总览</span>
+                <span class="title">新闻总览</span>
               </li>
               <li class="text-primary" href="#uploadArticle">
                 <span class="glyphicon glyphicon-cloud-upload"></span>
-                <span class="title">上传文章</span>
+                <span class="title">上传新闻</span>
               </li>
             </ul>
           </div>
-          <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
+          <!-- <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-user"></span>
               <span class="title">用户管理</span>
             </div>
-          </div>
+          </div> -->
         </div>
         <a href="/index.php" class="front-end">
           <span class="glyphicon glyphicon-home"></span>
@@ -128,7 +128,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
           <ul id="pageTabs" class="hidden-xs nav nav-tabs" role="tablist">
             <li role="presentation" class="active" href="#articleTab">
               <span class="pull-left glyphicon glyphicon-list"></span>
-              <span class="title">文章总览</span>
+              <span class="title">新闻总览</span>
             </li>
           </ul>
           <div id="pageTabContent" class="tab-content">
@@ -136,7 +136,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               <div class="clearfix overview">
                 <div class="col-xs-6 col-sm-4 col-md-3">
                   <div class="wrap total">
-                    <p>全部文章</p>
+                    <p>全部新闻</p>
                     <span class="text-primary digital"><?php echo $articleManage->getRecordCounts(); ?></span>
                     <span>条</span>
                   </div>
@@ -150,7 +150,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                   <div class="wrap marked">
-                    <p>推荐阅读</p>
+                    <p>首页显示</p>
                     <span class="text-success digital"><?php echo $articleManage->getRecordCounts("b_recommends='T'"); ?></span>
                     <span>条</span>
                   </div>
@@ -158,7 +158,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="col-xs-6 col-sm-4 col-md-3">
                   <div class="btn-upload" href="#uploadArticle">
                     <span class="glyphicon glyphicon-cloud-upload"></span>
-                    <span class="title">上传文章</span>
+                    <span class="title">上传新闻</span>
                   </div>
                 </div>
               </div>
@@ -210,15 +210,15 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <textarea required type="text" class="form-control" name="cp-description"></textarea>
                 </div>
                 <div class="input-group">
-                  <label for="article-title" class="input-group-addon">文章标题</label>
+                  <label for="article-title" class="input-group-addon">新闻标题</label>
                   <input required type="text" class="form-control" name="article-title">
                 </div>
                 <div class="input-group">
-                  <label for="article-author" class="input-group-addon">文章作者</label>
+                  <label for="article-author" class="input-group-addon">新闻作者</label>
                   <input required type="text" class="form-control" name="article-author">
                 </div>
                 <div class="input-group">
-                  <label for="article-class" class="input-group-addon">文章类别</label>
+                  <label for="article-class" class="input-group-addon">新闻类别</label>
                   <select name="article-class" class="form-control">
                     <option value="0">公司动态</option>
                     <option value="1">行业资讯</option>
@@ -229,7 +229,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <input type="date" class="form-control" name="article-date" required>
                 </div>
                 <div class="input-group">
-                  <label for="upload-content" class="input-group-addon">文章内容</label>
+                  <label for="upload-content" class="input-group-addon">新闻内容</label>
                   <textarea class="form-control" id="upload-content"></textarea>
                 </div>
                 <div class="input-group">
@@ -257,15 +257,15 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <textarea required type="text" class="form-control" name="cp-description"></textarea>
                 </div>
                 <div class="input-group">
-                  <label for="article-title" class="input-group-addon">文章标题</label>
+                  <label for="article-title" class="input-group-addon">新闻标题</label>
                   <input required type="text" class="form-control" name="article-title">
                 </div>
                 <div class="input-group">
-                  <label for="article-author" class="input-group-addon">文章作者</label>
+                  <label for="article-author" class="input-group-addon">新闻作者</label>
                   <input required type="text" class="form-control" name="article-author">
                 </div>
                 <div class="input-group">
-                  <label for="article-class" class="input-group-addon">文章类别</label>
+                  <label for="article-class" class="input-group-addon">新闻类别</label>
                   <select name="article-class" class="form-control">
                     <option value="0">公司动态</option>
                     <option value="1">行业资讯</option>
@@ -276,7 +276,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <input type="date" class="form-control" name="article-date" required>
                 </div>
                 <div class="input-group">
-                  <label for="edit-content" class="input-group-addon">文章内容</label>
+                  <label for="edit-content" class="input-group-addon">新闻内容</label>
                   <textarea class="form-control" id="edit-content"></textarea>
                 </div>
                 <div class="input-group">

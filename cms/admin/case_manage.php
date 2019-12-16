@@ -96,26 +96,26 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
           <div class="list-item slide slide-left" role="button" href="/cms/admin/article_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-pencil"></span>
-              <span class="title">文章管理</span>
+              <span class="title">新闻管理</span>
               <span class="pull-right glyphicon glyphicon-menu"></span>
             </div>
             <ul class="slide-menu">
               <li class="text-primary" href="#articleTab">
                 <span class="glyphicon glyphicon-list"></span>
-                <span class="title">文章总览</span>
+                <span class="title">新闻总览</span>
               </li>
               <li class="text-primary" href="#uploadArticle">
                 <span class="glyphicon glyphicon-cloud-upload"></span>
-                <span class="title">上传文章</span>
+                <span class="title">上传新闻</span>
               </li>
             </ul>
           </div>
-          <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
+          <!-- <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-user"></span>
               <span class="title">用户管理</span>
             </div>
-          </div>
+          </div> -->
         </div>
         <a href="/index.php" class="front-end">
           <span class="glyphicon glyphicon-home"></span>
@@ -150,7 +150,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                   <div class="wrap marked">
-                    <p>推荐阅读</p>
+                    <p>首页显示</p>
                     <span class="text-success digital"><?php echo $caseManage->getRecordCounts("b_recommends='T'"); ?></span>
                     <span>条</span>
                   </div>
@@ -221,10 +221,11 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="input-group">
                   <label for="case-class" class="input-group-addon">项目类型</label>
                   <select class="form-control" name="case-class">
-                    <option value="0">餐厅空间</option>
-                    <option value="1">酒店空间</option>
-                    <option value="2">娱乐空间</option>
-                    <option value="3">其他设计</option>
+                    <option value="0">新中式</option>
+                    <option value="1">田园</option>
+                    <option value="2">工业</option>
+                    <option value="3">时尚</option>
+                    <option value="4">民俗</option>
                   </select>
                 </div>
                 <div class="input-group">
@@ -252,14 +253,14 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                         <span class="glyphicon glyphicon-open"></span>
                         <span>本地上传</span>
                       </div>
-                      <div class="btn btn-default btn-remote">
+                      <!-- <div class="btn btn-default btn-remote">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span>远程文件</span>
                       </div>
                       <div class="btn btn-default btn-online">
                         <span class="glyphicon glyphicon-globe"></span>
                         <span>网络图片</span>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>
@@ -299,10 +300,11 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="input-group">
                   <label for="case-class" class="input-group-addon">项目类型</label>
                   <select class="form-control" name="case-class">
-                    <option value="0">餐厅空间</option>
-                    <option value="1">酒店空间</option>
-                    <option value="2">娱乐空间</option>
-                    <option value="3">其他设计</option>
+                    <option value="0">新中式</option>
+                    <option value="1">田园</option>
+                    <option value="2">工业</option>
+                    <option value="3">时尚</option>
+                    <option value="4">民俗</option>
                   </select>
                 </div>
                 <div class="input-group">
@@ -330,14 +332,14 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                         <span class="glyphicon glyphicon-open"></span>
                         <span>本地上传</span>
                       </div>
-                      <div class="btn btn-default btn-remote">
+                      <!-- <div class="btn btn-default btn-remote">
                         <span class="glyphicon glyphicon-folder-open"></span>
                         <span>远程文件</span>
                       </div>
                       <div class="btn btn-default btn-online">
                         <span class="glyphicon glyphicon-globe"></span>
                         <span>网络图片</span>
-                      </div>
+                      </div> -->
                     </div>
                   </div>
                 </div>

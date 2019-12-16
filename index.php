@@ -1,3 +1,6 @@
+<?php
+  require_once($_SERVER["DOCUMENT_ROOT"]."/cms/include/php/include.php");
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -214,8 +217,41 @@
         </div>
         <div class="bd container-fluid inner">
           <ul class="row bd-list">
-            <li class="col-xs-12 col-sm-6 col-md-4">
-              <a href="/case/2019080601.html">
+            <?php
+              $rule_case = "b_recommends='T'";
+              $result_case = $caseManage->selectItem($rule_case);
+              $cnt_case = $caseManage->getRecordCounts($rule_case);
+
+              // print_r(json_decode($result_case[0]["ct_image"], TRUE)[0]["url"]);
+              
+              if(!$cnt_case) {
+                // no records
+                for($i = 0; $i < 6; $i++) {
+                  echo '<li class="col-xs-12 col-sm-6 col-md-4">';
+                  echo '<a href="/case/2019082601.html">';
+                  echo '<img src="/upload/2019082601/201908260101.jpg" alt="">';
+                  echo '<div class="cover">';
+                  echo '<h3 class="text-ellipsis title">东莞洪记荷湘里</h3><h5 class="text-ellipsis content">被称为“芙蓉国”的湖南是中国著名的渔米之乡，绿色大省，生态大省。湖南的旅游资源十分丰富，张家界，崀山，洞庭湖等山水名胜，享誉海内外，人称“人文湘楚、山水湖南”。洞庭湖畔的荷花飘香，“小荷才露尖尖角，早有蜻蜓立上头”也形成了湘土文化的一大特色，打造一个极具田园家乡特色的民俗湘间菜馆，是为了在潮流来来去去，物欲横流的今天，保持原始的个性与初心，让在都市久居的人们能够在原生态的环境中，找到久违的世外桃源，回到内心熟悉的故土，没有束缚，没有压抑，只为了将纯粹的自在与快乐传递给客户，因为极致，所以纯粹，因为用心，所以脱颖而出。</h5><span class="glyphicon glyphicon-plus"></span>';
+                  echo '</div>';
+                  echo '</a>';
+                  echo '</li>';
+                }
+              }
+              else {
+                for($i = 0; $i < ($cnt_case>6?6:$cnt_case); $i++) {
+                  echo '<li class="col-xs-12 col-sm-6 col-md-4">';
+                  echo '<a href="'. $result_case[$i]["st_path"] .'">';
+                  echo '<img src="'. json_decode($result_case[$i]["ct_image"], TRUE)[0]["url"] .'" alt="">';
+                  echo '<div class="cover">';
+                  echo '<h3 class="text-ellipsis title">'. $result_case[$i]["ct_title"] .'</h3><h5 class="text-ellipsis content">'. $result_case[$i]["ct_description"] .'</h5><span class="glyphicon glyphicon-plus"></span>';
+                  echo '</div>';
+                  echo '</a>';
+                  echo '</li>';
+                }
+              }
+            ?>
+            <!-- <li class="col-xs-12 col-sm-6 col-md-4">
+              <a href="/case/2019082601.html">
                 <img src="/upload/2019082601/201908260101.jpg" alt="">
                 <div class="cover">
                   <h3 class="text-ellipsis title">东莞洪记荷湘里</h3>
@@ -273,7 +309,7 @@
                   <span class="glyphicon glyphicon-plus"></span>
                 </div>
               </a>
-            </li>
+            </li> -->
           </ul>
         </div>
         <div class="ft">
@@ -844,7 +880,26 @@
             <div class="title"><span>弥尚<br>动态</span></div>
             <div class="content">
               <ul class="list">
-                <li class="list-item">
+                <?php
+                  $rule_article0 = "b_recommends='T' AND ct_class=0";
+                  $result0 = $articleManage->selectItem($rule_article0);
+                  $cnt_article0 = $articleManage->getRecordCounts($rule_article0);
+                  if(!$cnt_article0) {
+                    // no records
+                    echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                  }
+                  else {
+                    for ($i = 0; $i < ($cnt_article0>5?5:$cnt_article0); $i++) {
+                      echo "<li class='list-item'>";
+                      echo "<a href='" . $result0[$i]["st_path"] . "'>";
+                      echo "<div class='tit'>" . $result0[$i]["ct_title"] . "</div>";
+                      // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result0[$i]["ct_content"] . "</div></div>";
+                      echo "</a>";
+                      echo "</li>";
+                    }
+                  }
+                ?>
+                <!-- <li class="list-item">
                   <a href="javascript:;" class="wrap">
                     <div class="tit">公司动态新闻第1条</div>
                     <div class="des">
@@ -888,7 +943,7 @@
                       <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
                     </div>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -896,7 +951,26 @@
             <div class="title"><span>行业<br>资讯</span></div>
             <div class="content">
               <ul class="list">
-                <li class="list-item">
+                <?php
+                  $rule_article1 = "b_recommends='T' AND ct_class=1";
+                  $result1 = $articleManage->selectItem($rule_article1);
+                  $cnt_article1 = $articleManage->getRecordCounts($rule_article1);
+                  if(!$cnt_article1) {
+                    // no records
+                    echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                  }
+                  else {
+                    for ($i = 0; $i < ($cnt_article1>5?5:$cnt_article1); $i++) {
+                      echo "<li class='list-item'>";
+                      echo "<a href='" . $result1[$i]["st_path"] . "'>";
+                      echo "<div class='tit'>" . $result1[$i]["ct_title"] . "</div>";
+                      // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result1[$i]["ct_content"] . "</div></div>";
+                      echo "</a>";
+                      echo "</li>";
+                    }
+                  }
+                ?>
+                <!-- <li class="list-item">
                   <a href="javascript:;" class="wrap">
                     <div class="tit">行业前沿资讯第1条</div>
                     <div class="des">
@@ -940,13 +1014,13 @@
                       <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
                     </div>
                   </a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
         </div>
         <div class="ft">
-          <div class="btn btn-square">更多资讯</div>
+          <a href="/news/" class="btn btn-square">更多资讯</a>
         </div>
       </div>
     </div>
@@ -1144,11 +1218,11 @@
   </ul>
 
   <!-- Budget Modal -->
-  <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">
+  <!-- <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</d></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</div></button>
           <h4 class="modal-title" id="budgetModalLabel">装修费用明细表</h4>
         </div>
         <div class="modal-body">
@@ -1176,7 +1250,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <a class="bshareDiv" href="http://www.bshare.cn/share">分享按钮</a>
   <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=&style=3&fs=4&textcolor=#fff&bgcolor=#000&text=分享"></script>

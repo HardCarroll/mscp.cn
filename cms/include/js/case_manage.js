@@ -90,6 +90,7 @@ $(function() {
   // 保存按钮点击事件处理函数
   $(".btn-save").off("click").on("click", function() {
     updateItem({target: $(this).parent().parent().parent(), token: "updateItem", id: $(this).parent().parent().parent().attr("data-id")});
+    alert("已保存！");
   });
 
   // 发布按钮点击事件处理函数
@@ -350,6 +351,7 @@ function updateItem(argJson) {
     var imgArray = new Array();
     argJson.target.find(".case-thumb").children().not(":last").each(function() {
       var imgJson = {url: $(this).find("img").attr("src"), attr_alt: $(this).find('[name="data-alt"]').val(), attr_title: $(this).find('[name="data-title"]').val()};
+      // var imgJson = {url: $(this).find("img").attr("src"), attr_alt: $(this).find('[name="data-alt"]').val(), attr_title: $(this).find('[name="data-title"]').val(), attr_poster: $(this).find('[name="data-poster"]').val()};
       imgArray.push(imgJson);
     });
     var caseData = {
@@ -364,6 +366,7 @@ function updateItem(argJson) {
       ct_company: argJson.target.find("[name='case-company']").val(),
       ct_description: argJson.target.find("[name='case-description']").val(),
       ct_image: imgArray,
+      // ct_poster: imgArray,
       b_end: "TAB_END"
     };
     fmd.append("data", JSON.stringify(caseData));

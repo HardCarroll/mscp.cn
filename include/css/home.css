@@ -393,6 +393,7 @@
 #case .bd a img {
   width: 100%;
   transition: all 0.6s;
+  max-height: 200px;
 }
 #case .bd a .cover {
   position: absolute;

@@ -49,6 +49,7 @@ $(function() {
     window.editor_upload.sync();
     window.editor_edit.sync();
     updateItem({target: $(this).parent().parent().parent(), token: "updateItem", id: $(this).parent().parent().parent().attr("data-id")});
+    alert("已保存！");
   });
 
   // 删除确认对话框处理函数

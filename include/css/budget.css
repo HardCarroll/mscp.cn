@@ -39,11 +39,11 @@
   padding: 100px 0;
   display: flex;
   align-items: center;
-  box-shadow: 0 0 16px 0 rgba(80, 80, 80, 1);
+  /* box-shadow: 0 0 16px 0 rgba(80, 80, 80, 1); */
   overflow: hidden;
 }
 #budget .lt {
-  padding: 15px 85px;
+  padding: 15px 0;
   position: relative;
   flex: 1;
 }
@@ -81,8 +81,10 @@
   opacity: 1;
 }
 #budget .rt {
-  padding: 15px 85px;
+  padding: 15px 0;
   position: relative;
+  /* opacity: 0; */
+  bottom: -360%;
   flex: 1;
   color: #ffdc90;
 }
@@ -91,11 +93,12 @@
 }
 #budget .rt .total span {
   margin: 0 10px;
-  color: #ca1717;
+  color: #FFF;
   display: inline-block;
   width: 100px;
   font-family: "lcd";
   text-align: center;
+  font-size: 30px;
 }
 #budget .rt .detail {
   border: 1px solid #c6c8c8;
@@ -105,14 +108,18 @@
   text-align: center;
 }
 #budget .rt .detail p {
-  margin: 5px;
+  line-height: 28px;
+  display: flex;
+  justify-content: space-between;
 }
 #budget .rt .detail p span {
-  margin: 0 15px;
-  width: 80px;
   display: inline-block;
   font-family: "lcd";
   text-align: right;
+  font-size: 20px;
+}
+#budget .rt .detail p b {
+  font-weight: normal;
 }
 #budget .rt .tips {
   font-size: 14px;

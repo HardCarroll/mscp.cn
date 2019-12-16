@@ -1,5 +1,6 @@
 #banner {
-  background-image: url(/images/banner-bg.jpg);
+  background-image: url(/images/case-banner.jpg);
+  position: relative;
 }
 #banner .banner-title {
   position: absolute;

@@ -79,6 +79,7 @@ class DBManager {
         $sql_b .= ", ";
       }
     }
+    
     $sql = $sql_h . $sql_b . $sql_t;
     $this->execute($sql);
     $id = $this->selectItem()[0]["id"];

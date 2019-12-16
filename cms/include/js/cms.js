@@ -133,10 +133,12 @@ function setSiteCookie() {
  * 添加图片处理函数
  * @param {Object} target
  * @param {JSON} img
+ * @param {number} nPoster
  */
-function proc_addPictures(target, img) {
+function proc_addPictures(target, img, nPoster = 0) {
   // 添加图片节点
-  $(target).parent().before('<div class="col-sm-4 col-md-3"><div class="thumbnail"><input type="file" style="display:none;"><img><div class="caption"><input type="text" placeholder="图片名称(如：效果图)" name="data-title"><input type="text" placeholder="图片alt属性(SEO关键词)" name="data-alt" value="'+JSON.parse(getCookie("siteInfo")).keywords+'"></div></div><span class="btn btn-remove glyphicon glyphicon-trash"></span></div>');
+  $(target).parent().before('<div class="col-sm-4 col-md-3"><div class="thumbnail"><input type="file" style="display:none;"><img><div class="caption"><input type="text" placeholder="图片名称(如：效果图)" name="data-title"><input type="text" placeholder="图片alt属性(SEO关键词)" name="data-alt" value="'+JSON.parse(getCookie("siteInfo")).keywords+'"></div></div><span class="btn btn-remove glyphicon glyphicon-trash"></span><span class="btn btn-mark glyphicon glyphicon-star-empty"></span></div>');
+  // $(target).parent().before('<div class="col-sm-4 col-md-3"><div class="thumbnail"><input type="file" style="display:none;"><img><div class="caption"><input type="text" name="data-poster" value="'+img.attr_poster+'" style="display:none;"><input type="text" placeholder="图片名称(如：效果图)" name="data-title"><input type="text" placeholder="图片alt属性(SEO关键词)" name="data-alt" value="'+JSON.parse(getCookie("siteInfo")).keywords+'"></div></div><span class="btn btn-remove glyphicon glyphicon-trash"></span><span class="btn btn-mark glyphicon glyphicon-star-empty"></span></div>');
   // 更改图片路径
   $(target).parent().prev().find("img").attr("src", img.url);
   if(img.attr_title) {
@@ -145,6 +147,24 @@ function proc_addPictures(target, img) {
   if(img.attr_alt) {
     $(target).parent().prev().find("[name='data-alt']").val(img.attr_alt);
   }
+  // console.log(typeof img.attr_poster);
+  // if(img.attr_poster === "1") {
+  //   // console.log(1);
+  //   $(target).parent().find("[name='data-poster']").val(img.attr_poster);
+  //   $(target).parent().find("span.btn-mark").removeClass("glyphicon-star-empty").addClass("glyphicon-star");
+  // }
+
+  // 设置封面图片
+  // $(target).parent().parent().children().eq(nPoster).find("span.btn-mark").removeClass("glyphicon-star-empty").addClass("glyphicon-star");
+
+  // 设置封面图片按钮事件
+  // $(target).parent().prev().find("span.btn-mark").off("click").on("click", function(e) {
+  //   e.stopPropagation();
+  //   e.preventDefault();
+  //   $(this).toggleClass("glyphicon-star-empty").toggleClass("glyphicon-star").parent().siblings().find("span.btn-mark").addClass("glyphicon-star-empty").removeClass("glyphicon-star");
+  //   $(this).parent().find("[name='data-poster']").val(1);
+  //   $(this).parent().siblings().find("[name='data-poster']").val(0);
+  // });
   // 注册图片删除按钮事件
   $(target).parent().prev().find("span.btn-remove").off("click").on("click", function(e) {
     e.stopPropagation();

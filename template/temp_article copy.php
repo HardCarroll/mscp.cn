@@ -1,6 +1,6 @@
 <?php
-// $dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/json/temp_article.json");
-$dataJson = file_get_contents("php://input");
+$dataJson = file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/json/temp_article.json");
+// $dataJson = file_get_contents("php://input");
 $dataArray = json_decode($dataJson, true);
 $st_title = $dataArray["st_title"];
 $st_keywords = $dataArray["st_keywords"];

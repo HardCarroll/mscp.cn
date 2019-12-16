@@ -181,7 +181,7 @@ function proc_uploadFiles($files) {
     if($files["size"][$i] <= 2*1024*1024 && ($files["type"][$i] == "image/png" || $files["type"][$i] == "image/jpeg" || $files["type"][$i] == "image/gif")) {
       $fn = date("His_").$files["name"][$i];
       move_uploaded_file($files["tmp_name"][$i], ROOT_PATH.$path.$fn);
-      array_push($ret, '{"url": "'.($path.$fn).'", "attr_alt": "", "attr_title": ""}');
+      array_push($ret, '{"url": "'.($path.$fn).'", "attr_alt": "", "attr_title": "", "attr_poster": 0}');
     }
     else {
       return '{"err_no": -1, "err_code": "请检查文件大小或类型！"}';
