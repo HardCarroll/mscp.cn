@@ -7,6 +7,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       // 上传文件
       echo proc_uploadFiles($_FILES["files"]);
       break;
+    case "removeFiles":
+      echo proc_removeFiles($_POST["path"]);
+      break;
     case "login":
       // 登录按钮点击处理过程
       echo proc_login($userManage, $_POST["data"]);
@@ -180,12 +183,23 @@ function proc_uploadFiles($files) {
   for($i = 0; $i < count($files["size"]); $i++) {
     if($files["size"][$i] <= 2*1024*1024 && ($files["type"][$i] == "image/png" || $files["type"][$i] == "image/jpeg" || $files["type"][$i] == "image/gif")) {
       $fn = date("His_").$files["name"][$i];
-      move_uploaded_file($files["tmp_name"][$i], ROOT_PATH.$path.$fn);
+      $fhd = move_uploaded_file($files["tmp_name"][$i], ROOT_PATH.$path.$fn);
       array_push($ret, '{"url": "'.($path.$fn).'", "attr_alt": "", "attr_title": "", "attr_poster": 0}');
     }
     else {
       return '{"err_no": -1, "err_code": "请检查文件大小或类型！"}';
     }
+  }
+  unset($fhd);
+  return json_encode($ret, 320);
+}
+
+function proc_removeFiles($file_path) {
+  if(unlink($_SERVER["DOCUMENT_ROOT"] . $file_path)) {
+    $ret = '{"err_no": 0, "err_code": "delete file '.$file_path.' success."}';
+  }
+  else {
+    $ret = '{"err_no": -1, "err_code": "delete file '.$file_path.' failed."}';
   }
   return json_encode($ret, 320);
 }

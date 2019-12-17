@@ -138,6 +138,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </p>
               <p class="content">
                 欢迎使用本后台管理系统，通过本系统您可以轻松地进行人员管理、权限设置、内容管理等操作，本系统功能正在进一步开发完善中，如果您有更好的想法或建议，如果您在使用过程中遇到任何问题，请联系我！
+                <a href="http://mscp.gotoftp3.com" target="_blank">虚机后台</a>
               </p>
               <p class="end">
                 再次感谢您使用本系统，祝您生活愉快！

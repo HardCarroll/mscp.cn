@@ -66,16 +66,6 @@ $(function() {
         });
       }).click();
     }
-    // 远程图片按钮
-    if($(this).hasClass("btn-remote")) {
-      // proc_addPictures($(this), {url: "/src/case-thumb-hotel.jpg"});
-      alert("此功能正在开发中，敬请期待！");
-    }
-    // 网络图片按钮
-    if($(this).hasClass("btn-online")) {
-      // proc_addPictures($(this), {url: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548685758785&di=9457da526fb1b08a4eae2c8bbd66913f&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fb8389b504fc2d562e613fdc4ec1190ef76c66cfb.jpg"});
-      alert("此功能正在开发中，敬请期待！");
-    }
   });
 
   // 关闭按钮点击事件处理函数
@@ -89,50 +79,11 @@ $(function() {
 
   // 保存按钮点击事件处理函数
   $(".btn-save").off("click").on("click", function() {
+    window.editor_upload_case.sync();
+    window.editor_edit_case.sync();
     updateItem({target: $(this).parent().parent().parent(), token: "updateItem", id: $(this).parent().parent().parent().attr("data-id")});
     alert("已保存！");
   });
-
-  // 发布按钮点击事件处理函数
-  // $(".btn-post").off("click").on("click", function() {
-    // var fmd = new FormData();
-    // fmd.append("token", "add");
-
-    // var imgArray = new Array();
-    // var target = $(this).parent().parent().parent();
-    // target.find(".case-thumb").children().not(":last").each(function() {
-    //   var imgJson = {url: $(this).find("img").attr("src"), attr_alt: $(this).find('[name="data-alt"]').val(), attr_title: $(this).find('[name="data-title"]').val()};
-    //   imgArray.push(imgJson);
-    // });
-    // var caseData = {
-    //   st_title: target.find("[name='cp-title']").val(),
-    //   st_keywords: target.find("[name='cp-keywords']").val(),
-    //   st_description: target.find("[name='cp-description']").val(),
-    //   ct_title: target.find("[name='case-title']").val(),
-    //   ct_area: target.find("[name='case-area']").val(),
-    //   ct_address: target.find("[name='case-address']").val(),
-    //   ct_class: target.find("[name='case-class']").val(),
-    //   ct_team: target.find("[name='case-team']").val(),
-    //   ct_company: target.find("[name='case-company']").val(),
-    //   ct_description: target.find("[name='case-description']").val(),
-    //   ct_image: imgArray
-    // };
-    // fmd.append("data", JSON.stringify(caseData));
-    // $.ajax({
-    //   url: "/cms/debug.php",
-    //   type: "POST",
-    //   data: fmd,
-    //   dataType: "json",
-    //   processData: false,
-    //   contentType: false,
-    //   success: function(result) {
-    //     console.log(result);
-    //   },
-    //   error: function(error) {
-    //     console.log(error);
-    //   }
-    // });
-  // });
 
   // 删除确认对话框处理函数
   $("#modalConfirm .btn-danger").off("click").on("click", function() {
@@ -161,6 +112,23 @@ $(function() {
 
   refreshTabList({page: 1});
 
+});
+
+KindEditor.ready(function(K) {
+  window.editor_upload_case = K.create('#upload-case', {
+    width: '100%',
+    height: '400px',
+    resizeType: 0,
+    allowFileManager : true,
+    items: ['preview', '|', 'undo', 'redo', '|', 'template', 'plainpaste', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript', 'superscript', 'clearhtml', 'quickformat', '|', 'selectall', 'formatblock', 'fontsize', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','anchor', 'link', 'unlink', '|', 'source']
+  });
+  window.editor_edit_case = K.create('#edit-case', {
+    width: '100%',
+    height: '400px',
+    resizeType: 0,
+    allowFileManager : true,
+    items: ['preview', '|', 'undo', 'redo', '|', 'template', 'plainpaste', '|', 'justifyleft', 'justifycenter', 'justifyright', 'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript', 'superscript', 'clearhtml', 'quickformat', '|', 'selectall', 'formatblock', 'fontsize', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image','anchor', 'link', 'unlink', '|', 'source']
+  });
 });
 
 /**
@@ -197,6 +165,14 @@ function refreshTabContent(argJson) {
         $(this).find("[name='case-team']").val(result.ct_team);
         $(this).find("[name='case-company']").val(result.ct_company);
         $(this).find("[name='case-description']").val(result.ct_description);
+
+        if($(this).attr("id") === "editTab") {
+          window.editor_edit_case.html(result.ct_content);
+        }
+        if($(this).attr("id") === "uploadCase") {
+          window.editor_upload_case.html(result.ct_content);
+        }
+
         var imgArray = JSON.parse(result.ct_image);
         for(var i in imgArray) {
           if(imgArray.length < $(this).find(".case-thumb").children().length) {
@@ -351,9 +327,15 @@ function updateItem(argJson) {
     var imgArray = new Array();
     argJson.target.find(".case-thumb").children().not(":last").each(function() {
       var imgJson = {url: $(this).find("img").attr("src"), attr_alt: $(this).find('[name="data-alt"]').val(), attr_title: $(this).find('[name="data-title"]').val()};
-      // var imgJson = {url: $(this).find("img").attr("src"), attr_alt: $(this).find('[name="data-alt"]').val(), attr_title: $(this).find('[name="data-title"]').val(), attr_poster: $(this).find('[name="data-poster"]').val()};
       imgArray.push(imgJson);
     });
+    var content = "";
+    if(argJson.target.attr("id") === "uploadCase") {
+      content = argJson.target.find("#upload-case").val();
+    }
+    if(argJson.target.attr("id") === "editTab") {
+      content = argJson.target.find("#edit-case").val();
+    }
     var caseData = {
       st_title: argJson.target.find("[name='cp-title']").val(),
       st_keywords: argJson.target.find("[name='cp-keywords']").val(),
@@ -366,7 +348,7 @@ function updateItem(argJson) {
       ct_company: argJson.target.find("[name='case-company']").val(),
       ct_description: argJson.target.find("[name='case-description']").val(),
       ct_image: imgArray,
-      // ct_poster: imgArray,
+      ct_content: content,
       b_end: "TAB_END"
     };
     fmd.append("data", JSON.stringify(caseData));
@@ -411,4 +393,10 @@ function clearTabContent(argJson) {
   argJson.target.find("select").val(0);
   argJson.target.find(".case-thumb").children().not(":last-child").remove();
   argJson.target.find(".btn-save").removeClass("disabled");
+  if(argJson.target.attr("id") === "uploadCase") {
+    window.editor_upload_case.html("");
+  }
+  if(argJson.target.attr("id") === "editTab") {
+    window.editor_edit_case.html("");
+  }
 }

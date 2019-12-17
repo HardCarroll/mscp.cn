@@ -54,6 +54,7 @@ class DBManager {
    * @return mixed 执行完成后的结果
    */
   public function execute($sql) {
+    mysqli_query($this->link, "set names utf8");
     $result = mysqli_query($this->link, $sql);
     $this->state = array("err_no"=>mysqli_errno($this->link), "err_code"=>mysqli_error($this->link));
     return $result;

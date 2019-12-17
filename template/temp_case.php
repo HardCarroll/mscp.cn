@@ -12,6 +12,7 @@ $c_class = $dataArray["ct_class"];
 $c_team = $dataArray["ct_team"];
 $c_company = $dataArray["ct_company"];
 $c_description = $dataArray["ct_description"];
+$c_content = $dataArray["ct_content"];
 // $more_prev = $dataArray["more_prev"];
 // $more_next = $dataArray["more_next"];
 function transmitCasetype($key)
@@ -162,10 +163,11 @@ function transmitCasetype($key)
             <span>项目图片：</span>
             <div class="case-thumb">
               <?php
-              $imgArray = json_decode($dataArray["ct_image"], true);
-              foreach ($imgArray as $imgs_item) {
-                echo '<div class="case-thumb-item"><img src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '"></div>';
-              }
+              // $imgArray = json_decode($dataArray["ct_image"], true);
+              // foreach ($imgArray as $imgs_item) {
+              //   echo '<div class="case-thumb-item"><img src="' . $imgs_item["url"] . '" title="' . $imgs_item["attr_title"] . '" alt="' . $imgs_item["attr_alt"] . '"></div>';
+              // }
+              echo $c_content;
               ?>
             </div>
           </li>

@@ -221,10 +221,10 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="input-group">
                   <label for="case-class" class="input-group-addon">项目类型</label>
                   <select class="form-control" name="case-class">
-                    <option value="0">新中式</option>
-                    <option value="1">田园</option>
-                    <option value="2">工业</option>
-                    <option value="3">时尚</option>
+                    <option value="0">田园</option>
+                    <option value="1">工业</option>
+                    <option value="2">时尚</option>
+                    <option value="3">新中式</option>
                     <option value="4">民俗</option>
                   </select>
                 </div>
@@ -248,21 +248,17 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <label for="case-image" class="input-group-addon">封面图片</label>
                   <div class="form-control case-thumb">
                     <div class="col-sm-4 col-md-3">
-                      <input required type="file" style="display: none;" multiple="true" accept=".png, .jpg, .jpeg">
+                      <input required type="file" style="display: none;" accept=".png, .jpg, .jpeg">
                       <div class="btn btn-default btn-local">
                         <span class="glyphicon glyphicon-open"></span>
                         <span>本地上传</span>
                       </div>
-                      <!-- <div class="btn btn-default btn-remote">
-                        <span class="glyphicon glyphicon-folder-open"></span>
-                        <span>远程文件</span>
-                      </div>
-                      <div class="btn btn-default btn-online">
-                        <span class="glyphicon glyphicon-globe"></span>
-                        <span>网络图片</span>
-                      </div> -->
                     </div>
                   </div>
+                </div>
+                <div class="input-group">
+                  <label for="upload-case" class="input-group-addon">项目内容</label>
+                  <textarea class="form-control" id="upload-case"></textarea>
                 </div>
                 <div class="input-group">
                   <p class="text-state">&nbsp;</p>
@@ -300,10 +296,10 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="input-group">
                   <label for="case-class" class="input-group-addon">项目类型</label>
                   <select class="form-control" name="case-class">
-                    <option value="0">新中式</option>
-                    <option value="1">田园</option>
-                    <option value="2">工业</option>
-                    <option value="3">时尚</option>
+                    <option value="0">田园</option>
+                    <option value="1">工业</option>
+                    <option value="2">时尚</option>
+                    <option value="3">新中式</option>
                     <option value="4">民俗</option>
                   </select>
                 </div>
@@ -324,24 +320,20 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <textarea required type="text" class="form-control" name="case-description"></textarea>
                 </div>
                 <div class="input-group">
-                  <label for="case-image" class="input-group-addon">项目图片</label>
+                  <label for="case-image" class="input-group-addon">封面图片</label>
                   <div class="form-control case-thumb">
                     <div class="col-sm-4 col-md-3">
-                      <input required type="file" style="display: none;" multiple="true" accept=".png, .jpg, .jpeg">
+                      <input required type="file" style="display: none;"accept=".png, .jpg, .jpeg">
                       <div class="btn btn-default btn-local">
                         <span class="glyphicon glyphicon-open"></span>
                         <span>本地上传</span>
                       </div>
-                      <!-- <div class="btn btn-default btn-remote">
-                        <span class="glyphicon glyphicon-folder-open"></span>
-                        <span>远程文件</span>
-                      </div>
-                      <div class="btn btn-default btn-online">
-                        <span class="glyphicon glyphicon-globe"></span>
-                        <span>网络图片</span>
-                      </div> -->
                     </div>
                   </div>
+                </div>
+                <div class="input-group">
+                  <label for="edit-case" class="input-group-addon">项目内容</label>
+                  <textarea class="form-control" id="edit-case"></textarea>
                 </div>
                 <div class="input-group">
                   <p class="text-state">&nbsp;</p>
@@ -384,6 +376,8 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
 
   <script type="text/javascript" src="/cms/include/jquery/jquery.min.js"></script>
   <script type="text/javascript" src="/cms/include/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/cms/include/kindeditor/kindeditor-all-min.js"></script>
+  <script src="/cms/include/kindeditor/lang/zh-CN.js"></script>
   <script type="text/javascript" src="/cms/include/js/cms.js"></script>
   <script type="text/javascript" src="/cms/include/js/case_manage.js"></script>
 </body>
