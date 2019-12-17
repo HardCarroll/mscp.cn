@@ -30,6 +30,9 @@ function transmitCasetype($key)
     case 3:
       $type = '新中式';
       break;
+    case 3:
+      $type = '民俗';
+      break;
   }
   return $type;
 }
@@ -42,9 +45,9 @@ function transmitCasetype($key)
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="renderer" content="webkit">
-  <meta name="Keywords" content="关键词">
-  <meta name="Description" content="内容描述">
-  <title>精品案例-弥尚餐饮装饰设计</title>
+  <meta name="Keywords" content="<?php echo $p_keywords; ?>">
+  <meta name="Description" content="<?php echo $p_description; ?>">
+  <title><?php echo $p_title; ?></title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/include/css/icons.css">
   <link rel="stylesheet" href="/include/css/shared.css">

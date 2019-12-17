@@ -245,7 +245,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   <textarea required type="text" class="form-control" name="case-description"></textarea>
                 </div>
                 <div class="input-group">
-                  <label for="case-image" class="input-group-addon">项目图片</label>
+                  <label for="case-image" class="input-group-addon">封面图片</label>
                   <div class="form-control case-thumb">
                     <div class="col-sm-4 col-md-3">
                       <input required type="file" style="display: none;" multiple="true" accept=".png, .jpg, .jpeg">
