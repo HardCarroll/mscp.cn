@@ -101,6 +101,7 @@
                 <option value="1">新中式</option>
                 <option value="2">时尚版</option>
                 <option value="3">工业风</option>
+                <option value="4">民俗风</option>
               </select>
               <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
             </div>
@@ -117,6 +118,10 @@
             <div class="tips">
               <span class="glyphicon glyphicon-heart"></span>
               <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
+            </div>
+            <div class="qrcode-btn">
+              <div class="btn btn-qrcode" data-toggle="modal" data-target="#qrcodeModal">申请免费布局</div>
+              <div class="btn btn-qrcode" data-toggle="modal" data-target="#qrcodeModal">装修设计报价</div>
             </div>
           </div>
           <div class="md">
@@ -155,7 +160,7 @@
         </div>
         <div class="bd container-fluid row inner">
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-1.png"></div>
             <div class="cap">
               <p class="index">01</p>
               <p class="title">针对餐厅客户人群定制风格</p>
@@ -163,7 +168,7 @@
             </div>
           </div>
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-2.png"></div>
             <div class="cap">
               <p class="index">02</p>
               <p class="title">门头可提升进店率50%以上</p>
@@ -171,7 +176,7 @@
             </div>
           </div>
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-2.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-3.png"></div>
             <div class="cap">
               <p class="index">03</p>
               <p class="title">合理动线是快速盈利的秘诀</p>
@@ -179,7 +184,7 @@
             </div>
           </div>
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-4.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-4.png"></div>
             <div class="cap">
               <p class="index">04</p>
               <p class="title">灯光设计可促进客户消费</p>
@@ -187,7 +192,7 @@
             </div>
           </div>
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-3.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-5.png"></div>
             <div class="cap">
               <p class="index">05</p>
               <p class="title">造型有效的增加回头率</p>
@@ -195,7 +200,7 @@
             </div>
           </div>
           <div class="pro-item col-sm-2">
-            <div class="pic"><img data-src="/images/adv-1.jpg"></div>
+            <div class="pic"><img data-src="/images/adv-6.png"></div>
             <div class="cap">
               <p class="index">06</p>
               <p class="title">色彩搭配增加亲和力</p>
@@ -1216,6 +1221,13 @@
       <span class="glyphicon glyphicon-arrow-up"></span>
     </li>
   </ul>
+
+  <!-- Budget Modal -->
+  <div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalLabel">
+    <div class="modal-dialog" role="document">
+      <img src="/images/qrcode_budget.png" alt="">
+    </div>
+  </div>
 
   <!-- Budget Modal -->
   <!-- <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">

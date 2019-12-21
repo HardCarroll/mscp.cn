@@ -74,6 +74,7 @@
                   <option value="1">新中式</option>
                   <option value="2">时尚版</option>
                   <option value="3">工业风</option>
+                  <option value="4">民俗风</option>
                 </select>
                 <span class="input-group-addon glyphicon glyphicon-triangle-bottom"></span>
               </div>
@@ -90,6 +91,10 @@
               <div class="tips">
                 <span class="glyphicon glyphicon-heart"></span>
                 <span>为了您的利益及我们的口碑，您的隐私将被严格保密！</span>
+              </div>
+              <div class="qrcode-btn">
+                <div class="btn btn-qrcode" data-toggle="modal" data-target="#qrcodeModal">申请免费布局</div>
+                <div class="btn btn-qrcode" data-toggle="modal" data-target="#qrcodeModal">装修设计报价</div>
               </div>
             </div>
             <div class="md">
@@ -225,6 +230,13 @@
     </ul>
 
   </section>
+
+  <!-- Budget Modal -->
+  <div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalLabel">
+    <div class="modal-dialog" role="document">
+      <img src="/images/qrcode_budget.png" alt="">
+    </div>
+  </div>
 
   <!-- Budget Modal -->
   <!-- <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">

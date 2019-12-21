@@ -6,7 +6,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  font-size: 35px;
+  font-size: 70px;
   font-weight: 700;
   transform: translateX(-50%);
 }
@@ -46,7 +46,7 @@
 .card-list p {
   word-wrap:break-word;
   word-break:break-all;
-  text-indent: 2em;
+  /* text-indent: 2em; */
 }
 .card-list .case-thumb {
   margin: 0;
