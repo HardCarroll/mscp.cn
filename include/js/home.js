@@ -59,6 +59,7 @@ $(function () {
   });
 
   $("#fullpage").fullpage({
+    scrollingSpeed: 300,
     navigation: true,
     navigationPosition: "left",
     navigationTooltips: ["官网首页", "5秒就能帮您算出明细！", "您的设计够专业吗？", "这些案例能否激发您的灵感？", "术业有专攻，省时省心又省钱！", "选择我们，您会收获什么？", "下一个盈利的就是你！", "您想要的，我们都有！", "一站式服务，为您保驾护航！", "专业名师为您答疑解惑！", "足不出户，尽知行业前沿资讯！", "多年专注，不玩套路！", "友好合作，互利共赢！", "关注我们，了解我们！"],
@@ -72,7 +73,7 @@ $(function () {
       if (destination.index === 1) {
         $(destination.item).find(".bd").animate({ height: "400px", opacity: 1 }, 100, function () {
           $(this).find(".lt").animate({ bottom: 0, opacity: 1 }, 300);
-          $(this).find(".btn-round").delay(300).animate({ opacity: 1 }, 300);
+          $(this).find(".btn-round").delay(100).animate({ opacity: 1 }, 300);
           $(this).find(".rt").animate({ bottom: 0, opacity: 1 }, 300);
 
           if (!budgetTimer) {
@@ -107,7 +108,7 @@ $(function () {
       // 案例展示 #case
       if (destination.index === 3) {
         $("#case .bd-list li").delay(100).css("transform", "rotateZ(0) translate(0, 0)");
-        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 600, function () { $("#case .bd").css("box-shadow", "0 0 16px 0 #ffdc90") });
+        $(destination.item).find(".btn-square").delay(100).animate({ top: 0, opacity: 1 }, 300, function () { $("#case .bd").css("box-shadow", "0 0 16px 0 #ffdc90") });
       }
       // 服务优势 #advantage
       if (destination.index === 4) {
@@ -374,6 +375,8 @@ $(function () {
             total += result[i];
           }
           $("#budget .rt .total").find("span").html(total);
+          $("#budgetModal .result").html(total);
+          $("#budgetModal").modal();
         },
         error: function (err) {
           console.log("fail: " + err);

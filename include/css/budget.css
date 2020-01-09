@@ -245,3 +245,19 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+#budgetModal {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#budgetModal strong.result {
+  font-size: 30px;
+  color: #ca1717;
+}
+#budgetModal strong {
+  color: #ca1717;
+  font-size: 18px;
+}
+#budgetModal .modal-footer {
+  text-align: center;
+}

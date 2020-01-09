@@ -1,5 +1,5 @@
 <?php
-  require_once($_SERVER["DOCUMENT_ROOT"]."/cms/include/php/include.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -59,7 +59,7 @@
           <div class="content">
             <p>装修大数据，不花冤枉钱</p>
             <a href="/budget/" class="btn btn-square">获取装修报价</a>
-        </div>
+          </div>
         </div>
         <div class="item">
           <img data-src="/images/banner3.jpg">
@@ -209,7 +209,7 @@
           </div>
         </div>
         <div class="ft">
-          <a class="btn btn-square" href="javascript:;">了解更多</a>
+          <a class="btn btn-square" href="javascript:;" data-toggle="modal" data-target="#qrcodeModal">了解更多</a>
         </div>
       </div>
     </div> <!-- #professional end;-->
@@ -223,37 +223,36 @@
         <div class="bd container-fluid inner">
           <ul class="row bd-list">
             <?php
-              $rule_case = "b_recommends='T'";
-              $result_case = $caseManage->selectItem($rule_case);
-              $cnt_case = $caseManage->getRecordCounts($rule_case);
+            $rule_case = "b_recommends='T'";
+            $result_case = $caseManage->selectItem($rule_case);
+            $cnt_case = $caseManage->getRecordCounts($rule_case);
 
-              // print_r(json_decode($result_case[0]["ct_image"], TRUE)[0]["url"]);
-              
-              if(!$cnt_case) {
-                // no records
-                for($i = 0; $i < 6; $i++) {
-                  echo '<li class="col-xs-12 col-sm-6 col-md-4">';
-                  echo '<a href="/case/2019082601.html">';
-                  echo '<img src="/upload/2019082601/201908260101.jpg" alt="">';
-                  echo '<div class="cover">';
-                  echo '<h3 class="text-ellipsis title">东莞洪记荷湘里</h3><h5 class="text-ellipsis content">被称为“芙蓉国”的湖南是中国著名的渔米之乡，绿色大省，生态大省。湖南的旅游资源十分丰富，张家界，崀山，洞庭湖等山水名胜，享誉海内外，人称“人文湘楚、山水湖南”。洞庭湖畔的荷花飘香，“小荷才露尖尖角，早有蜻蜓立上头”也形成了湘土文化的一大特色，打造一个极具田园家乡特色的民俗湘间菜馆，是为了在潮流来来去去，物欲横流的今天，保持原始的个性与初心，让在都市久居的人们能够在原生态的环境中，找到久违的世外桃源，回到内心熟悉的故土，没有束缚，没有压抑，只为了将纯粹的自在与快乐传递给客户，因为极致，所以纯粹，因为用心，所以脱颖而出。</h5><span class="glyphicon glyphicon-plus"></span>';
-                  echo '</div>';
-                  echo '</a>';
-                  echo '</li>';
-                }
+            // print_r(json_decode($result_case[0]["ct_image"], TRUE)[0]["url"]);
+
+            if (!$cnt_case) {
+              // no records
+              for ($i = 0; $i < 6; $i++) {
+                echo '<li class="col-xs-12 col-sm-6 col-md-4">';
+                echo '<a href="/case/2019082601.html">';
+                echo '<img src="/upload/2019082601/201908260101.jpg" alt="">';
+                echo '<div class="cover">';
+                echo '<h3 class="text-ellipsis title">东莞洪记荷湘里</h3><h5 class="text-ellipsis content">被称为“芙蓉国”的湖南是中国著名的渔米之乡，绿色大省，生态大省。湖南的旅游资源十分丰富，张家界，崀山，洞庭湖等山水名胜，享誉海内外，人称“人文湘楚、山水湖南”。洞庭湖畔的荷花飘香，“小荷才露尖尖角，早有蜻蜓立上头”也形成了湘土文化的一大特色，打造一个极具田园家乡特色的民俗湘间菜馆，是为了在潮流来来去去，物欲横流的今天，保持原始的个性与初心，让在都市久居的人们能够在原生态的环境中，找到久违的世外桃源，回到内心熟悉的故土，没有束缚，没有压抑，只为了将纯粹的自在与快乐传递给客户，因为极致，所以纯粹，因为用心，所以脱颖而出。</h5><span class="glyphicon glyphicon-plus"></span>';
+                echo '</div>';
+                echo '</a>';
+                echo '</li>';
               }
-              else {
-                for($i = 0; $i < ($cnt_case>6?6:$cnt_case); $i++) {
-                  echo '<li class="col-xs-12 col-sm-6 col-md-4">';
-                  echo '<a href="'. $result_case[$i]["st_path"] .'">';
-                  echo '<img src="'. json_decode($result_case[$i]["ct_image"], TRUE)[0]["url"] .'" alt="">';
-                  echo '<div class="cover">';
-                  echo '<h3 class="text-ellipsis title">'. $result_case[$i]["ct_title"] .'</h3><h5 class="text-ellipsis content">'. $result_case[$i]["ct_description"] .'</h5><span class="glyphicon glyphicon-plus"></span>';
-                  echo '</div>';
-                  echo '</a>';
-                  echo '</li>';
-                }
+            } else {
+              for ($i = 0; $i < ($cnt_case > 6 ? 6 : $cnt_case); $i++) {
+                echo '<li class="col-xs-12 col-sm-6 col-md-4">';
+                echo '<a href="' . $result_case[$i]["st_path"] . '">';
+                echo '<img src="' . json_decode($result_case[$i]["ct_image"], TRUE)[0]["url"] . '" alt="">';
+                echo '<div class="cover">';
+                echo '<h3 class="text-ellipsis title">' . $result_case[$i]["ct_title"] . '</h3><h5 class="text-ellipsis content">' . $result_case[$i]["ct_description"] . '</h5><span class="glyphicon glyphicon-plus"></span>';
+                echo '</div>';
+                echo '</a>';
+                echo '</li>';
               }
+            }
             ?>
             <!-- <li class="col-xs-12 col-sm-6 col-md-4">
               <a href="/case/2019082601.html">
@@ -384,7 +383,7 @@
           </ul>
         </div>
         <div class="ft">
-          <a href="javascript:;" class="btn btn-square">立即咨询</a>
+          <a href="javascript:;" class="btn btn-square" data-toggle="modal" data-target="#qrcodeModal">立即咨询</a>
         </div>
       </div>
     </div> <!-- #advantage end;-->
@@ -466,7 +465,7 @@
           </ul>
         </div>
         <div class="ft">
-          <a href="javascript:;" class="btn btn-square">沟通合作</a>
+          <a href="javascript:;" class="btn btn-square" data-toggle="modal" data-target="#qrcodeModal">沟通合作</a>
         </div>
       </div>
     </div> <!-- #service end;-->
@@ -479,7 +478,7 @@
         </div>
         <div class="bd inner">
           <div id="style-box">
-            <div class="item active">
+            <a class="item active" href="/case/">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>新中式</span>
@@ -488,8 +487,8 @@
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
               </div>
-            </div>
-            <div class="item">
+            </a>
+            <a class="item" href="/case/">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>田园</span>
@@ -498,8 +497,8 @@
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
               </div>
-            </div>
-            <div class="item">
+            </a>
+            <a class="item" href="/case/">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>工业</span>
@@ -508,8 +507,8 @@
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
               </div>
-            </div>
-            <div class="item">
+            </a>
+            <a class="item" href="/case/">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>时尚</span>
@@ -518,8 +517,8 @@
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
               </div>
-            </div>
-            <div class="item">
+            </a>
+            <a class="item" href="/case/">
               <div class="item-hd">
                 <img src="/upload/2019082601/201908260102.jpg" alt="">
                 <span>民俗</span>
@@ -528,7 +527,7 @@
               <div class="item-bd">
                 <img src="/upload/2019082601/201908260103.jpg" alt="">
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div class="ft"></div>
@@ -698,7 +697,7 @@
           </ul>
         </div>
         <div class="ft">
-          <a href="javascript:;" class="btn btn-square">了解更多</a>
+          <a href="javascript:;" class="btn btn-square" data-toggle="modal" data-target="#qrcodeModal">了解更多</a>
         </div>
       </div>
     </div> <!-- #support end-->
@@ -869,7 +868,7 @@
           </ul>
         </div>
         <div class="ft">
-          <a href="javascript:;" class="btn btn-square">立即咨询</a>
+          <a href="javascript:;" class="btn btn-square" data-toggle="modal" data-target="#qrcodeModal">立即咨询</a>
         </div>
       </div>
     </div>
@@ -886,23 +885,22 @@
             <div class="content">
               <ul class="list">
                 <?php
-                  $rule_article0 = "b_recommends='T' AND ct_class=0";
-                  $result0 = $articleManage->selectItem($rule_article0);
-                  $cnt_article0 = $articleManage->getRecordCounts($rule_article0);
-                  if(!$cnt_article0) {
-                    // no records
-                    echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                $rule_article0 = "b_recommends='T' AND ct_class=0";
+                $result0 = $articleManage->selectItem($rule_article0);
+                $cnt_article0 = $articleManage->getRecordCounts($rule_article0);
+                if (!$cnt_article0) {
+                  // no records
+                  echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                } else {
+                  for ($i = 0; $i < ($cnt_article0 > 5 ? 5 : $cnt_article0); $i++) {
+                    echo "<li class='list-item'>";
+                    echo "<a href='" . $result0[$i]["st_path"] . "'>";
+                    echo "<div class='tit'>" . $result0[$i]["ct_title"] . "</div>";
+                    // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result0[$i]["ct_content"] . "</div></div>";
+                    echo "</a>";
+                    echo "</li>";
                   }
-                  else {
-                    for ($i = 0; $i < ($cnt_article0>5?5:$cnt_article0); $i++) {
-                      echo "<li class='list-item'>";
-                      echo "<a href='" . $result0[$i]["st_path"] . "'>";
-                      echo "<div class='tit'>" . $result0[$i]["ct_title"] . "</div>";
-                      // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result0[$i]["ct_content"] . "</div></div>";
-                      echo "</a>";
-                      echo "</li>";
-                    }
-                  }
+                }
                 ?>
                 <!-- <li class="list-item">
                   <a href="javascript:;" class="wrap">
@@ -957,23 +955,22 @@
             <div class="content">
               <ul class="list">
                 <?php
-                  $rule_article1 = "b_recommends='T' AND ct_class=1";
-                  $result1 = $articleManage->selectItem($rule_article1);
-                  $cnt_article1 = $articleManage->getRecordCounts($rule_article1);
-                  if(!$cnt_article1) {
-                    // no records
-                    echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                $rule_article1 = "b_recommends='T' AND ct_class=1";
+                $result1 = $articleManage->selectItem($rule_article1);
+                $cnt_article1 = $articleManage->getRecordCounts($rule_article1);
+                if (!$cnt_article1) {
+                  // no records
+                  echo "<strong>没有相关动态，请前往后台上传发布！</strong>";
+                } else {
+                  for ($i = 0; $i < ($cnt_article1 > 5 ? 5 : $cnt_article1); $i++) {
+                    echo "<li class='list-item'>";
+                    echo "<a href='" . $result1[$i]["st_path"] . "'>";
+                    echo "<div class='tit'>" . $result1[$i]["ct_title"] . "</div>";
+                    // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result1[$i]["ct_content"] . "</div></div>";
+                    echo "</a>";
+                    echo "</li>";
                   }
-                  else {
-                    for ($i = 0; $i < ($cnt_article1>5?5:$cnt_article1); $i++) {
-                      echo "<li class='list-item'>";
-                      echo "<a href='" . $result1[$i]["st_path"] . "'>";
-                      echo "<div class='tit'>" . $result1[$i]["ct_title"] . "</div>";
-                      // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result1[$i]["ct_content"] . "</div></div>";
-                      echo "</a>";
-                      echo "</li>";
-                    }
-                  }
+                }
                 ?>
                 <!-- <li class="list-item">
                   <a href="javascript:;" class="wrap">
@@ -1142,7 +1139,7 @@
           </ul>
         </div>
         <div class="ft">
-          <a href="javascript:;" class="btn btn-square">沟通合作</a>
+          <a href="javascript:;" class="btn btn-square" data-toggle="modal" data-target="#qrcodeModal">沟通合作</a>
         </div>
       </div>
     </div> <!-- #partner end -->
@@ -1226,6 +1223,22 @@
   <div class="modal fade" id="qrcodeModal" tabindex="-1" role="dialog" aria-labelledby="qrcodeModalLabel">
     <div class="modal-dialog" role="document">
       <img src="/images/qrcode_budget.png" alt="">
+    </div>
+  </div>
+
+  <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">您的餐厅投资预算约为：<strong class="result"></strong> 元</h4>
+        </div>
+        <div class="modal-body">
+          以上投资报价由优厨联盟历时15年综合348+家分店历史数据分析结果，没有包含房屋租金及押金，加盟费等，具体投资及项目可行性请致电<strong>15580807779</strong>或<strong>微信13873976777</strong>免费上门实际考察为准！
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">我知道了</button>
+        </div>
+      </div>
     </div>
   </div>
 

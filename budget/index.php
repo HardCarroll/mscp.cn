@@ -238,6 +238,22 @@
     </div>
   </div>
 
+  <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">您的餐厅投资预算约为：<strong class="result"></strong> 元</h4>
+        </div>
+        <div class="modal-body">
+          以上投资报价由优厨联盟历时15年综合348+家分店历史数据分析结果，没有包含房屋租金及押金，加盟费等，具体投资及项目可行性请致电<strong>15580807779</strong>或<strong>微信13873976777</strong>免费上门实际考察为准！
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">我知道了</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Budget Modal -->
   <!-- <div class="modal fade" id="budgetModal" tabindex="-1" role="dialog" aria-labelledby="budgetModalLabel">
     <div class="modal-dialog" role="document">

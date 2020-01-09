@@ -47,6 +47,9 @@ $(function() {
             total += result[i];
           }
           $("#budget .rt .total").find("span").html(total);
+          // alert("您的投资预算为：");
+          $("#budgetModal .result").html(total);
+          $("#budgetModal").modal();
         },
         error: function (err) {
           console.log("fail: " + err);

@@ -286,6 +286,21 @@
   top: 50%;
   transform: translateY(-50%);
 }
+#budgetModal {
+  top: 50%;
+  transform: translateY(-50%);
+}
+#budgetModal strong.result {
+  font-size: 30px;
+  color: #ca1717;
+}
+#budgetModal strong {
+  color: #ca1717;
+  font-size: 18px;
+}
+#budgetModal .modal-footer {
+  text-align: center;
+}
 
 #professional {
   background-image: url(/images/service-bg.jpg);
@@ -373,7 +388,7 @@
   margin: 0 auto;
   padding: 0;
   width: 100%;
-  transition: all 0.6s;
+  transition: all 0.3s;
 }
 #case .bd .bd-list {
   list-style: none;
@@ -382,7 +397,7 @@
 }
 #case .bd .bd-list li {
   padding: 5px;
-  transition: all 1s;
+  transition: all 0.6s;
 }
 #case .bd .bd-list li:nth-child(1) {
   transform: rotateZ(45deg) translate(-3000px, -1000px);
