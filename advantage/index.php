@@ -21,12 +21,11 @@
       <div id="navbar-mscp">
         <div class="nav-left">
           <a href="/" class="nav-logo">
-            <img src="/images/xc.png" alt="">
-            <span>懂餐饮更懂设计</span>
+            <img src="/images/logo-hd.png" alt="">
           </a>
         </div>
         <div class="nav-middle visible-lg-block">
-          <span>湖南弥尚空间设计</span>
+          <span>湖南弥尚装饰设计有限公司</span>
         </div>
         <div class="nav-right">
           <ul class="nav-list clearfix">
@@ -40,6 +39,9 @@
           </ul>
         </div>
       </div>
+      <?php
+      // echo file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/common/navbar.tpl");
+      ?>
     </section>
     <section id="banner">
       <!-- <img src="/images/contact-bg.jpg" alt=""> -->
@@ -116,7 +118,7 @@
                 <div class="title"><span class="glyphicon glyphicon-tags"></span>价格优势</div>
               </div>
             </div>
-            
+
             <ul class="adv-list">
               <li class="list-item active">
                 <img src="/images/advico1.png" alt="">
@@ -154,8 +156,7 @@
           <img src="/images/bottom-text.png" alt="">
           <ul>
             <li>
-              <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span
-                  class="icon icon-cuz icon-qq"></span></a>
+              <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
             </li>
             <li>
               <span class="glyphicon glyphicon-qrcode"></span>
@@ -180,9 +181,7 @@
           </div>
         </section>
         <section class="contact-ft">
-          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a
-            href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn"
-            target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
+          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
         </section>
       </div>
     </section>
@@ -191,8 +190,7 @@
     <ul class="list-group fixed fixed-rb" id="asidebar">
       <ul class="hidden-xs list-group" id="asidebar-tools">
         <li class="list-group-item" role="button" id="btn_aside_qq">
-          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span
-              class="icon icon-cuz icon-qq"></span></a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
         </li>
         <li class="list-group-item" role="button" id="btn_aside_tel">
           <span class="glyphicon glyphicon-earphone"></span>

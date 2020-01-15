@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,18 +14,18 @@
   <link rel="stylesheet" href="/include/css/shared.css">
   <link rel="stylesheet" href="/include/css/contact.css">
 </head>
+
 <body>
   <section class="layer">
     <section class="header">
       <div id="navbar-mscp">
         <div class="nav-left">
           <a href="/" class="nav-logo">
-            <img src="/images/xc.png" alt="">
-            <span>懂餐饮更懂设计</span>
+            <img src="/images/logo-hd.png" alt="">
           </a>
         </div>
         <div class="nav-middle visible-lg-block">
-          <span>湖南弥尚空间设计</span>
+          <span>湖南弥尚装饰设计有限公司</span>
         </div>
         <div class="nav-right">
           <ul class="nav-list clearfix">
@@ -38,6 +39,9 @@
           </ul>
         </div>
       </div>
+      <?php
+      // echo file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/common/navbar.tpl");
+      ?>
     </section>
     <section id="banner">
       <!-- <img src="/images/contact-bg.jpg" alt=""> -->
@@ -86,7 +90,7 @@
                 <span class="input-group-addon">您的称呼</span>
                 <input type="text" id="msg-name" class="form-control" placeholder="请问如何称呼您呢？">
               </div>
-              <div id="tel-box"class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
+              <div id="tel-box" class="input-group" data-toggle="popover" data-trigger="manual" data-content="请输入有效的手机号码" data-placement="bottom" tabindex="0">
                 <span class="input-group-addon">联系电话</span>
                 <input type="text" id="msg-phone" class="form-control" placeholder="请填写您的手机号码，稍后会有工作人员回访！">
               </div>
@@ -162,8 +166,7 @@
     <ul class="list-group fixed fixed-rb" id="asidebar">
       <ul class="hidden-xs list-group" id="asidebar-tools">
         <li class="list-group-item" role="button" id="btn_aside_qq">
-          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span
-              class="icon icon-cuz icon-qq"></span></a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
         </li>
         <li class="list-group-item" role="button" id="btn_aside_tel">
           <span class="glyphicon glyphicon-earphone"></span>
@@ -190,4 +193,5 @@
   <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=Q3tkjSIyd86jWKCzKiRfO4wjtjrnmmZR"></script>
   <script type="text/javascript" src="/include/js/contact.js"></script>
 </body>
+
 </html>

@@ -1,3 +1,34 @@
+#tempModal .modal-dialog {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#tempModal .modal-content {
+  width: 100%;
+  box-shadow: none;
+  border: none;
+  background-color: transparent;
+}
+#tempModal .modal-body img {
+  width: 100%;
+}
+#tempModal .modal-footer {
+  text-align: center;
+  border-top: none;
+}
+#tempModal .modal-footer button {
+  font-size: 30px;
+}
+#tempModal .modal-footer .btn-danger {
+  background-color: #c9302c;
+  border: 1px solid #ffdc90;
+}
+#tempModal .modal-footer .btn-danger:hover {
+  color: #ffdc90;
+}
+
 .adCarousel {
   position: relative;
   width: 100%;

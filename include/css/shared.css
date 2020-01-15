@@ -106,12 +106,18 @@ input, textarea, button, select {
 #navbar-mscp .nav-left {
   height: 100%;
   padding: 15px 0;
+  line-height: 70px;
+}
+#navbar-mscp .nav-left a {
+  display: inline-block;
+  position: relative;
 }
 #navbar-mscp .nav-left img {
   display: inline-block;
-  height: 100%;
+  width: 320px;
+  vertical-align: middle;
 }
-#navbar-mscp .nav-left span {
+/* #navbar-mscp .nav-left span {
   display: inline-block;
   border-left: 1px solid #ffdc90;
   margin-left: 10px;
@@ -122,11 +128,11 @@ input, textarea, button, select {
   height: 100%;
   line-height: 70px;
   vertical-align: top;
-}
+} */
 #navbar-mscp .nav-middle span {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
-  color: #ffdc90;
+  color: #fff;
 }
 #navbar-mscp .nav-right {
   margin: 0;

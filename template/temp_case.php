@@ -61,12 +61,11 @@ function transmitCasetype($key)
       <div id="navbar-mscp">
         <div class="nav-left">
           <a href="/" class="nav-logo">
-            <img src="/images/xc.png" alt="">
-            <span>懂餐饮更懂设计</span>
+            <img src="/images/logo-hd.png" alt="">
           </a>
         </div>
         <div class="nav-middle visible-lg-block">
-          <span>湖南弥尚空间设计</span>
+          <span>湖南弥尚装饰设计有限公司</span>
         </div>
         <div class="nav-right">
           <ul class="nav-list clearfix">
@@ -80,6 +79,10 @@ function transmitCasetype($key)
           </ul>
         </div>
       </div>
+
+      <?php
+      // echo file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/include/common/navbar.tpl");
+      ?>
     </section>
     <section id="banner">
       <!-- <img src="/images/banner-bg.jpg" alt=""> -->

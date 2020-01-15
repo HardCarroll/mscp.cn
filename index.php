@@ -23,12 +23,11 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
   <div id="navbar-mscp">
     <div class="nav-left">
       <a href="/" class="nav-logo">
-        <img src="/images/xc.png" alt="">
-        <span>懂餐饮更懂设计</span>
+        <img src="/images/logo-hd.png" alt="">
       </a>
     </div>
     <div class="nav-middle visible-lg-block">
-      <span>湖南弥尚空间设计</span>
+      <span>湖南弥尚装饰设计有限公司</span>
     </div>
     <div class="nav-right">
       <ul class="nav-list clearfix">
@@ -42,6 +41,10 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
       </ul>
     </div>
   </div>
+
+  <?php
+  // echo file_get_contents($_SERVER["DOCUMENT_ROOT"]."/include/common/navbar.tpl");
+  ?>
 
   <div id="fullpage">
     <!-- .adCarousel begin -->
@@ -1237,6 +1240,22 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">我知道了</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="tempModal" tabindex="-1" role="dialog" aria-labelledby="tempModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <!-- <div class="modal-header">
+          <h4 class="modal-title" id="gridSystemModalLabel">您的餐厅投资预算约为：<strong class="result"></strong> 元</h4>
+        </div> -->
+        <div class="modal-body">
+          <img src="/images/2020.jpg" alt="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">新年快乐</button>
         </div>
       </div>
     </div>

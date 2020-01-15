@@ -56,7 +56,7 @@
   padding: 5px;
 }
 .card-list .case-thumb img {
-  /* width: 100%; */
+  max-width: 100%;
 }
 
 #displayModal {
