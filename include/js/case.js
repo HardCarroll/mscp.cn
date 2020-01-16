@@ -8,6 +8,8 @@ $(function() {
       title: imgs[i].title
     });
     $(".card-list .carousel-inner").append(ele);
-    $(".card-list .carousel-inner").find(".item").eq(0).addClass("active");
+    imgs[i].remove();
+    // console.log(i);
   }
+  $(".card-list .carousel-inner").find(".item").eq(0).addClass("active");
 });
