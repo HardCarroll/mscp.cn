@@ -48,6 +48,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
     </section>
     <section id="banner">
       <!-- <img src="/images/contact-bg.jpg" alt=""> -->
+      <!-- test -->
     </section>
     <section class="position">
       <div class="inner">
