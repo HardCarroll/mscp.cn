@@ -883,7 +883,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
           <h5><span class="left">弥尚餐饮整装设计</span><span class="right">为您提供最实用的装修宝典</span></h5>
         </div>
         <div class="bd inner">
-          <div class="box">
+          <div class="box active">
             <div class="title"><span>弥尚<br>动态</span></div>
             <div class="content">
               <ul class="list">
@@ -899,61 +899,15 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
                     echo "<li class='list-item'>";
                     echo "<a href='" . $result0[$i]["st_path"] . "'>";
                     echo "<div class='tit'>" . $result0[$i]["ct_title"] . "</div>";
-                    // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result0[$i]["ct_content"] . "</div></div>";
                     echo "</a>";
                     echo "</li>";
                   }
                 }
                 ?>
-                <!-- <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第1条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第2条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第3条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第4条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">公司动态新闻第5条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li> -->
               </ul>
             </div>
           </div>
-          <div class="box active">
+          <div class="box">
             <div class="title"><span>行业<br>资讯</span></div>
             <div class="content">
               <ul class="list">
@@ -969,57 +923,11 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
                     echo "<li class='list-item'>";
                     echo "<a href='" . $result1[$i]["st_path"] . "'>";
                     echo "<div class='tit'>" . $result1[$i]["ct_title"] . "</div>";
-                    // echo "<div class='des'><div class='pic'></div><div class='txt text-ellipsis'>" . $result1[$i]["ct_content"] . "</div></div>";
                     echo "</a>";
                     echo "</li>";
                   }
                 }
                 ?>
-                <!-- <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第1条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第2条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第3条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第4条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li>
-                <li class="list-item">
-                  <a href="javascript:;" class="wrap">
-                    <div class="tit">行业前沿资讯第5条</div>
-                    <div class="des">
-                      <div class="pic"></div>
-                      <div class="txt text-ellipsis">公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条公司动态新闻第1条</div>
-                    </div>
-                  </a>
-                </li> -->
               </ul>
             </div>
           </div>
@@ -1153,7 +1061,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
         <div class="hd inner">
           <div class="cpy">
             <p class="title">关于弥尚</p>
-            <p class="content">湖南弥尚餐饮装饰设计有限公司，是一家专业的餐饮整装设计公司。我司成立于xxxx年，总部位于湖南长沙。我们专注于连锁店面的设计与装修，通过对消费者心理的深度理解，对行为和动线的合理规划，从品牌视觉到空间工程，打造出有价值的餐饮空间。我们具备一站式、短工期、高品质、优服务的优势特色，最大程度为客户省时、省力、省钱，是湖南颇具影响力的餐饮设计装饰机构。</p>
+            <p class="content">湖南弥尚餐饮装饰设计有限公司，是一家专业的餐饮整装设计公司。我司成立于2003年，总部位于湖南长沙。我们专注于连锁店面的设计与装修，通过对消费者心理的深度理解，对行为和动线的合理规划，从品牌视觉到空间工程，打造出有价值的餐饮空间。我们具备一站式、短工期、高品质、优服务的优势特色，最大程度为客户省时、省力、省钱，是湖南颇具影响力的餐饮设计装饰机构。</p>
           </div>
           <div class="pos">
             <img data-src="/images/pos-bg.png">
@@ -1164,7 +1072,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
         </div>
         <div id="contact">
           <section class="contact-hd">
-            <img src="/images/bottom-text.png" alt="">
+            <img class="bottom-logo" src="/images/bottom-text.png" alt="">
             <ul>
               <li>
                 <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
@@ -1255,7 +1163,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
           <img src="/images/2020.jpg" alt="">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">新年快乐</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">新年快乐,点击进入网站</button>
         </div>
       </div>
     </div>

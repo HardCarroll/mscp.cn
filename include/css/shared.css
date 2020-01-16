@@ -220,15 +220,14 @@ input, textarea, button, select {
   width: 100%;
   height: 304px;
 }
+
 #contact .contact-hd {
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
   border-bottom: 1px solid #ca1717;
 }
-#contact .contact-hd {
-  padding: 15px 0;
-  text-align: center;
-  border-bottom: 1px solid #ca1717;
+#contact .contact-hd .bottom-logo {
+  height: 36px;
 }
 #contact .contact-hd ul {
   margin: 0;

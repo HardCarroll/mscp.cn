@@ -109,7 +109,7 @@ function transmitType($key)
     <section class="footer">
       <div id="contact">
         <section class="contact-hd">
-          <img src="/images/bottom-text.png" alt="">
+          <img class="bottom-logo" src="/images/bottom-text.png" alt="">
           <ul>
             <li>
               <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>

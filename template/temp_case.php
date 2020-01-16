@@ -104,6 +104,18 @@ function transmitCasetype($key)
     <section class="body">
       <div class="inner">
         <ul class="contain-fluid card-list">
+
+          <div id="carousel-case" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+            </div>
+            <a class="left carousel-control" href="#carousel-case" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-case" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            </a>
+          </div>
+
           <span class="glyphicon glyphicon-bookmark"></span>
           <span class="type"><?php echo transmitCasetype($c_class); ?></span>
           <li>
@@ -180,7 +192,7 @@ function transmitCasetype($key)
     <section class="footer">
       <div id="contact">
         <section class="contact-hd">
-          <img src="/images/bottom-text.png" alt="">
+          <img class="bottom-logo" src="/images/bottom-text.png" alt="">
           <ul>
             <li>
               <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
@@ -239,6 +251,7 @@ function transmitCasetype($key)
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
   <script src="/include/js/shared.js"></script>
+  <script src="/include/js/case.js"></script>
   <!-- <script src="/include/js/temp_case.js"></script> -->
 </body>
 

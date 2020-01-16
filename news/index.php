@@ -62,8 +62,8 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
     <section class="body">
       <div class="inner">
         <ul class="nav nav-tabs" role="tablist" id="news-tab">
-          <li role="presentation" class="active"><a href="#industry" aria-controls="industry" role="tab" data-toggle="tab">行业资讯</a></li>
-          <li role="presentation"><a href="#company" aria-controls="company" role="tab" data-toggle="tab">公司动态</a></li>
+          <li role="presentation" class="active"><a href="#industry" aria-controls="industry" role="tab" data-toggle="tab">公司动态</a></li>
+          <li role="presentation"><a href="#company" aria-controls="company" role="tab" data-toggle="tab">行业资讯</a></li>
         </ul>
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane fade in active" id="industry">
@@ -105,58 +105,6 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
               }
               ?>
             </section>
-            <!-- <ul>
-              <li>
-                <a href="javascript:;">
-                  <span class="date"><strong>05</strong>2019-07</span>
-                  <div class="txt">
-                    <h4 class="text-ellipsis">主题酒店设计需要注意的事项有哪些？</h4>
-                    <p class="text-ellipsis"> 主题类酒店设计突破了酒店设计原有的模式，在酒店行业颇为盛行，主要是通过主题环境与制造出的氛围来展示主题概念，主题突出、和谐一致，才能打造出成功的主题酒店设计。</p>
-                  </div>
-                  <span class="link">MORE+</span>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <span class="date"><strong>05</strong>2019-07</span>
-                  <div class="txt">
-                    <h4>主题酒店设计需要注意的事项有哪些？</h4>
-                    <p> 主题类酒店设计突破了酒店设计原有的模式，在酒店行业颇为盛行，主要是通过主题环境与制造出的氛围来展示主题概念，主题突出、和谐一致，才能打造出成功的主题酒店设计。</p>
-                  </div>
-                  <span class="link">MORE+</span>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <span class="date"><strong>05</strong>2019-07</span>
-                  <div class="txt">
-                    <h4>主题酒店设计需要注意的事项有哪些？</h4>
-                    <p> 主题类酒店设计突破了酒店设计原有的模式，在酒店行业颇为盛行，主要是通过主题环境与制造出的氛围来展示主题概念，主题突出、和谐一致，才能打造出成功的主题酒店设计。</p>
-                  </div>
-                  <span class="link">MORE+</span>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <span class="date"><strong>05</strong>2019-07</span>
-                  <div class="txt">
-                    <h4>主题酒店设计需要注意的事项有哪些？</h4>
-                    <p> 主题类酒店设计突破了酒店设计原有的模式，在酒店行业颇为盛行，主要是通过主题环境与制造出的氛围来展示主题概念，主题突出、和谐一致，才能打造出成功的主题酒店设计。</p>
-                  </div>
-                  <span class="link">MORE+</span>
-                </a>
-              </li>
-              <li>
-                <a href="javascript:;">
-                  <span class="date"><strong>05</strong>2019-07</span>
-                  <div class="txt">
-                    <h4>主题酒店设计需要注意的事项有哪些？</h4>
-                    <p> 主题类酒店设计突破了酒店设计原有的模式，在酒店行业颇为盛行，主要是通过主题环境与制造出的氛围来展示主题概念，主题突出、和谐一致，才能打造出成功的主题酒店设计。</p>
-                  </div>
-                  <span class="link">MORE+</span>
-                </a>
-              </li>
-            </ul> -->
           </div>
         </div>
       </div>
@@ -164,7 +112,7 @@ require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
     <section class="footer">
       <div id="contact">
         <section class="contact-hd">
-          <img src="/images/bottom-text.png" alt="">
+          <img class="bottom-logo" src="/images/bottom-text.png" alt="">
           <ul>
             <li>
               <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
