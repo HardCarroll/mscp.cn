@@ -3,11 +3,24 @@ require_once($_SERVER["DOCUMENT_ROOT"]."/cms/include/php/include.php");
 
 if (isset($_POST["token"]) && !empty($_POST["token"])) {
   switch ($_POST["token"]) {
+    case "getBudget":
+      // 获取预算服务
+      if (isset($_POST["data"]) && !empty($_POST["data"])) {
+        echo proc_getBudget($_POST["data"]);
+      }
+    break;
+    case "leaveMessage":
+      // 留言板服务
+      if (isset($_POST["data"]) && !empty($_POST["data"])) {
+        echo proc_leaveMessage($messageManage, $_POST["data"]);
+      }
+      break;
     case "uploadFiles":
       // 上传文件
       echo proc_uploadFiles($_FILES["files"]);
       break;
     case "removeFiles":
+      // 删除文件
       echo proc_removeFiles($_POST["path"]);
       break;
     case "login":
@@ -108,6 +121,34 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
     default:
       break;
   }
+}
+
+// 预算服务处理函数
+function proc_getBudget($data) {
+  // $arr_item = ["设计费", "材料费", "人工费", "软装配饰", "灯饰光源", "餐厅桌椅", "空调电器", "厨放设备及抽排", "企划灯箱", "门牌发光字", "餐具小件", "窗帘工服", "收银监控音响", "其他"];
+  $arr_data = json_decode($data, TRUE);
+  $arr_budget = array("设计费"=>$arr_data["area"]*80,
+                      "材料费"=>$arr_data["area"]*550,
+                      "人工费"=>$arr_data["area"]*650,
+                      "软装配饰"=>$arr_data["area"]*80,
+                      "灯饰光源"=>$arr_data["area"]*100,
+                      "餐厅桌椅"=>$arr_data["area"]*150,
+                      "空调电器"=>$arr_data["area"]*150,
+                      "厨放设备及抽排"=>$arr_data["area"]*200,
+                      "企划灯箱"=>$arr_data["area"]*100,
+                      "门牌发光字"=>$arr_data["area"]*50,
+                      "餐具小件"=>$arr_data["area"]*50,
+                      "窗帘工服"=>$arr_data["area"]*50,
+                      "收银监控音响"=>$arr_data["area"]*80,
+                      "其他"=>$arr_data["area"]*50,
+                    );
+  return json_encode($arr_budget, 320);
+}
+
+// 留言板功能处理函数
+function proc_leaveMessage($hd, $data) {
+  $ret = $hd->addItem($data);
+  return json_encode($ret, 320);
 }
 
 

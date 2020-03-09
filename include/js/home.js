@@ -362,7 +362,7 @@ $(function () {
       fmd_getBudget.append("token", "getBudget");
       fmd_getBudget.append("data", JSON.stringify(data));
       $.ajax({
-        url: "/include/php/handle.php",
+        url: "/cms/include/php/handle.php",
         type: "POST",
         data: fmd_getBudget,
         processData: false,

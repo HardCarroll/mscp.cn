@@ -62,26 +62,34 @@ $(function () {
       });
     }
     else {
-      var msgData = { msgName: msgName, msgPhone: msgPhone, msgEmail: msgEmail, msgAddress: msgAddress, msgTitle: msgTitle, msgContent: msgContent };
+      var msgData = {msg_name: msgName, msg_phone: msgPhone, msg_email: msgEmail, msg_address: msgAddress, msg_title: msgTitle, msg_content: msgContent, b_end: "TAB_END"};
       fmd.append("token", "leaveMessage");
       fmd.append("data", JSON.stringify(msgData));
       $.ajax({
-        url: "/include/php/handle.php",
+        url: "/cms/include/php/handle.php",
         type: "POST",
         data: fmd,
         processData: false,
         contentType: false,
         dataType: "json",
         success: function (result) {
-          console.log(JSON.parse(result));
+          if(!result.err_no) {
+            alert("感谢您的留言，您的留言已提交至后台！");
+            $("#msg-name").val("");
+            $("#msg-phone").val("");
+            $("#msg-email").val("");
+            $("#msg-address").val("");
+            $("#msg-title").val("");
+            $("#msg-content").val("");
+            $("#inputCode").val("");
+            verifyCode = resetCode();
+          }
         },
         error: function (err) {
           console.log("fail: " + err);
         }
       });
-      console.log(msgData);
     }
 
-    // console.log("name: "+msgName+" tel: "+msgPhone+" email: "+msgEmail+" address: "+msgAddress+" title: "+msgTitle+" content: "+msgContent+" verify: "+inputCode);
   });
 });
