@@ -202,6 +202,12 @@ function activateTab(target) {
   }
   if($(target).attr("href") === "#uploadArticle") {
     refreshTabContent({target: $("#uploadArticle"), id: $("#uploadArticle").attr("data-id")});
+    
+    var time = new Date();
+    var day = ("0" + time.getDate()).slice(-2);
+    var month = ("0" + (time.getMonth() + 1)).slice(-2);
+    var today = time.getFullYear() + "-" + (month) + "-" + (day);
+    $("#uploadArticle").find("[name='article-date']").val(today);
   }
   if($(target).attr("href") === "#editTab") {
     $("#pageTabs>li[href='#editTab']").children().eq(0).addClass("glyphicon glyphicon-edit");

@@ -15,8 +15,8 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   <link rel="stylesheet" href="/cms/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/cms/include/css/icons.css">
   <link rel="stylesheet" href="/cms/include/css/cms.css">
-  <link rel="stylesheet" href="/cms/include/css/article_manage.css">
-  <title>新闻管理——Powered by 黄狮虎</title>
+  <link rel="stylesheet" href="/cms/include/css/message_manage.css">
+  <title>留言管理——Powered by 黄狮虎</title>
 </head>
 <body>
   <div class="layer">
@@ -87,20 +87,20 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <span class="glyphicon glyphicon-list"></span>
                 <span class="title">案例总览</span>
               </li>
-              <li class="text-primary" href="#uploadTab">
+              <li class="text-primary" href="#uploadCase">
                 <span class="glyphicon glyphicon-cloud-upload"></span>
                 <span class="title">上传案例</span>
               </li>
             </ul>
           </div>
-          <div class="list-item slide slide-left active" role="button" href="/cms/admin/article_manage.php">
+          <div class="list-item slide slide-left" role="button" href="/cms/admin/article_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-pencil"></span>
               <span class="title">新闻管理</span>
               <span class="pull-right glyphicon glyphicon-menu"></span>
             </div>
             <ul class="slide-menu">
-              <li class="text-primary active" href="#articleTab">
+              <li class="text-primary" href="#articleTab">
                 <span class="glyphicon glyphicon-list"></span>
                 <span class="title">新闻总览</span>
               </li>
@@ -110,7 +110,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </li>
             </ul>
           </div>
-          <div class="list-item slide slide-left" role="button" href="/cms/admin/message_manage.php">
+          <div class="list-item slide slide-left active" role="button" href="/cms/admin/message_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-comment"></span>
               <span class="title">信息管理</span>
@@ -133,47 +133,38 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
       <div class="content-wrap">
         <div class="content-inner">
           <ul id="pageTabs" class="hidden-xs nav nav-tabs" role="tablist">
-            <li role="presentation" class="active" href="#articleTab">
-              <span class="pull-left glyphicon glyphicon-list"></span>
-              <span class="title">新闻总览</span>
+            <li role="presentation" class="active" href="#budgetTab">
+              <span class="pull-left glyphicon glyphicon-comment"></span>
+              <span class="title">预算信息</span>
+            </li>
+            <li role="presentation" class="" href="#messageTab">
+              <span class="pull-left glyphicon glyphicon-comment"></span>
+              <span class="title">留言信息</span>
             </li>
           </ul>
           <div id="pageTabContent" class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="articleTab">
+            <div role="tabpanel" class="tab-pane active" id="budgetTab">
               <div class="clearfix overview">
-                <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="col-xs-6">
                   <div class="wrap total">
-                    <p>全部新闻</p>
-                    <span class="text-primary digital"><?php echo $articleManage->getRecordCounts(); ?></span>
+                    <p>全部留言</p>
+                    <span class="text-primary digital"><?php echo $caseManage->getRecordCounts(); ?></span>
                     <span>条</span>
                   </div>
                 </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
+                <div class="col-xs-6">
                   <div class="wrap unpost">
-                    <p>暂未发布</p>
-                    <span class="text-danger digital"><?php echo $articleManage->getRecordCounts("b_posted='F'"); ?></span>
+                    <p>暂未处理</p>
+                    <span class="text-danger digital"><?php echo $caseManage->getRecordCounts("b_posted='F'"); ?></span>
                     <span>条</span>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="wrap marked">
-                    <p>首页显示</p>
-                    <span class="text-success digital"><?php echo $articleManage->getRecordCounts("b_recommends='T'"); ?></span>
-                    <span>条</span>
-                  </div>
-                </div>
-                <div class="col-xs-6 col-sm-4 col-md-3">
-                  <div class="btn-upload" href="#uploadArticle">
-                    <span class="glyphicon glyphicon-cloud-upload"></span>
-                    <span class="title">上传新闻</span>
                   </div>
                 </div>
               </div>
-              <div class="article-wrap">
+              <div class="case-wrap">
                 <!-- 动态生成案例列表 -->
                 <?php
-                $result = $articleManage->selectItem();
-                $counts = $articleManage->getRecordCounts();
+                $result = $caseManage->selectItem();
+                $counts = $caseManage->getRecordCounts();
                 if($counts) {
                   echo '<div class="panel-group" role="tablist" aria-multiselectable="true">';
                   for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
@@ -184,8 +175,8 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                       echo '<div class="panel panel-danger">';
                     }
                     echo '<div class="panel-heading" role="tab">';
-                    echo '<a class="collapsed" role="button" data-toggle="collapse" href="#article_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
-                    echo '<div id="article_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
+                    echo '<a class="collapsed" role="button" data-toggle="collapse" href="#case_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
+                    echo '<div id="case_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
                     echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
                     echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_recommends"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
                     echo '<li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>';
@@ -196,106 +187,59 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   echo '</div>';
                 }
                 ?>
-              </div> <!-- .article-wrap -->
+              </div> <!-- .case-wrap -->
               <div class="list-wrap">
                 <!-- 分页按钮动态输出 -->
               </div>
-            </div> <!-- #articleTab -->
-
-            <div role="tabpanel" class="tab-pane" id="uploadArticle" data-id="">
-              <div class="article-page">
-                <div class="input-group">
-                  <label for="cp-title" class="input-group-addon">网页标题</label>
-                  <input required type="text" class="form-control" name="cp-title">
+            </div> <!-- #budgetTab -->
+            <div role="tabpanel" class="tab-pane" id="messageTab">
+              <div class="clearfix overview">
+                <div class="col-xs-6">
+                  <div class="wrap total">
+                    <p>全部留言</p>
+                    <span class="text-primary digital"><?php echo $messageManage->getRecordCounts(); ?></span>
+                    <span>条</span>
+                  </div>
                 </div>
-                <div class="input-group">
-                  <label for="cp-keywords" class="input-group-addon">网页关键词</label>
-                  <input required type="text" class="form-control" name="cp-keywords">
-                </div>
-                <div class="input-group">
-                  <label for="cp-description" class="input-group-addon">网页内容简介</label>
-                  <textarea required type="text" class="form-control" name="cp-description"></textarea>
-                </div>
-                <div class="input-group">
-                  <label for="article-title" class="input-group-addon">新闻标题</label>
-                  <input required type="text" class="form-control" name="article-title">
-                </div>
-                <div class="input-group">
-                  <label for="article-author" class="input-group-addon">新闻作者</label>
-                  <input required type="text" class="form-control" name="article-author">
-                </div>
-                <div class="input-group">
-                  <label for="article-class" class="input-group-addon">新闻类别</label>
-                  <select name="article-class" class="form-control">
-                    <option value="0">公司动态</option>
-                    <option value="1">行业资讯</option>
-                  </select>
-                </div>
-                <div class="input-group">
-                  <label for="article-date" class="input-group-addon">发布日期</label>
-                  <input type="date" class="form-control" name="article-date" required>
-                </div>
-                <div class="input-group">
-                  <label for="upload-content" class="input-group-addon">新闻内容</label>
-                  <textarea class="form-control" id="upload-content"></textarea>
-                </div>
-                <div class="input-group">
-                  <p class="text-state">&nbsp;</p>
-                </div>
-                <div class="input-group">
-                  <span class="btn btn-default btn-close" role="button">关闭</span>
-                  <span class="btn btn-warning btn-save" role="button">保存</span>
-                  <!-- <span class="btn btn-success btn-post" role="button">发布</span> -->
+                <div class="col-xs-6">
+                  <div class="wrap unpost">
+                    <p>暂未处理</p>
+                    <span class="text-danger digital"><?php echo $messageManage->getRecordCounts("b_read='F'"); ?></span>
+                    <span>条</span>
+                  </div>
                 </div>
               </div>
-            </div> <!--#uploadArticle-->
-            <div role="tabpanel" class="tab-pane" id="editTab" data-id="">
-              <div class="article-page">
-                <div class="input-group">
-                  <label for="cp-title" class="input-group-addon">网页标题</label>
-                  <input required type="text" class="form-control" name="cp-title">
-                </div>
-                <div class="input-group">
-                  <label for="cp-keywords" class="input-group-addon">网页关键词</label>
-                  <input required type="text" class="form-control" name="cp-keywords">
-                </div>
-                <div class="input-group">
-                  <label for="cp-description" class="input-group-addon">网页内容简介</label>
-                  <textarea required type="text" class="form-control" name="cp-description"></textarea>
-                </div>
-                <div class="input-group">
-                  <label for="article-title" class="input-group-addon">新闻标题</label>
-                  <input required type="text" class="form-control" name="article-title">
-                </div>
-                <div class="input-group">
-                  <label for="article-author" class="input-group-addon">新闻作者</label>
-                  <input required type="text" class="form-control" name="article-author">
-                </div>
-                <div class="input-group">
-                  <label for="article-class" class="input-group-addon">新闻类别</label>
-                  <select name="article-class" class="form-control">
-                    <option value="0">公司动态</option>
-                    <option value="1">行业资讯</option>
-                  </select>
-                </div>
-                <div class="input-group">
-                  <label for="article-date" class="input-group-addon">发布日期</label>
-                  <input type="date" class="form-control" name="article-date" required>
-                </div>
-                <div class="input-group">
-                  <label for="edit-content" class="input-group-addon">新闻内容</label>
-                  <textarea class="form-control" id="edit-content"></textarea>
-                </div>
-                <div class="input-group">
-                  <p class="text-state">&nbsp;</p>
-                </div>
-                <div class="input-group">
-                  <span class="btn btn-default btn-close" role="button">关闭</span>
-                  <span class="btn btn-warning btn-save" role="button">保存</span>
-                  <!-- <span class="btn btn-success btn-post" role="button">发布</span> -->
-                </div>
+              <div class="case-wrap">
+                <!-- 动态生成案例列表 -->
+                <?php
+                $result = $messageManage->selectItem();
+                $counts = $messageManage->getRecordCounts();
+                if($counts) {
+                  echo '<div class="panel-group" role="tablist" aria-multiselectable="true">';
+                  for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
+                    if($result[$i]["b_read"] === "T") {
+                      echo '<div class="panel panel-default">';
+                    }
+                    else {
+                      echo '<div class="panel panel-danger">';
+                    }
+                    echo '<div class="panel-heading" role="tab">';
+                    echo '<a class="collapsed" role="button" data-toggle="collapse" href="#message_'.$result[$i]["id"].'">'.($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message ".$result[$i]["id"]).'</a></div>';
+                    echo '<div id="message_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
+                    echo '<div class="msg-content">'.$result[$i]["msg_content"].'</div>';
+                    echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
+                    echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+                    echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
+                    echo '</ul></div></div>';
+                  }
+                  echo '</div>';
+                }
+                ?>
+              </div> <!-- .case-wrap -->
+              <div class="list-wrap">
+                <!-- 分页按钮动态输出 -->
               </div>
-            </div> <!--#editTab-->
+            </div> <!-- #messageTab -->
           </div> <!-- #pageTabContent-->
         </div> <!-- .content-inner-->
       </div> <!-- .content-wrap-->
@@ -330,6 +274,6 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   <script src="/cms/include/kindeditor/kindeditor-all-min.js"></script>
   <script src="/cms/include/kindeditor/lang/zh-CN.js"></script>
   <script type="text/javascript" src="/cms/include/js/cms.js"></script>
-  <script type="text/javascript" src="/cms/include/js/article_manage.js"></script>
+  <!-- <script type="text/javascript" src="/cms/include/js/case_manage.js"></script> -->
 </body>
 </html>

@@ -1,5 +1,5 @@
 $(function () {
-  $("#tempModal").modal();
+  // $("#tempModal").modal();
   var budgetTimer = 0;
   // var designerTimer = 0;
   var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $("html") : $("body")) : $("html,body");

@@ -110,6 +110,13 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </li>
             </ul>
           </div>
+          <div class="list-item slide slide-left" role="button" href="/cms/admin/message_manage.php">
+            <div class="slide-head">
+              <span class="glyphicon glyphicon-comment"></span>
+              <span class="title">信息管理</span>
+              <span class="pull-right badge"><?php echo $messageManage->getRecordCounts("b_read='F'"); ?></span>
+            </div>
+          </div>
           <!-- <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-user"></span>

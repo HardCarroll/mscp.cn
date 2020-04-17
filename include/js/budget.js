@@ -118,7 +118,11 @@ $(function() {
       });
     }
     else {
-      var msgData = {msg_name: msgName, msg_phone: msgPhone, msg_email: msgEmail, msg_address: msgAddress, msg_title: msgTitle, msg_content: msgContent, b_end: "TAB_END"};
+      var time = new Date();
+      var day = ("0" + time.getDate()).slice(-2);
+      var month = ("0" + (time.getMonth() + 1)).slice(-2);
+      var today = time.getFullYear() + "-" + (month) + "-" + (day);
+      var msgData = {msg_name: msgName, msg_phone: msgPhone, msg_email: msgEmail, msg_address: msgAddress, msg_title: msgTitle, msg_content: msgContent,msg_date: today, b_read: "F", b_end: "TAB_END"};
       fmd.append("token", "leaveMessage");
       fmd.append("data", JSON.stringify(msgData));
       $.ajax({

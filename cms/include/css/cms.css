@@ -149,6 +149,9 @@ ul {
   height: 30px;
   line-height: 30px;
 }
+.slide>.slide-head>span.badge {
+  line-height: 24px;
+}
 .slide>.slide-head>span:nth-of-type(1) {
   width: 30px;
   height: 30px;

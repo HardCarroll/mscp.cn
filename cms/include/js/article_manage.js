@@ -220,9 +220,9 @@ function refreshTabContent(argJson) {
         }
       }
       else {
-        $(this).find("[name='cp-title']").val(result.title);
-        $(this).find("[name='cp-keywords']").val(result.keywords);
-        $(this).find("[name='cp-description']").val(result.description);
+        $(this).find("[name='cp-title']").val(result.site_info.title);
+        $(this).find("[name='cp-keywords']").val(result.site_info.keywords);
+        $(this).find("[name='cp-description']").val(result.site_info.description);
       }
     },
     error: function(msg) {

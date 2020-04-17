@@ -110,6 +110,13 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </li>
             </ul>
           </div>
+          <div class="list-item slide slide-left" role="button" href="/cms/admin/message_manage.php">
+            <div class="slide-head">
+              <span class="glyphicon glyphicon-comment"></span>
+              <span class="title">留言管理</span>
+              <span class="pull-right badge"><?php echo $messageManage->getRecordCounts("b_read='F'"); ?></span>
+            </div>
+          </div>
           <!-- <div class="list-item slide" role="button" href="/cms/admin/user_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-user"></span>
@@ -149,6 +156,38 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                 <div class="input-group" title="description">
                   <label for="description" class="input-group-addon">网站内容简介</label>
                   <textarea type="text" class="form-control" name="description" id="description"></textarea>
+                </div>
+                <div class="input-group" title="icp">
+                  <label for="icp" class="input-group-addon">网站备案号</label>
+                  <input type="text" class="form-control" name="icp" id="icp">
+                </div>
+                <div class="input-group" title="company-name">
+                  <label for="company-name" class="input-group-addon">公司名称</label>
+                  <input type="text" class="form-control" name="company-name" id="company-name">
+                </div>
+                <div class="input-group" title="mobile">
+                  <label for="mobile" class="input-group-addon">客服手机</label>
+                  <input type="text" class="form-control" name="mobile" id="mobile">
+                </div>
+                <div class="input-group" title="service-qq">
+                  <label for="service-qq" class="input-group-addon">客服QQ</label>
+                  <input type="text" class="form-control" name="service-qq" id="service-qq">
+                </div>
+                <div class="input-group" title="phone">
+                  <label for="phone" class="input-group-addon">固定电话</label>
+                  <input type="text" class="form-control" name="phone" id="phone">
+                </div>
+                <div class="input-group" title="fax">
+                  <label for="fax" class="input-group-addon">传真</label>
+                  <input type="text" class="form-control" name="fax" id="fax">
+                </div>
+                <div class="input-group" title="email">
+                  <label for="email" class="input-group-addon">邮箱地址</label>
+                  <input type="text" class="form-control" name="email" id="email">
+                </div>
+                <div class="input-group" title="company-address">
+                  <label for="company-address" class="input-group-addon">公司地址</label>
+                  <input type="text" class="form-control" name="company-address" id="company-address">
                 </div>
                 <div class="input-group">
                   <p class="text-state">&nbsp;</p>
