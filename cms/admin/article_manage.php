@@ -323,6 +323,39 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modPwd" tabindex="-1" role="dialog" aria-labelledby="modPwdLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modPwdLabel">修改用户密码</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="old-pwd" class="control-label">旧密码:</label>
+                <input type="password" class="form-control" id="old-pwd" name="old-pwd" required>
+              </div>
+              <div class="form-group">
+                <label for="new-pwd1" class="control-label">新的密码:</label>
+                <input type="password" class="form-control" id="new-pwd1" name="new-pwd1" required>
+              </div>
+              <div class="form-group">
+                <label for="new-pwd2" class="control-label">确认新密码:</label>
+                <input type="password" class="form-control" id="new-pwd2" name="new-pwd2" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <span class="tips"></span>
+            <button type="button" class="btn btn-primary" id="btn_ok">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div> <!-- /.layer-->
 
   <script type="text/javascript" src="/cms/include/jquery/jquery.min.js"></script>

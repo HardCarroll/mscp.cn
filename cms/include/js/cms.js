@@ -194,7 +194,7 @@ function activateTab(target) {
     refresh_siteTab();
   }
   if($(target).attr("href") === "#caseTab") {
-    refreshTabList({page: 1});
+    refreshTabList({page: 1, rule: "", tableId: "case-panel-wrap"});
   }
 
   if($(target).attr("href") === "#uploadCase") {
@@ -241,10 +241,10 @@ function regTabEvent() {
     $(".nav-list").find('[href="' + $("#pageTabs").find(".active").attr("href") + '"]').addClass("active").siblings().removeClass("active");
     
     if($("#pageTabs").find(".active").attr("href") === "#caseTab") {
-      refreshTabList({page: 1});
+      refreshTabList({page: 1, rule: "", tableId: "case-panel-wrap"});
     }
     if($("#pageTabs").find(".active").attr("href") === "#articleTab") {
-      refreshTabList({page: 1});
+      refreshTabList({page: 1, rule: "", tableId: "article-panel-wrap"});
     }
 
     // 清除data-id属性值
@@ -283,7 +283,7 @@ function paginationList(argJson) {
       context: argJson.target,
       success: function(result) {
         $(this).html("").html(result);
-        paginationClick({object: $(this).find("li"), rule: argJson.rule});
+        paginationClick({object: $(this).find("li"), rule: argJson.rule, tableId: argJson.tableId});
       },
       error: function(err) {
         console.log("fail: "+err);
@@ -341,7 +341,7 @@ function paginationClick(argJson) {
         curIndex = $(this).index();
       }
 
-      refreshTabList({page: curIndex, rule: argJson.rule});
+      refreshTabList({page: curIndex, rule: argJson.rule, tableId: argJson.tableId});
       
     }); // click_func
   }); // each_func

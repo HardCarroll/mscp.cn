@@ -4,7 +4,8 @@ $(function() {
     token: "refreshPagination",
     handle: "case",
     url: "/cms/include/php/handle.php",
-    target: $("#caseTab>.list-wrap")
+    target: $("#caseTab>.list-wrap"),
+    tableId: "case-panel-wrap"
   });
 
   // 案例管理标签页上传按钮
@@ -20,16 +21,16 @@ $(function() {
       e.stopPropagation();
       e.preventDefault();
       if($(this).hasClass("total")) {
-        refreshTabList({page: 1, rule: ""});
-        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: ""});
+        refreshTabList({page: 1, rule: "", tableId: "case-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: "", tableId: "case-panel-wrap"});
       }
       if($(this).hasClass("unpost")) {
-        refreshTabList({page: 1, rule: "b_posted='F'"});
-        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: "b_posted='F'"});
+        refreshTabList({page: 1, rule: "b_posted='F'", tableId: "case-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: "b_posted='F'", tableId: "case-panel-wrap"});
       }
       if($(this).hasClass("marked")) {
-        refreshTabList({page: 1, rule: "b_recommends='T'"});
-        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: "b_recommends='T'"});
+        refreshTabList({page: 1, rule: "b_recommends='T'", tableId: "case-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), rule: "b_recommends='T'", tableId: "case-panel-wrap"});
       }
     });
   });
@@ -74,7 +75,7 @@ $(function() {
     getCounts({rule: "", target: $(".wrap.total>span.digital")});
     getCounts({rule: "b_posted='F'", target: $(".wrap.unpost>span.digital")});
     getCounts({rule: "b_recommends='T'", target: $(".wrap.marked>span.digital")});
-    paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap")});
+    paginationList({token: "refreshPagination", handle: "case", url: "/cms/include/php/handle.php", target: $("#caseTab>.list-wrap"), tableId: "case-panel-wrap"});
   });
 
   // 保存按钮点击事件处理函数
@@ -110,7 +111,7 @@ $(function() {
     });
   });
 
-  refreshTabList({page: 1});
+  refreshTabList({page: 1, rule: "", tableId: "case-panel-wrap"});
 
 });
 

@@ -60,6 +60,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       else if($_POST["handle"] === "article") {
         echo proc_refreshTabList($articleManage, $_POST["data"]);
       }
+      else if($_POST["handle"] === "message") {
+        echo proc_refreshMsgList($messageManage, $_POST["data"]);
+      }
       break;
     case "refreshRecommends":
       // 刷新推荐列表
@@ -77,6 +80,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       }
       else if($_POST["handle"] === "article") {
         echo proc_refreshPagination($articleManage, $_POST["rule"]);
+      }
+      else if($_POST["handle"] === "message") {
+        echo proc_refreshPagination($messageManage, $_POST["rule"]);
       }
       break;
     case "updateItem":
@@ -264,7 +270,7 @@ function proc_refreshTabList($hd, $data) {
   $cmp = $counts / ($page*10) >= 1 ? 10 : ($counts%10);
 
   if($counts) {
-    $html = '<div class="panel-group" role="tablist" aria-multiselectable="true" id="panel-wrap">';
+    $html = '<div class="panel-group" role="tablist" aria-multiselectable="true" id="'.$dataArray["tableId"].'">';
     for ($i = ($page-1)*10; $i < ($page-1)*10+$cmp; $i++) {
       if($result[$i]["b_posted"] === "T") {
         $html .= '<div class="panel panel-default">';
@@ -273,12 +279,62 @@ function proc_refreshTabList($hd, $data) {
         $html .= '<div class="panel panel-danger">';
       }
       $html .= '<div class="panel-heading" role="tab">';
-      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#panel-wrap" href="#item_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
+      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#'.$dataArray["tableId"].'" href="#item_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
       $html .= '<div id="item_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
       $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
       $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_recommends"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
       $html .= '<li role="button" href="#editTab" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>';
       $html .= '<li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>';
+      $html .= '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
+      $html .= '</ul></div></div>';
+    }
+    $html .= '</div>';
+  }
+  else {
+    $html = "<p>没有相关项数据！</p>";
+  }
+  
+  return $html;
+}
+/**
+ * 实时生成消息内容列表
+ */
+function proc_refreshMsgList($hd, $data) {
+  $dataArray = json_decode($data, true);
+  empty($dataArray["page"]) ? $page = 1 : $page = $dataArray["page"];
+  if(isset($dataArray["rule"])) {
+    $result = $hd->selectItem($dataArray["rule"]);
+    $counts = $hd->getRecordCounts($dataArray["rule"]);
+  }
+  else {
+    $result = $hd->selectItem();
+    $counts = $hd->getRecordCounts();
+  }
+  
+  $html = '';
+  $cmp = $counts / ($page*10) >= 1 ? 10 : ($counts%10);
+
+  if($counts) {
+    $html = '<div class="panel-group" role="tablist" aria-multiselectable="true" id="'.$dataArray["tableId"].'">';
+    for ($i = ($page-1)*10; $i < ($page-1)*10+$cmp; $i++) {
+      if($result[$i]["b_read"] === "T") {
+        $html .= '<div class="panel panel-default">';
+      }
+      else {
+        $html .= '<div class="panel panel-danger">';
+      }
+      $html .= '<div class="panel-heading" role="tab">';
+      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#'.$dataArray["tableId"].'" href="#'.$dataArray["tableId"].'_'.$result[$i]["id"].'">'.($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message " . $result[$i]["id"]).'</a></div>';
+      $html .= '<div id="'.$dataArray["tableId"].'_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
+      $html .= ('<div class="panel-body">
+                  <p class="msg-name"><span>姓名：</span><span>'.$result[$i]["msg_name"].'</span></p>
+                  <p class="msg-tel"><span>电话：</span><span>'.$result[$i]["msg_phone"].'</span></p>
+                  <p class="msg-email"><span>邮箱：</span><span>'.$result[$i]["msg_email"].'</span></p>
+                  <p class="msg-address"><span>地址：</span><span>'.$result[$i]["msg_address"].'</span></p>
+                  <p class="msg-content"><span>内容：</span><span>'.$result[$i]["msg_content"].'</span></p>
+                </div>');
+      $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
+      $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
       $html .= '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
       $html .= '</ul></div></div>';
     }

@@ -1,6 +1,6 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"]."/cms/include/php/include.php");
-if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
+require_once($_SERVER["DOCUMENT_ROOT"] . "/cms/include/php/include.php");
+if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   $_SESSION["state"] = sha1(-1);
   header("location: /cms/admin/login.php");
   exit;
@@ -8,6 +8,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
@@ -18,6 +19,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   <link rel="stylesheet" href="/cms/include/css/message_manage.css">
   <title>留言管理——Powered by 黄狮虎</title>
 </head>
+
 <body>
   <div class="layer">
     <section class="page-head">
@@ -160,34 +162,59 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   </div>
                 </div>
               </div>
-              <div class="case-wrap">
+              <div class="message-wrap">
                 <!-- 动态生成案例列表 -->
                 <?php
-                $result = $caseManage->selectItem();
-                $counts = $caseManage->getRecordCounts();
-                if($counts) {
-                  echo '<div class="panel-group" role="tablist" aria-multiselectable="true">';
-                  for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
-                    if($result[$i]["b_posted"] === "T") {
-                      echo '<div class="panel panel-default">';
-                    }
-                    else {
-                      echo '<div class="panel panel-danger">';
-                    }
-                    echo '<div class="panel-heading" role="tab">';
-                    echo '<a class="collapsed" role="button" data-toggle="collapse" href="#case_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
-                    echo '<div id="case_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
-                    echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
-                    echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_recommends"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
-                    echo '<li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>';
-                    echo '<li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>';
-                    echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
-                    echo '</ul></div></div>';
-                  }
-                  echo '</div>';
-                }
+                // $result = $caseManage->selectItem();
+                // $counts = $caseManage->getRecordCounts();
+                // if($counts) {
+                //   echo '<div class="panel-group" role="tablist" aria-multiselectable="true" id="budget-panel-wrap">';
+                //   for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
+                //     if($result[$i]["b_posted"] === "T") {
+                //       echo '<div class="panel panel-default">';
+                //     }
+                //     else {
+                //       echo '<div class="panel panel-danger">';
+                //     }
+                //     echo '<div class="panel-heading" role="tab">';
+                //     echo '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#budget-panel-wrap" href="#case_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
+                //     echo '<div id="case_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
+                //     echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
+                //     echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_recommends"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+                //     echo '<li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>';
+                //     echo '<li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>';
+                //     echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
+                //     echo '</ul></div></div>';
+                //   }
+
+                //   echo '</div>';
+                // }
                 ?>
-              </div> <!-- .case-wrap -->
+
+                <div class="panel-group" id="budget-panel-wrap" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#budget-panel-wrap" href="#collapseOne">Budget</a>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
+                      <div class="panel-body">
+                        <p class="msg-name"><span>姓名：</span><span>Leon</span></p>
+                        <p class="msg-tel"><span>电话：</span><span>13312345678</span></p>
+                        <p class="msg-email"><span>邮箱：</span><span>Leon@mail.com</span></p>
+                        <p class="msg-address"><span>地址：</span><span>China, Hunan Province</span></p>
+                        <p class="msg-content"><span>内容：</span><span>Content of message</span></p>
+                      </div>
+                      <ul class="btn-group" data-id="">
+                        <li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon glyphicon-star"></li>
+                        <li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>
+                        <li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>
+                        <li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+              </div> <!-- .message-wrap -->
               <div class="list-wrap">
                 <!-- 分页按钮动态输出 -->
               </div>
@@ -209,33 +236,38 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   </div>
                 </div>
               </div>
-              <div class="case-wrap">
+              <div class="message-wrap">
                 <!-- 动态生成案例列表 -->
                 <?php
                 $result = $messageManage->selectItem();
                 $counts = $messageManage->getRecordCounts();
-                if($counts) {
-                  echo '<div class="panel-group" role="tablist" aria-multiselectable="true">';
-                  for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
-                    if($result[$i]["b_read"] === "T") {
+                if ($counts) {
+                  echo '<div class="panel-group" role="tablist" aria-multiselectable="true" id="message-panel-wrap">';
+                  for ($i = 0; $i < ($counts > 10 ? 10 : $counts); $i++) {
+                    if ($result[$i]["b_read"] === "T") {
                       echo '<div class="panel panel-default">';
-                    }
-                    else {
+                    } else {
                       echo '<div class="panel panel-danger">';
                     }
                     echo '<div class="panel-heading" role="tab">';
-                    echo '<a class="collapsed" role="button" data-toggle="collapse" href="#message_'.$result[$i]["id"].'">'.($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message ".$result[$i]["id"]).'</a></div>';
-                    echo '<div id="message_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
-                    echo '<div class="msg-content">'.$result[$i]["msg_content"].'</div>';
-                    echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
-                    echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+                    echo '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#message-panel-wrap" href="#message_' . $result[$i]["id"] . '">' . ($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message " . $result[$i]["id"]) . '</a></div>';
+                    echo '<div id="message_' . $result[$i]["id"] . '" class="panel-collapse collapse" role="tabpanel">';
+                    echo '<div class="panel-body">
+                            <p class="msg-name"><span>姓名：</span><span>'.$result[$i]["msg_name"].'</span></p>
+                            <p class="msg-tel"><span>电话：</span><span>'.$result[$i]["msg_phone"].'</span></p>
+                            <p class="msg-email"><span>邮箱：</span><span>'.$result[$i]["msg_email"].'</span></p>
+                            <p class="msg-address"><span>地址：</span><span>'.$result[$i]["msg_address"].'</span></p>
+                            <p class="msg-content"><span>内容：</span><span>'.$result[$i]["msg_content"].'</span></p>
+                          </div>';
+                    echo '<ul class="btn-group" data-id="' . $result[$i]["id"] . '">';
+                    echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon ' . ($result[$i]["b_read"] === "T" ? "glyphicon-star" : "glyphicon-star-empty") . '"></li>';
                     echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
                     echo '</ul></div></div>';
                   }
                   echo '</div>';
                 }
                 ?>
-              </div> <!-- .case-wrap -->
+              </div> <!-- .message-wrap -->
               <div class="list-wrap">
                 <!-- 分页按钮动态输出 -->
               </div>
@@ -267,6 +299,39 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="modPwd" tabindex="-1" role="dialog" aria-labelledby="modPwdLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="modPwdLabel">修改用户密码</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="old-pwd" class="control-label">旧密码:</label>
+                <input type="password" class="form-control" id="old-pwd" name="old-pwd" required>
+              </div>
+              <div class="form-group">
+                <label for="new-pwd1" class="control-label">新的密码:</label>
+                <input type="password" class="form-control" id="new-pwd1" name="new-pwd1" required>
+              </div>
+              <div class="form-group">
+                <label for="new-pwd2" class="control-label">确认新密码:</label>
+                <input type="password" class="form-control" id="new-pwd2" name="new-pwd2" required>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <span class="tips"></span>
+            <button type="button" class="btn btn-primary" id="btn_ok">确认</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div> <!-- /.layer-->
 
   <script type="text/javascript" src="/cms/include/jquery/jquery.min.js"></script>
@@ -274,6 +339,7 @@ if(!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
   <script src="/cms/include/kindeditor/kindeditor-all-min.js"></script>
   <script src="/cms/include/kindeditor/lang/zh-CN.js"></script>
   <script type="text/javascript" src="/cms/include/js/cms.js"></script>
-  <!-- <script type="text/javascript" src="/cms/include/js/case_manage.js"></script> -->
+  <script type="text/javascript" src="/cms/include/js/message_manage.js"></script>
 </body>
+
 </html>

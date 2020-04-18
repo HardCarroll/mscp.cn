@@ -4,7 +4,8 @@ $(function() {
     token: "refreshPagination",
     handle: "article",
     url: "/cms/include/php/handle.php",
-    target: $("#articleTab>.list-wrap")
+    target: $("#articleTab>.list-wrap"),
+    tableId: "article-panel-wrap"
   });
 
   // 文章管理标签页上传按钮
@@ -20,16 +21,16 @@ $(function() {
       e.stopPropagation();
       e.preventDefault();
       if($(this).hasClass("total")) {
-        refreshTabList({page: 1, rule: ""});
-        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: ""});
+        refreshTabList({page: 1, rule: "", tableId: "article-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: "", tableId: "article-panel-wrap"});
       }
       if($(this).hasClass("unpost")) {
-        refreshTabList({page: 1, rule: "b_posted='F'"});
-        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: "b_posted='F'"});
+        refreshTabList({page: 1, rule: "b_posted='F'", tableId: "article-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: "b_posted='F'", tableId: "article-panel-wrap"});
       }
       if($(this).hasClass("marked")) {
-        refreshTabList({page: 1, rule: "b_recommends='T'"});
-        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: "b_recommends='T'"});
+        refreshTabList({page: 1, rule: "b_recommends='T'", tableId: "article-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), rule: "b_recommends='T'", tableId: "article-panel-wrap"});
       }
     });
   });
@@ -41,7 +42,7 @@ $(function() {
     getCounts({rule: "", target: $(".wrap.total>span.digital")});
     getCounts({rule: "b_posted='F'", target: $(".wrap.unpost>span.digital")});
     getCounts({rule: "b_recommends='T'", target: $(".wrap.marked>span.digital")});
-    paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap")});
+    paginationList({token: "refreshPagination", handle: "article", url: "/cms/include/php/handle.php", target: $("#articleTab>.list-wrap"), tableId: "article-panel-wrap"});
   });
 
   // 保存按钮点击事件处理函数
@@ -77,7 +78,7 @@ $(function() {
     });
   });
 
-  refreshTabList({page: 1});
+  refreshTabList({page: 1, rule: "", tableId: "article-panel-wrap"});
 });
 
 KindEditor.ready(function(K) {
