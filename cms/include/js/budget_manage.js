@@ -2,24 +2,24 @@ $(function() {
   // 分页按钮列表
   paginationList({
     token: "refreshPagination",
-    handle: "message",
+    handle: "budget",
     url: "/cms/include/php/handle.php",
-    target: $("#messageTab>.list-wrap"),
-    tableId: "message-panel-wrap"
+    target: $("#budgetTab>.list-wrap"),
+    tableId: "budget-panel-wrap"
   });
 
-  // 留言消息管理管理标签页上分类按钮处理函数
-  $("#messageTab .overview .wrap").each(function() {
+  // 预算消息管理管理标签页上分类按钮处理函数
+  $("#budgetTab .overview .wrap").each(function() {
     $(this).off("click").on("click", function(e) {
       e.stopPropagation();
       e.preventDefault();
       if($(this).hasClass("total")) {
-        refreshTabList({page: 1, rule: "", tableId: "message-panel-wrap"});
-        paginationList({token: "refreshPagination", handle: "message", url: "/cms/include/php/handle.php", target: $("#messageTab>.list-wrap"), rule: "", tableId: "message-panel-wrap"});
+        refreshTabList({page: 1, rule: "", tableId: "budget-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "budget", url: "/cms/include/php/handle.php", target: $("#budgetTab>.list-wrap"), rule: "", tableId: "budget-panel-wrap"});
       }
       if($(this).hasClass("marked")) {
-        refreshTabList({page: 1, rule: "b_read='F'", tableId: "message-panel-wrap"});
-        paginationList({token: "refreshPagination", handle: "message", url: "/cms/include/php/handle.php", target: $("#messageTab>.list-wrap"), rule: "b_read='F'", tableId: "message-panel-wrap"});
+        refreshTabList({page: 1, rule: "b_read='F'", tableId: "budget-panel-wrap"});
+        paginationList({token: "refreshPagination", handle: "budget", url: "/cms/include/php/handle.php", target: $("#budgetTab>.list-wrap"), rule: "b_read='F'", tableId: "budget-panel-wrap"});
       }
     });
   });
@@ -28,7 +28,7 @@ $(function() {
   $("#modalConfirm .btn-danger").off("click").on("click", function() {
     var fmd = new FormData();
     fmd.append("token", "removeItem");
-    fmd.append("handle", "message");
+    fmd.append("handle", "budget");
     fmd.append("id", $(this).attr("data-id"));
     $.ajax({
       url: "/cms/include/php/handle.php",
@@ -49,7 +49,7 @@ $(function() {
     });
   });
 
-  refreshTabList({page: 1, rule: "", tableId: "message-panel-wrap"});
+  refreshTabList({page: 1, rule: "", tableId: "budget-panel-wrap"});
 
 });
 
@@ -61,7 +61,7 @@ function getCounts(argJson) {
   
   var fmd = new FormData();
   fmd.append("token", "getCounts");
-  fmd.append("handle", "message");
+  fmd.append("handle", "budget");
   fmd.append("rule", argJson.rule);
   $.ajax({
     url: "/cms/include/php/handle.php",
@@ -88,7 +88,7 @@ function getCounts(argJson) {
 function refreshTabList(data) {
   var fmd = new FormData();
   fmd.append("token", "refreshTabList");
-  fmd.append("handle", "message");
+  fmd.append("handle", "budget");
   if(data) {
     fmd.append("data", JSON.stringify(data));
   }
@@ -98,7 +98,7 @@ function refreshTabList(data) {
     data: fmd,
     processData: false,
     contentType: false,   //数据为formData时必须定义此项
-    context: $("#messageTab>.message-wrap"),
+    context: $("#budgetTab>.budget-wrap"),
     success: function(result) {
       // 先清空内容后再追加
       $(this).html("").append(result);
@@ -111,7 +111,7 @@ function refreshTabList(data) {
             case "mark":
               var fmd = new FormData();
               fmd.append("token", "markItem");
-              fmd.append("handle", "message");
+              fmd.append("handle", "budget");
               fmd.append("id", $(this).parent().attr("data-id"));
               if($(this).hasClass("glyphicon-star")) {
                 fmd.append("data", '{"b_read": "F"}');

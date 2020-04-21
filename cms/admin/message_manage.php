@@ -112,10 +112,17 @@ if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </li>
             </ul>
           </div>
+          <div class="list-item slide slide-left" role="button" href="/cms/admin/budget_manage.php">
+            <div class="slide-head">
+              <span class="glyphicon glyphicon-comment"></span>
+              <span class="title">预算管理</span>
+              <span class="pull-right badge"><?php echo $budgetManage->getRecordCounts("b_read='F'"); ?></span>
+            </div>
+          </div>
           <div class="list-item slide slide-left active" role="button" href="/cms/admin/message_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-comment"></span>
-              <span class="title">信息管理</span>
+              <span class="title">留言管理</span>
               <span class="pull-right badge"><?php echo $messageManage->getRecordCounts("b_read='F'"); ?></span>
             </div>
           </div>
@@ -135,91 +142,13 @@ if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
       <div class="content-wrap">
         <div class="content-inner">
           <ul id="pageTabs" class="hidden-xs nav nav-tabs" role="tablist">
-            <li role="presentation" class="active" href="#budgetTab">
-              <span class="pull-left glyphicon glyphicon-comment"></span>
-              <span class="title">预算信息</span>
-            </li>
-            <li role="presentation" class="" href="#messageTab">
+            <li role="presentation" class="active" href="#messageTab">
               <span class="pull-left glyphicon glyphicon-comment"></span>
               <span class="title">留言信息</span>
             </li>
           </ul>
           <div id="pageTabContent" class="tab-content">
-            <div role="tabpanel" class="tab-pane active" id="budgetTab">
-              <div class="clearfix overview">
-                <div class="col-xs-6">
-                  <div class="wrap total">
-                    <p>全部留言</p>
-                    <span class="text-primary digital"><?php echo $caseManage->getRecordCounts(); ?></span>
-                    <span>条</span>
-                  </div>
-                </div>
-                <div class="col-xs-6">
-                  <div class="wrap unpost">
-                    <p>暂未处理</p>
-                    <span class="text-danger digital"><?php echo $caseManage->getRecordCounts("b_posted='F'"); ?></span>
-                    <span>条</span>
-                  </div>
-                </div>
-              </div>
-              <div class="message-wrap">
-                <!-- 动态生成案例列表 -->
-                <?php
-                // $result = $caseManage->selectItem();
-                // $counts = $caseManage->getRecordCounts();
-                // if($counts) {
-                //   echo '<div class="panel-group" role="tablist" aria-multiselectable="true" id="budget-panel-wrap">';
-                //   for ($i = 0; $i < ($counts>10?10:$counts); $i++) {
-                //     if($result[$i]["b_posted"] === "T") {
-                //       echo '<div class="panel panel-default">';
-                //     }
-                //     else {
-                //       echo '<div class="panel panel-danger">';
-                //     }
-                //     echo '<div class="panel-heading" role="tab">';
-                //     echo '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#budget-panel-wrap" href="#case_'.$result[$i]["id"].'">'.$result[$i]["ct_title"].'</a></div>';
-                //     echo '<div id="case_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
-                //     echo '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
-                //     echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_recommends"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
-                //     echo '<li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>';
-                //     echo '<li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>';
-                //     echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
-                //     echo '</ul></div></div>';
-                //   }
-
-                //   echo '</div>';
-                // }
-                ?>
-
-                <div class="panel-group" id="budget-panel-wrap" role="tablist" aria-multiselectable="true">
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#budget-panel-wrap" href="#collapseOne">Budget</a>
-                    </div>
-                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel">
-                      <div class="panel-body">
-                        <p class="msg-name"><span>姓名：</span><span>Leon</span></p>
-                        <p class="msg-tel"><span>电话：</span><span>13312345678</span></p>
-                        <p class="msg-email"><span>邮箱：</span><span>Leon@mail.com</span></p>
-                        <p class="msg-address"><span>地址：</span><span>China, Hunan Province</span></p>
-                        <p class="msg-content"><span>内容：</span><span>Content of message</span></p>
-                      </div>
-                      <ul class="btn-group" data-id="">
-                        <li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon glyphicon-star"></li>
-                        <li role="button" data-token="edit" title="编辑" class="btn btn-default glyphicon glyphicon-edit"></li>
-                        <li role="button" data-token="post" title="发布" class="btn btn-default glyphicon glyphicon-send"></li>
-                        <li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-              </div> <!-- .message-wrap -->
-              <div class="list-wrap">
-                <!-- 分页按钮动态输出 -->
-              </div>
-            </div> <!-- #budgetTab -->
-            <div role="tabpanel" class="tab-pane" id="messageTab">
+            <div role="tabpanel" class="tab-pane active" id="messageTab">
               <div class="clearfix overview">
                 <div class="col-xs-6">
                   <div class="wrap total">
@@ -229,7 +158,7 @@ if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
                   </div>
                 </div>
                 <div class="col-xs-6">
-                  <div class="wrap unpost">
+                  <div class="wrap marked">
                     <p>暂未处理</p>
                     <span class="text-danger digital"><?php echo $messageManage->getRecordCounts("b_read='F'"); ?></span>
                     <span>条</span>
@@ -238,35 +167,6 @@ if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
               </div>
               <div class="message-wrap">
                 <!-- 动态生成案例列表 -->
-                <?php
-                $result = $messageManage->selectItem();
-                $counts = $messageManage->getRecordCounts();
-                if ($counts) {
-                  echo '<div class="panel-group" role="tablist" aria-multiselectable="true" id="message-panel-wrap">';
-                  for ($i = 0; $i < ($counts > 10 ? 10 : $counts); $i++) {
-                    if ($result[$i]["b_read"] === "T") {
-                      echo '<div class="panel panel-default">';
-                    } else {
-                      echo '<div class="panel panel-danger">';
-                    }
-                    echo '<div class="panel-heading" role="tab">';
-                    echo '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#message-panel-wrap" href="#message_' . $result[$i]["id"] . '">' . ($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message " . $result[$i]["id"]) . '</a></div>';
-                    echo '<div id="message_' . $result[$i]["id"] . '" class="panel-collapse collapse" role="tabpanel">';
-                    echo '<div class="panel-body">
-                            <p class="msg-name"><span>姓名：</span><span>'.$result[$i]["msg_name"].'</span></p>
-                            <p class="msg-tel"><span>电话：</span><span>'.$result[$i]["msg_phone"].'</span></p>
-                            <p class="msg-email"><span>邮箱：</span><span>'.$result[$i]["msg_email"].'</span></p>
-                            <p class="msg-address"><span>地址：</span><span>'.$result[$i]["msg_address"].'</span></p>
-                            <p class="msg-content"><span>内容：</span><span>'.$result[$i]["msg_content"].'</span></p>
-                          </div>';
-                    echo '<ul class="btn-group" data-id="' . $result[$i]["id"] . '">';
-                    echo '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon ' . ($result[$i]["b_read"] === "T" ? "glyphicon-star" : "glyphicon-star-empty") . '"></li>';
-                    echo '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
-                    echo '</ul></div></div>';
-                  }
-                  echo '</div>';
-                }
-                ?>
               </div> <!-- .message-wrap -->
               <div class="list-wrap">
                 <!-- 分页按钮动态输出 -->

@@ -6,7 +6,7 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
     case "getBudget":
       // 获取预算服务
       if (isset($_POST["data"]) && !empty($_POST["data"])) {
-        echo proc_getBudget($_POST["data"]);
+        echo proc_getBudget($budgetManage, $_POST["data"]);
       }
     break;
     case "leaveMessage":
@@ -102,6 +102,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       else if($_POST["handle"] === "article") {
         echo proc_removeItem($articleManage, $_POST["id"]);
       }
+      else if($_POST["handle"] === "message") {
+        echo proc_removeItem($messageManage, $_POST["id"]);
+      }
       break;
     case "markItem":
       //推荐项
@@ -111,6 +114,10 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       else if($_POST["handle"] === "article") {
         echo proc_markItem($articleManage, $_POST["id"], $_POST["data"]);
       }
+      else if($_POST["handle"] === "message") {
+        // echo proc_markItem($messageManage, $_POST["id"], $_POST["data"]);
+        echo json_encode($messageManage->updateItem($_POST["id"], $_POST["data"]), 320);
+      }
       break;
     case "getCounts":
       // 获取记录数
@@ -119,6 +126,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       }
       else if($_POST["handle"] === "article") {
         echo $articleManage->getRecordCounts($_POST["rule"]);
+      }
+      else if($_POST["handle"] === "message") {
+        echo $messageManage->getRecordCounts($_POST["rule"]);
       }
       break;
     case "debug":
@@ -130,7 +140,7 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
 }
 
 // 预算服务处理函数
-function proc_getBudget($data) {
+function proc_getBudget($hd, $data) {
   // $arr_item = ["设计费", "材料费", "人工费", "软装配饰", "灯饰光源", "餐厅桌椅", "空调电器", "厨放设备及抽排", "企划灯箱", "门牌发光字", "餐具小件", "窗帘工服", "收银监控音响", "其他"];
   $arr_data = json_decode($data, TRUE);
   $arr_budget = array("设计费"=>$arr_data["area"]*80,
@@ -148,6 +158,7 @@ function proc_getBudget($data) {
                       "收银监控音响"=>$arr_data["area"]*80,
                       "其他"=>$arr_data["area"]*50,
                     );
+  $hd->addItem($data);
   return json_encode($arr_budget, 320);
 }
 
@@ -324,7 +335,7 @@ function proc_refreshMsgList($hd, $data) {
         $html .= '<div class="panel panel-danger">';
       }
       $html .= '<div class="panel-heading" role="tab">';
-      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#'.$dataArray["tableId"].'" href="#'.$dataArray["tableId"].'_'.$result[$i]["id"].'">'.($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message " . $result[$i]["id"]).'</a></div>';
+      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#'.$dataArray["tableId"].'" href="#'.$dataArray["tableId"].'_'.$result[$i]["id"].'"><span class="msg-title text-ellipsis">'.($result[$i]["msg_title"] ? $result[$i]["msg_title"] : "Message " . $result[$i]["id"]).'</span><span class="msg-date">'.$result[$i]["msg_date"].'</span></a></div>';
       $html .= '<div id="'.$dataArray["tableId"].'_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
       $html .= ('<div class="panel-body">
                   <p class="msg-name"><span>姓名：</span><span>'.$result[$i]["msg_name"].'</span></p>

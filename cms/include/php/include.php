@@ -8,4 +8,5 @@ $caseManage = new DBManager("localhost", "mscp", "2tks5jt3", "mscp", "tab_case")
 $articleManage = new DBManager("localhost", "mscp", "2tks5jt3", "mscp", "tab_article");
 $classManage = new DBManager("localhost", "mscp", "2tks5jt3", "mscp", "tab_class");
 $messageManage = new DBManager("localhost", "mscp", "2tks5jt3", "mscp", "tab_message");
+$budgetManage = new DBManager("localhost", "mscp", "2tks5jt3", "mscp", "tab_budget");
 ?>

@@ -333,8 +333,13 @@ $(function () {
   $("[data-toggle='popover'").popover();
 
   $(".btn-round").off("click").on("click", function () {
+    var time = new Date();
+    var day = ("0" + time.getDate()).slice(-2);
+    var month = ("0" + (time.getMonth() + 1)).slice(-2);
+    var today = time.getFullYear() + "-" + (month) + "-" + (day);
     var area = $("#decoration-area").val();
     var type = $("#decoration-style").val();
+    var name = $("#decoration-name").val();
     var tel = $("#decoration-tel").val();
     var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
 
@@ -356,7 +361,7 @@ $(function () {
       });
     }
     else {
-      var data = { area: area, type: type, tel: tel };
+      var data = { area: area, type: type, name: name, tel: tel, date: today, b_read: "F", b_end: "TAB_END" };
 
       var fmd_getBudget = new FormData();
       fmd_getBudget.append("token", "getBudget");
