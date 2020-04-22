@@ -20,37 +20,6 @@ $(function () {
     $.fn.fullpage.moveTo(1);
   });
 
-  // #designer 注册鼠标进入、离开事件
-  // $("#designer .bd-list").off("mouseenter").on("mouseenter", function () {
-  //   if (designerTimer) {
-  //     clearInterval(designerTimer);
-  //     designerTimer = 0;
-  //   }
-  // });
-  // $("#designer .bd-list").off("mouseleave").on("mouseleave", function () {
-  //   if (!designerTimer) {
-  //     designerTimer = setInterval(autoSlide, 3000);
-  //   }
-  // });
-  // #designer 注册鼠标单击事件
-  // $("#designer .bd-list").children().each(function () {
-  //   $(this).off("click").on("click", function () {
-  //     var count = $(this).parent().children().length;
-  //     var index = $(this).index();
-  //     var mid = Math.floor(count / 2);
-  //     var key = Math.abs(index - mid);
-  //     while (key > 0) {
-  //       if (index - mid > 0) {
-  //         autoSlide();
-  //       }
-  //       else {
-  //         reverseSlide();
-  //       }
-  //       key--;
-  //     }
-  //   });
-  // });
-
   $("#style-box .item").on("mouseenter", function() {
     $(this).addClass("active").siblings().removeClass("active");
   });
@@ -361,7 +330,7 @@ $(function () {
       });
     }
     else {
-      var data = { area: area, type: type, name: name, tel: tel, date: today, b_read: "F", b_end: "TAB_END" };
+      var data = { area: area, tel: tel, name: name, type: type, date: today, b_read: "F", b_end: "TAB_END" };
 
       var fmd_getBudget = new FormData();
       fmd_getBudget.append("token", "getBudget");
@@ -376,8 +345,8 @@ $(function () {
         success: function (result) {
           clearInterval(budgetTimer);
           var total = 0;
-          for(var i in result) {
-            $("#budget .rt .detail").find("p[data-item='"+i+"']").find("span").html(result[i]);
+          for (var i in result) {
+            $("#budget .rt .detail").find("p[data-item='" + i + "']").find("span").html(result[i]);
             total += result[i];
           }
           $("#budget .rt .total").find("span").html(total);
@@ -389,7 +358,6 @@ $(function () {
         }
       });
     }
-
   });
 
   // 轮播图

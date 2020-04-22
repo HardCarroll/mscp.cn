@@ -115,7 +115,7 @@ if (!isset($_SESSION["state"]) || $_SESSION["state"] !== sha1(0)) {
           <div class="list-item slide slide-left active" role="button" href="/cms/admin/budget_manage.php">
             <div class="slide-head">
               <span class="glyphicon glyphicon-comment"></span>
-              <span class="title">预算管理</span>
+              <span class="title">预算信息</span>
               <span class="pull-right badge"><?php echo $budgetManage->getRecordCounts("b_read='F'"); ?></span>
             </div>
           </div>

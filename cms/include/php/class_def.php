@@ -254,7 +254,7 @@ class DBManager {
     $htmlPath = $clsArray["htmlPath"].$id.$ext;
     // 获取网站信息数据
     $siteinfo = json_decode(file_get_contents(ROOT_PATH.PATH_JSON."/siteinfo.json"), true);
-    $url = "http://".$siteinfo["domain"].$clsArray["tempPath"];
+    $url = "http://".$siteinfo["site_info"]["domain"].$clsArray["tempPath"];
     $str = curl_request($url, json_encode($this->selectItem("id=$id")[0], 320));
     file_put_contents(ROOT_PATH.$htmlPath, $str);
     $result = $this->updateItem($id, '{"b_posted": "T", "st_path": "'.$htmlPath.'"}');

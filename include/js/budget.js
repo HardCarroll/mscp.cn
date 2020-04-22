@@ -32,7 +32,7 @@ $(function() {
       });
     }
     else {
-      var data = { area: area, type: type, name: name, tel: tel, date: today, b_read: "F", b_end: "TAB_END" };
+      var data = { area: area, tel: tel, name: name, type: type, date: today, b_read: "F", b_end: "TAB_END" };
 
       var fmd_getBudget = new FormData();
       fmd_getBudget.append("token", "getBudget");
@@ -52,7 +52,6 @@ $(function() {
             total += result[i];
           }
           $("#budget .rt .total").find("span").html(total);
-          // alert("您的投资预算为：");
           $("#budgetModal .result").html(total);
           $("#budgetModal").modal();
         },

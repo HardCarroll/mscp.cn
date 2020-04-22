@@ -63,6 +63,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       else if($_POST["handle"] === "message") {
         echo proc_refreshMsgList($messageManage, $_POST["data"]);
       }
+      else if($_POST["handle"] === "budget") {
+        echo proc_refreshBudgetList($budgetManage, $_POST["data"]);
+      }
       break;
     case "refreshRecommends":
       // 刷新推荐列表
@@ -83,6 +86,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       }
       else if($_POST["handle"] === "message") {
         echo proc_refreshPagination($messageManage, $_POST["rule"]);
+      }
+      else if($_POST["handle"] === "budget") {
+        echo proc_refreshPagination($budgetManage, $_POST["rule"]);
       }
       break;
     case "updateItem":
@@ -105,6 +111,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       else if($_POST["handle"] === "message") {
         echo proc_removeItem($messageManage, $_POST["id"]);
       }
+      else if($_POST["handle"] === "budget") {
+        echo proc_removeItem($budgetManage, $_POST["id"]);
+      }
       break;
     case "markItem":
       //推荐项
@@ -115,8 +124,10 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
         echo proc_markItem($articleManage, $_POST["id"], $_POST["data"]);
       }
       else if($_POST["handle"] === "message") {
-        // echo proc_markItem($messageManage, $_POST["id"], $_POST["data"]);
         echo json_encode($messageManage->updateItem($_POST["id"], $_POST["data"]), 320);
+      }
+      else if($_POST["handle"] === "budget") {
+        echo json_encode($budgetManage->updateItem($_POST["id"], $_POST["data"]), 320);
       }
       break;
     case "getCounts":
@@ -129,6 +140,9 @@ if (isset($_POST["token"]) && !empty($_POST["token"])) {
       }
       else if($_POST["handle"] === "message") {
         echo $messageManage->getRecordCounts($_POST["rule"]);
+      }
+      else if($_POST["handle"] === "budget") {
+        echo $budgetManage->getRecordCounts($_POST["rule"]);
       }
       break;
     case "debug":
@@ -343,6 +357,56 @@ function proc_refreshMsgList($hd, $data) {
                   <p class="msg-email"><span>邮箱：</span><span>'.$result[$i]["msg_email"].'</span></p>
                   <p class="msg-address"><span>地址：</span><span>'.$result[$i]["msg_address"].'</span></p>
                   <p class="msg-content"><span>内容：</span><span>'.$result[$i]["msg_content"].'</span></p>
+                </div>');
+      $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
+      $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+      $html .= '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
+      $html .= '</ul></div></div>';
+    }
+    $html .= '</div>';
+  }
+  else {
+    $html = "<p>没有相关项数据！</p>";
+  }
+  
+  return $html;
+}
+/**
+ * 实时生成预算消息内容列表
+ */
+function proc_refreshBudgetList($hd, $data) {
+  $type = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"]."/cms/include/json/style.json"), TRUE);
+  $dataArray = json_decode($data, true);
+  empty($dataArray["page"]) ? $page = 1 : $page = $dataArray["page"];
+  if(isset($dataArray["rule"])) {
+    $result = $hd->selectItem($dataArray["rule"]);
+    $counts = $hd->getRecordCounts($dataArray["rule"]);
+  }
+  else {
+    $result = $hd->selectItem();
+    $counts = $hd->getRecordCounts();
+  }
+  
+  $html = '';
+  $cmp = $counts / ($page*10) >= 1 ? 10 : ($counts%10);
+
+  if($counts) {
+    $html = '<div class="panel-group" role="tablist" aria-multiselectable="true" id="'.$dataArray["tableId"].'">';
+    for ($i = ($page-1)*10; $i < ($page-1)*10+$cmp; $i++) {
+      if($result[$i]["b_read"] === "T") {
+        $html .= '<div class="panel panel-default">';
+      }
+      else {
+        $html .= '<div class="panel panel-danger">';
+      }
+      $html .= '<div class="panel-heading" role="tab">';
+      $html .= '<a class="collapsed" role="button" data-toggle="collapse" data-parent="#'.$dataArray["tableId"].'" href="#'.$dataArray["tableId"].'_'.$result[$i]["id"].'"><span class="msg-title text-ellipsis">'.($result[$i]["name"] ? $result[$i]["name"] : "预算留言 " . $result[$i]["id"]).'</span><span class="msg-date">'.$result[$i]["date"].'</span></a></div>';
+      $html .= '<div id="'.$dataArray["tableId"].'_'.$result[$i]["id"].'" class="panel-collapse collapse" role="tabpanel">';
+      $html .= ('<div class="panel-body">
+                  <p class="msg-name"><span>姓名：</span><span>'.$result[$i]["name"].'</span></p>
+                  <p class="msg-tel"><span>电话：</span><span>'.$result[$i]["tel"].'</span></p>
+                  <p class="msg-email"><span>风格：</span><span>'.$type[$result[$i]["type"]].'</span></p>
+                  <p class="msg-address"><span>面积：</span><span>'.$result[$i]["area"].'</span></p>
                 </div>');
       $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
       $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';

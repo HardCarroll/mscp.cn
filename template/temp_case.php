@@ -15,6 +15,7 @@ $c_description = $dataArray["ct_description"];
 $c_content = $dataArray["ct_content"];
 // $more_prev = $dataArray["more_prev"];
 // $more_next = $dataArray["more_next"];
+$baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/include/json/siteinfo.json"), TRUE);
 function transmitCasetype($key)
 {
   $type = '';
@@ -48,7 +49,7 @@ function transmitCasetype($key)
   <meta name="renderer" content="webkit">
   <meta name="Keywords" content="<?php echo $p_keywords; ?>">
   <meta name="Description" content="<?php echo $p_description; ?>">
-  <title><?php echo $p_title; ?></title>
+  <title><?php echo $c_title; ?>丨案例展示-弥尚餐饮装饰设计</title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/include/css/icons.css">
   <link rel="stylesheet" href="/include/css/shared.css">
@@ -195,7 +196,7 @@ function transmitCasetype($key)
           <img class="bottom-logo" src="/images/bottom-text.png" alt="">
           <ul>
             <li>
-              <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+              <a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $baseinfo["company_info"]["qq"]; ?>&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
             </li>
             <li>
               <span class="glyphicon glyphicon-qrcode"></span>
@@ -208,11 +209,11 @@ function transmitCasetype($key)
         <section class="contact-bd">
           <div class="contact-us">
             <h4>联系我们</h4>
-            <p>电话：+86 13873976777</p>
-            <p>座机：0731-88853335</p>
-            <p>传真：0731-88853335</p>
-            <p>邮箱：382320863@qq.com</p>
-            <p>地址：湖南省长沙市芙蓉区朝阳路3号天心电脑城</p>
+            <p>电话：<?php echo $baseinfo["company_info"]["mobile"]; ?></p>
+            <p>座机：<?php echo $baseinfo["company_info"]["tel"]; ?></p>
+            <p>传真：<?php echo $baseinfo["company_info"]["fax"]; ?></p>
+            <p>邮箱：<?php echo $baseinfo["company_info"]["email"]; ?></p>
+            <p>地址：<?php echo $baseinfo["company_info"]["address"]; ?></p>
           </div>
           <div class="qrcode">
             <p class="pic"><img src="/images/qrcode.jpg" alt="扫一扫，关注弥尚餐饮装饰设计有限公司手机网站"><span>官方二维码</span></p>
@@ -220,7 +221,7 @@ function transmitCasetype($key)
           </div>
         </section>
         <section class="contact-ft">
-          <a href="http://www.mscp.cn">湖南弥尚餐饮装饰设计有限公司</a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank">弥尚餐饮装饰设计</a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg">湘ICP备17010608号-1</a>
+          <a href="http://www.mscp.cn"><?php echo $baseinfo["company_info"]["name"]; ?></a> Copyright © 2019 版权所有&nbsp;&nbsp;技术支持：<a href="http://www.mscp.cn" target="_blank"><?php echo $baseinfo["company_info"]["name"]; ?></a>&nbsp;&nbsp;<a href="http://www.beian.miit.gov.cn" target="_blank"><img src="/images/icp.jpg"><?php echo $baseinfo["site_info"]["icp"]; ?></a>
         </section>
       </div>
     </section>
@@ -229,16 +230,16 @@ function transmitCasetype($key)
     <ul class="list-group fixed fixed-rb" id="asidebar">
       <ul class="hidden-xs list-group" id="asidebar-tools">
         <li class="list-group-item" role="button" id="btn_aside_qq">
-          <a href="http://wpa.qq.com/msgrd?v=3&uin=382320863&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
+          <a href="http://wpa.qq.com/msgrd?v=3&uin=<?php echo $baseinfo["company_info"]["qq"]; ?>&site=qq&menu=yes"><span class="icon icon-cuz icon-qq"></span></a>
         </li>
         <li class="list-group-item" role="button" id="btn_aside_tel">
           <span class="glyphicon glyphicon-earphone"></span>
-          <div class="tel">13873976777</div>
+          <div class="tel"><?php echo $baseinfo["company_info"]["mobile"]; ?></div>
         </li>
         <li class="list-group-item" role="button" id="btn_aside_qrcode">
           <span class="glyphicon glyphicon-qrcode"></span>
           <div class="qrcode">
-            <img src="/images/qrcode.jpg" alt="弥尚餐饮装饰设计">
+            <img src="/images/qrcode.jpg" alt="">
           </div>
         </li>
       </ul>

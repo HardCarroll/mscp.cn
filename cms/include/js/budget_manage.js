@@ -98,7 +98,7 @@ function refreshTabList(data) {
     data: fmd,
     processData: false,
     contentType: false,   //数据为formData时必须定义此项
-    context: $("#budgetTab>.budget-wrap"),
+    context: $("#budgetTab>.message-wrap"),
     success: function(result) {
       // 先清空内容后再追加
       $(this).html("").append(result);
@@ -130,6 +130,7 @@ function refreshTabList(data) {
                 success: function(result) {
                   $(this).toggleClass("glyphicon-star-empty").toggleClass("glyphicon-star").parent().parent().parent().toggleClass("panel-default").toggleClass("panel-danger");
                   getCounts({rule: "b_read='F'", target: $(".wrap.marked>span.digital")});
+                  getCounts({rule: "b_read='F'", target: $(".nav-list .list-item.active .badge")});
                 },
                 error: function(err) {
                   console.log("fail: "+err);

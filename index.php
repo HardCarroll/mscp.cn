@@ -10,9 +10,9 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="renderer" content="webkit">
-  <meta name="Keywords" content="关键词">
-  <meta name="Description" content="内容描述">
-  <title>弥尚餐饮装饰设计-官方网站</title>
+  <meta name="Keywords" content="<?php echo $baseinfo["site_info"]["keywords"] ?>">
+  <meta name="Description" content="<?php echo $baseinfo["site_info"]["description"] ?>">
+  <title><?php echo $baseinfo["site_info"]["title"] ?></title>
   <link rel="stylesheet" href="/include/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="/include/fullpage/css/fullpage.css">
   <link rel="stylesheet" href="/include/css/icons.css">
@@ -1062,7 +1062,7 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
         <div class="hd inner">
           <div class="cpy">
             <p class="title">关于弥尚</p>
-            <p class="content">湖南弥尚餐饮装饰设计有限公司，是一家专业的餐饮整装设计公司。我司成立于2003年，总部位于湖南长沙。我们专注于连锁店面的设计与装修，通过对消费者心理的深度理解，对行为和动线的合理规划，从品牌视觉到空间工程，打造出有价值的餐饮空间。我们具备一站式、短工期、高品质、优服务的优势特色，最大程度为客户省时、省力、省钱，是湖南颇具影响力的餐饮设计装饰机构。</p>
+            <p class="content">湖南弥尚餐饮装饰设计有限公司，是一家专业的餐饮整装设计公司。我司成立于2003年，总部位于湖南长沙。我们专注于连锁店面的设计与装修，通过对消费者心理的深度理解，对行为和动线的合理规划，从品牌视觉到空间工程，打造出有价值的餐饮空间。我们具备一站式、短工期、高品质、优服务的优势特色，最大程度为客户省时、省力、省钱，是湖南颇具影响力的餐饮设计装饰机构。为客户提供长沙餐厅装修、餐厅设计、特色餐饮设计、餐饮店面设计、餐厅软装设计、餐饮空间设计、餐饮品牌设计、餐厅硬装设计、特色湘菜店设计、装修工程、餐饮配套在内的一站式连锁品牌服务。公司在长沙、株洲、湘潭等地均有分部。</p>
           </div>
           <div class="pos">
             <img data-src="/images/pos-bg.png">
