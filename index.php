@@ -1211,6 +1211,7 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
   <script src="/include/jquery/jquery.min.js"></script>
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
   <script src="/include/fullpage/js/fullpage.js"></script>
+  <script src="/include/js/shared.js"></script>
   <script src="/include/js/home.js"></script>
 </body>
 

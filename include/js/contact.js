@@ -31,69 +31,75 @@ $(function () {
     verifyCode = resetCode();
   });
   $("#btn-submit").off("click").on("click", function () {
-    var fmd = new FormData();
-    var msgName = $("#msg-name").val();
-    var msgPhone = $("#msg-phone").val();
-    var msgEmail = $("#msg-email").val();
-    var msgAddress = $("#msg-address").val();
-    var msgTitle = $("#msg-title").val();
-    var msgContent = $("#msg-content").val();
-    var inputCode = $("#inputCode").val().toUpperCase();
-
-    var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
-    if (!regTel.test(msgPhone)) {
-      $("#tel-box").popover("show");
-      $("#tel-box").on("shown.bs.popover", function () {
-        setTimeout(function () {
-          $("#tel-box").popover("hide");
-          $("#msg-phone").select().focus();
-        }, 1500);
-      });
-    }
-    else if (inputCode !== verifyCode) {
-      // console.log("error verifyCode");
-      $("#verify-box").popover("show");
-      $("#verify-box").on("shown.bs.popover", function () {
-        setTimeout(function () {
-          $("#verify-box").popover("hide");
-          $("#inputCode").select().focus();
-          verifyCode = resetCode();
-        }, 1500);
-      });
+    var bMessage = getCookie("bMsgBoard");
+    if (bMessage) {
+      alert("请勿反复提交！如需再次留言，请关闭浏览器并重新打开此页面！");
     }
     else {
-      var time = new Date();
-      var day = ("0" + time.getDate()).slice(-2);
-      var month = ("0" + (time.getMonth() + 1)).slice(-2);
-      var today = time.getFullYear() + "-" + (month) + "-" + (day);
-      var msgData = {msg_name: msgName, msg_phone: msgPhone, msg_email: msgEmail, msg_address: msgAddress, msg_title: msgTitle, msg_content: msgContent,msg_date: today, b_read: "F", b_end: "TAB_END"};
-      fmd.append("token", "leaveMessage");
-      fmd.append("data", JSON.stringify(msgData));
-      $.ajax({
-        url: "/cms/include/php/handle.php",
-        type: "POST",
-        data: fmd,
-        processData: false,
-        contentType: false,
-        dataType: "json",
-        success: function (result) {
-          console.log(result);
-          if(!result.err_no) {
-            alert("感谢您的留言，您的留言已提交至后台！");
-            $("#msg-name").val("");
-            $("#msg-phone").val("");
-            $("#msg-email").val("");
-            $("#msg-address").val("");
-            $("#msg-title").val("");
-            $("#msg-content").val("");
-            $("#inputCode").val("");
+      var fmd = new FormData();
+      var msgName = $("#msg-name").val();
+      var msgPhone = $("#msg-phone").val();
+      var msgEmail = $("#msg-email").val();
+      var msgAddress = $("#msg-address").val();
+      var msgTitle = $("#msg-title").val();
+      var msgContent = $("#msg-content").val();
+      var inputCode = $("#inputCode").val().toUpperCase();
+  
+      var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
+      if (!regTel.test(msgPhone)) {
+        $("#tel-box").popover("show");
+        $("#tel-box").on("shown.bs.popover", function () {
+          setTimeout(function () {
+            $("#tel-box").popover("hide");
+            $("#msg-phone").select().focus();
+          }, 1500);
+        });
+      }
+      else if (inputCode !== verifyCode) {
+        // console.log("error verifyCode");
+        $("#verify-box").popover("show");
+        $("#verify-box").on("shown.bs.popover", function () {
+          setTimeout(function () {
+            $("#verify-box").popover("hide");
+            $("#inputCode").select().focus();
             verifyCode = resetCode();
+          }, 1500);
+        });
+      }
+      else {
+        var time = new Date();
+        var day = ("0" + time.getDate()).slice(-2);
+        var month = ("0" + (time.getMonth() + 1)).slice(-2);
+        var today = time.getFullYear() + "-" + (month) + "-" + (day);
+        var msgData = { msg_name: msgName, msg_phone: msgPhone, msg_email: msgEmail, msg_address: msgAddress, msg_title: msgTitle, msg_content: msgContent, msg_date: today, b_read: "F", b_end: "TAB_END" };
+        fmd.append("token", "leaveMessage");
+        fmd.append("data", JSON.stringify(msgData));
+        $.ajax({
+          url: "/cms/include/php/handle.php",
+          type: "POST",
+          data: fmd,
+          processData: false,
+          contentType: false,
+          dataType: "json",
+          success: function (result) {
+            setCookie("bMsgBoard", true);
+            if (!result.err_no) {
+              alert("感谢您的留言，您的留言已提交至后台！");
+              $("#msg-name").val("");
+              $("#msg-phone").val("");
+              $("#msg-email").val("");
+              $("#msg-address").val("");
+              $("#msg-title").val("");
+              $("#msg-content").val("");
+              $("#inputCode").val("");
+              verifyCode = resetCode();
+            }
+          },
+          error: function (err) {
+            console.log("fail: " + err);
           }
-        },
-        error: function (err) {
-          console.log("fail: " + err);
-        }
-      });
+        });
+      }
     }
 
   });

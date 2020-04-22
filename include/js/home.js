@@ -302,61 +302,68 @@ $(function () {
   $("[data-toggle='popover'").popover();
 
   $(".btn-round").off("click").on("click", function () {
-    var time = new Date();
-    var day = ("0" + time.getDate()).slice(-2);
-    var month = ("0" + (time.getMonth() + 1)).slice(-2);
-    var today = time.getFullYear() + "-" + (month) + "-" + (day);
-    var area = $("#decoration-area").val();
-    var type = $("#decoration-style").val();
-    var name = $("#decoration-name").val();
-    var tel = $("#decoration-tel").val();
-    var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
-
-    if (parseInt(area) <= 0 || area == "") {
-      $("#area-box").popover("show");
-      $("#area-box").on("shown.bs.popover", function () {
-        setTimeout(function () {
-          $("#area-box").popover("hide");
-          $("#decoration-area").select().focus();
-        }, 1500);
-      });
-    } else if (!regTel.test(tel)) {
-      $("#tel-box").popover("show");
-      $("#tel-box").on("shown.bs.popover", function () {
-        setTimeout(function () {
-          $("#tel-box").popover("hide");
-          $("#decoration-tel").select().focus();
-        }, 1500);
-      });
+    var bMsgBudget = getCookie("bMsgBudget");
+    if (bMsgBudget) {
+      alert("请勿反复提交！如需再次留言，请关闭浏览器并重新打开此页面！");
     }
     else {
-      var data = { area: area, tel: tel, name: name, type: type, date: today, b_read: "F", b_end: "TAB_END" };
+      var time = new Date();
+      var day = ("0" + time.getDate()).slice(-2);
+      var month = ("0" + (time.getMonth() + 1)).slice(-2);
+      var today = time.getFullYear() + "-" + (month) + "-" + (day);
+      var area = $("#decoration-area").val();
+      var type = $("#decoration-style").val();
+      var name = $("#decoration-name").val();
+      var tel = $("#decoration-tel").val();
+      var regTel = /^1[3|4|5|7|8|9]\d{9}$/;
 
-      var fmd_getBudget = new FormData();
-      fmd_getBudget.append("token", "getBudget");
-      fmd_getBudget.append("data", JSON.stringify(data));
-      $.ajax({
-        url: "/cms/include/php/handle.php",
-        type: "POST",
-        data: fmd_getBudget,
-        processData: false,
-        contentType: false,
-        dataType: "json",
-        success: function (result) {
-          clearInterval(budgetTimer);
-          var total = 0;
-          for (var i in result) {
-            $("#budget .rt .detail").find("p[data-item='" + i + "']").find("span").html(result[i]);
-            total += result[i];
+      if (parseInt(area) <= 0 || area == "") {
+        $("#area-box").popover("show");
+        $("#area-box").on("shown.bs.popover", function () {
+          setTimeout(function () {
+            $("#area-box").popover("hide");
+            $("#decoration-area").select().focus();
+          }, 1500);
+        });
+      } else if (!regTel.test(tel)) {
+        $("#tel-box").popover("show");
+        $("#tel-box").on("shown.bs.popover", function () {
+          setTimeout(function () {
+            $("#tel-box").popover("hide");
+            $("#decoration-tel").select().focus();
+          }, 1500);
+        });
+      }
+      else {
+        var data = { area: area, tel: tel, name: name, type: type, date: today, b_read: "F", b_end: "TAB_END" };
+
+        var fmd_getBudget = new FormData();
+        fmd_getBudget.append("token", "getBudget");
+        fmd_getBudget.append("data", JSON.stringify(data));
+        $.ajax({
+          url: "/cms/include/php/handle.php",
+          type: "POST",
+          data: fmd_getBudget,
+          processData: false,
+          contentType: false,
+          dataType: "json",
+          success: function (result) {
+            setCookie("bMsgBudget", true);
+            clearInterval(budgetTimer);
+            var total = 0;
+            for (var i in result) {
+              $("#budget .rt .detail").find("p[data-item='" + i + "']").find("span").html(result[i]);
+              total += result[i];
+            }
+            $("#budget .rt .total").find("span").html(total);
+            $("#budgetModal .result").html(total);
+            $("#budgetModal").modal();
+          },
+          error: function (err) {
+            console.log("fail: " + err);
           }
-          $("#budget .rt .total").find("span").html(total);
-          $("#budgetModal .result").html(total);
-          $("#budgetModal").modal();
-        },
-        error: function (err) {
-          console.log("fail: " + err);
-        }
-      });
+        });
+      }
     }
   });
 

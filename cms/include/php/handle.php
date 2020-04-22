@@ -359,7 +359,7 @@ function proc_refreshMsgList($hd, $data) {
                   <p class="msg-content"><span>内容：</span><span>'.$result[$i]["msg_content"].'</span></p>
                 </div>');
       $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
-      $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+      $html .= '<li role="button" data-token="mark" title="标记为已读" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
       $html .= '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
       $html .= '</ul></div></div>';
     }
@@ -409,7 +409,7 @@ function proc_refreshBudgetList($hd, $data) {
                   <p class="msg-address"><span>面积：</span><span>'.$result[$i]["area"].'</span></p>
                 </div>');
       $html .= '<ul class="btn-group" data-id="'.$result[$i]["id"].'">';
-      $html .= '<li role="button" data-token="mark" title="星标" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
+      $html .= '<li role="button" data-token="mark" title="标记为已读" class="btn btn-default glyphicon '.($result[$i]["b_read"]==="T" ? "glyphicon-star" : "glyphicon-star-empty").'"></li>';
       $html .= '<li role="button" data-token="remove" title="删除" class="btn btn-default glyphicon glyphicon-trash"></li>';
       $html .= '</ul></div></div>';
     }
