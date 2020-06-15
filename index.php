@@ -1020,32 +1020,32 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_01.png"></div>
+                <div class="pic"><img data-src="/images/p_07.png"></div>
               </div>
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_02.png"></div>
+                <div class="pic"><img data-src="/images/p_08.png"></div>
               </div>
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_03.png"></div>
+                <div class="pic"><img data-src="/images/p_09.png"></div>
               </div>
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_04.png"></div>
+                <div class="pic"><img data-src="/images/p_10.png"></div>
               </div>
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_05.png"></div>
+                <div class="pic"><img data-src="/images/p_11.png"></div>
               </div>
             </li>
             <li class="col-sm-2 list-item">
               <div class="wrap">
-                <div class="pic"><img data-src="/images/p_06.png"></div>
+                <div class="pic"><img data-src="/images/p_12.png"></div>
               </div>
             </li>
           </ul>
