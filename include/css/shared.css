@@ -530,6 +530,10 @@ input, textarea, button, select {
 .bs-xtop b, .bs-xbottom b {
   background-color: #FFF !important;
 }
+#LRfloater0 {
+  left: auto !important;
+  right: 0 !important;
+}
 
 
 @keyframes light {

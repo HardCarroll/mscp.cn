@@ -295,6 +295,7 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
   <script src="/include/bootstrap/js/bootstrap.min.js"></script>
   <script src="/include/js/shared.js"></script>
   <script src="/include/js/budget.js"></script>
+  <script language="javascript" src="http://dkt.zoosnet.net/JS/LsJS.aspx?siteid=DKT87949349&float=1&lng=cn"></script>
 </body>
 
 </html>

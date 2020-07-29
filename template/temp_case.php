@@ -254,6 +254,7 @@ function transmitCasetype($key)
   <script src="/include/js/shared.js"></script>
   <script src="/include/js/case.js"></script>
   <!-- <script src="/include/js/temp_case.js"></script> -->
+  <script language="javascript" src="http://dkt.zoosnet.net/JS/LsJS.aspx?siteid=DKT87949349&float=1&lng=cn"></script>
 </body>
 
 </html>

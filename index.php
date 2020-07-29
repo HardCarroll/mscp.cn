@@ -1213,6 +1213,7 @@ $baseinfo = json_decode(file_get_contents($_SERVER["DOCUMENT_ROOT"] . "/cms/incl
   <script src="/include/fullpage/js/fullpage.js"></script>
   <script src="/include/js/shared.js"></script>
   <script src="/include/js/home.js"></script>
+  <script language="javascript" src="http://dkt.zoosnet.net/JS/LsJS.aspx?siteid=DKT87949349&float=1&lng=cn"></script>
 </body>
 
 </html>
